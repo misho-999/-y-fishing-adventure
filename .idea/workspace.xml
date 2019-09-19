@@ -2,11 +2,38 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="MyProject:war exploded" />
+      <artifact name="MyFishAdvanture:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="" />
+    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MyFishAdvanture.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/details.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/profile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/register-fish.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/templates/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/templates/head.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/templates/navbar.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/upload.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/js/jquery-3.3.1.min.js" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +83,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/My-fishing-adventure" />
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="maa" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -82,15 +114,16 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.35351735" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -124,17 +157,17 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="MyFish" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 9.0.20" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="MyFishingAdventures" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 9.0.20" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="MyProject:war exploded">
+        <artifact name="MyFishAdvanture:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_myproject" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_myproject_3" />
         <option name="HTTP_PORT" value="8000" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
@@ -143,7 +176,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51217" />
+        <option name="DEBUG_PORT" value="59075" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -193,7 +226,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="MyProject:war exploded" />
+          <artifact name="MyFishAdvanture:war exploded" />
         </option>
       </method>
     </configuration>
@@ -235,6 +268,7 @@
       <workItem from="1568809355060" duration="4025000" />
       <workItem from="1568877513369" duration="10168000" />
       <workItem from="1568888404848" duration="776000" />
+      <workItem from="1568890194080" duration="1015000" />
     </task>
     <servers />
   </component>
@@ -246,10 +280,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/My-fishing-adventure" />
+    </ignored-roots>
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
 </project>
