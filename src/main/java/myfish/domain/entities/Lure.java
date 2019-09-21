@@ -1,10 +1,7 @@
 package myfish.domain.entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "lure")
@@ -15,6 +12,7 @@ public class Lure extends BaseEntity {
     private TypeOnLure typeOnLure;
     private Integer weigtInGrams;
     private Integer lengthInMilimeters;
+    private Fisherman owner;
 
     public Lure() {
     }
@@ -76,5 +74,16 @@ public class Lure extends BaseEntity {
 
     public void setLengthInMilimeters(Integer length) {
         this.lengthInMilimeters = length;
+    }
+
+    @NotNull
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    public Fisherman getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Fisherman owner) {
+        this.owner = owner;
     }
 }

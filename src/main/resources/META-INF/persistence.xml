@@ -10,7 +10,7 @@
     <persistence-unit name="myfish" transaction-type="RESOURCE_LOCAL">
         <properties>
             <property name="hibernate.connection.url"
-                      value="jdbc:mysql://localhost:3306/my_fish_db?useSSL=false&amp;createDatabaseIfNotExist=true&amp;serverTimezone=UTC"/>
+                      value="jdbc:mysql://localhost:3306/my_fish_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.connection.password" value="1234"/>

@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="MyFishAdvanture:war exploded" />
+      <artifact name="MyFishingAdvanture:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MyFishAdvanture.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Town.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,22 +43,12 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="myfish/Hibernate" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="myfish/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="myfish/Hibernate" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="my_fish_db: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -94,7 +98,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JAVA DB/02. HIBERNATE/EXERCISES/Exam_28.07.2019/Football-Info_Skeleton_maa" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -138,7 +142,7 @@
     <configuration name="MyFishingAdventures" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 9.0.20" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="MyFishAdvanture:war exploded">
+        <artifact name="MyFishingAdvanture:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -205,6 +209,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="MyFishAdvanture:war exploded" />
+          <artifact name="MyFishingAdvanture:war exploded" />
         </option>
       </method>
     </configuration>
@@ -236,7 +241,7 @@
       <workItem from="1568905001282" duration="262000" />
       <workItem from="1568909598701" duration="4157000" />
       <workItem from="1568991154235" duration="650000" />
-      <workItem from="1569043054156" duration="3170000" />
+      <workItem from="1569043054156" duration="8622000" />
     </task>
     <task id="LOCAL-00001" summary="server changes">
       <created>1568891461750</created>
@@ -259,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569046702376</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added entitis">
+      <created>1569046991096</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569046991096</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
