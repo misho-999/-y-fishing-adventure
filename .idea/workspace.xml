@@ -6,22 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="server changes">
-      <change afterPath="$PROJECT_DIR$/MyFishingAdvanture.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/config/ApplicationBeanConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/SpoolSize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFishAdvanture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyFishAdvanture.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/repository/FishRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/repository/FishRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/service/FishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/service/FishServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/util/ModelMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/util/ValidationUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/servlets/FishRegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/web/servlets/FishRegisterServlet.java" afterDir="false" />
+    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/MyFishAdvanture.iml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +236,7 @@
       <workItem from="1568905001282" duration="262000" />
       <workItem from="1568909598701" duration="4157000" />
       <workItem from="1568991154235" duration="650000" />
-      <workItem from="1569043054156" duration="2785000" />
+      <workItem from="1569043054156" duration="3170000" />
     </task>
     <task id="LOCAL-00001" summary="server changes">
       <created>1568891461750</created>
@@ -259,7 +245,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568891461750</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added entitis">
+      <created>1569046632246</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569046632246</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added entitis">
+      <created>1569046702376</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569046702376</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +284,8 @@
     </ignored-roots>
     <MESSAGE value="changes" />
     <MESSAGE value="server changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="server changes" />
+    <MESSAGE value="Added entitis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added entitis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
