@@ -6,33 +6,22 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MyFishAdvanture.iml" afterDir="false" />
+    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="server changes">
+      <change afterPath="$PROJECT_DIR$/MyFishingAdvanture.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/config/ApplicationBeanConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/SpoolSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/WEB-INF/beans.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/details.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/home.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/profile.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/register-fish.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/templates/footer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/templates/head.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/templates/navbar.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/jsp/upload.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/metubev2-1.0-SNAPSHOT/resources/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFishAdvanture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyFishAdvanture.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/repository/FishRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/repository/FishRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/service/FishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/service/FishServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/util/ModelMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/util/ValidationUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/servlets/FishRegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/web/servlets/FishRegisterServlet.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,7 +100,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1R0gIuXE47PbcNL42Q6QZwTLtnf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -121,27 +112,28 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.35351735" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.13802315" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp\jsp" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\java\myfish\web\servlets" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\java\myfish\service" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\java\myfish\repository" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp\jsp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="myfish.config" />
       <recent name="myfish.domain.modules.service" />
       <recent name="myfish.web.servlets" />
       <recent name="myfish.repository" />
       <recent name="myfish.domain.entities" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\webapp\resources\css" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\webapp" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\webapp\resources" />
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp\jsp" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -235,21 +227,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@11c787f0" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f69bff26" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f69bff26" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@5e6ea9f2" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -268,8 +246,20 @@
       <workItem from="1568809355060" duration="4025000" />
       <workItem from="1568877513369" duration="10168000" />
       <workItem from="1568888404848" duration="776000" />
-      <workItem from="1568890194080" duration="1015000" />
+      <workItem from="1568890194080" duration="4319000" />
+      <workItem from="1568905001282" duration="262000" />
+      <workItem from="1568909598701" duration="4157000" />
+      <workItem from="1568991154235" duration="650000" />
+      <workItem from="1569043054156" duration="2785000" />
     </task>
+    <task id="LOCAL-00001" summary="server changes">
+      <created>1568891461750</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568891461750</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +283,23 @@
       <path value="$PROJECT_DIR$/My-fishing-adventure" />
     </ignored-roots>
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="server changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="server changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/myfish/web/servlets/IndexServlet.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/myfish/web/servlets/FishRegisterServlet.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

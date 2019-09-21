@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="MyFishAdvanture" />
         <module name="MyProject" />
+        <module name="MyFishingAdvanture" />
       </profile>
     </annotationProcessing>
   </component>

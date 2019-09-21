@@ -4,17 +4,15 @@ import myfish.domain.entities.Fish;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 import java.util.List;
 
 public class FishRepositoryImpl implements FishRepository {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
-    public FishRepositoryImpl() {
-        this.entityManager = Persistence
-                .createEntityManagerFactory("myfish")
-                .createEntityManager();
+    @Inject
+    public FishRepositoryImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
     @Override

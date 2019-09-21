@@ -4,7 +4,7 @@ package myfish.web.servlets;
 import myfish.domain.modules.binding.FishRegisterBindingModel;
 import myfish.domain.modules.service.FishServiceModel;
 import myfish.service.FishService;
-import myfish.util.ModelMapper;
+import org.modelmapper.ModelMapper;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
