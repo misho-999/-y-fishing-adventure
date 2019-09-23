@@ -7,21 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/MainProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1b7037ba-dbec-4514-9e8b-168a016577d8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1b7037ba-dbec-4514-9e8b-168a016577d8/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/62c1b006-c584-45b5-b16a-eba89004a248.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/62c1b006-c584-45b5-b16a-eba89004a248/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFishingAdvanture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyFishingAdvanture.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Town.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +54,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -241,7 +239,11 @@
       <workItem from="1568905001282" duration="262000" />
       <workItem from="1568909598701" duration="4157000" />
       <workItem from="1568991154235" duration="650000" />
-      <workItem from="1569043054156" duration="8622000" />
+      <workItem from="1569043054156" duration="8780000" />
+      <workItem from="1569226877248" duration="138000" />
+      <workItem from="1569227189849" duration="461000" />
+      <workItem from="1569227697011" duration="896000" />
+      <workItem from="1569255429829" duration="824000" />
     </task>
     <task id="LOCAL-00001" summary="server changes">
       <created>1568891461750</created>
@@ -271,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569046991096</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added entitis">
+      <created>1569052567429</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569052567429</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

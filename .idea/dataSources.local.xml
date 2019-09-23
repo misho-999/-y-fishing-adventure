@@ -11,5 +11,10 @@
       <user-name>root</user-name>
       <schema-mapping />
     </data-source>
+    <data-source name="myfish/Hibernate" uuid="b594e996-66d2-42f8-aac7-3688c79544ed">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0" />
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>

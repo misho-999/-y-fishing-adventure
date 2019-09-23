@@ -4,30 +4,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "fishing_rods")
-public class FishingRod extends BaseEntity {
-    private String make;
-    private String model;
+public class FishingRod extends MainProperty {
     private Double length;
     private Double weigth;
     private Fisherman fisherman;
 
     public FishingRod() {
-    }
-
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public Double getLength() {

@@ -1,30 +1,25 @@
 package myfish.domain.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "spools")
-public class Spool extends BaseEntity {
-    private String make;
-    private String model;
+public class Spool extends MainProperty {
+    private SpoolSize spoolSize;
 
     public Spool() {
     }
 
-    public String getMake() {
-        return make;
+    @Enumerated
+    @Column(name = "spool_size", nullable = false, updatable = false)
+    public SpoolSize getSpoolSize() {
+        return spoolSize;
     }
 
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
+    public void setSpoolSize(SpoolSize spoolSize) {
+        this.spoolSize = spoolSize;
     }
 }

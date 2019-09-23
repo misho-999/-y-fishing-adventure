@@ -7,10 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "boats")
-public class Boat {
-    //Make	Model	Length	Weigth	width	motor	owner
-    private String make;
-    private String model;
+public class Boat extends MainProperty {
     private Double length;
     private Double width;
     private Double weigth;
@@ -18,22 +15,6 @@ public class Boat {
     private Fisherman fisherman;
 
     public Boat() {
-    }
-
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public Double getLength() {

@@ -5,9 +5,7 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "lure")
-public class Lure extends BaseEntity {
-    private String make;
-    private String model;
+public class Lure extends MainProperty {
     private String color;
     private TypeOnLure typeOnLure;
     private Integer weigtInGrams;
@@ -15,24 +13,6 @@ public class Lure extends BaseEntity {
     private Fisherman owner;
 
     public Lure() {
-    }
-
-    @Column(name = "make", nullable = false, updatable = false)
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    @Column(name = "model", nullable = false, updatable = false)
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     @Column(name = "color", nullable = false, updatable = true)
