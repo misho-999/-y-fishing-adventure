@@ -7,19 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/MainProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1b7037ba-dbec-4514-9e8b-168a016577d8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1b7037ba-dbec-4514-9e8b-168a016577d8/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/62c1b006-c584-45b5-b16a-eba89004a248.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/62c1b006-c584-45b5-b16a-eba89004a248/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFishingAdvanture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyFishingAdvanture.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +35,22 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost [2]" type="feb32156:DbDataSourceImpl" />
+        <item name="my_fish_db@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="my_fish_db@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="my_fish_db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="my_fish_db: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -96,10 +100,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JAVA DB/02. HIBERNATE/EXERCISES/Exam_28.07.2019/Football-Info_Skeleton_maa" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.13802315" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -216,7 +220,16 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c5d50168" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@eaed6015" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -243,7 +256,9 @@
       <workItem from="1569226877248" duration="138000" />
       <workItem from="1569227189849" duration="461000" />
       <workItem from="1569227697011" duration="896000" />
-      <workItem from="1569255429829" duration="824000" />
+      <workItem from="1569255429829" duration="1033000" />
+      <workItem from="1569260116345" duration="143000" />
+      <workItem from="1569477019286" duration="1645000" />
     </task>
     <task id="LOCAL-00001" summary="server changes">
       <created>1568891461750</created>
@@ -280,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569052567429</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added MainProperty abstrac class">
+      <created>1569256397375</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1569256397376</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +328,8 @@
     <MESSAGE value="changes" />
     <MESSAGE value="server changes" />
     <MESSAGE value="Added entitis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added entitis" />
+    <MESSAGE value="Added MainProperty abstrac class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added MainProperty abstrac class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

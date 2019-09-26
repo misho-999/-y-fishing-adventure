@@ -49,8 +49,7 @@ public class Boat extends MainProperty {
         this.engineHorsepower = engineHorsepower;
     }
 
-    @OneToOne
-    @JoinColumn(name = "fisherman_id", referencedColumnName = "id")
+    @OneToOne(mappedBy = "boat")
     public Fisherman getFisherman() {
         return fisherman;
     }

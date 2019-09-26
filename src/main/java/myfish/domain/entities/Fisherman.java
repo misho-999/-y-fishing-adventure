@@ -13,6 +13,7 @@ public class Fisherman extends BaseEntity {
     private String lastName;
     private String age;
     private Boat boat;
+    private FishingRod fishingRod;
     private List<Lure> lures;
     private List<FishingRod> fishingRods;
 
@@ -60,6 +61,7 @@ public class Fisherman extends BaseEntity {
     public void setBoat(Boat boat) {
         this.boat = boat;
     }
+
 
     @OneToMany(mappedBy = "owner")
     public List<Lure> getLures() {
