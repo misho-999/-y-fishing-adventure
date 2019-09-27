@@ -1,8 +1,6 @@
 package myfish.domain.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Max;
@@ -17,6 +15,7 @@ public class Fish extends BaseEntity {
     private Double weigthInKilograms;
     private Integer lengthInSentimeters;
     private String dam;
+    private Fisherman fisherman;
 
     public Fish() {
     }
@@ -68,4 +67,15 @@ public class Fish extends BaseEntity {
     public void setDam(String dam) {
         this.dam = dam;
     }
+
+    @ManyToOne
+    @JoinColumn(name = "fish_id", referencedColumnName = "id")
+    public Fisherman getFisherman() {
+        return fisherman;
+    }
+
+    public void setFisherman(Fisherman fisherman) {
+        this.fisherman = fisherman;
+    }
+
 }

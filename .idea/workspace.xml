@@ -8,12 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyFishingAdvanture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyFishingAdvanture.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Destination.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,10 +35,6 @@
       <set />
     </option>
     <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="my_fish_db@localhost" type="feb32156:DbDataSourceImpl" />
@@ -100,7 +98,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JAVA DB/02. HIBERNATE/EXERCISES/Exam_28.07.2019/Football-Info_Skeleton_maa" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Facets" />
@@ -220,16 +218,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@c5d50168" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@eaed6015" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -259,6 +248,10 @@
       <workItem from="1569255429829" duration="1033000" />
       <workItem from="1569260116345" duration="143000" />
       <workItem from="1569477019286" duration="1645000" />
+      <workItem from="1569577035102" duration="3226000" />
+      <workItem from="1569580268532" duration="628000" />
+      <workItem from="1569580925808" duration="2422000" />
+      <workItem from="1569585084201" duration="333000" />
     </task>
     <task id="LOCAL-00001" summary="server changes">
       <created>1568891461750</created>

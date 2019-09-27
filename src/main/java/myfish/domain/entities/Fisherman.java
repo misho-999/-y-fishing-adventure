@@ -13,9 +13,10 @@ public class Fisherman extends BaseEntity {
     private String lastName;
     private String age;
     private Boat boat;
-    private FishingRod fishingRod;
     private List<Lure> lures;
     private List<FishingRod> fishingRods;
+    private List<Destination> destinations;
+    private List<Fish> fishes;
 
     public Fisherman() {
     }
@@ -62,7 +63,6 @@ public class Fisherman extends BaseEntity {
         this.boat = boat;
     }
 
-
     @OneToMany(mappedBy = "owner")
     public List<Lure> getLures() {
         return lures;
@@ -79,5 +79,26 @@ public class Fisherman extends BaseEntity {
 
     public void setFishingRods(List<FishingRod> fishingRods) {
         this.fishingRods = fishingRods;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "fisherman_destination",
+            joinColumns = @JoinColumn(name = "fisherman_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "destination_id", referencedColumnName = "id"))
+    public List<Destination> getDestinations() {
+        return destinations;
+    }
+
+    public void setDestinations(List<Destination> destinations) {
+        this.destinations = destinations;
+    }
+
+    @OneToMany(mappedBy = "fisherman")
+    public List<Fish> getFishes() {
+        return fishes;
+    }
+
+    public void setFishes(List<Fish> fishes) {
+        this.fishes = fishes;
     }
 }

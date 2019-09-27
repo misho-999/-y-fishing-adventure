@@ -1,17 +1,20 @@
 package myfish.domain.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
-@Table(name = "towns")
-public class Town extends BaseEntity {
+@Table(name = "destinations")
+public class Destination extends BaseEntity {
     private String townName;
     private String region;
     private Integer population;
     private Integer altitude;
+    private List<Fisherman> fishermens;
 
-    public Town() {
+    public Destination() {
     }
 
     public String getTownName() {
@@ -44,5 +47,14 @@ public class Town extends BaseEntity {
 
     public void setAltitude(Integer altitude) {
         this.altitude = altitude;
+    }
+
+    @ManyToMany(mappedBy = "destinations")
+    public List<Fisherman> getFishermens() {
+        return fishermens;
+    }
+
+    public void setFishermens(List<Fisherman> fishermens) {
+        this.fishermens = fishermens;
     }
 }

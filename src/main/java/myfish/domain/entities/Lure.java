@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-@Table(name = "lure")
+@Table(name = "lures")
 public class Lure extends MainProperty {
     private String color;
     private TypeOnLure typeOnLure;

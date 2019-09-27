@@ -28,7 +28,6 @@ public class Boat extends MainProperty {
     public Double getWidth() {
         return width;
     }
-
     public void setWidth(Double width) {
         this.width = width;
     }
