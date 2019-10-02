@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,6 +245,7 @@
       <workItem from="1569585084201" duration="333000" />
       <workItem from="1569587354057" duration="649000" />
       <workItem from="1570034306060" duration="107000" />
+      <workItem from="1570034652668" duration="184000" />
     </task>
     <task id="LOCAL-00001" summary="server changes">
       <created>1568891461750</created>
@@ -290,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569256397376</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added html resourses">
+      <created>1570034727987</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570034727987</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +316,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/My-fishing-adventure" />
     </ignored-roots>
@@ -317,7 +324,8 @@
     <MESSAGE value="server changes" />
     <MESSAGE value="Added entitis" />
     <MESSAGE value="Added MainProperty abstrac class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added MainProperty abstrac class" />
+    <MESSAGE value="Added html resourses" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added html resourses" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
