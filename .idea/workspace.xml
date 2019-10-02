@@ -7,15 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyFishingAdvanture.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyFishingAdvanture.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Destination.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +86,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -252,6 +245,8 @@
       <workItem from="1569580268532" duration="628000" />
       <workItem from="1569580925808" duration="2422000" />
       <workItem from="1569585084201" duration="333000" />
+      <workItem from="1569587354057" duration="649000" />
+      <workItem from="1570034306060" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="server changes">
       <created>1568891461750</created>

@@ -1,0 +1,23 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+  
+main{
+    background-image: url(/img/Beglik.jpg);
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5mm;
+}
+
+img{
+    height: 50px;
+    margin-left: 5mm;
+}
+
+h1.text-center{
+    color: blue;
+    font-size: 10mm;
+}
