@@ -4,7 +4,7 @@ body, html {
 }
   
 main{
-    background-image: url(/img/Beglik.jpg);
+    background-image: url(/img/Batak.jpg);
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
@@ -19,9 +19,16 @@ img{
 
 h1.text-center{
     color: blue;
-    font-size: 15mm;
-    /* background-color: rgb(128, 218, 245); */
-    border-radius: 3mm;
-    width: 600px;
-    padding-top: 80px;
+    font-size: 8mm;
+    /* border-radius: 3mm; */
+    /* width: 600px; */
+    padding-top: 10px;
 }
+
+
+form{
+    color:rgb(0, 123, 255);
+    padding-top: 15px;
+}
+
+
