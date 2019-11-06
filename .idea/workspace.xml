@@ -1,76 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="MyFishingAdvanture:war exploded" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="" />
+    <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DemoControler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/add-destination.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/add-fishing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/home2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/reset-css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/jpg/Batak.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/jpg/Beglik.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/jpg/Belmeken.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/jpg/Romantica.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/jpg/ShirokaPoliana.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/jpg/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/add-destination.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/add-fishing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/all.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/$CACHE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyFishingAdvanture.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/config/ApplicationBeanConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Boat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Destination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishFamily.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Fisherman.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/FishingRod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Lure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/MainProperty.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/Spool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/SpoolSize.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/TypeOfReservoir.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/entities/TypeOnLure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/modules/binding/FishRegisterBindingModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/domain/modules/service/FishServiceModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/repository/FishRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/repository/FishRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/repository/GenericRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/service/FishService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/service/FishServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/filters/FishRegisterFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/css/add-destination.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/css/add-fishing.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/css/home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/css/home2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/css/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/html/add-destination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/html/add-fishing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/html/all.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/html/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/html/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/img/Batak.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/img/Beglik.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/img/Belmeken.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/img/Romantica.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/img/ShirokaPoliana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/resourses/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/servlets/FishRegisterServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myfish/web/servlets/IndexServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/details.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/register-fish.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/templates/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/templates/head.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/templates/navbar.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/upload.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/classes/META-INF/MyFishingAdvanture.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/details.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/profile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/register-fish.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/register.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/templates/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/templates/head.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/templates/navbar.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/jsp/upload.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/resources/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/resources/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/resources/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/MyFishingAdvanture-1.0-SNAPSHOT/resources/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MyFishingAdvanture.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="my_fish_db@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="my_fish_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="my_fish_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="my_fish_db: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="maa" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -79,42 +146,30 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1R0gIuXE47PbcNL42Q6QZwTLtnf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectId" id="1TFIKMNfaqOBmMHJQAvve39LQeS" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JAVA DB/02. HIBERNATE/EXERCISES/Exam_28.07.2019/Football-Info_Skeleton_maa" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Facets" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.13802315" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/css" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp\jsp" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="myfish.config" />
-      <recent name="myfish.domain.modules.service" />
-      <recent name="myfish.web.servlets" />
-      <recent name="myfish.repository" />
-      <recent name="myfish.domain.entities" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\webapp\resources\css" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\webapp" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\webapp\resources" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp\jsp" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\MyProject\src\main\webapp" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static\css" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -130,180 +185,27 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="MyFishingAdventures" type="TomeeConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="TomEE 9.0.20" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="MyFishingAdvanture:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_myproject_3" />
-        <option name="HTTP_PORT" value="8000" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59075" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
+    <configuration name="MyfishingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="myfishing" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="maa.myfishing.MyfishingApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="MyFishAdvanture:war exploded" />
-          <artifact name="MyFishingAdvanture:war exploded" />
-        </option>
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f04eff78-097b-4365-9693-e62eafe1f144" name="Default Changelist" comment="" />
-      <created>1568809350987</created>
+      <changelist id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="" />
+      <created>1573049351331</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1568809350987</updated>
-      <workItem from="1568809355060" duration="4025000" />
-      <workItem from="1568877513369" duration="10168000" />
-      <workItem from="1568888404848" duration="776000" />
-      <workItem from="1568890194080" duration="4319000" />
-      <workItem from="1568905001282" duration="262000" />
-      <workItem from="1568909598701" duration="4157000" />
-      <workItem from="1568991154235" duration="650000" />
-      <workItem from="1569043054156" duration="8780000" />
-      <workItem from="1569226877248" duration="138000" />
-      <workItem from="1569227189849" duration="461000" />
-      <workItem from="1569227697011" duration="896000" />
-      <workItem from="1569255429829" duration="1033000" />
-      <workItem from="1569260116345" duration="143000" />
-      <workItem from="1569477019286" duration="1645000" />
-      <workItem from="1569577035102" duration="3226000" />
-      <workItem from="1569580268532" duration="628000" />
-      <workItem from="1569580925808" duration="2422000" />
-      <workItem from="1569585084201" duration="333000" />
-      <workItem from="1569587354057" duration="649000" />
-      <workItem from="1570034306060" duration="107000" />
-      <workItem from="1570034652668" duration="263000" />
+      <updated>1573049351331</updated>
+      <workItem from="1573049352547" duration="4317000" />
+      <workItem from="1573056437495" duration="5146000" />
     </task>
-    <task id="LOCAL-00001" summary="server changes">
-      <created>1568891461750</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1568891461750</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added entitis">
-      <created>1569046632246</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1569046632246</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added entitis">
-      <created>1569046702376</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1569046702376</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added entitis">
-      <created>1569046991096</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1569046991096</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added entitis">
-      <created>1569052567429</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1569052567429</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Added MainProperty abstrac class">
-      <created>1569256397375</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1569256397376</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Added html resourses">
-      <created>1570034727987</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1570034727987</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added html resourses">
-      <created>1570034849577</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1570034849577</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,33 +223,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/My-fishing-adventure" />
-    </ignored-roots>
-    <MESSAGE value="changes" />
-    <MESSAGE value="server changes" />
-    <MESSAGE value="Added entitis" />
-    <MESSAGE value="Added MainProperty abstrac class" />
-    <MESSAGE value="Added html resourses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added html resourses" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/myfish/web/servlets/IndexServlet.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/myfish/web/servlets/FishRegisterServlet.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
