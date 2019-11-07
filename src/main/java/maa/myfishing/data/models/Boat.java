@@ -1,7 +1,6 @@
 package maa.myfishing.data.models;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -12,7 +11,7 @@ public class Boat extends MainProperty {
     private Double width;
     private Double weigth;
     private Integer engineHorsepower;
-    private Fisherman fisherman;
+    private Fishing fishing;
 
     public Boat() {
     }
@@ -28,6 +27,7 @@ public class Boat extends MainProperty {
     public Double getWidth() {
         return width;
     }
+
     public void setWidth(Double width) {
         this.width = width;
     }
@@ -48,13 +48,12 @@ public class Boat extends MainProperty {
         this.engineHorsepower = engineHorsepower;
     }
 
-    @OneToOne(mappedBy = "boat")
-    public Fisherman getFisherman() {
-        return fisherman;
+    @OneToOne
+    public Fishing getFishing() {
+        return fishing;
     }
 
-    public void setFisherman(Fisherman owner) {
-        this.fisherman = owner;
+    public void setFishing(Fishing fishing) {
+        this.fishing = fishing;
     }
-
 }

@@ -12,10 +12,9 @@ public class Fish extends BaseEntity {
 
     private String fishName;
     private String fishFamily;
-    private Double weigthInKilograms;
-    private Integer lengthInSentimeters;
-    private String dam;
-    private Fisherman fisherman;
+    private Double weightInKilograms;
+    private Integer lengthInCentimeters;
+    private Fishing fishing;
 
     public Fish() {
     }
@@ -41,41 +40,33 @@ public class Fish extends BaseEntity {
     @Column(name = "weigth_in_kg", nullable = false, updatable = false)
     @DecimalMin(value = "0.10")
     @DecimalMax(value = "200.00")
-    public Double getWeigthInKilograms() {
-        return weigthInKilograms;
+    public Double getWeightInKilograms() {
+        return weightInKilograms;
     }
 
-    public void setWeigthInKilograms(Double weigth) {
-        this.weigthInKilograms = weigth;
+    public void setWeightInKilograms(Double weigth) {
+        this.weightInKilograms = weigth;
     }
 
     @Column(name = "length_in_sm", nullable = false, updatable = false)
     @Min(20)
     @Max(value = 300)
-    public Integer getLengthInSentimeters() {
-        return lengthInSentimeters;
+    public Integer getLengthInCentimeters() {
+        return lengthInCentimeters;
     }
 
-    public void setLengthInSentimeters(Integer length) {
-        this.lengthInSentimeters = length;
+    public void setLengthInCentimeters(Integer length) {
+        this.lengthInCentimeters = length;
     }
 
-    public String getDam() {
-        return dam;
-    }
-
-    public void setDam(String dam) {
-        this.dam = dam;
-    }
 
     @ManyToOne
-    @JoinColumn(name = "fish_id", referencedColumnName = "id")
-    public Fisherman getFisherman() {
-        return fisherman;
+    @JoinColumn(name = "fishing_id", referencedColumnName = "id")
+    public Fishing getFishing() {
+        return fishing;
     }
 
-    public void setFisherman(Fisherman fisherman) {
-        this.fisherman = fisherman;
+    public void setFishing(Fishing fishing) {
+        this.fishing = fishing;
     }
-
 }

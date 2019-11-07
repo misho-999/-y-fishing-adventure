@@ -3,17 +3,16 @@ package maa.myfishing.data.models;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import java.util.List;
 
 @Entity
-@Table(name = "destinations")
-public class Destination extends BaseEntity {
+@Table(name = "upcoming_destinations")
+public class UpcomingDestination extends BaseEntity {
     private String townName;
     private Integer population;
     private Integer altitude;
     private User user;
 
-    public Destination() {
+    public UpcomingDestination() {
     }
 
     @Column(name = "townName", nullable = false, unique = true)

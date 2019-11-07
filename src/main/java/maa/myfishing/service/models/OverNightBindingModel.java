@@ -3,10 +3,10 @@ package maa.myfishing.service.models;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OvertightBindingModel {
+public class OverNightBindingModel {
     private String overnight;
 
-    public OvertightBindingModel() {
+    public OverNightBindingModel() {
     }
 
     public String getOvernight() {

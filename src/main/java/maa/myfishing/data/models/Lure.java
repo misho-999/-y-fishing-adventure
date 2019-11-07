@@ -8,9 +8,9 @@ import javax.validation.constraints.*;
 public class Lure extends MainProperty {
     private String color;
     private TypeOnLure typeOnLure;
-    private Integer weigtInGrams;
-    private Integer lengthInMilimeters;
-    private Fisherman owner;
+    private Integer weightInGrams;
+    private Integer lengthInMillimeters;
+    private Fishing fishing;
 
     public Lure() {
     }
@@ -37,33 +37,32 @@ public class Lure extends MainProperty {
     @Column(name = "weigth_in_rgams", nullable = false, updatable = true)
     @DecimalMin(value = "0.10")
     @DecimalMax(value = "200.00")
-    public Integer getWeigtInGrams() {
-        return weigtInGrams;
+    public Integer getWeightInGrams() {
+        return weightInGrams;
     }
 
-    public void setWeigtInGrams(Integer weigth) {
-        this.weigtInGrams = weigth;
+    public void setWeightInGrams(Integer weigth) {
+        this.weightInGrams = weigth;
     }
 
     @Column(name = "length_in_mm", nullable = false, updatable = false)
     @Min(3)
     @Max(value = 20)
-    public Integer getLengthInMilimeters() {
-        return lengthInMilimeters;
+    public Integer getLengthInMillimeters() {
+        return lengthInMillimeters;
     }
 
-    public void setLengthInMilimeters(Integer length) {
-        this.lengthInMilimeters = length;
+    public void setLengthInMillimeters(Integer length) {
+        this.lengthInMillimeters = length;
     }
 
-    @NotNull
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    public Fisherman getOwner() {
-        return owner;
+    @JoinColumn(name = "fishing_id", referencedColumnName = "id")
+    public Fishing getFishing() {
+        return fishing;
     }
 
-    public void setOwner(Fisherman owner) {
-        this.owner = owner;
+    public void setFishing(Fishing fishing) {
+        this.fishing = fishing;
     }
 }
