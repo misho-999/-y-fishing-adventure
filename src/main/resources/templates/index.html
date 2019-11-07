@@ -3,58 +3,19 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>index</title>
-
-    <link rel="stylesheet" type="text/css" href="/css/reset-css.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-
+    <th:block th:include="~{fragments/head}"></th:block>
 </head>
 
 <body class="container-fluid">
 <header>
-    <nav>
-        <div class="container-fluid footer-back">
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <!--                    <a class="nav-link" href="register.html">Register</a>-->
-                    <a class="nav-link" th:href="@{/register}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/home}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <th:block th:include="~{fragments/navbar}"></th:block>
 </header>
-<main>
-    <div id="welcome"><strong><em>Welcome to My Fishing Advanture</em></strong></div>
+<main class="back-index">
+    <div class="welcome"><strong><em>Welcome to My Fishing Advanture</em></strong></div>
 </main>
 
-<footer class="page-footer font-small blue footer-back">
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-        <a href="/templates/index.html">My Fishing</a>
-        <img src="jpg/logo.png" alt="fish-logo">
-    </div>
+<footer>
+    <th:block th:include="~{fragments/footer}"></th:block>
 </footer>
 
 

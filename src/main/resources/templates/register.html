@@ -2,16 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
-
-    <link rel="stylesheet" type="text/css" href="/css/reset-css.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-
+    <th:block th:include="~{fragments/head}"></th:block>
 </head>
 
 <body class="container-fluid">
@@ -76,17 +67,9 @@
         </div>
     </main>
     <footer>
-        <!-- Footer -->
-        <footer class="page-footer font-small blue">
-
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2018 Copyright:
-                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
-        <!-- Footer -->
+        <th:block th:include="~{fragments/footer}"></th:block>
     </footer>
+
 
 
 </body>

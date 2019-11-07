@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:include="~{fragments/head}"></th:block>
+</head>
+
+<body class="container-fluid">
+<header>
+    <nav>
+        <div class="container-fluid footer-back">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <!--                    <a class="nav-link" href="register.html">Register</a>-->
+                    <a class="nav-link" th:href="@{/register}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/home}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="welcome"><strong><em>My Destinations</em></strong></div>
+    <div class="container">
+        <div class="row mb-4 d-flex justify-content-around">
+            <div class="col-md-3 d-flex flex-column text-center mb-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Batak_dam_afternoon_view.jpg"
+                     class="img-thumb" width="300" height="200"/>
+                <h5 class="text-white text-center">Batak</h5>
+                <a class="btn btn-info mb-2">Details</a>
+                <a class="btn btn-danger">Delete</a>
+            </div>
+            <div class="col-md-3 d-flex flex-column text-center mb-3">
+                <img src="https://static.pochivka.bg/sights.bgstay.com/images/01/1422/5460f03c43feb.jpg"
+                     name="hreoImage.jpg" class="img-thumb" width="300" height="200"/>
+                <h5 class="text-white text-center">Vycha</h5>
+                <a class="btn btn-info mb-2">Details</a>
+                <a class="btn btn-danger">Delete</a>
+            </div>
+            <div class="col-md-3 d-flex flex-column text-center mb-3">
+                <img src="https://static.pochivka.bg/sights.bgstay.com/images/01/1422/5460f03c43feb.jpg"
+                     name="hreoImage.jpg" class="img-thumb" width="300" height="200"/>
+                <h5 class="text-white text-center">Mage</h5>
+                <a class="btn btn-info mb-2">Details</a>
+                <a class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+        <div class="row mb-4 d-flex justify-content-around">
+            <div class="col-md-3 d-flex flex-column text-center mb-3">
+                <img src="https://static.pochivka.bg/sights.bgstay.com/images/01/1422/5460f03c43feb.jpg"
+                     class="img-thumb" width="300" height="200"/>
+                <h5 class="text-white text-center">Warrior</h5>
+                <a class="btn btn-info mb-2">Details</a>
+                <a class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+<footer>
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
+
+
+
+</body>
+
+</html>
