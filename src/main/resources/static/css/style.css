@@ -9,6 +9,11 @@ body {
     background-size: cover;
 }
 
+.destinations {
+    background-image: url(/jpg/Romantica.jpg);
+}
+
+
 footer {
     background-color: #d1ecf1;
     position: fixed;

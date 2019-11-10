@@ -1,92 +1,60 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <th:block th:include="~{fragments/head}"></th:block>
+    <th:block th:include="~{fragments/head}"/>
 </head>
 
 <body>
-<header id="site-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <a class="nav-link" href="#">Add Destination</a>
-                </li> -->
-                <li class="nav-item">
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Add Destination</button>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add Destination</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Add Boat</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Add Fishing Road</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Add Lures</button>
-                </li>
-            </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            <div form-inline my-2 my-lg-0>
-                <img id="im" src="/static/jpg/logo.png" alt="Logo">
-            </div>
-        </div>
-    </nav>
+<header>
+    <th:block th:include="~{fragments/navbar}"/>
 </header>
 <main>
-    <div class="container-fluid">
-        <div class="row justify-content-md-center text-center">
-            <form action="POST">
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="inputEmail4"> <em> <strong class="label-color ">Town</strong></em></label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Town">
+    <div class="welcome"><strong><em>Add Fishing</em></strong></div>
+    <div class="row justify-content-md-center text-center">
+<!--        private String date;-->
+<!--        private Boat boat;-->
+<!--        private Destination destination;-->
+<!--        private List<Fish> fishes;-->
+<!--        private List<Lure> lures;-->
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md ">
+                            <label for="date"><em><strong class="label-color">Date</strong></em></label>
+                            <input type="text" class="form-control" id="date" placeholder="Date..." name="date"
+                                   th:value="*{username}">
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="inputEmail4"> <em> <strong class="label-color ">Region</strong></em></label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="Region">
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label for="inputPassword4"><em><strong class="label-color">Password</strong></em></label>
+                            <input type="password" class="form-control" id="password" placeholder="Password..."
+                                   name="password" th:value="*{password}">
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-12 ">
-                        <label for="inputEmail4"> <em> <strong class="label-color ">Altitude</strong></em></label>
-                        <input type="number" class="form-control" id="inputEmail4" placeholder="Altitude">
+                    <div class="form-row">
+                        <div class="form-group col-md">
+                            <label for="inputPassword4"><em><strong class="label-color">Confirm
+                                Password</strong></em></label>
+                            <input type="password" class="form-control" id="confirmPassword"
+                                   placeholder="Confirm Password ..." name="confirmPassword"
+                                   th:value="*{confirmPassword}">
+                        </div>
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="inputEmail4"> <em> <strong class="label-color ">Type of
-                            Overnight</strong></em></label>
-                        <select class="form-group col-md-6">
-                            <option th:each="module : ${T(maa.myfishing.data.models.Overnight).values()}"
-                                    th:value="${module}" th:text="${module}"></option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group col-md ">
+                            <label for="inputEmail4"> <em> <strong class="label-color ">Email</strong></em></label>
+                            <input type="email" class="form-control" id="email" placeholder="Email..." name="email"
+                                   th:value="*{email}">
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="btn btn-primary">Add Destination</button>
-            </form>
-        </div>
-    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
     </div>
 </main>
-
 <footer>
-    <th:block th:include="~{fragments/footer}"></th:block>
+    <th:block th:include="~{fragments/footer}"/>
 </footer>
 
 </body>

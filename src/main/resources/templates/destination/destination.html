@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <th:block th:include="~{fragments/head}"></th:block>
+    <th:block th:include="~{fragments/head}"/>
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid destinations">
 <header>
-    <th:block th:include="~{fragments/destination-navbar}"></th:block>
+    <th:block th:include="~{fragments/destination-navbar}"/>
 </header>
 <main>
     <div class="welcome"><strong><em>My Destinations</em></strong></div>
@@ -18,7 +18,8 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Batak_dam_afternoon_view.jpg"
                      class="img-thumb" width="300" height="200"/>
                 <h5 class="text-white text-center">Batak</h5>
-                <a class="btn btn-info mb-2">Details</a>
+                <a class="btn btn-info mb-2" th:href="@{/destinations/details}">Details</a>
+                <a class="btn btn-info mb-2" th:href="@{/destinations/add-fishing}">Add Fishing</a>
                 <a class="btn btn-danger">Delete</a>
             </div>
             <div class="col-md-3 d-flex flex-column text-center mb-3">
@@ -49,11 +50,9 @@
 </main>
 
 
-
 <footer>
-    <th:block th:include="~{fragments/footer}"></th:block>
+    <th:block th:include="~{fragments/footer}"/>
 </footer>
-
 
 
 </body>

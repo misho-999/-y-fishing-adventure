@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <th:block th:include="~{fragments/head}"></th:block>
@@ -9,43 +10,47 @@
 <header>
     <th:block th:include="~{fragments/navbar}"></th:block>
 </header>
-    <main>
-        <div class="container-fluid">
-            <div class="row justify-content-md-center text-center">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md ">
-                            <label for="inputEmail4"> <em> <strong class="label-color ">Email</strong></em></label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                        </div>
+<main>
+    <div class="container-fluid">
+        <div class="row justify-content-md-center text-center">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md ">
+                        <label for="inputPassword4"><em><strong class="label-color">Username</strong></em></label>
+                        <input type="text" class="form-control" id="username" placeholder="Username..." name="username"
+                               th:value="*{username}">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md">
-                            <label for="inputPassword4"><em><strong class="label-color">Password</strong></em></label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="inputPassword4"><em><strong class="label-color">Password</strong></em></label>
+                        <input type="password" class="form-control" id="password" placeholder="Password..."
+                               name="password" th:value="*{password}">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md">
-                            <label for="inputPassword4"><em><strong class="label-color">Repeat Password</strong></em></label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                        </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="inputPassword4"><em><strong class="label-color">Confirm
+                            Password</strong></em></label>
+                        <input type="password" class="form-control" id="confirmPassword"
+                               placeholder="Confirm Password ..." name="confirmPassword" th:value="*{confirmPassword}">
                     </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </form>
-            </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md ">
+                        <label for="inputEmail4"> <em> <strong class="label-color ">Email</strong></em></label>
+                        <input type="email" class="form-control" id="email" placeholder="Email..." name="email" th:value="*{email}">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
         </div>
-
-
-
-        </div>
-    </main>
-    <footer>
-        <th:block th:include="~{fragments/footer}"></th:block>
-    </footer>
-
-
-
+    </div>
+    </div>
+</main>
+<footer>
+    <th:block th:include="~{fragments/footer}"></th:block>
+</footer>
 </body>
 
 </html>

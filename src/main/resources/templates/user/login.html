@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <th:block th:include="~{fragments/head}"></th:block>
@@ -15,14 +16,14 @@
             <form>
                 <div class="form-row">
                     <div class="form-group col-md ">
-                        <label for="inputEmail4"> <em> <strong class="label-color ">Username</strong></em></label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <label for="username" class="font-weight-bold">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username..." name="username">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
-                        <label for="inputPassword4"><em><strong class="label-color">Password</strong></em></label>
-                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <label for="password" class="font-weight-bold">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password..." name="password">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
@@ -31,13 +32,11 @@
     </div>
 
 
-
     </div>
 </main>
 <footer>
     <th:block th:include="~{fragments/footer}"></th:block>
 </footer>
-
 
 
 </body>

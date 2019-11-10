@@ -3,8 +3,10 @@ package maa.myfishing.web.controllers;
 
 import maa.myfishing.service.models.OverNightBindingModel;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -12,22 +14,33 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/users")
 public class UserController extends BaseController {
 
-
-//    @GetMapping("/")
-//    public ModelAndView getIndex(ModelAndView modelAndView) {
-//
-//        modelAndView.setViewName("index.html");
-//        return modelAndView;
-//    }
-
     @GetMapping("/register")
-    public ModelAndView getRegister(ModelAndView modelAndView) {
+    public ModelAndView register(ModelAndView modelAndView) {
 
         modelAndView.setViewName("register.html");
-//        return modelAndView;
-
         return super.view("user/register", modelAndView);
     }
+
+//    @PostMapping("/register")
+////    @PreAuthorize("isAnonymous()")
+//    public ModelAndView registerConfirm(ModelAndView modelAndView, @ModelAttribute(name = "model") UserRegisterBindingModel model, BindingResult bindingResult) {
+//        this.userRegisterValidator.validate(model, bindingResult);
+//
+//        if (bindingResult.hasErrors()) {
+//            model.setPassword(null);
+//            model.setConfirmPassword(null);
+//            modelAndView.addObject("model", model);
+//
+//            return super.view("user/register", modelAndView);
+//        }
+//
+//        UserServiceModel userServiceModel = this.modelMapper.map(model, UserServiceModel.class);
+//        this.userService.registerUser(userServiceModel);
+//
+//        return super.redirect("/login");
+//    }
+
+
 
     @GetMapping("/login")
     public ModelAndView getLogin(ModelAndView modelAndView) {

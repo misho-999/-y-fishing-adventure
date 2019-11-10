@@ -16,18 +16,40 @@ public class DestinationController {
     }
 
     @GetMapping("/all")
-    public ModelAndView getAllDestination(ModelAndView modelAndView) {
+    public ModelAndView all (ModelAndView modelAndView) {
 
         modelAndView.setViewName("destination/all-destination.html");
         return modelAndView;
     }
 
     @GetMapping("/add")
-    public ModelAndView getADDDestination(ModelAndView modelAndView) {
+    public ModelAndView add(ModelAndView modelAndView) {
 
         modelAndView.setViewName("destination/add-destination.html");
         return modelAndView;
     }
+
+    @GetMapping("/upcoming")
+    public ModelAndView upcoming(ModelAndView modelAndView) {
+
+        modelAndView.setViewName("destination/upcoming-destination.html");
+        return modelAndView;
+    }
+
+    @GetMapping("/details")
+    public ModelAndView details(ModelAndView modelAndView) {
+
+        modelAndView.setViewName("destination/details.html");
+        return modelAndView;
+    }
+
+    @GetMapping("/add-fishing")
+    public ModelAndView addFishing(ModelAndView modelAndView) {
+
+        modelAndView.setViewName("add-fishing.html");
+        return modelAndView;
+    }
+
 
 
 }
