@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -18,6 +19,7 @@ public class User extends BaseEntity {
     }
 
     @NotNull
+    @Size(min = 3, max = 10, message = "Invalid name") // message in Constants;
     @Column(name = "username", nullable = false)
     public String getUsername() {
         return username;

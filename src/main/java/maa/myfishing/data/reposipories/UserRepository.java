@@ -1,4 +1,4 @@
-package maa.myfishing.repository;
+package maa.myfishing.data.reposipories;
 
 import maa.myfishing.data.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,5 +11,5 @@ public interface UserRepository extends JpaRepository<User, String> {
 
     Optional<User> findByUsername(String username);
 
-    Optional<User> findByAge(String email);
+    Optional<User> findByEmail(String email);
 }
