@@ -22,7 +22,7 @@ public class HomeController extends BaseController {
 
     @GetMapping("/")
 //    @PreAuthorize("isAnonymous()")
-    @PageTitle("Index")
+//    @PageTitle("Index")
     public ModelAndView index() {
         return super.view("index");
     }

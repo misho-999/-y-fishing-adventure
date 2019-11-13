@@ -1,12 +1,14 @@
 package maa.myfishing.data.models;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name = "fishings")
 public class Fishing extends BaseEntity {
-    private String date;
+    private LocalDate date;// На BindingModela трябва да има @DataTiemFormater(pattern = "yyyy-MM-dd")
+    private String description;
     private Boat boat;
     private Destination destination;
     private List<Fish> fishes;
@@ -15,13 +17,24 @@ public class Fishing extends BaseEntity {
     public Fishing() {
     }
 
-    @Column(name = "date", nullable = false, unique = true)
-    public String getDate() {
+
+    @Column(name = "date", nullable = false, unique = true)// На BindingModela трябва да има @DataTiemFormater(pattern = "yyyy-MM-dd")
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+
+    @Column(name = "description", columnDefinition = "TEXT", nullable = false)
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @OneToOne(mappedBy = "fishing")

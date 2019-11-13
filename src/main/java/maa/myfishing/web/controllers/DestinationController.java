@@ -7,47 +7,32 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/destinations")
-public class DestinationController {
-    @GetMapping("/")
-    public ModelAndView getDestination(ModelAndView modelAndView) {
-
-        modelAndView.setViewName("destination/destination.html");
-        return modelAndView;
-    }
+public class DestinationController extends BaseController {
+//    @GetMapping("/")
+//    public ModelAndView getDestination(ModelAndView modelAndView) {
+//
+//        modelAndView.setViewName("destination/all-destinations.html");
+//        return modelAndView;
+//    }
 
     @GetMapping("/all")
-    public ModelAndView all (ModelAndView modelAndView) {
-
-        modelAndView.setViewName("destination/all-destination.html");
-        return modelAndView;
+    public ModelAndView all(ModelAndView modelAndView) {
+        return super.view("destination/all-destinations.html");
     }
 
     @GetMapping("/add")
     public ModelAndView add(ModelAndView modelAndView) {
-
-        modelAndView.setViewName("destination/add-destination.html");
-        return modelAndView;
+        return super.view("destination/add-destination.html");
     }
 
     @GetMapping("/upcoming")
     public ModelAndView upcoming(ModelAndView modelAndView) {
-
-        modelAndView.setViewName("destination/upcoming-destination.html");
-        return modelAndView;
+        return super.view("destination/upcoming-destination.html");
     }
 
     @GetMapping("/details")
     public ModelAndView details(ModelAndView modelAndView) {
-
-        modelAndView.setViewName("destination/details.html");
-        return modelAndView;
-    }
-
-    @GetMapping("/add-fishing")
-    public ModelAndView addFishing(ModelAndView modelAndView) {
-
-        modelAndView.setViewName("add-fishing.html");
-        return modelAndView;
+        return super.view("destination/details.html");
     }
 
 

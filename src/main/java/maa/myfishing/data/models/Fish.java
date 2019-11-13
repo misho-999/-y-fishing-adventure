@@ -11,7 +11,6 @@ import javax.validation.constraints.Min;
 public class Fish extends BaseEntity {
 
     private String fishName;
-    private String fishFamily;
     private Double weightInKilograms;
     private Integer lengthInCentimeters;
     private Fishing fishing;
@@ -26,15 +25,6 @@ public class Fish extends BaseEntity {
 
     public void setFishName(String name) {
         this.fishName = name;
-    }
-
-    @Column(name = "family", nullable = false, updatable = false)
-    public String getFishFamily() {
-        return fishFamily;
-    }
-
-    public void setFishFamily(String firshFamily) {
-        this.fishFamily = firshFamily;
     }
 
     @Column(name = "weigth_in_kg", nullable = false, updatable = false)

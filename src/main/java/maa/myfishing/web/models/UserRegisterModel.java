@@ -1,13 +1,13 @@
-package maa.myfishing.web.models.binding;
+package maa.myfishing.web.models;
 
-public class UserRegisterBindingModel {
+public class UserRegisterModel {
 
     private String username;
     private String password;
     private String confirmPassword;
     private String email;
 
-    public UserRegisterBindingModel() {
+    public UserRegisterModel() {
     }
 
     public String getUsername() {

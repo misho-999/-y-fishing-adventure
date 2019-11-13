@@ -13,24 +13,24 @@
 <main>
     <div class="container-fluid">
         <div class="row justify-content-md-center text-center">
-            <form>
+            <form th:action="@{/users/register}" th:method="post" th:object="${model}">
                 <div class="form-row">
                     <div class="form-group col-md ">
-                        <label for="inputPassword4"><em><strong class="label-color">Username</strong></em></label>
+                        <label for="username"><em><strong class="label-color">Username</strong></em></label>
                         <input type="text" class="form-control" id="username" placeholder="Username..." name="username"
                                th:value="*{username}">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
-                        <label for="inputPassword4"><em><strong class="label-color">Password</strong></em></label>
+                        <label for="password"><em><strong class="label-color">Password</strong></em></label>
                         <input type="password" class="form-control" id="password" placeholder="Password..."
                                name="password" th:value="*{password}">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
-                        <label for="inputPassword4"><em><strong class="label-color">Confirm
+                        <label for="confirmPassword"><em><strong class="label-color">Confirm
                             Password</strong></em></label>
                         <input type="password" class="form-control" id="confirmPassword"
                                placeholder="Confirm Password ..." name="confirmPassword" th:value="*{confirmPassword}">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md ">
-                        <label for="inputEmail4"> <em> <strong class="label-color ">Email</strong></em></label>
+                        <label for="email"> <em> <strong class="label-color ">Email</strong></em></label>
                         <input type="email" class="form-control" id="email" placeholder="Email..." name="email" th:value="*{email}">
                     </div>
                 </div>
