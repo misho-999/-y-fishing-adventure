@@ -12,7 +12,7 @@ public class FaviconInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        String link = "http://decorous.net/wp-content/uploads/2016/01/cropped-favico.png";
+        String link = "http://icons.iconarchive.com/icons/google/noto-emoji-animals-nature/128/22293-fish-icon.png";
 
         if (modelAndView != null) {
             modelAndView.addObject("favicon", link);

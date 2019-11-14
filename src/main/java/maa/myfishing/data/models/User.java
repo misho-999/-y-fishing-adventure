@@ -1,26 +1,24 @@
 package maa.myfishing.data.models;
 
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User extends BaseEntity {
+public class User extends BaseEntity implements UserDetails {
+
     private String username;
     private String password;
     private String email;
-    private List<Destination> destinations;
-    private List<UpcomingDestination> upcomingDestinations;
+
+    private Set<Role> authorities;
 
     public User() {
     }
 
-    @NotNull
-    @Size(min = 3, max = 10, message = "Invalid name") // message in Constants;
+    @Override
     @Column(name = "username", nullable = false, unique = true, updatable = false)
     public String getUsername() {
         return username;
@@ -30,11 +28,11 @@ public class User extends BaseEntity {
         this.username = username;
     }
 
+    @Override
     @Column(name = "password", nullable = false)
     public String getPassword() {
         return password;
     }
-
 
     public void setPassword(String password) {
         this.password = password;
@@ -49,21 +47,40 @@ public class User extends BaseEntity {
         this.email = email;
     }
 
-    @OneToMany(mappedBy = "user")
-    public List<Destination> getDestinations() {
-        return destinations;
+    @Override
+    @ManyToMany(targetEntity = Role.class, fetch = FetchType.EAGER)
+    @JoinTable(name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    public Set<Role> getAuthorities() {
+        return authorities;
     }
 
-    public void setDestinations(List<Destination> destinations) {
-        this.destinations = destinations;
+    public void setAuthorities(Set<Role> authorities) {
+        this.authorities = authorities;
     }
 
-    @OneToMany(mappedBy = "user")
-    public List<UpcomingDestination> getUpcomingDestinations() {
-        return upcomingDestinations;
+    @Override
+    @Transient
+    public boolean isAccountNonExpired() {
+        return true;
     }
 
-    public void setUpcomingDestinations(List<UpcomingDestination> upcomingDestinations) {
-        this.upcomingDestinations = upcomingDestinations;
+    @Override
+    @Transient
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    @Transient
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    @Transient
+    public boolean isEnabled() {
+        return true;
     }
 }

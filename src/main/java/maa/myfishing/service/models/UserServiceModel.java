@@ -1,5 +1,8 @@
 package maa.myfishing.service.models;
 
+import maa.myfishing.service.models.BaseServiceModel;
+import maa.myfishing.service.models.RoleServiceModel;
+
 import java.util.Set;
 
 public class UserServiceModel extends BaseServiceModel {
@@ -8,7 +11,7 @@ public class UserServiceModel extends BaseServiceModel {
     private String password;
     private String email;
 
-//    private Set<RoleServiceModel> authorities;
+    private Set<RoleServiceModel> authorities;
 
     public UserServiceModel() {
     }
@@ -37,11 +40,11 @@ public class UserServiceModel extends BaseServiceModel {
         this.email = email;
     }
 
-//    public Set<RoleServiceModel> getAuthorities() {
-//        return authorities;
-//    }
-//
-//    public void setAuthorities(Set<RoleServiceModel> authorities) {
-//        this.authorities = authorities;
-//    }
+    public Set<RoleServiceModel> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(Set<RoleServiceModel> authorities) {
+        this.authorities = authorities;
+    }
 }

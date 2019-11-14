@@ -1,74 +1,162 @@
 package maa.myfishing.web.controllers;
 
-
+import maa.myfishing.service.models.UserServiceModel;
 import maa.myfishing.service.serices.UserService;
+import maa.myfishing.validation.user.UserEditValidator;
 import maa.myfishing.validation.user.UserRegisterValidator;
 import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.UserRegisterModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/users")
 public class UserController extends BaseController {
 
-//
-//    private final UserService userService;
-//    private final ModelMapper modelMapper;
-//    private final UserRegisterValidator userRegisterValidator;
+    private final UserService userService;
+    private final ModelMapper modelMapper;
+    private final UserRegisterValidator userRegisterValidator;
+    private final UserEditValidator userEditValidator;
 
-
-//    @Autowired
-//    public UserController(UserService userService, ModelMapper modelMapper, UserRegisterValidator userRegisterValidator) {
-//        this.userService = userService;
-//        this.modelMapper = modelMapper;
-//        this.userRegisterValidator = userRegisterValidator;
-//    }
-//    private final UserEditValidator userEditValidator;
-
-
-
+    @Autowired
+    public UserController(UserService userService, ModelMapper modelMapper, UserRegisterValidator userRegisterValidator, UserEditValidator userEditValidator) {
+        this.userService = userService;
+        this.modelMapper = modelMapper;
+        this.userRegisterValidator = userRegisterValidator;
+        this.userEditValidator = userEditValidator;
+    }
 
     @GetMapping("/register")
-    public ModelAndView register(ModelAndView modelAndView) {
+    @PreAuthorize("isAnonymous()")
+    @PageTitle("Register")
+    public ModelAndView register(ModelAndView modelAndView, @ModelAttribute(name = "model") UserRegisterModel model) {
+        modelAndView.addObject("model", model);
 
         return super.view("user/register", modelAndView);
     }
 
     @PostMapping("/register")
-//    @PreAuthorize("isAnonymous()")
+    @PreAuthorize("isAnonymous()")
     public ModelAndView registerConfirm(ModelAndView modelAndView, @ModelAttribute(name = "model") UserRegisterModel model, BindingResult bindingResult) {
-
-//        this.userRegisterValidator.validate(model, bindingResult);
+        this.userRegisterValidator.validate(model, bindingResult);
 
         if (bindingResult.hasErrors()) {
             model.setPassword(null);
             model.setConfirmPassword(null);
             modelAndView.addObject("model", model);
 
-            return super.view("user/register.html", modelAndView);
+            return super.view("user/register", modelAndView);
         }
 
-//        UserServiceModel userServiceModel = this.modelMapper.map(model, UserServiceModel.class);
-//        this.userService.registerUser(userServiceModel);
+        UserServiceModel userServiceModel = this.modelMapper.map(model, UserServiceModel.class);
+        this.userService.registerUser(userServiceModel);
 
-        return super.redirect("/login.html");
+        return super.redirect("/login");
     }
-
 
     @GetMapping("/login")
-//    @PreAuthorize("isAnonymous()")
+    @PreAuthorize("isAnonymous()")
     @PageTitle("Login")
     public ModelAndView login() {
-        return super.view("user/login.html");
+        return super.view("user/login");
     }
 
+//    @GetMapping("/profile")
+//    @PreAuthorize("isAuthenticated()")
+//    @PageTitle("Profile")
+//    public ModelAndView profile(Principal principal, ModelAndView modelAndView) {
+//        UserServiceModel userServiceModel = this.userService.findUserByUserName(principal.getName());
+//        UserProfileViewModel model = this.modelMapper.map(userServiceModel, UserProfileViewModel.class);
+//        modelAndView.addObject("model", model);
+//
+//        return super.view("user/profile", modelAndView);
+//    }
+//
+//    @GetMapping("/edit")
+//    @PreAuthorize("isAuthenticated()")
+//    @PageTitle("Edit Profile")
+//    public ModelAndView editProfile(Principal principal, ModelAndView modelAndView, @ModelAttribute(name = "model") UserEditBindingModel model) {
+//        UserServiceModel userServiceModel = this.userService.findUserByUserName(principal.getName());
+//        model = this.modelMapper.map(userServiceModel, UserEditBindingModel.class);
+//        model.setPassword(null);
+//        modelAndView.addObject("model", model);
+//
+//        return super.view("user/edit-profile", modelAndView);
+//    }
+//
+//    @PatchMapping("/edit")
+//    @PreAuthorize("isAuthenticated()")
+//    public ModelAndView editProfileConfirm(ModelAndView modelAndView, @ModelAttribute(name = "model") UserEditBindingModel model, BindingResult bindingResult) {
+//        this.userEditValidator.validate(model, bindingResult);
+//
+//        if (bindingResult.hasErrors()) {
+//            model.setOldPassword(null);
+//            model.setPassword(null);
+//            model.setConfirmPassword(null);
+//            modelAndView.addObject("model", model);
+//
+//            return super.view("user/edit-profile", modelAndView);
+//        }
+//
+//        UserServiceModel userServiceModel = this.modelMapper.map(model, UserServiceModel.class);
+//        this.userService.editUserProfile(userServiceModel, model.getOldPassword());
+//
+//        return super.redirect("/users/profile");
+//    }
+//
+//    @GetMapping("/all")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+//    @PageTitle("All Users")
+//    public ModelAndView allUsers(ModelAndView modelAndView) {
+//        List<UserAllViewModel> users = this.userService.findAllUsers()
+//                .stream()
+//                .map(u -> {
+//                    UserAllViewModel user = this.modelMapper.map(u, UserAllViewModel.class);
+//                    Set<String> authorities = u.getAuthorities().stream().map(a -> a.getAuthority()).collect(Collectors.toSet());
+//                    user.setAuthorities(authorities);
+//
+//                    return user;
+//                })
+//                .collect(Collectors.toList());
+//
+//        modelAndView.addObject("users", users);
+//
+//        return super.view("user/all-users", modelAndView);
+//    }
 
+    @PostMapping("/set-user/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ModelAndView setUser(@PathVariable String id) {
+        this.userService.setUserRole(id, "user");
+
+        return super.redirect("/users/all");
+    }
+
+    @PostMapping("/set-moderator/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ModelAndView setModerator(@PathVariable String id) {
+        this.userService.setUserRole(id, "moderator");
+
+        return super.redirect("/users/all");
+    }
+
+    @PostMapping("/set-admin/{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ModelAndView setAdmin(@PathVariable String id) {
+        this.userService.setUserRole(id, "admin");
+
+        return super.redirect("/users/all");
+    }
+
+    @InitBinder
+    private void initBinder(WebDataBinder webDataBinder) {
+        webDataBinder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
+    }
 }

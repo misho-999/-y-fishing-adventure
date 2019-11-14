@@ -13,7 +13,8 @@
 <main>
     <div class="container-fluid">
         <div class="row justify-content-md-center text-center">
-            <form>
+            <form class="form w-25 mx-auto" th:action="@{/users/login}" method="post">
+                <input type="hidden" name="_csrf" value="c95ccb2b-1afa-47bd-bf7b-a5b72739470b">
                 <div class="form-row">
                     <div class="form-group col-md ">
                         <label for="username"><em><strong class="label-color">Username</strong></em></label>

@@ -2,32 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/config/ApplicationWebMvcConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/interceptors/FaviconInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/interceptors/TitleInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/add-caught-fish.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-fishing.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/details-navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/config/ApplicationCloudConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/config/ApplicationSecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/DestinationServiceModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/RoleServiceModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/CloudinaryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/CloudinaryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationAddModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/UserEditModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/destination-add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user/edit-profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fishing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fishing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/config/ApplicationBeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/config/ApplicationBeanConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/TypeOfReservoir.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/UpcomingDestination.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/UserServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/UserServiceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserRegisterValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserRegisterValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserEditValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserEditValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/binding/UserRegisterBindingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/UserRegisterModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-fishing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/add-fishing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/add-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/add-destination.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/interceptors/FaviconInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/interceptors/FaviconInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/add-destination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/destinations-all.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/destination-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/destination-navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/head.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterDir="false" />
     </list>
@@ -79,8 +87,8 @@
         <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,10 +115,10 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/maa/myfishing/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -121,18 +129,18 @@
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fragments\destinations" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="maa.myfishing.web.controllers" />
       <recent name="maa.myfishing.config" />
-      <recent name="maa.myfishing.data.models" />
+      <recent name="maa.myfishing.web.models" />
       <recent name="maa.myfishing.data.reposipories" />
       <recent name="maa.myfishing.service.models" />
-      <recent name="maa.myfishing.web.annotations" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\web" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\service\serices" />
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\web\models" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\config" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -160,12 +168,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@8773adba" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -194,7 +197,15 @@
       <workItem from="1573542118427" duration="433000" />
       <workItem from="1573542587671" duration="8271000" />
       <workItem from="1573563361327" duration="6306000" />
-      <workItem from="1573627755654" duration="6994000" />
+      <workItem from="1573627755654" duration="12908000" />
+      <workItem from="1573712565850" duration="1263000" />
+      <workItem from="1573713839373" duration="3088000" />
+      <workItem from="1573716947198" duration="17955000" />
+      <workItem from="1573740440391" duration="86000" />
+      <workItem from="1573740529441" duration="6148000" />
+      <workItem from="1573750473095" duration="161000" />
+      <workItem from="1573750745948" duration="241000" />
+      <workItem from="1573751496989" duration="1532000" />
     </task>
     <servers />
   </component>
@@ -213,5 +224,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/UserController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/UserController.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

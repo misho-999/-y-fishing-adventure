@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"/>
+</head>
+
+<body class="destinations">
+<header>
+    <th:block th:include="~{fragments/destination-navbar}"/>
+</header>
+<main>
+    <div class="container-fluid">
+        <div row justify-content-center>
+            <h1 class="text-center welcome"><em>Add New Destination</em></h1>
+        </div>
+        <div class="row justify-content-center">
+            <!--            townName;-->
+            <!--            population-->
+            <!--            altitude;-->
+            <!--            <form th:action="@{/destinations/add}" th:method="post" th:object="${model}">-->
+            <form id="add-product-form" class="form w-25 mx-auto" th:action="@{/destinations/add}" method="post"
+                  enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md ">
+                        <label for="townName"><em><strong class="label-color">townName</strong></em></label>
+                        <input type="text" class="form-control" id="townName" placeholder="townName..." name="townName">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="population"><em><strong class="label-color">population</strong></em></label>
+                        <input type="number" class="form-control" id="population" placeholder="population..."
+                               name="population">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md">
+                        <label for="altitude"><em><strong class="label-color">altitude</strong></em></label>
+                        <input type="number" class="form-control" id="altitude" placeholder="altitude..." name="altitude">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <th:block th:include="~{fragments/footer}"/>
+</footer>
+
+
+</body>
+
+</html>

@@ -4,6 +4,7 @@ import maa.myfishing.service.serices.DestinationService;
 import maa.myfishing.web.annotations.PageTitle;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,14 +22,14 @@ public class HomeController extends BaseController {
     }
 
     @GetMapping("/")
-//    @PreAuthorize("isAnonymous()")
-//    @PageTitle("Index")
+    @PreAuthorize("isAnonymous()")
+    @PageTitle("Index")
     public ModelAndView index() {
         return super.view("index");
     }
 
     @GetMapping("/home")
-//    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("isAuthenticated()")
     @PageTitle("Home")
     public ModelAndView home(ModelAndView modelAndView) {
 //        List<CategoryViewModel> categories = this.categoryService.findAllCategories()
@@ -39,6 +40,7 @@ public class HomeController extends BaseController {
 //        modelAndView.setViewName("home.html");
 //        return modelAndView;
 
-        return super.view("home", modelAndView);
+        return super.view("home.html", modelAndView);
     }
+
 }
