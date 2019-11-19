@@ -3,6 +3,7 @@ package maa.myfishing.data.models;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,9 +12,12 @@ public class Destination extends BaseEntity {
     private String townName;
     private Integer population;
     private Integer altitude;
-    private User user;
+    private String description;
+    private TypeOfOvernight typeOfOvernight;
+    private List<UserInfo> userInfos;
 
     public Destination() {
+        this.userInfos = new ArrayList<>();
     }
 
     @Column(name = "townName", nullable = false, unique = true)
@@ -45,13 +49,35 @@ public class Destination extends BaseEntity {
         this.altitude = altitude;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    public User getUser() {
-        return user;
+    @Column(name = "description", nullable = false)
+    public String getDescription() {
+        return description;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    public TypeOfOvernight getTypeOfOvernight() {
+        return this.typeOfOvernight;
+    }
+
+    public void setTypeOfOvernight(TypeOfOvernight typeOfOvernight) {
+        this.typeOfOvernight = typeOfOvernight;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "destinations_users_infos",
+            joinColumns = @JoinColumn(name = "destination_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "user_info_id"))
+//    @ManyToMany(mappedBy = "destinations")
+    public List<UserInfo> getUserInfos() {
+        return userInfos;
+    }
+
+    public void setUserInfos(List<UserInfo> userInfos) {
+        this.userInfos = userInfos;
     }
 }

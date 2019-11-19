@@ -1,10 +1,14 @@
 package maa.myfishing.web.models;
 
 
+import maa.myfishing.data.models.TypeOfOvernight;
+
 public class DestinationAddModel {
     private String townName;
     private Integer population;
     private Integer altitude;
+    private String description;
+    private String typeOfOvernight;
 
     public DestinationAddModel() {
     }
@@ -31,5 +35,21 @@ public class DestinationAddModel {
 
     public void setAltitude(Integer altitude) {
         this.altitude = altitude;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getTypeOfOvernight() {
+        return typeOfOvernight;
+    }
+
+    public void setTypeOfOvernight(String typeOfOvernight) {
+        this.typeOfOvernight = typeOfOvernight;
     }
 }

@@ -1,9 +1,15 @@
 package maa.myfishing.service.serices.implementations;
 
+import maa.myfishing.data.models.Destination;
+import maa.myfishing.data.models.TypeOfOvernight;
 import maa.myfishing.data.models.User;
+import maa.myfishing.data.models.UserInfo;
 import maa.myfishing.data.reposipories.UserRepository;
+import maa.myfishing.service.models.DestinationServiceModel;
+import maa.myfishing.service.models.UserInfoServiceModel;
 import maa.myfishing.service.models.UserServiceModel;
 import maa.myfishing.service.serices.RoleService;
+import maa.myfishing.service.serices.UserInfoService;
 import maa.myfishing.service.serices.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +20,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -24,12 +29,17 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    private final UserInfoService userInfoService;
+
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, RoleService roleService, ModelMapper modelMapper, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RoleService roleService, ModelMapper modelMapper
+            , BCryptPasswordEncoder bCryptPasswordEncoder, UserInfoService userInfoService) {
         this.userRepository = userRepository;
         this.roleService = roleService;
         this.modelMapper = modelMapper;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+
+        this.userInfoService = userInfoService;
     }
 
     @Override
@@ -46,7 +56,14 @@ public class UserServiceImpl implements UserService {
         User user = this.modelMapper.map(userServiceModel, User.class);
         user.setPassword(this.bCryptPasswordEncoder.encode(userServiceModel.getPassword()));
 
-        return this.modelMapper.map(this.userRepository.saveAndFlush(user), UserServiceModel.class);
+        UserServiceModel userServiceMod = this.modelMapper.map(this.userRepository.saveAndFlush(user), UserServiceModel.class);
+
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUser(user);
+
+        this.userInfoService.saveUserInfo(this.modelMapper.map(userInfo, UserInfoServiceModel.class));
+
+        return userServiceMod;
     }
 
     @Override
@@ -67,7 +84,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserServiceModel editUserProfile(UserServiceModel userServiceModel, String oldPassword) {
         User user = this.userRepository.findByUsername(userServiceModel.getUsername())
-                .orElseThrow(()-> new UsernameNotFoundException("Username not found!"));
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found!"));
 
         if (!this.bCryptPasswordEncoder.matches(oldPassword, user.getPassword())) {
             throw new IllegalArgumentException("Incorrect password!");
@@ -111,4 +128,6 @@ public class UserServiceImpl implements UserService {
 
         this.userRepository.saveAndFlush(this.modelMapper.map(userServiceModel, User.class));
     }
+
+
 }

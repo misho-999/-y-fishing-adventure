@@ -1,8 +1,8 @@
 package maa.myfishing.web.controllers;
 
 import maa.myfishing.service.models.DestinationServiceModel;
-import maa.myfishing.service.serices.CloudinaryService;
 import maa.myfishing.service.serices.DestinationService;
+import maa.myfishing.service.serices.UserInfoService;
 import maa.myfishing.web.models.DestinationAddModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +14,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.security.Principal;
+
 @Controller
 @RequestMapping("/destinations")
 public class DestinationController extends BaseController {
 
+    private final UserInfoService userInfoService;
     private final DestinationService destinationService;
-    private final CloudinaryService cloudinaryService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public DestinationController(DestinationService destinationService, CloudinaryService cloudinaryService, ModelMapper modelMapper) {
+    public DestinationController(UserInfoService userInfoService, DestinationService destinationService, ModelMapper modelMapper) {
+        this.userInfoService = userInfoService;
         this.destinationService = destinationService;
-        this.cloudinaryService = cloudinaryService;
         this.modelMapper = modelMapper;
     }
 
@@ -35,16 +37,30 @@ public class DestinationController extends BaseController {
     }
 
     @GetMapping("/add")
+    @PreAuthorize("hasRole('ROLE_MODERATOR')")
     public ModelAndView add(ModelAndView modelAndView) {
         return super.view("destination/destination-add.html");
     }
 
+    @ModelAttribute(value = "modelAttribute")
+    public DestinationAddModel destinationAddModel() {
+        return new DestinationAddModel();
+    }
+
     @PostMapping("/add")
-    @PreAuthorize("isAuthenticated()")
-    public ModelAndView destinationAddConfirm(@ModelAttribute DestinationAddModel model) {
-        DestinationServiceModel productServiceModel = this.modelMapper.map(model, DestinationServiceModel.class);
-        System.out.println();
-        return super.redirect("/destinations");
+    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    public ModelAndView destinationAddConfirm(ModelAndView modelAndView, @ModelAttribute(name = "modelAttribute")
+            DestinationAddModel destinationAddModel, Principal principal) {
+
+        DestinationServiceModel destinationServiceModel = this.modelMapper.map(destinationAddModel, DestinationServiceModel.class);
+
+        this.destinationService.addDestination(destinationServiceModel);
+
+        this.userInfoService.addDestination(destinationServiceModel.getTownName(), principal.getName());
+
+        super.redirect("/destinations/add");
+
+        return modelAndView;
     }
 
     @GetMapping("/details")

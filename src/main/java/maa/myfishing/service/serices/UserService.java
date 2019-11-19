@@ -1,5 +1,6 @@
 package maa.myfishing.service.serices;
 
+import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.models.UserServiceModel;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
