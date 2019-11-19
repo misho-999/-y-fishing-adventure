@@ -3,18 +3,18 @@ package maa.myfishing.web.controllers;
 import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.serices.DestinationService;
 import maa.myfishing.service.serices.UserInfoService;
+import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.DestinationAddModel;
+import maa.myfishing.web.models.DestinationAllModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/destinations")
@@ -33,7 +33,12 @@ public class DestinationController extends BaseController {
 
     @GetMapping("/all")
     public ModelAndView all(ModelAndView modelAndView) {
-        return super.view("destination/destinations-all.html");
+        modelAndView.addObject("destinations", this.destinationService.getAllDestinations()
+                .stream()
+                .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
+                .collect(Collectors.toList()));
+
+        return super.view("destination/destinations-all.html", modelAndView);
     }
 
     @GetMapping("/add")
@@ -58,9 +63,7 @@ public class DestinationController extends BaseController {
 
         this.userInfoService.addDestination(destinationServiceModel.getTownName(), principal.getName());
 
-        super.redirect("/destinations/add");
-
-        return modelAndView;
+        return super.redirect("/destinations/all");
     }
 
     @GetMapping("/details")

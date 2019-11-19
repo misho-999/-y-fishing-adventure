@@ -1,6 +1,6 @@
-package maa.myfishing.service.models;
+package maa.myfishing.web.models;
 
-public class DestinationServiceModel {
+public class DestinationAllModel {
     private String id;
     private String imgUrl;
     private String townName;
@@ -9,7 +9,7 @@ public class DestinationServiceModel {
     private String description;
     private String typeOfOvernight;
 
-    public DestinationServiceModel() {
+    public DestinationAllModel() {
     }
 
     public String getId() {

@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Table(name = "destinations")
 public class Destination extends BaseEntity {
+    private String imgUrl;
     private String townName;
     private Integer population;
     private Integer altitude;
@@ -18,6 +19,15 @@ public class Destination extends BaseEntity {
 
     public Destination() {
         this.userInfos = new ArrayList<>();
+    }
+
+    @Column(name = "img_url")
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     @Column(name = "townName", nullable = false, unique = true)

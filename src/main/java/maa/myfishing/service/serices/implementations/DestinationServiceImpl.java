@@ -9,6 +9,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class DestinationServiceImpl implements DestinationService {
     private final DestinationRepository destinationRepository;
@@ -36,5 +39,13 @@ public class DestinationServiceImpl implements DestinationService {
         Destination destination = this.destinationRepository.findByTownName(townName);
 
         return this.modelMapper.map(destination, DestinationServiceModel.class);
+    }
+
+    @Override
+    public List<DestinationServiceModel> getAllDestinations() {
+        return this.destinationRepository.findAll()
+                .stream()
+                .map(d -> this.modelMapper.map(d, DestinationServiceModel.class))
+                .collect(Collectors.toList());
     }
 }

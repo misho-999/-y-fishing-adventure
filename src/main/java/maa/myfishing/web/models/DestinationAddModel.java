@@ -1,9 +1,8 @@
 package maa.myfishing.web.models;
 
 
-import maa.myfishing.data.models.TypeOfOvernight;
-
 public class DestinationAddModel {
+    private String imgUrl;
     private String townName;
     private Integer population;
     private Integer altitude;
@@ -11,6 +10,14 @@ public class DestinationAddModel {
     private String typeOfOvernight;
 
     public DestinationAddModel() {
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getTownName() {
