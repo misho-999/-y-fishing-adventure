@@ -59,13 +59,6 @@ public class DestinationServiceImpl implements DestinationService {
     public DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel) {
         Destination destination = this.destinationRepository.findById(id)
                 .orElseThrow(() -> new DestinationNotFoundException("Destination with the given id was not found!"));
-
-        //   private String imgUrl;
-        //    private String townName;
-        //    private Integer population;
-        //    private Integer altitude;
-        //    private String description;
-
         destination.setImgUrl(destinationServiceModel.getImgUrl());
         destination.setTownName(destinationServiceModel.getTownName());
         destination.setPopulation(destinationServiceModel.getPopulation());
@@ -73,36 +66,13 @@ public class DestinationServiceImpl implements DestinationService {
         destination.setDescription(destinationServiceModel.getDescription());
 
         return this.modelMapper.map(this.destinationRepository.saveAndFlush(destination), DestinationServiceModel.class);
+    }
 
+    @Override
+    public void deleteDestination(String id) {
+        Destination destination = this.destinationRepository.findById(id)
+                .orElseThrow(() -> new DestinationNotFoundException("Destination with the given id was not found!"));
 
-//        Product product = this.productRepository.findById(id)
-//                .orElseThrow(() -> new ProductNotFoundException("Product with the given id was not found!"));
-//
-//        productServiceModel.setCategories(
-//                this.categoryService.findAllCategories()
-//                        .stream()
-//                        .filter(c -> productServiceModel.getCategories().contains(c.getId()))
-//                        .collect(Collectors.toList())
-//        );
-//
-//        product.setName(productServiceModel.getName());
-//        product.setDescription(productServiceModel.getDescription());
-//        product.setPrice(productServiceModel.getPrice());
-//        product.setCategories(
-//                productServiceModel.getCategories()
-//                        .stream()
-//                        .map(c -> this.modelMapper.map(c, Category.class))
-//                        .collect(Collectors.toList())
-//        );
-//
-//        this.offerRepository.findByProduct_Id(product.getId())
-//                .ifPresent((o) -> {
-//                    o.setPrice(product.getPrice().multiply(new BigDecimal(0.8)));
-//
-//                    this.offerRepository.save(o);
-//                });
-//
-//        return this.modelMapper.map(this.productRepository.saveAndFlush(product), ProductServiceModel.class);
-
+        this.destinationRepository.delete(destination);
     }
 }

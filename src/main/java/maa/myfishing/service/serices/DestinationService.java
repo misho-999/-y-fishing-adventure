@@ -16,4 +16,6 @@ public interface DestinationService {
     List<DestinationServiceModel> getAllDestinations();
 
     DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel);
+
+    void deleteDestination(String id);
 }

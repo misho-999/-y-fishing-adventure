@@ -102,4 +102,26 @@ public class DestinationController extends BaseController {
         return super.redirect("/destinations/details/" + id);
     }
 
+    @GetMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Delete Destination")
+    public ModelAndView deleteProduct(@PathVariable String id, ModelAndView modelAndView) {
+        DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationById(id);
+        DestinationAddModel destinationAddModel = this.modelMapper.map(destinationServiceModel, DestinationAddModel.class);
+//        model.setCategories(productServiceModel.getCategories().stream().map(c -> c.getName()).collect(Collectors.toList()));
+
+        modelAndView.addObject("destination", destinationAddModel);
+        modelAndView.addObject("destinationId", id);
+
+        return super.view("destination/destination-delete", modelAndView);
+    }
+
+    @PostMapping("/delete/{id}")
+    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    public ModelAndView deleteProductConfirm(@PathVariable String id) {
+        this.destinationService.deleteDestination(id);
+
+        return super.redirect("/destinations/all");
+    }
+
 }
