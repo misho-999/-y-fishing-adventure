@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 @Table(name = "fishings")
 public class Fishing extends BaseEntity {
-    private LocalDate date;// На BindingModela трябва да има @DataTiemFormater(pattern = "yyyy-MM-dd")
+    private LocalDate date;// На BindingModela трябва да има @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String description;
     private Boat boat;
     private Destination destination;

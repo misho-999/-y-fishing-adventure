@@ -1,23 +1,13 @@
 package maa.myfishing.web.models;
 
-public class DestinationAllModel {
-    private String id;
+public class DestinationDetailsViewModel {
     private String imgUrl;
     private String townName;
     private Integer population;
     private Integer altitude;
     private String description;
-    private String uploader;
 
-    public DestinationAllModel() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public DestinationDetailsViewModel() {
     }
 
     public String getImgUrl() {
@@ -58,13 +48,5 @@ public class DestinationAllModel {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getUploader() {
-        return uploader;
-    }
-
-    public void setUploader(String uploader) {
-        this.uploader = uploader;
     }
 }

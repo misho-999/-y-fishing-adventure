@@ -7,7 +7,7 @@ public class DestinationServiceModel {
     private Integer population;
     private Integer altitude;
     private String description;
-    private String typeOfOvernight;
+    private String uploader;
 
     public DestinationServiceModel() {
     }
@@ -60,11 +60,11 @@ public class DestinationServiceModel {
         this.description = description;
     }
 
-    public String getTypeOfOvernight() {
-        return typeOfOvernight;
+    public String getUploader() {
+        return uploader;
     }
 
-    public void setTypeOfOvernight(String typeOfOvernight) {
-        this.typeOfOvernight = typeOfOvernight;
+    public void setUploader(String uploader) {
+        this.uploader = uploader;
     }
 }

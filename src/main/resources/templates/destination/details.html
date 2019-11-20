@@ -6,34 +6,40 @@
     <th:block th:include="~{fragments/head}"/>
 </head>
 
-<body class="container-fluid">
+<body class="destinations">
 <header>
-    <th:block th:include="~{fragments/details-navbar}"/>
+    <th:block th:include="~{fragments/navbar}"/>
 </header>
 <main>
     <div class="container-fluid">
-        <div row justify-content-center>
+        <div class="row justify-content-center">
             <h1 class="text-center welcome"><em>Details</em></h1>
         </div>
-        <div class="jumbotron bg-light text-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Batak_dam_afternoon_view.jpg"
-                 class="img-thumb" width="300" height="200"/>
-            <div class="row">
-                <div class="col col-md-12 mt-5">
-                    <h1>Name: Batak</h1>
+        <div class="text-center">
+            <img th:src="${destination.imgUrl}" class="img-thumb" width="300" height="200"/>
+            <div class="row justify-content-center">
+                <div class="col-md-3 mt-2 text-white font-weight-bold">
+                    <h1 th:text="'Town: ' + ${destination.townName}"></h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col col-md-12 mt-3">
-                    <h4>Population: 1500</h4>
+            <div class="row justify-content-center">
+                <div class="col-md-3 mt-2 text-white font-weight-bold">
+                    <h4 th:text="'Population: ' + ${destination.population}"></h4>
                 </div>
             </div>
-            <div class="row">
-                <div class="col col-md-12 mt-3">
-                    <h4>Altitude: 1450m</h4>
+            <div class="row justify-content-center">
+                <div class="col-md-3 mt-2 text-white font-weight-bold">
+                    <h4 th:text="'Altitude: ' + ${destination.altitude}"></h4>
                 </div>
             </div>
-            <a class="nav-link" th:href="@{/fishings/add-caught-fish}">Add Caught Fish</a>
+            <div class="row justify-content-center">
+                <div class="col-md-3 mt-2 text-white font-weight-bold">
+                    <textarea th:text="'Altitude: ' + ${destination.description}" class="form-control"
+                              readonly></textarea>
+                </div>
+            </div>
+            <a th:href="@{/fishings/add-caught-fish}"
+               class="btn btn-primary font-weight-bold text-white mt-2">Add Caught Fish</a>
         </div>
     </div>
 </main>

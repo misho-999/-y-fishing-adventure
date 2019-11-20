@@ -6,6 +6,7 @@ import maa.myfishing.service.serices.UserInfoService;
 import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.DestinationAddModel;
 import maa.myfishing.web.models.DestinationAllModel;
+import maa.myfishing.web.models.DestinationDetailsViewModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -32,6 +33,7 @@ public class DestinationController extends BaseController {
     }
 
     @GetMapping("/all")
+    @PageTitle("All Destinations")
     public ModelAndView all(ModelAndView modelAndView) {
         modelAndView.addObject("destinations", this.destinationService.getAllDestinations()
                 .stream()
@@ -43,18 +45,19 @@ public class DestinationController extends BaseController {
 
     @GetMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Add Destination")
     public ModelAndView add(ModelAndView modelAndView) {
         return super.view("destination/destination-add.html");
     }
 
-    @ModelAttribute(value = "modelAttribute")
+    @ModelAttribute(value = "destinationModel")
     public DestinationAddModel destinationAddModel() {
         return new DestinationAddModel();
     }
 
     @PostMapping("/add")
     @PreAuthorize("hasRole('ROLE_MODERATOR')")
-    public ModelAndView destinationAddConfirm(ModelAndView modelAndView, @ModelAttribute(name = "modelAttribute")
+    public ModelAndView destinationAddConfirm(ModelAndView modelAndView, @ModelAttribute(name = "destinationModel")
             DestinationAddModel destinationAddModel, Principal principal) {
 
         DestinationServiceModel destinationServiceModel = this.modelMapper.map(destinationAddModel, DestinationServiceModel.class);
@@ -66,8 +69,37 @@ public class DestinationController extends BaseController {
         return super.redirect("/destinations/all");
     }
 
-    @GetMapping("/details")
-    public ModelAndView details(ModelAndView modelAndView) {
-        return super.view("destination/details.html");
+    @GetMapping("/details/{id}")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("Destination Details")
+    public ModelAndView destinationDetails(@PathVariable String id, ModelAndView modelAndView) {
+        DestinationDetailsViewModel destination =
+                this.modelMapper.map(this.destinationService.getDestinationById(id), DestinationDetailsViewModel.class);
+
+        modelAndView.addObject("destination", destination);
+
+        return super.view("destination/details.html", modelAndView);
     }
+
+    @GetMapping("/edit/{id}")
+    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PageTitle("Edit Destination")
+    public ModelAndView editProduct(@PathVariable String id, ModelAndView modelAndView) {
+        DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationById(id);
+        DestinationAddModel destinationAddModel = this.modelMapper.map(destinationServiceModel, DestinationAddModel.class);
+
+        modelAndView.addObject("destination", destinationServiceModel);
+        modelAndView.addObject("destinationId", id);
+
+        return super.view("destination/destination-edit", modelAndView);
+    }
+
+    @PostMapping("/edit/{id}")
+    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    public ModelAndView editProductConfirm(@PathVariable String id, @ModelAttribute DestinationAddModel destinationAddModel) {
+        this.destinationService.editDestination(id, this.modelMapper.map(destinationAddModel, DestinationServiceModel.class));
+
+        return super.redirect("/destinations/details/" + id);
+    }
+
 }

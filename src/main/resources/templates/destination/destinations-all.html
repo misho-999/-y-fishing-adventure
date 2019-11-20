@@ -8,7 +8,7 @@
 
 <body class="container-fluid destinations">
 <header>
-    <th:block th:include="~{fragments/destination-navbar}"/>
+    <th:block th:include="~{fragments/navbar}"/>
 </header>
 <main class="mt-3">
     <h1 class="text-center text-dark">All Destinations</h1>
@@ -21,7 +21,7 @@
             <th class="col-md-1 text-center">Town</th>
             <th class="col-md-1 text-center">Population</th>
             <th class="col-md-1 text-center">Altitude</th>
-            <th class="col-md-1 text-center">Overnight</th>
+            <th class="col-md-1 text-center">Uploader</th>
             <th class="col-md-5 text-center">Action</th>
         </tr>
         </thead>
@@ -37,9 +37,9 @@
                 <td class="col-md-1 text-center" th:text="${destination.townName}"></td>
                 <td class="col-md-1 text-center" th:text="${destination.population}"></td>
                 <td class="col-md-1 text-center" th:text="${destination.altitude}"></td>
-                <td class="col-md-1 text-center" th:text="${destination.typeOfOvernight}"></td>
+                <td class="col-md-1 text-center" th:text="${destination.uploader}"></td>
                 <td class="col-md-5 text-center">
-                    <a th:href="@{/destinations/add-fishing}"
+                    <a th:href="@{/fishings/add/{id}(id=${destination.id})}"
                        class="btn btn-primary font-weight-bold text-white">Add Fishing</a>
                     <a th:href="@{/destinations/details/{id}(id=${destination.id})}"
                        class="btn btn-warning font-weight-bold text-white">Details</a>

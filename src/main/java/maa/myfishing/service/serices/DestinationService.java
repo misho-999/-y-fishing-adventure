@@ -9,7 +9,11 @@ public interface DestinationService {
 
     DestinationServiceModel addDestination(DestinationServiceModel destinationServiceModel);
 
+    DestinationServiceModel getDestinationById(String id);
+
     DestinationServiceModel getDestinationByTownName(String townName);
 
     List<DestinationServiceModel> getAllDestinations();
+
+    DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel);
 }

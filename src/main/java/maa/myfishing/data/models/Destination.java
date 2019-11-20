@@ -14,7 +14,6 @@ public class Destination extends BaseEntity {
     private Integer population;
     private Integer altitude;
     private String description;
-    private TypeOfOvernight typeOfOvernight;
     private List<UserInfo> userInfos;
 
     public Destination() {
@@ -66,16 +65,6 @@ public class Destination extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    @Column
-    @Enumerated(EnumType.STRING)
-    public TypeOfOvernight getTypeOfOvernight() {
-        return this.typeOfOvernight;
-    }
-
-    public void setTypeOfOvernight(TypeOfOvernight typeOfOvernight) {
-        this.typeOfOvernight = typeOfOvernight;
     }
 
     @ManyToMany
