@@ -7,11 +7,15 @@ import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.FishingRepository;
 import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.eroors.FishingAlreadyExistsException;
+import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.FishingService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class FishingServiceImpl implements FishingService {
@@ -48,5 +52,19 @@ public class FishingServiceImpl implements FishingService {
         this.destinationRepository.save(destination);
 
         return this.modelMapper.map(fishing, FishingServiceModel.class);
+    }
+
+    @Override
+    public List<FishingServiceModel> getAllFishings() {
+
+        List<Fishing> allFishings = this.fishingRepository.findAll();
+        List<FishingServiceModel> fishingServiceModels = allFishings.stream()
+                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
+                .collect(Collectors.toList());
+        for (int i = 0; i < allFishings.size(); i++) {
+            fishingServiceModels.get(i).setDestinationId(allFishings.get(i).getDestination().getId());
+        }
+
+        return fishingServiceModels;
     }
 }

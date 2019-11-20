@@ -11,7 +11,34 @@
     <th:block th:include="~{fragments/navbar}"/>
 </header>
 <main>
-    <div class="welcome"><strong><em>All Fishing</em></strong></div>
+    <div class="welcome"><strong><em>All Fishings</em></strong></div>
+    private String imgUrl;
+    private String destinationId;
+    private LocalDate date;
+    private String description;
+    <th:block th:each="fishing, iter : ${fishings}">
+        <tr class="row mx-auto">
+            <th class="col-md-1 text-center" th:text="${iter.index + 1}"></th>
+            <td class="col-md-2">
+                <div class="text-center"><img th:src="${fishing.imgUrl}" width="100" height="100"
+                                              class="img-thumb" alt="Destination">
+                </div>
+            </td>
+            <td class="col-md-1 text-center" th:text="${fishing.destinationId}"></td>
+            <td class="col-md-1 text-center" th:text="${fishing.date}"></td>
+            <td class="col-md-1 text-center" th:text="${fishing.description}"></td>
+            <td class="col-md-5 text-center">
+                <a th:href="@{/fishings/add/{id}(id=${fishing.id})}"
+                   class="btn btn-primary font-weight-bold text-white">Add Fishing</a>
+                <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
+                   class="btn btn-warning font-weight-bold text-white">Details</a>
+                <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"
+                   class="btn btn-success font-weight-bold text-white">Edit</a>
+                <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"
+                   class="btn btn-danger font-weight-bold text-white">Delete</a>
+            </td>
+        </tr>
+    </th:block>
 </main>
 <footer>
     <th:block th:include="~{fragments/footer}"/>

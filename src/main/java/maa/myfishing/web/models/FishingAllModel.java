@@ -1,15 +1,15 @@
-package maa.myfishing.service.models;
+package maa.myfishing.web.models;
 
 import java.time.LocalDate;
 
-public class FishingServiceModel {
+public class FishingAllModel {
     private String id;
     private String imgUrl;
     private String destinationId;
     private LocalDate date;
     private String description;
 
-    public FishingServiceModel() {
+    public FishingAllModel() {
     }
 
     public String getId() {
