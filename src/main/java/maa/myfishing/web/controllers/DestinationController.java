@@ -1,5 +1,6 @@
 package maa.myfishing.web.controllers;
 
+import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.serices.DestinationService;
 import maa.myfishing.service.serices.UserInfoService;
@@ -122,6 +123,16 @@ public class DestinationController extends BaseController {
         this.destinationService.deleteDestination(id);
 
         return super.redirect("/destinations/all");
+    }
+
+
+    @ExceptionHandler({DestinationNotFoundException.class})
+    public ModelAndView handleDestinationNotFound(DestinationNotFoundException e) {
+        ModelAndView modelAndView = new ModelAndView("error");
+        modelAndView.addObject("message", e.getMessage());
+        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
     }
 
 }

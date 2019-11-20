@@ -15,12 +15,14 @@ public class Destination extends BaseEntity {
     private Integer altitude;
     private String description;
     private List<UserInfo> userInfos;
+    private List<Fishing> fishings;
 
     public Destination() {
         this.userInfos = new ArrayList<>();
+        this.fishings = new ArrayList<>();
     }
 
-    @Column(name = "img_url")
+    @Column(name = "img_url", unique = true)
     public String getImgUrl() {
         return imgUrl;
     }
@@ -71,12 +73,20 @@ public class Destination extends BaseEntity {
     @JoinTable(name = "destinations_users_infos",
             joinColumns = @JoinColumn(name = "destination_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "user_info_id"))
-//    @ManyToMany(mappedBy = "destinations")
     public List<UserInfo> getUserInfos() {
         return userInfos;
     }
 
     public void setUserInfos(List<UserInfo> userInfos) {
         this.userInfos = userInfos;
+    }
+
+    @OneToMany(mappedBy = "destination")
+    public List<Fishing> getFishings() {
+        return fishings;
+    }
+
+    public void setFishings(List<Fishing> fishings) {
+        this.fishings = fishings;
     }
 }

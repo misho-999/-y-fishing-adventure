@@ -24,11 +24,7 @@ public class UserInfo extends BaseEntity {
         this.user = user;
     }
 
-        @ManyToMany(mappedBy = "userInfos", fetch = FetchType.EAGER)
-//    @ManyToMany
-//    @JoinTable(name = "users_info_destinations",
-//            joinColumns = @JoinColumn(name = "user_info_id", referencedColumnName = "id"),
-//            inverseJoinColumns = @JoinColumn(name = "destination_id", referencedColumnName = "id"))
+    @ManyToMany(mappedBy = "userInfos", fetch = FetchType.EAGER)
     public List<Destination> getDestinations() {
         return destinations;
     }

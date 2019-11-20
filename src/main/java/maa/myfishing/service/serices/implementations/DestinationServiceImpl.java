@@ -1,5 +1,6 @@
 package maa.myfishing.service.serices.implementations;
 
+import maa.myfishing.constants.Constants;
 import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.TypeOfOvernight;
 import maa.myfishing.data.reposipories.DestinationRepository;
@@ -9,6 +10,8 @@ import maa.myfishing.service.serices.DestinationService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -52,13 +55,16 @@ public class DestinationServiceImpl implements DestinationService {
 
     @Override
     public DestinationServiceModel getDestinationById(String id) {
-        return this.modelMapper.map(this.destinationRepository.getOne(id), DestinationServiceModel.class);
+        Destination destination = this.destinationRepository.findById(id)
+                .orElseThrow(() -> new DestinationNotFoundException("Destination with the given id was not found!"));
+
+        return this.modelMapper.map(destination, DestinationServiceModel.class);
     }
 
     @Override
     public DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel) {
         Destination destination = this.destinationRepository.findById(id)
-                .orElseThrow(() -> new DestinationNotFoundException("Destination with the given id was not found!"));
+                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_FOT_FOUND_EXCEPTION));
         destination.setImgUrl(destinationServiceModel.getImgUrl());
         destination.setTownName(destinationServiceModel.getTownName());
         destination.setPopulation(destinationServiceModel.getPopulation());
@@ -71,8 +77,10 @@ public class DestinationServiceImpl implements DestinationService {
     @Override
     public void deleteDestination(String id) {
         Destination destination = this.destinationRepository.findById(id)
-                .orElseThrow(() -> new DestinationNotFoundException("Destination with the given id was not found!"));
+                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_FOT_FOUND_EXCEPTION));
 
         this.destinationRepository.delete(destination);
     }
+
+
 }
