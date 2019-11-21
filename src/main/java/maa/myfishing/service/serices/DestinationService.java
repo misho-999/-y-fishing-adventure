@@ -7,13 +7,15 @@ import java.util.List;
 
 public interface DestinationService {
 
-    DestinationServiceModel addDestination(DestinationServiceModel destinationServiceModel);
+    DestinationServiceModel createDestination(DestinationServiceModel destinationServiceModel);
 
     DestinationServiceModel getDestinationById(String id);
 
     DestinationServiceModel getDestinationByTownName(String townName);
 
     List<DestinationServiceModel> getAllDestinations();
+
+    List<DestinationServiceModel> getMyDestinations(String username);
 
     DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel);
 

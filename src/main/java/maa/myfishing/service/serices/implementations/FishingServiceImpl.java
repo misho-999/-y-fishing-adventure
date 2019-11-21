@@ -7,7 +7,6 @@ import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.FishingRepository;
 import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.eroors.FishingAlreadyExistsException;
-import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.FishingService;
 import org.modelmapper.ModelMapper;
@@ -43,7 +42,7 @@ public class FishingServiceImpl implements FishingService {
         fishing = this.modelMapper.map(fishingServiceModel, Fishing.class);
 
         Destination destination = this.destinationRepository.findById(destinationId)
-                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_FOT_FOUND_EXCEPTION));
+                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
 
         fishing.setDestination(destination);
 

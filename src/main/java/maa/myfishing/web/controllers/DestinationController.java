@@ -1,6 +1,7 @@
 package maa.myfishing.web.controllers;
 
 import maa.myfishing.eroors.DestinationNotFoundException;
+import maa.myfishing.eroors.TownAlreadyExistException;
 import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.serices.DestinationService;
 import maa.myfishing.service.serices.UserInfoService;
@@ -34,21 +35,63 @@ public class DestinationController extends BaseController {
     }
 
     @GetMapping("/all")
+    @PreAuthorize("isAuthenticated()")
     @PageTitle("All Destinations")
-    public ModelAndView all(ModelAndView modelAndView) {
+    public ModelAndView allDestinations(ModelAndView modelAndView) {
         modelAndView.addObject("destinations", this.destinationService.getAllDestinations()
                 .stream()
                 .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
                 .collect(Collectors.toList()));
 
-        return super.view("destination/destinations-all.html", modelAndView);
+        return super.view("destination/all-destinations.html", modelAndView);
     }
 
-    @GetMapping("/add")
-    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @GetMapping("/my")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("My Destinations")
+    public ModelAndView myDestinations(ModelAndView modelAndView, Principal principal) {
+        modelAndView.addObject("destinations", this.destinationService.getMyDestinations(principal.getName())
+                .stream()
+                .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
+                .collect(Collectors.toList()));
+
+        return super.view("destination/my-destinations.html", modelAndView);
+    }
+
+    //=======================================================================
+    @GetMapping("/add-to-my/{townName}")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("Ad To My Destinations")
+    public ModelAndView addToMyDestinations(@PathVariable String townName, ModelAndView modelAndView) {
+        DestinationServiceModel destination =
+                this.modelMapper.map(this.destinationService.getDestinationByTownName(townName), DestinationServiceModel.class);
+
+        modelAndView.addObject("destination", destination);
+//        modelAndView.addObject("destinationId", id);
+
+        return super.view("destination/add-to-my-destination.html", modelAndView);
+    }
+
+    @PostMapping("/add-to-my/{townName}")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView addToMyDestinationsConfirm(@PathVariable String townName
+            , @ModelAttribute DestinationAddModel destinationAddModel, Principal principal) {
+
+        String destinationId = townName;
+        String username = principal.getName();
+
+        this.userInfoService.addDestination(townName, username);
+
+        return super.redirect("/destinations/my");
+    }
+
+
+    //=======================================================================
+    @GetMapping("/create")
+    @PreAuthorize("isAuthenticated()")
     @PageTitle("Add Destination")
     public ModelAndView add(ModelAndView modelAndView) {
-        return super.view("destination/destination-add.html");
+        return super.view("destination/create-destination.html");
     }
 
     @ModelAttribute(value = "destinationModel")
@@ -56,18 +99,19 @@ public class DestinationController extends BaseController {
         return new DestinationAddModel();
     }
 
-    @PostMapping("/add")
-    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PostMapping("/create")
+    @PreAuthorize("isAuthenticated()")
     public ModelAndView destinationAddConfirm(ModelAndView modelAndView, @ModelAttribute(name = "destinationModel")
             DestinationAddModel destinationAddModel, Principal principal) {
 
         DestinationServiceModel destinationServiceModel = this.modelMapper.map(destinationAddModel, DestinationServiceModel.class);
 
-        this.destinationService.addDestination(destinationServiceModel);
+        this.destinationService.createDestination(destinationServiceModel);
 
         this.userInfoService.addDestination(destinationServiceModel.getTownName(), principal.getName());
 
         return super.redirect("/destinations/all");
+//        return super.redirect("/destinations/my");
     }
 
     @GetMapping("/details/{id}")
@@ -79,11 +123,11 @@ public class DestinationController extends BaseController {
 
         modelAndView.addObject("destination", destination);
 
-        return super.view("destination/details.html", modelAndView);
+        return super.view("destination/details-destination.html", modelAndView);
     }
 
     @GetMapping("/edit/{id}")
-    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PreAuthorize("isAuthenticated()")
     @PageTitle("Edit Destination")
     public ModelAndView editProduct(@PathVariable String id, ModelAndView modelAndView) {
         DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationById(id);
@@ -92,11 +136,11 @@ public class DestinationController extends BaseController {
         modelAndView.addObject("destination", destinationServiceModel);
         modelAndView.addObject("destinationId", id);
 
-        return super.view("destination/destination-edit", modelAndView);
+        return super.view("destination/edit-destination", modelAndView);
     }
 
     @PostMapping("/edit/{id}")
-    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PreAuthorize("isAuthenticated()")
     public ModelAndView editProductConfirm(@PathVariable String id, @ModelAttribute DestinationAddModel destinationAddModel) {
         this.destinationService.editDestination(id, this.modelMapper.map(destinationAddModel, DestinationServiceModel.class));
 
@@ -104,7 +148,7 @@ public class DestinationController extends BaseController {
     }
 
     @GetMapping("/delete/{id}")
-    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PreAuthorize("isAuthenticated()")
     @PageTitle("Delete Destination")
     public ModelAndView deleteProduct(@PathVariable String id, ModelAndView modelAndView) {
         DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationById(id);
@@ -114,25 +158,23 @@ public class DestinationController extends BaseController {
         modelAndView.addObject("destination", destinationAddModel);
         modelAndView.addObject("destinationId", id);
 
-        return super.view("destination/destination-delete", modelAndView);
+        return super.view("destination/delete-destination", modelAndView);
     }
 
     @PostMapping("/delete/{id}")
-    @PreAuthorize("hasRole('ROLE_MODERATOR')")
+    @PreAuthorize("isAuthenticated()")
     public ModelAndView deleteProductConfirm(@PathVariable String id) {
         this.destinationService.deleteDestination(id);
 
         return super.redirect("/destinations/all");
     }
 
-
-    @ExceptionHandler({DestinationNotFoundException.class})
-    public ModelAndView handleDestinationNotFound(DestinationNotFoundException e) {
-        ModelAndView modelAndView = new ModelAndView("error");
+    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})
+    public ModelAndView handleDestinationNotFound(Exception e) {
+        ModelAndView modelAndView = new ModelAndView("error.html");
         modelAndView.addObject("message", e.getMessage());
-        modelAndView.addObject("statusCode", e.getStatusCode());
+//        modelAndView.addObject("statusCode", e.getStatusCode());
 
         return modelAndView;
     }
-
 }

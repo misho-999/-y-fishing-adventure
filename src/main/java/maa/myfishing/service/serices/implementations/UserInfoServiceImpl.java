@@ -1,9 +1,11 @@
 package maa.myfishing.service.serices.implementations;
 
+import maa.myfishing.constants.Constants;
 import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.UserInfo;
 import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.UserInfoRepository;
+import maa.myfishing.eroors.TownAlreadyExistException;
 import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.models.UserInfoServiceModel;
 import maa.myfishing.service.serices.DestinationService;
@@ -11,6 +13,8 @@ import maa.myfishing.service.serices.UserInfoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
@@ -37,8 +41,10 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public void addDestination(String townName, String username) {
-
         UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
+        if (isDestinationPresent(townName, username)) {
+            throw new TownAlreadyExistException(Constants.TOWN_ALREADY_EXIST_EXCEPTION);
+        }
 
         DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationByTownName(townName);
 
@@ -49,5 +55,19 @@ public class UserInfoServiceImpl implements UserInfoService {
 
         this.destinationRepository.save(destination);
         this.userInfoRepository.save(userInfo);
+    }
+
+    private boolean isDestinationPresent(String townName, String username) {
+        UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
+        List<Destination> destinations = userInfo.getDestinations();
+
+        boolean isPresent = false;
+
+        for (int i = 0; i < destinations.size(); i++) {
+            if (destinations.get(i).getTownName().equals(townName)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
