@@ -1,8 +1,10 @@
 package maa.myfishing.data.reposipories;
 
 import maa.myfishing.data.models.Destination;
+import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.models.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,5 +17,7 @@ public interface DestinationRepository extends JpaRepository<Destination, String
 
     Optional<Destination> findById(String id);
 
-    List<Destination> findByUserInfos(UserInfo userInfo);
+    @Query("SELECT d from Destination d JOIN d.userInfos u where u.id = :id")
+    List<Destination> findDestinationsByUserInfosId(String id);
+
 }

@@ -57,10 +57,11 @@ public class DestinationServiceImpl implements DestinationService {
 
         UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
 
-        List<DestinationServiceModel> destinations = this.destinationRepository.findByUserInfos(userInfo)
+        List<DestinationServiceModel> destinations = this.destinationRepository.findDestinationsByUserInfosId(userInfo.getId())
                 .stream()
                 .map(d -> this.modelMapper.map(d, DestinationServiceModel.class))
                 .collect(Collectors.toList());
+
         return destinations;
     }
 

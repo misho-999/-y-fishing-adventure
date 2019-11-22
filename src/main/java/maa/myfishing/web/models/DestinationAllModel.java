@@ -7,7 +7,7 @@ public class DestinationAllModel {
     private Integer population;
     private Integer altitude;
     private String description;
-    private String uploader;
+    private int countOfFishings;
 
     public DestinationAllModel() {
     }
@@ -60,11 +60,11 @@ public class DestinationAllModel {
         this.description = description;
     }
 
-    public String getUploader() {
-        return uploader;
+    public int getCountOfFishings() {
+        return countOfFishings;
     }
 
-    public void setUploader(String uploader) {
-        this.uploader = uploader;
+    public void setCountOfFishings(int countOfFishings) {
+        this.countOfFishings = countOfFishings;
     }
 }

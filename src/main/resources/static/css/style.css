@@ -7,7 +7,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .destinations {
@@ -43,7 +43,7 @@ footer {
 
 .welcome {
     text-align: center;
-    font-size: 15mm;
+    font-size: 10mm;
     color: blue;
 }
 

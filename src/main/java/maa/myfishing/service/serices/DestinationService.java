@@ -20,4 +20,5 @@ public interface DestinationService {
     DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel);
 
     void deleteDestination(String id);
+
 }

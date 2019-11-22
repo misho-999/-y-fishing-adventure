@@ -37,7 +37,7 @@ public class FishingController extends BaseController {
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Fishing")
     public ModelAndView addFishing(@PathVariable String id, ModelAndView modelAndView) {
-        return super.view("fishing/fishing-add.html");
+        return super.view("fishing/fishing-create.html");
     }
 
     @ModelAttribute(value = "fishingAddModel")
@@ -54,7 +54,7 @@ public class FishingController extends BaseController {
 
         fishingServiceModel.setImgUrl(this.cloudinaryService.uploadImage(fishingAddModel.getImage()));
 
-        String destinationId = fishingAddModel.getDestinationId().replace("http://localhost:8000/fishings/add/", "");
+        String destinationId = fishingAddModel.getDestinationId().replace("http://localhost:8000/fishings/create/", "");
 
         this.fishingService.addFishingToDestination(fishingServiceModel, destinationId);
 

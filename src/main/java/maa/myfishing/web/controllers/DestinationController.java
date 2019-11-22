@@ -4,6 +4,7 @@ import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.eroors.TownAlreadyExistException;
 import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.serices.DestinationService;
+import maa.myfishing.service.serices.FishingService;
 import maa.myfishing.service.serices.UserInfoService;
 import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.DestinationAddModel;
@@ -25,12 +26,14 @@ public class DestinationController extends BaseController {
 
     private final UserInfoService userInfoService;
     private final DestinationService destinationService;
+    private final FishingService fishingService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public DestinationController(UserInfoService userInfoService, DestinationService destinationService, ModelMapper modelMapper) {
+    public DestinationController(UserInfoService userInfoService, DestinationService destinationService, FishingService fishingService, ModelMapper modelMapper) {
         this.userInfoService = userInfoService;
         this.destinationService = destinationService;
+        this.fishingService = fishingService;
         this.modelMapper = modelMapper;
     }
 
@@ -54,6 +57,8 @@ public class DestinationController extends BaseController {
                 .stream()
                 .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
                 .collect(Collectors.toList()));
+
+//        modelAndView.addObject("countOfFishings", this.fishingService.getCountOfFishingsByDestination());
 
         return super.view("destination/my-destinations.html", modelAndView);
     }

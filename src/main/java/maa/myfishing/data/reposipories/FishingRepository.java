@@ -24,10 +24,15 @@ public interface FishingRepository extends JpaRepository<Fishing, String> {
 //            "JOIN destinations AS d\n" +
 //            "ON f.destination_id = d.id", nativeQuery = true)
 
+    //  @Query("SELECT d from Destination d JOIN d.userInfos u where u.id = :id")
+//    List<Destination> findDestinationsByUserInfosId(String id);
 
-    @Query(value = "SELECT * from fishings AS f\n" +
-            "JOIN destinations AS d\n" +
-            "ON f.destination_id = d.id\n" +
-            "WHERE d.town_name = ?;", nativeQuery = true)
+
+    //    @Query(value = "SELECT * from fishings AS f\n" +
+//            "JOIN destinations AS d\n" +
+//            "ON f.destination_id = d.id\n" +
+//            "WHERE d.town_name = ?;", nativeQuery = true)
+//
+    @Query("SELECT f FROM Fishing  f JOIN f.destination d where d.townName =:townName")
     List<Fishing> getAllFishingByTownName(String townName);
 }

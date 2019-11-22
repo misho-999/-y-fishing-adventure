@@ -15,7 +15,7 @@
 <main>
     <div class="welcome"><strong><em>Add Fishing</em></strong></div>
     <div class="row justify-content-md-center text-center">
-        <form id="add-product-form" class="form w-25 mx-auto" th:action="@{/fishings/add/}" method="post"
+        <form id="add-product-form" class="form w-25 mx-auto" th:action="@{/fishings/create/}" method="post"
               enctype="multipart/form-data">
             <input type="hidden" name="destinationId" th:value="*{#httpServletRequest.requestURL}">
             <div class="form-row">
