@@ -67,7 +67,6 @@ public class DestinationController extends BaseController {
                 this.modelMapper.map(this.destinationService.getDestinationByTownName(townName), DestinationServiceModel.class);
 
         modelAndView.addObject("destination", destination);
-//        modelAndView.addObject("destinationId", id);
 
         return super.view("destination/add-to-my-destination.html", modelAndView);
     }
@@ -77,10 +76,7 @@ public class DestinationController extends BaseController {
     public ModelAndView addToMyDestinationsConfirm(@PathVariable String townName
             , @ModelAttribute DestinationAddModel destinationAddModel, Principal principal) {
 
-        String destinationId = townName;
-        String username = principal.getName();
-
-        this.userInfoService.addDestination(townName, username);
+        this.userInfoService.addDestination(townName, principal.getName());
 
         return super.redirect("/destinations/my");
     }
@@ -94,10 +90,10 @@ public class DestinationController extends BaseController {
         return super.view("destination/create-destination.html");
     }
 
-    @ModelAttribute(value = "destinationModel")
-    public DestinationAddModel destinationAddModel() {
-        return new DestinationAddModel();
-    }
+//    @ModelAttribute(value = "destinationModel")
+//    public DestinationAddModel destinationAddModel() {
+//        return new DestinationAddModel();
+//    }
 
     @PostMapping("/create")
     @PreAuthorize("isAuthenticated()")

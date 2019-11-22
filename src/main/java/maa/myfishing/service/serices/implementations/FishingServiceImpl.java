@@ -48,7 +48,7 @@ public class FishingServiceImpl implements FishingService {
 
         this.fishingRepository.saveAndFlush(fishing);
 
-        this.destinationRepository.save(destination);
+//        this.destinationRepository.save(destination);
 
         return this.modelMapper.map(fishing, FishingServiceModel.class);
     }
@@ -58,6 +58,21 @@ public class FishingServiceImpl implements FishingService {
 
         List<Fishing> allFishings = this.fishingRepository.findAll();
         List<FishingServiceModel> fishingServiceModels = allFishings.stream()
+                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
+                .collect(Collectors.toList());
+        for (int i = 0; i < allFishings.size(); i++) {
+            fishingServiceModels.get(i).setDestinationId(allFishings.get(i).getDestination().getId());
+        }
+
+        return fishingServiceModels;
+    }
+
+    @Override
+    public List<FishingServiceModel> getAllFishingsByTownName(String townName) {
+        List<Fishing> allFishings = this.fishingRepository.getAllFishingByTownName(townName);
+
+        List<FishingServiceModel> fishingServiceModels = allFishings.stream()
+
                 .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
                 .collect(Collectors.toList());
         for (int i = 0; i < allFishings.size(); i++) {

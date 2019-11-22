@@ -13,8 +13,6 @@ import java.lang.annotation.Target;
 @Component
 public @interface Validator {
 
-    @AliasFor(
-            annotation = Component.class
-    )
+    @AliasFor(annotation = Component.class)
     String value() default "";
 }

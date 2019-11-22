@@ -26,10 +26,23 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" th:href="@{/destinations/create}">Create Destination</a>
                             <a class="dropdown-item" th:href="@{/destinations/my}">My Destinations</a>
-<!--                            <th:block sec:authorize="hasRole('ROLE_MODERATOR')">-->
+                            <!--                            <th:block sec:authorize="hasRole('ROLE_MODERATOR')">-->
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" th:href="@{/destinations/all}">All Destination</a>
+                            <!--                            </th:block>-->
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fishings</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!--                                <a class="dropdown-item" th:href="@{/fishings/create}">Create Fishing</a>-->
+                            <a class="dropdown-item" th:href="@{/fishings/my}">My Fishings</a>
+                            <th:block sec:authorize="hasRole('ROLE_MODERATOR')">
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" th:href="@{/destinations/all}">All Destination</a>
-<!--                            </th:block>-->
+                                <a class="dropdown-item" th:href="@{/fishings/all}">All Fishings</a>
+                            </th:block>
                         </div>
                     </li>
 

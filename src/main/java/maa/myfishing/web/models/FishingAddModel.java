@@ -2,11 +2,12 @@ package maa.myfishing.web.models;
 
 import maa.myfishing.constants.Constants;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 
 public class FishingAddModel {
-    private String imgUrl;
+    private MultipartFile image;
     private LocalDate date;// На BindingModela трябва да има @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String description;
     private String destinationId;
@@ -14,12 +15,20 @@ public class FishingAddModel {
     public FishingAddModel() {
     }
 
-    public String getImgUrl() {
-        return imgUrl;
+//    public String getImgUrl() {
+//        return imgUrl;
+//    }
+//
+//    public void setImgUrl(String imgUrl) {
+//        this.imgUrl = imgUrl;
+//    }
+
+    public MultipartFile getImage() {
+        return image;
     }
 
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setImage(MultipartFile image) {
+        this.image = image;
     }
 
     public String getDestinationId() {

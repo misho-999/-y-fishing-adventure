@@ -16,6 +16,8 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/users")
 public class UserController extends BaseController {
@@ -44,7 +46,9 @@ public class UserController extends BaseController {
 
     @PostMapping("/register")
     @PreAuthorize("isAnonymous()")
-    public ModelAndView registerConfirm(ModelAndView modelAndView, @ModelAttribute(name = "model") UserRegisterModel model, BindingResult bindingResult) {
+    public ModelAndView registerConfirm(@Valid ModelAndView modelAndView, @ModelAttribute(name = "model") UserRegisterModel model
+            , BindingResult bindingResult) {
+
         this.userRegisterValidator.validate(model, bindingResult);
 
         if (bindingResult.hasErrors()) {

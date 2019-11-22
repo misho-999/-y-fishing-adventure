@@ -7,9 +7,11 @@
 </head>
 
 <body class="destinations">
+
 <header>
     <th:block th:include="~{fragments/navbar}"/>
 </header>
+
 <main>
     <div class="container-fluid">
         <div class="row justify-content-center">
@@ -51,25 +53,15 @@
                     <textarea name="description" id="add-product-description" class="form-control" rows="5"
                               th:text="${destination.description}"></textarea>
                 </div>
-<!--                <div class="form-group justify-content-center">-->
-<!--                    <label for="typeOfOvernight"><em><strong class="label-color">Type Of Overnight</strong></em></label><br/>-->
-<!--                    <select class="form-control" id="typeOfOvernight" name="typeOfOvernight">-->
-<!--                        <option th:each="overnight : ${T(maa.myfishing.data.models.TypeOfOvernight).values()}"-->
-<!--                                th:value="${overnight}"-->
-<!--                                th:text="${overnight.toString()}">-->
-<!--                        </option>-->
-<!--                    </select>-->
-<!--                </div>-->
                 <button type="submit" class="btn btn-primary">Edit Destination</button>
             </form>
         </div>
-
     </div>
 </main>
+
 <footer>
     <th:block th:include="~{fragments/footer}"/>
 </footer>
-
 
 </body>
 

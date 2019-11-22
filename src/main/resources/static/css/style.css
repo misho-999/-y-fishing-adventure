@@ -7,6 +7,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    margin-bottom: 50px;
 }
 
 .destinations {
@@ -17,8 +18,10 @@ body {
 footer {
     background-color: #d1ecf1;
     position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
+    text-align: center;
 }
 
 .img-logo {
@@ -48,3 +51,10 @@ footer {
     padding-left: 0;
     padding-right: 0;
 }
+
+.error {
+    color: red;
+    font-family: "Harlow Solid Italic";
+    font-size: 15px;
+}
+
