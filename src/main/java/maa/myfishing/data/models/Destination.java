@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Table(name = "destinations")
 public class Destination extends BaseEntity {
+    private String creator;
     private String imgUrl;
     private String townName;
     private Integer population;
@@ -20,6 +21,15 @@ public class Destination extends BaseEntity {
     public Destination() {
         this.userInfos = new ArrayList<>();
         this.fishings = new ArrayList<>();
+    }
+
+    @Column(name = "creator")
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
     @Column(name = "img_url", unique = true)

@@ -1,6 +1,8 @@
 package maa.myfishing.web.models;
 
 public class DestinationDetailsViewModel {
+    private String creator;
+    private String id;
     private String imgUrl;
     private String townName;
     private Integer population;
@@ -8,6 +10,22 @@ public class DestinationDetailsViewModel {
     private String description;
 
     public DestinationDetailsViewModel() {
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getImgUrl() {

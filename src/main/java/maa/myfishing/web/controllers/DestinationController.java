@@ -111,7 +111,7 @@ public class DestinationController extends BaseController {
 
         this.userInfoService.addDestination(destinationServiceModel.getTownName(), principal.getName());
 
-        return super.redirect("/destinations/all");
+        return super.redirect("/destinations/my");
 //        return super.redirect("/destinations/my");
     }
 
@@ -126,6 +126,8 @@ public class DestinationController extends BaseController {
 
         return super.view("destination/details-destination.html", modelAndView);
     }
+
+
 
     @GetMapping("/edit/{id}")
     @PreAuthorize("isAuthenticated()")
@@ -145,7 +147,8 @@ public class DestinationController extends BaseController {
     public ModelAndView editProductConfirm(@PathVariable String id, @ModelAttribute DestinationAddModel destinationAddModel) {
         this.destinationService.editDestination(id, this.modelMapper.map(destinationAddModel, DestinationServiceModel.class));
 
-        return super.redirect("/destinations/details/" + id);
+//        return super.redirect("/destinations/details/" + id);
+        return super.redirect("/destinations/my");
     }
 
     @GetMapping("/delete/{id}")
@@ -167,7 +170,7 @@ public class DestinationController extends BaseController {
     public ModelAndView deleteProductConfirm(@PathVariable String id) {
         this.destinationService.deleteDestination(id);
 
-        return super.redirect("/destinations/all");
+        return super.redirect("/destinations/my");
     }
 
     @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})

@@ -2,6 +2,7 @@ package maa.myfishing.web.models;
 
 
 public class DestinationAddModel {
+    private String creator;
     private String imgUrl;
     private String townName;
     private Integer population;
@@ -10,6 +11,14 @@ public class DestinationAddModel {
     private String typeOfOvernight;
 
     public DestinationAddModel() {
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
     public String getImgUrl() {

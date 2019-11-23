@@ -1,6 +1,7 @@
 package maa.myfishing.service.models;
 
 public class DestinationServiceModel {
+    private String creator;
     private String id;
     private String imgUrl;
     private String townName;
@@ -10,6 +11,14 @@ public class DestinationServiceModel {
     private int countOfFishings;
 
     public DestinationServiceModel() {
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
     public String getId() {

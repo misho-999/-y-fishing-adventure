@@ -23,8 +23,8 @@
             <th class="col-md-1 text-center">Town</th>
             <th class="col-md-1 text-center">Population</th>
             <th class="col-md-1 text-center">Altitude</th>
-            <th class="col-md-1 text-center">Count Of Fishings</th>
-            <th class="col-md-6 text-center">Action</th>
+            <th class="col-md-1 text-center">Creator</th>
+            <th class="col-md-5 text-center">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -39,19 +39,23 @@
                 <td class="col-md-1 text-center" th:text="${destination.townName}"></td>
                 <td class="col-md-1 text-center" th:text="${destination.population}"></td>
                 <td class="col-md-1 text-center" th:text="${destination.altitude}"></td>
-                <td class="col-md-1 text-center" th:text="${destination.countOfFishings}"></td>
-                <td class="col-md-6 text-center">
+                <td class="col-md-1 text-center" th:text="${destination.creator}"></td>
+                <td class="col-md-5 text-center">
 
                     <a th:href="@{/destinations/details/{id}(id=${destination.id})}"
                        class="btn btn-warning font-weight-bold text-white btn-sm align-middle">Details</a>
-                    <a th:href="@{/destinations/edit/{id}(id=${destination.id})}"
-                       class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>
-                    <a th:href="@{/destinations/delete/{id}(id=${destination.id})}"
-                       class="btn btn-danger font-weight-bold text-white btn-sm">Delete</a>
-                    <a th:href="@{/fishings/create/{id}(id=${destination.id})}"
-                       class="btn btn-primary font-weight-bold text-white btn-sm">Add Fishing</a>
-                    <a th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"
-                       class="btn btn-primary font-weight-bold text-white btn-sm">All Fishing</a>
+                    <th:block sec:authorize="hasRole('ROLE_MODERATOR')">
+                        <a th:href="@{/destinations/edit/{id}(id=${destination.id})}"
+                           class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>
+                        <a th:href="@{/destinations/delete/{id}(id=${destination.id})}"
+                           class="btn btn-danger font-weight-bold text-white btn-sm">Delete</a>
+                        <!--                    <a th:href="@{/destinations/details/{id}(id=${destination.id})}"-->
+                        <!--                       class="btn btn-warning font-weight-bold text-white btn-sm align-middle">Add To My Destinatios</a>-->
+                        <!--                    <a th:href="@{/fishings/create/{id}(id=${destination.id})}"-->
+                        <!--                       class="btn btn-primary font-weight-bold text-white btn-sm">Add Fishing</a>-->
+                        <!--                    <a th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"-->
+                        <!--                       class="btn btn-primary font-weight-bold text-white btn-sm">All Fishing</a>-->
+                    </th:block>
                 </td>
             </tr>
         </th:block>
