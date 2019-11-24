@@ -27,7 +27,7 @@ public class Fishing extends BaseEntity {
         this.imgUrl = imgUrl;
     }
 
-    @Column(name = "date", nullable = false, unique = true)// На BindingModela трябва да има @DataTiemFormater(pattern = "yyyy-MM-dd")
+    @Column(name = "date", nullable = false)// На BindingModela трябва да има @DataTiemFormater(pattern = "yyyy-MM-dd")
     public LocalDate getDate() {
         return date;
     }

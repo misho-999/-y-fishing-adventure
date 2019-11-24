@@ -19,27 +19,24 @@
     private LocalDate date;
     private String description;
     <th:block th:each="fishing, iter : ${fishings}">
-        <tr class="row mx-auto">
-            <th class="col-md-1 text-center" th:text="${iter.index + 1}"></th>
-            <td class="col-md-2">
+        <div class="row">
+            <div class="col col-md-4">
                 <div class="text-center"><img th:src="${fishing.imgUrl}" width="355" height="200"
                                               class="img-thumb" alt="Destination">
+                    <p th:text="${fishing.destinationId}"></p>
+                    <p th:text="${fishing.date}"></p>
+                    <p th:text="${fishing.fishing.description}"></p>
+                    <a th:href="@{/fishings/add/{id}(id=${fishing.id})}"
+                       class="btn btn-primary font-weight-bold text-white">Add Fish</a>
+                    <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
+                       class="btn btn-warning font-weight-bold text-white">Details</a>
+                    <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"
+                       class="btn btn-success font-weight-bold text-white">Edit</a>
+                    <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"
+                       class="btn btn-danger font-weight-bold text-white">Delete</a>
                 </div>
-            </td>
-            <td class="col-md-1 text-center" th:text="${fishing.destinationId}"></td>
-            <td class="col-md-1 text-center" th:text="${fishing.date}"></td>
-            <td class="col-md-1 text-center" th:text="${fishing.description}"></td>
-            <td class="col-md-5 text-center">
-                <a th:href="@{/fishings/add/{id}(id=${fishing.id})}"
-                   class="btn btn-primary font-weight-bold text-white">Add Fish</a>
-                <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
-                   class="btn btn-warning font-weight-bold text-white">Details</a>
-                <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"
-                   class="btn btn-success font-weight-bold text-white">Edit</a>
-                <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"
-                   class="btn btn-danger font-weight-bold text-white">Delete</a>
-            </td>
-        </tr>
+            </div>
+        </div>
     </th:block>
 </main>
 

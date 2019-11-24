@@ -1,6 +1,7 @@
 package maa.myfishing.data.models;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.util.ArrayList;
@@ -60,8 +61,8 @@ public class Destination extends BaseEntity {
     }
 
     @Column(name = "altitude", nullable = false)
-    @Min(0)
-    @Max(2900)
+    @Min(value = 0, message = "Value should be more than 0")
+    @Max(value = 5000 , message = "Value should be less than 5000")
     public Integer getAltitude() {
         return altitude;
     }

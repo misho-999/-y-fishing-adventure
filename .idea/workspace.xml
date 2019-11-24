@@ -2,22 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/UserInfoModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Destination.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Destination.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/DestinationServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/DestinationServiceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fishing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fishing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationAddModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationAddModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationAllModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationAllModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationDetailsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationDetailsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/add-to-my-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/add-to-my-destination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/create-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/create-destination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/details-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/details-destination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/my-destinations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/my-destinations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-all.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,8 +65,8 @@
         <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,12 +100,12 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static\help" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\service\serices" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="maa.myfishing.web.controllers" />
@@ -116,12 +114,12 @@
       <recent name="maa.myfishing.data.reposipories" />
       <recent name="maa.myfishing.service.models" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static\help" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\service\serices" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -150,7 +148,17 @@
       <serviceView>
         <option name="contentProportion" value="0.29289025" />
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ed32204a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ed32204a" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3cebe258" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -202,7 +210,9 @@
       <workItem from="1574415295381" duration="14852000" />
       <workItem from="1574440552130" duration="211000" />
       <workItem from="1574444201278" duration="2106000" />
-      <workItem from="1574447533588" duration="12919000" />
+      <workItem from="1574447533588" duration="17912000" />
+      <workItem from="1574527256010" duration="3137000" />
+      <workItem from="1574612090994" duration="546000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574444265566</created>
@@ -239,38 +249,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
-          <line>147</line>
+          <line>151</line>
           <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="152" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java</url>
@@ -324,38 +304,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>84</line>
+          <line>85</line>
           <option name="timeStamp" value="170" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>79</line>
+          <line>80</line>
           <option name="timeStamp" value="172" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java</url>
           <line>81</line>
           <option name="timeStamp" value="181" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="182" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="183" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
-          <line>109</line>
-          <option name="timeStamp" value="184" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
@@ -366,6 +331,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
           <line>34</line>
           <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="188" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

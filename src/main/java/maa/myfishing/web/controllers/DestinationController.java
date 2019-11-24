@@ -10,6 +10,7 @@ import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.DestinationAddModel;
 import maa.myfishing.web.models.DestinationAllModel;
 import maa.myfishing.web.models.DestinationDetailsViewModel;
+import maa.myfishing.web.models.UserInfoModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -118,11 +119,14 @@ public class DestinationController extends BaseController {
     @GetMapping("/details/{id}")
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Destination Details")
-    public ModelAndView destinationDetails(@PathVariable String id, ModelAndView modelAndView) {
+    public ModelAndView destinationDetails(@PathVariable String id, ModelAndView modelAndView, Principal principal) {
         DestinationDetailsViewModel destination =
                 this.modelMapper.map(this.destinationService.getDestinationById(id), DestinationDetailsViewModel.class);
 
         modelAndView.addObject("destination", destination);
+
+        modelAndView.addObject("userInfo",this.modelMapper
+                .map(this.userInfoService.getUserByUsername(principal.getName()), UserInfoModel.class));
 
         return super.view("destination/details-destination.html", modelAndView);
     }
