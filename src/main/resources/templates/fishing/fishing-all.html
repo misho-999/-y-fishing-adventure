@@ -18,14 +18,13 @@
     private String destinationId;
     private LocalDate date;
     private String description;
-    <th:block th:each="fishing, iter : ${fishings}">
-        <div class="row">
-            <div class="col col-md-4">
-                <div class="text-center"><img th:src="${fishing.imgUrl}" width="355" height="200"
-                                              class="img-thumb" alt="Destination">
-                    <p th:text="${fishing.destinationId}"></p>
-                    <p th:text="${fishing.date}"></p>
-                    <p th:text="${fishing.fishing.description}"></p>
+    <div class="row d-flex justify-content-center">
+        <th:block th:each="fishing, iter : ${fishings}">
+            <div class="col col-md-3 fishing-list">
+                <div class="text-center text-white"><img th:src="${fishing.imgUrl}" width="355" height="200">
+                    <h4 th:text="${fishing.destinationId}"></h4>
+                    <h4 th:text="${fishing.date}"></h4>
+                    <h4 th:text="${fishing.description}"></h4>
                     <a th:href="@{/fishings/add/{id}(id=${fishing.id})}"
                        class="btn btn-primary font-weight-bold text-white">Add Fish</a>
                     <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
@@ -36,8 +35,19 @@
                        class="btn btn-danger font-weight-bold text-white">Delete</a>
                 </div>
             </div>
-        </div>
-    </th:block>
+
+        </th:block>
+
+        <th:block th:if="${fishings.size()} %3 == 1">
+            <div class="col col-md-3 fishing-list"></div>
+            <div class="col col-md-3 fishing-list"></div>
+        </th:block>
+
+        <th:block th:if="${fishings.size()} %3 == 2">
+            <div class="col col-md-3 fishing-list"></div>
+        </th:block>
+
+    </div>
 </main>
 
 <footer>
