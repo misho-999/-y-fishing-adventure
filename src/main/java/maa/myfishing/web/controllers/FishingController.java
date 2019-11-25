@@ -8,7 +8,6 @@ import maa.myfishing.service.serices.FishingService;
 import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.FishingAddModel;
 import maa.myfishing.web.models.FishingAllModel;
-import org.apache.catalina.authenticator.SavedRequest;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.stream.Collectors;
 
 @Controller
@@ -58,9 +58,9 @@ public class FishingController extends BaseController {
 
         this.fishingService.addFishingToDestination(fishingServiceModel, destinationId);
 
-//        return super.redirect("/fishings/all");
         return super.redirect("/destinations/details/" + destinationId);
     }
+
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_USER')")
@@ -73,6 +73,7 @@ public class FishingController extends BaseController {
 
         return super.view("fishing/fishing-all.html", modelAndView);
     }
+
 
     @GetMapping("/all-for-destination/{townName}")
     @PreAuthorize("hasRole('ROLE_USER')")
@@ -90,6 +91,19 @@ public class FishingController extends BaseController {
     @GetMapping("/add-caught-fish")
     public ModelAndView AddCaughtFish(ModelAndView modelAndView) {
         return super.view("fishing/add-caught-fish.html");
+    }
+
+
+    @GetMapping("/my")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("My Fishings")
+    public ModelAndView allMyFishings(ModelAndView modelAndView, Principal principal) {
+        modelAndView.addObject("fishings", this.fishingService.getAllFishingsByUsername(principal.getName())
+                .stream()
+                .map(p -> this.modelMapper.map(p, FishingAllModel.class))
+                .collect(Collectors.toList()));
+
+        return super.view("fishing/fishing-all.html", modelAndView);
     }
 
     //==========================================================================

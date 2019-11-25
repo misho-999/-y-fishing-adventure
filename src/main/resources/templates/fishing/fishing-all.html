@@ -14,14 +14,10 @@
 
 <main>
     <div class="welcome"><strong><em>All Fishings</em></strong></div>
-    private String imgUrl;
-    private String destinationId;
-    private LocalDate date;
-    private String description;
     <div class="row d-flex justify-content-center">
         <th:block th:each="fishing, iter : ${fishings}">
             <div class="col col-md-3 fishing-list">
-                <div class="text-center text-white"><img th:src="${fishing.imgUrl}" width="355" height="200">
+                <div class="text-center text-white"><img th:src="${fishing.imgUrl}" width="300" height="200">
                     <h4 th:text="${fishing.destinationId}"></h4>
                     <h4 th:text="${fishing.date}"></h4>
                     <h4 th:text="${fishing.description}"></h4>

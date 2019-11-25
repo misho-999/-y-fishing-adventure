@@ -13,4 +13,6 @@ public interface FishingService {
 
     List<FishingServiceModel> getAllFishingsByTownName(String townName);
 
+    List<FishingServiceModel> getAllFishingsByUsername(String username);
+
 }

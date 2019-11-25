@@ -17,7 +17,8 @@ public interface DestinationRepository extends JpaRepository<Destination, String
 
     Optional<Destination> findById(String id);
 
-    @Query("SELECT d from Destination d JOIN d.userInfos u where u.id = :id")
-    List<Destination> findDestinationsByUserInfosId(String id);
+//    @Query("SELECT d from Destination d JOIN d.userInfos u where u.id = :id")
+    @Query("SELECT d from Destination d JOIN d.userInfos u where u.user.username = :username")
+    List<Destination> findDestinationsByUsername(String username);
 
 }

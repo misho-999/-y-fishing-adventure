@@ -1,7 +1,5 @@
 package maa.myfishing.data.reposipories;
 
-import jdk.dynalink.linker.LinkerServices;
-import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.Fishing;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,24 +13,10 @@ import java.util.Optional;
 public interface FishingRepository extends JpaRepository<Fishing, String> {
     Optional<Fishing> findByDateAndDescription(LocalDate date, String description);
 
-//    List<Fishing> getAllByDestination(Destination destination);
-
-    //SELECT c1, c2 FROM Country c1 INNER JOIN c1.neighbors c2
-
-//    @Query("SELECT f FROM Fishing f join f.destination d where  = :townName")
-//    @Query(value = "SELECT * from fishings AS f\n" +
-//            "JOIN destinations AS d\n" +
-//            "ON f.destination_id = d.id", nativeQuery = true)
-
-    //  @Query("SELECT d from Destination d JOIN d.userInfos u where u.id = :id")
-//    List<Destination> findDestinationsByUserInfosId(String id);
-
-
-    //    @Query(value = "SELECT * from fishings AS f\n" +
-//            "JOIN destinations AS d\n" +
-//            "ON f.destination_id = d.id\n" +
-//            "WHERE d.town_name = ?;", nativeQuery = true)
-//
     @Query("SELECT f FROM Fishing  f JOIN f.destination d where d.townName =:townName")
     List<Fishing> getAllFishingByTownName(String townName);
+
+    @Query("FROM Fishing f LEFT JOIN f.destination d LEFT JOIN d.userInfos u where u.user.username =:username ")
+    List<Fishing> getAllFishingByUsername(String username);
+
 }

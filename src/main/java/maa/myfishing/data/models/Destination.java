@@ -16,6 +16,7 @@ public class Destination extends BaseEntity {
     private Integer population;
     private Integer altitude;
     private String description;
+    private int fishingsCount;
     private List<UserInfo> userInfos;
     private List<Fishing> fishings;
 
@@ -78,6 +79,15 @@ public class Destination extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Column(name = "fishings_count")
+    public int getFishingsCount() {
+        return fishingsCount;
+    }
+
+    public void setFishingsCount(int fishingsCount) {
+        this.fishingsCount = fishingsCount;
     }
 
     @ManyToMany

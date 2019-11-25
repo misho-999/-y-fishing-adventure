@@ -8,7 +8,7 @@ public class DestinationServiceModel {
     private Integer population;
     private Integer altitude;
     private String description;
-    private int countOfFishings;
+    private int fishingsCount;
 
     public DestinationServiceModel() {
     }
@@ -69,11 +69,11 @@ public class DestinationServiceModel {
         this.description = description;
     }
 
-    public int getCountOfFishings() {
-        return countOfFishings;
+    public int getFishingsCount() {
+        return fishingsCount;
     }
 
-    public void setCountOfFishings(int countOfFishings) {
-        this.countOfFishings = countOfFishings;
+    public void setFishingsCount(int fishingsCount) {
+        this.fishingsCount = fishingsCount;
     }
 }

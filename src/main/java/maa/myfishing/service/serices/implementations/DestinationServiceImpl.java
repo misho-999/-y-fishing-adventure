@@ -3,7 +3,6 @@ package maa.myfishing.service.serices.implementations;
 import maa.myfishing.constants.Constants;
 import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.Fishing;
-import maa.myfishing.data.models.UserInfo;
 import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.FishingRepository;
 import maa.myfishing.data.reposipories.UserInfoRepository;
@@ -59,9 +58,9 @@ public class DestinationServiceImpl implements DestinationService {
     @Override
     public List<DestinationServiceModel> getMyDestinations(String username) {
 
-        UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
+//        UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
 
-        List<DestinationServiceModel> destinations = this.destinationRepository.findDestinationsByUserInfosId(userInfo.getId())
+        List<DestinationServiceModel> destinations = this.destinationRepository.findDestinationsByUsername(username)
                 .stream()
                 .map(d -> this.modelMapper.map(d, DestinationServiceModel.class))
                 .collect(Collectors.toList());

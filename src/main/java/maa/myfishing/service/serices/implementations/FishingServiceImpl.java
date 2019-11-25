@@ -44,6 +44,9 @@ public class FishingServiceImpl implements FishingService {
         Destination destination = this.destinationRepository.findById(destinationId)
                 .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
 
+        destination.setFishingsCount(destination.getFishingsCount() + 1);
+        this.destinationRepository.save(destination);
+
         fishing.setDestination(destination);
 
         this.fishingRepository.saveAndFlush(fishing);
@@ -78,5 +81,14 @@ public class FishingServiceImpl implements FishingService {
         }
 
         return fishingServiceModels;
+    }
+
+    @Override
+    public List<FishingServiceModel> getAllFishingsByUsername(String username) {
+        List<Fishing> fishings = this.fishingRepository.getAllFishingByUsername(username);
+
+        return fishings.stream()
+                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
+                .collect(Collectors.toList());
     }
 }
