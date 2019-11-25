@@ -2,8 +2,10 @@ package maa.myfishing.service.serices.implementations;
 
 import maa.myfishing.constants.Constants;
 import maa.myfishing.data.models.Destination;
+import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.models.UserInfo;
 import maa.myfishing.data.reposipories.DestinationRepository;
+import maa.myfishing.data.reposipories.FishingRepository;
 import maa.myfishing.data.reposipories.UserInfoRepository;
 import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.service.models.DestinationServiceModel;
@@ -18,12 +20,14 @@ import java.util.stream.Collectors;
 @Service
 public class DestinationServiceImpl implements DestinationService {
     private final DestinationRepository destinationRepository;
+    private final FishingRepository fishingRepository;
     private final UserInfoRepository userInfoRepository;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public DestinationServiceImpl(DestinationRepository destinationRepository, UserInfoRepository userInfoRepository, ModelMapper modelMapper) {
+    public DestinationServiceImpl(DestinationRepository destinationRepository, FishingRepository fishingRepository, UserInfoRepository userInfoRepository, ModelMapper modelMapper) {
         this.destinationRepository = destinationRepository;
+        this.fishingRepository = fishingRepository;
         this.userInfoRepository = userInfoRepository;
         this.modelMapper = modelMapper;
     }
@@ -90,6 +94,20 @@ public class DestinationServiceImpl implements DestinationService {
     public void deleteDestination(String id) {
         Destination destination = this.destinationRepository.findById(id)
                 .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
+
+        List<Fishing> fishings = destination.getFishings();
+
+        //Don't delet this code!!!!
+//        fishings.forEach(fishing -> {
+//            fishing.setDestination(null);
+//        });
+
+        fishings.forEach(fishing -> {
+            fishing.setDestination(null);
+            this.fishingRepository.delete(fishing);
+            fishing.setFishes(null);
+            fishing.setLures(null);
+        });
 
         this.destinationRepository.delete(destination);
     }

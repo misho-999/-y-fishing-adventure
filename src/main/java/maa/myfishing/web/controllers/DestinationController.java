@@ -177,12 +177,12 @@ public class DestinationController extends BaseController {
         return super.redirect("/destinations/my");
     }
 
-    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})
-    public ModelAndView handleDestinationNotFound(Exception e) {
-        ModelAndView modelAndView = new ModelAndView("error.html");
-        modelAndView.addObject("message", e.getMessage());
-//        modelAndView.addObject("statusCode", e.getStatusCode());
-
-        return modelAndView;
-    }
+//    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})
+//    public ModelAndView handleDestinationNotFound(Exception e) {
+//        ModelAndView modelAndView = new ModelAndView("error.html");
+//        modelAndView.addObject("message", e.getMessage());
+////        modelAndView.addObject("statusCode", e.getStatusCode());
+//
+//        return modelAndView;
+//    }
 }

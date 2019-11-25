@@ -48,8 +48,6 @@ public class FishingServiceImpl implements FishingService {
 
         this.fishingRepository.saveAndFlush(fishing);
 
-//        this.destinationRepository.save(destination);
-
         return this.modelMapper.map(fishing, FishingServiceModel.class);
     }
 
