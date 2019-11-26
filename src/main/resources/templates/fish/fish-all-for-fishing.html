@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"/>
+</head>
+
+<body>
+
+<header>
+    <th:block th:include="~{fragments/navbar}"/>
+</header>
+
+<main>
+    <div class="welcome"><strong><em>All Fishes For This Destination</em></strong></div>
+    <div class="row d-flex justify-content-center">
+        <th:block th:each="fish, iter : ${fishes}">
+            <div class="col col-md-3 fishing-list">
+                <div class="text-center text-white">
+                    <!--                     <img th:src="${fishing.imgUrl}" width="300" height="200">-->
+                    <h4 th:text="${fish.fishName}"></h4>
+                    <h4 th:text="${fish.weightInKilograms}"></h4>
+                    <h4 th:text="${fish.lengthInCentimeters}"></h4>
+                    <h4 th:text="${fish.fishingId}"></h4>
+                    <a th:href="@{/destinations/edit/{id}(id=${fish.id})}"
+                       class="btn btn-success font-weight-bold text-white">Edit</a>
+                    <a th:href="@{/destinations/delete/{id}(id=${fish.id})}"
+                       class="btn btn-danger font-weight-bold text-white">Delete</a>
+                </div>
+            </div>
+        </th:block>
+
+        <th:block th:if="${fishes.size()} %3 == 1">
+            <div class="col col-md-3 fishing-list"></div>
+            <div class="col col-md-3 fishing-list"></div>
+        </th:block>
+
+        <th:block th:if="${fishes.size()} %3 == 2">
+            <div class="col col-md-3 fishing-list"></div>
+        </th:block>
+
+    </div>
+</main>
+
+<footer>
+    <th:block th:include="~{fragments/footer}"/>
+</footer>
+
+</body>
+</html>

@@ -16,12 +16,12 @@
     <div class="welcome"><strong><em>All Fishings</em></strong></div>
     <div class="row d-flex justify-content-center">
         <th:block th:each="fishing, iter : ${fishings}">
-            <div class="col col-md-3 fishing-list">
+            <div class="col col-md-4 fishing-list">
                 <div class="text-center text-white"><img th:src="${fishing.imgUrl}" width="300" height="200">
-                    <h4 th:text="${fishing.destinationId}"></h4>
-                    <h4 th:text="${fishing.date}"></h4>
-                    <h4 th:text="${fishing.description}"></h4>
-                    <a th:href="@{/fishings/add/{id}(id=${fishing.id})}"
+                    <h4 th:text="'DestinationID: ' + ${fishing.destinationId}"></h4>
+                    <h4 th:text="'Date of creation: '+${fishing.date}"></h4>
+                    <h4 th:text="'Description :'+ ${fishing.description}"></h4>
+                    <a th:href="@{/fish/create/{id}(id=${fishing.id})}"
                        class="btn btn-primary font-weight-bold text-white">Add Fish</a>
                     <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
                        class="btn btn-warning font-weight-bold text-white">Details</a>
@@ -29,9 +29,10 @@
                        class="btn btn-success font-weight-bold text-white">Edit</a>
                     <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"
                        class="btn btn-danger font-weight-bold text-white">Delete</a>
+                    <a th:href="@{/fish/all-for-fishing/{id}(id=${fishing.id})}"
+                       class="btn btn-primary font-weight-bold text-white mt-2">Add Fishes For This Fishing</a>
                 </div>
             </div>
-
         </th:block>
 
         <th:block th:if="${fishings.size()} %3 == 1">

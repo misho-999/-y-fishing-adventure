@@ -49,7 +49,7 @@ public class DestinationServiceImpl implements DestinationService {
 
     @Override
     public List<DestinationServiceModel> getAllDestinations() {
-        return this.destinationRepository.findAll()
+        return this.destinationRepository.findAllByOrderByFishingsCountDesc()
                 .stream()
                 .map(d -> this.modelMapper.map(d, DestinationServiceModel.class))
                 .collect(Collectors.toList());
@@ -58,14 +58,10 @@ public class DestinationServiceImpl implements DestinationService {
     @Override
     public List<DestinationServiceModel> getMyDestinations(String username) {
 
-//        UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
-
-        List<DestinationServiceModel> destinations = this.destinationRepository.findDestinationsByUsername(username)
+        return this.destinationRepository.findDestinationsByUsername(username)
                 .stream()
                 .map(d -> this.modelMapper.map(d, DestinationServiceModel.class))
                 .collect(Collectors.toList());
-
-        return destinations;
     }
 
     @Override

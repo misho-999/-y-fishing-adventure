@@ -15,4 +15,6 @@ public interface FishingService {
 
     List<FishingServiceModel> getAllFishingsByUsername(String username);
 
+    FishingServiceModel getFishingById(String id);
+
 }

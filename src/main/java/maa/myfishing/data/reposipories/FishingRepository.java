@@ -19,4 +19,5 @@ public interface FishingRepository extends JpaRepository<Fishing, String> {
     @Query("FROM Fishing f LEFT JOIN f.destination d LEFT JOIN d.userInfos u where u.user.username =:username ")
     List<Fishing> getAllFishingByUsername(String username);
 
+    Optional<Fishing> findById(String id);
 }

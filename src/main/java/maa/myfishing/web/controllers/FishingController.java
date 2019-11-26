@@ -36,7 +36,7 @@ public class FishingController extends BaseController {
     @GetMapping("/create/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Fishing")
-    public ModelAndView addFishing(@PathVariable String id, ModelAndView modelAndView) {
+    public ModelAndView addFishing() {
         return super.view("fishing/fishing-create.html");
     }
 

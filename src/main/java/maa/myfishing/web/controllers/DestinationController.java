@@ -27,14 +27,12 @@ public class DestinationController extends BaseController {
 
     private final UserInfoService userInfoService;
     private final DestinationService destinationService;
-    private final FishingService fishingService;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public DestinationController(UserInfoService userInfoService, DestinationService destinationService, FishingService fishingService, ModelMapper modelMapper) {
+    public DestinationController(UserInfoService userInfoService, DestinationService destinationService, ModelMapper modelMapper) {
         this.userInfoService = userInfoService;
         this.destinationService = destinationService;
-        this.fishingService = fishingService;
         this.modelMapper = modelMapper;
     }
 
@@ -58,8 +56,6 @@ public class DestinationController extends BaseController {
                 .stream()
                 .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
                 .collect(Collectors.toList()));
-
-//        modelAndView.addObject("countOfFishings", this.fishingService.getCountOfFishingsByDestination());
 
         return super.view("destination/my-destinations.html", modelAndView);
     }
@@ -88,7 +84,6 @@ public class DestinationController extends BaseController {
     }
 
 
-    //=======================================================================
     @GetMapping("/create")
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Add Destination")
@@ -96,10 +91,6 @@ public class DestinationController extends BaseController {
         return super.view("destination/create-destination.html");
     }
 
-//    @ModelAttribute(value = "destinationModel")
-//    public DestinationAddModel destinationAddModel() {
-//        return new DestinationAddModel();
-//    }
 
     @PostMapping("/create")
     @PreAuthorize("isAuthenticated()")
@@ -113,8 +104,8 @@ public class DestinationController extends BaseController {
         this.userInfoService.addDestination(destinationServiceModel.getTownName(), principal.getName());
 
         return super.redirect("/destinations/my");
-//        return super.redirect("/destinations/my");
     }
+
 
     @GetMapping("/details/{id}")
     @PreAuthorize("isAuthenticated()")
@@ -125,12 +116,11 @@ public class DestinationController extends BaseController {
 
         modelAndView.addObject("destination", destination);
 
-        modelAndView.addObject("userInfo",this.modelMapper
+        modelAndView.addObject("userInfo", this.modelMapper
                 .map(this.userInfoService.getUserByUsername(principal.getName()), UserInfoModel.class));
 
         return super.view("destination/details-destination.html", modelAndView);
     }
-
 
 
     @GetMapping("/edit/{id}")
@@ -146,12 +136,12 @@ public class DestinationController extends BaseController {
         return super.view("destination/edit-destination", modelAndView);
     }
 
+
     @PostMapping("/edit/{id}")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView editProductConfirm(@PathVariable String id, @ModelAttribute DestinationAddModel destinationAddModel) {
         this.destinationService.editDestination(id, this.modelMapper.map(destinationAddModel, DestinationServiceModel.class));
 
-//        return super.redirect("/destinations/details/" + id);
         return super.redirect("/destinations/my");
     }
 
@@ -161,7 +151,6 @@ public class DestinationController extends BaseController {
     public ModelAndView deleteProduct(@PathVariable String id, ModelAndView modelAndView) {
         DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationById(id);
         DestinationAddModel destinationAddModel = this.modelMapper.map(destinationServiceModel, DestinationAddModel.class);
-//        model.setCategories(productServiceModel.getCategories().stream().map(c -> c.getName()).collect(Collectors.toList()));
 
         modelAndView.addObject("destination", destinationAddModel);
         modelAndView.addObject("destinationId", id);
@@ -177,12 +166,12 @@ public class DestinationController extends BaseController {
         return super.redirect("/destinations/my");
     }
 
-//    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})
-//    public ModelAndView handleDestinationNotFound(Exception e) {
-//        ModelAndView modelAndView = new ModelAndView("error.html");
-//        modelAndView.addObject("message", e.getMessage());
-////        modelAndView.addObject("statusCode", e.getStatusCode());
-//
-//        return modelAndView;
-//    }
+    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})
+    public ModelAndView handleDestinationNotFound(Exception e) {
+        ModelAndView modelAndView = new ModelAndView("error.html");
+        modelAndView.addObject("message", e.getMessage());
+//        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
+    }
 }

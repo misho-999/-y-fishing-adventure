@@ -12,12 +12,15 @@ import java.util.Optional;
 
 @Repository
 public interface DestinationRepository extends JpaRepository<Destination, String> {
+    List<Destination> findAllByOrderByFishingsCountDesc();
+
+
+
 
     Optional<Destination> findByTownName(String townName);
 
     Optional<Destination> findById(String id);
 
-//    @Query("SELECT d from Destination d JOIN d.userInfos u where u.id = :id")
     @Query("SELECT d from Destination d JOIN d.userInfos u where u.user.username = :username")
     List<Destination> findDestinationsByUsername(String username);
 

@@ -14,29 +14,30 @@
     <div class="welcome"><strong><em>Add Caught Fish</em></strong></div>
     <div class="row justify-content-md-center text-center">
         private String fishName;
-        private Double weightInKilograms;
-        private Integer lengthInCentimeters;
-        <form>
+        private double weightInKilograms;
+        private int lengthInCentimeters;
+        <form id="create-fish" class="form w-25 mx-auto" th:action="@{/fish/create}" method="post"
+              enctype="multipart/form-data">
+            <input type="hidden" name="fishingId" th:value="*{#httpServletRequest.requestURL}">
             <div class="form-row">
                 <div class="form-group col-md ">
                     <label for="fishName"><em><strong class="label-color">Fish Name</strong></em></label>
-                    <input type="text" class="form-control" id="fishName" placeholder="Fish Name..." name="fishName"
-                           th:value="*{fishName}">
+                    <input type="text" class="form-control" id="fishName" placeholder="Fish Name..." name="fishName">
                 </div>
             </div>
-            <div class="form-group col-md ">
-                <label for="weightInKilograms"><em><strong class="label-color">Weight In Kilograms
-                    Name</strong></em></label>
-                <input type="text" class="form-control" id="weightInKilograms" placeholder="Weight In Kilograms..."
-                       name="weightInKilograms"
-                       th:value="*{weightInKilograms}">
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <label for="weightInKilograms"><em><strong class="label-color">Weight In Kilograms</strong></em></label>
+                    <input type="number" min="0.00" step=".01"  class="form-control" id="weightInKilograms" placeholder="Weight In Kilograms(between 0,1 and 200kg)..."
+                           name="weightInKilograms">
+                </div>
             </div>
-            <div class="form-group col-md ">
-                <label for="lengthInCentimeters"><em><strong class="label-color">Length In
-                    Centimeters</strong></em></label>
-                <input type="text" class="form-control" id="lengthInCentimeters" placeholder="Length In Centimeters..."
-                       name="lengthInCentimeters"
-                       th:value="*{lengthInCentimeters}">
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <label for="lengthInCentimeters"><em><strong class="label-color">Length In Centimeters</strong></em></label>
+                    <input type="number" class="form-control" id="lengthInCentimeters" placeholder="Length In Centimeters(between 20 and 300cm)... "
+                           name="lengthInCentimeters">
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Add Caught Fish</button>
         </form>
