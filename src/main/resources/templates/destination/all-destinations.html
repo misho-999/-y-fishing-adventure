@@ -6,14 +6,17 @@
     <th:block th:include="~{fragments/head}"/>
 </head>
 
+<link rel="stylesheet" href="/css/allDestinations.css">
+
 <body class="container-fluid destinations">
 
 <header>
     <th:block th:include="~{fragments/navbar}"/>
 </header>
 
-<main class="mt-3">
+<main>
     <h1 class="text-center text-dark">All Destinations</h1>
+
     <table class="table table-hover w-75 mx-auto label-color font-weight-bold">
         <thead>
         <tr class="row mx-auto">
@@ -60,6 +63,7 @@
 
 <footer>
     <th:block th:include="~{fragments/footer}"/>
+    <th:block th:include="~{fragments/loader}"/>
 </footer>
 
 <script src="/js/jquery-3.3.1.min.js"></script>

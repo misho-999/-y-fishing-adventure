@@ -37,9 +37,11 @@ fetch(URLS.destinations)
         allDestinations.forEach((destination, index) => {
             let button = addButton(destination, index, myDestinations);
             if (isInMyDestinations(destination, myDestinations)) {
-                $(`#${index+1}`).remove();
+                $(`#${index + 1}`).remove();
             }
         });
+
+        loader.hide();
     });
 
 

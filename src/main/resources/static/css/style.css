@@ -14,7 +14,6 @@ body {
     background-image: url(/jpg/Romantica.jpg);
 }
 
-
 footer {
     background-color: #d1ecf1;
     position: fixed;
@@ -59,7 +58,6 @@ footer {
     font-size: 15px;
 }
 
-/*=============================================*/
 .fishing-list{
     padding: 30px;
     margin: 30px;
@@ -67,3 +65,5 @@ footer {
     border-radius: .25rem;
     max-width: 100%;
 }
+
+/*=============================================*/
