@@ -44,6 +44,7 @@ public class FishServiceImpl implements FishService {
 
     @Override
     public List<FishServiceModel> getAllFishesByFishingId(String id) {
+
         List<Fish> allByFishingId = this.fishRepository.findAllByFishingId(id);
 
         return allByFishingId.stream()

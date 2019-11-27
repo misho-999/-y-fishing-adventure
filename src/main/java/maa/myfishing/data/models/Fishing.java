@@ -12,6 +12,7 @@ public class Fishing extends BaseEntity {
     private String description;
     private Boat boat;
     private Destination destination;
+    private String creator;
     private List<Fish> fishes;
     private List<Lure> lures;
 
@@ -44,6 +45,15 @@ public class Fishing extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Column(name = "creator", nullable = false)
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
     @OneToOne(mappedBy = "fishing")

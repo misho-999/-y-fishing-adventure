@@ -36,7 +36,7 @@
 <!--                <th:bolck th:if="${#authentication.getPrincipal().getUsername()} != ${destination.creator}">-->
                 <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
                     <a th:href="@{/fishings/create/{id}(id=${destination.id})}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">Add Fishing</a>
+                       class="btn btn-primary font-weight-bold text-white mt-2">Create Fishing</a>
                 </div>
                 <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
                     <a th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"

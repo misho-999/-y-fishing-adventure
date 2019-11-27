@@ -14,9 +14,6 @@ import java.util.Optional;
 public interface DestinationRepository extends JpaRepository<Destination, String> {
     List<Destination> findAllByOrderByFishingsCountDesc();
 
-
-
-
     Optional<Destination> findByTownName(String townName);
 
     Optional<Destination> findById(String id);

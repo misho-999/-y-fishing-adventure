@@ -45,7 +45,7 @@ public class DestinationController extends BaseController {
                 .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
                 .collect(Collectors.toList()));
 
-        return super.view("destination/all-destinations.html", modelAndView);
+        return super.view("destination/all-destinations.html", modelAndView); //Няма View
     }
 
     @GetMapping("/my")
@@ -80,7 +80,7 @@ public class DestinationController extends BaseController {
 
         this.userInfoService.addDestination(townName, principal.getName());
 
-        return super.redirect("/destinations/my");
+        return super.redirect("/destinations/all");
     }
 
 

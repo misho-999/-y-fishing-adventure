@@ -2,6 +2,7 @@ package maa.myfishing.service.serices.implementations;
 
 import maa.myfishing.constants.Constants;
 import maa.myfishing.data.models.Destination;
+import maa.myfishing.data.models.Fish;
 import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.FishingRepository;
@@ -59,40 +60,23 @@ public class FishingServiceImpl implements FishingService {
 
     @Override
     public List<FishingServiceModel> getAllFishings() {
-
         List<Fishing> allFishings = this.fishingRepository.findAll();
-        List<FishingServiceModel> fishingServiceModels = allFishings.stream()
-                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
-                .collect(Collectors.toList());
-        for (int i = 0; i < allFishings.size(); i++) {
-            fishingServiceModels.get(i).setDestinationId(allFishings.get(i).getDestination().getId());
-        }
 
-        return fishingServiceModels;
+        return setTownName(allFishings);
     }
 
     @Override
     public List<FishingServiceModel> getAllFishingsByTownName(String townName) {
         List<Fishing> allFishings = this.fishingRepository.getAllFishingByTownName(townName);
 
-        List<FishingServiceModel> fishingServiceModels = allFishings.stream()
-
-                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
-                .collect(Collectors.toList());
-        for (int i = 0; i < allFishings.size(); i++) {
-            fishingServiceModels.get(i).setDestinationId(allFishings.get(i).getDestination().getId());
-        }
-
-        return fishingServiceModels;
+        return this.setTownName(allFishings);
     }
 
     @Override
     public List<FishingServiceModel> getAllFishingsByUsername(String username) {
-        List<Fishing> fishings = this.fishingRepository.getAllFishingByUsername(username);
+        List<Fishing> allFishings = this.fishingRepository.getAllFishingByUsername(username);
 
-        return fishings.stream()
-                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
-                .collect(Collectors.toList());
+        return setTownName(allFishings);
     }
 
     @Override
@@ -101,5 +85,17 @@ public class FishingServiceImpl implements FishingService {
                 .orElseThrow(() -> new FishingNotFoundException(Constants.FISHING_WITH_ID_NOT_FOUND_EXCEPTION));
 
         return this.modelMapper.map(fishing, FishingServiceModel.class);
+    }
+
+    private List<FishingServiceModel> setTownName(List<Fishing> fishings) {
+        List<FishingServiceModel> fishingServiceModels = fishings.stream()
+                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
+                .collect(Collectors.toList());
+
+        for (int i = 0; i < fishings.size(); i++) {
+            fishingServiceModels.get(i).setTownName(fishings.get(i).getDestination().getTownName());
+        }
+
+        return fishingServiceModels;
     }
 }

@@ -13,14 +13,22 @@
 </header>
 
 <main>
+<!--    <th:block th:switch="*{#authentication.getPrincipal().getUsername()}">-->
+<!--        <a th:case="${destination.creator}" th:href="@{/destinations/edit/{id}(id=${destination.id})}"-->
+<!--           class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>-->
+<!--        <div th:case="${destination.creator}" class="welcome"><strong><em>All Fishings</em></strong></div>-->
+<!--    </th:block>-->
+
+
     <div class="welcome"><strong><em>All Fishings</em></strong></div>
     <div class="row d-flex justify-content-center">
         <th:block th:each="fishing, iter : ${fishings}">
-            <div class="col col-md-4 fishing-list">
+            <div class="col col-md-3 fishing-list">
                 <div class="text-center text-white"><img th:src="${fishing.imgUrl}" width="300" height="200">
-                    <h4 th:text="'DestinationID: ' + ${fishing.destinationId}"></h4>
-                    <h4 th:text="'Date of creation: '+${fishing.date}"></h4>
-                    <h4 th:text="'Description :'+ ${fishing.description}"></h4>
+                    <h4 th:text="'Creator: '+ ${fishing.creator}"></h4>
+                    <h4 th:text="'Destination: ' + ${fishing.townName}"></h4>
+                    <h4 th:text="'Created on: '+${fishing.date}"></h4>
+                    <h4 th:text="'Description: '+ ${fishing.description}"></h4>
                     <a th:href="@{/fish/create/{id}(id=${fishing.id})}"
                        class="btn btn-primary font-weight-bold text-white">Add Fish</a>
                     <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
@@ -30,7 +38,7 @@
                     <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"
                        class="btn btn-danger font-weight-bold text-white">Delete</a>
                     <a th:href="@{/fish/all-for-fishing/{id}(id=${fishing.id})}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">Add Fishes For This Fishing</a>
+                       class="btn btn-primary font-weight-bold text-white mt-2">All Fishes For This Fishing</a>
                 </div>
             </div>
         </th:block>

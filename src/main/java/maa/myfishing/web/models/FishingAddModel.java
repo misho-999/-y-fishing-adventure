@@ -11,6 +11,7 @@ public class FishingAddModel {
     private LocalDate date;// На BindingModela трябва да има @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String description;
     private String destinationId;
+    private String creator;
 
     public FishingAddModel() {
     }
@@ -46,5 +47,13 @@ public class FishingAddModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 }

@@ -5,9 +5,10 @@ import java.time.LocalDate;
 public class FishingAllModel {
     private String id;
     private String imgUrl;
-    private String destinationId;
     private LocalDate date;
     private String description;
+    private String townName;
+    private String creator;
 
     public FishingAllModel() {
     }
@@ -28,13 +29,6 @@ public class FishingAllModel {
         this.imgUrl = imgUrl;
     }
 
-    public String getDestinationId() {
-        return destinationId;
-    }
-
-    public void setDestinationId(String destinationId) {
-        this.destinationId = destinationId;
-    }
 
     public LocalDate getDate() {
         return date;
@@ -50,5 +44,21 @@ public class FishingAllModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getTownName() {
+        return townName;
+    }
+
+    public void setTownName(String townName) {
+        this.townName = townName;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 }
