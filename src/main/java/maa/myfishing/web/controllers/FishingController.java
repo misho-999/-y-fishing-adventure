@@ -6,7 +6,7 @@ import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.CloudinaryService;
 import maa.myfishing.service.serices.FishingService;
 import maa.myfishing.web.annotations.PageTitle;
-import maa.myfishing.web.models.FishingAddModel;
+import maa.myfishing.web.models.FishingCreateModel;
 import maa.myfishing.web.models.FishingAllModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,20 +41,20 @@ public class FishingController extends BaseController {
     }
 
     @ModelAttribute(value = "fishingAddModel")
-    public FishingAddModel fishingAddModel() {
-        return new FishingAddModel();
+    public FishingCreateModel fishingAddModel() {
+        return new FishingCreateModel();
     }
 
     @PostMapping("/create")
     @PreAuthorize("hasRole('ROLE_USER')")
     public ModelAndView destinationAddConfirm(ModelAndView modelAndView, @ModelAttribute(name = "fishingAddModel")
-            FishingAddModel fishingAddModel) throws IOException {
+            FishingCreateModel fishingCreateModel) throws IOException {
 
-        FishingServiceModel fishingServiceModel = this.modelMapper.map(fishingAddModel, FishingServiceModel.class);
+        FishingServiceModel fishingServiceModel = this.modelMapper.map(fishingCreateModel, FishingServiceModel.class);
 
-        fishingServiceModel.setImgUrl(this.cloudinaryService.uploadImage(fishingAddModel.getImage()));
+        fishingServiceModel.setImgUrl(this.cloudinaryService.uploadImage(fishingCreateModel.getImage()));
 
-        String destinationId = fishingAddModel.getDestinationId().replace("http://localhost:8000/fishings/create/", "");
+        String destinationId = fishingCreateModel.getDestinationId().replace("http://localhost:8000/fishings/create/", "");
 
         this.fishingService.addFishingToDestination(fishingServiceModel, destinationId);
 

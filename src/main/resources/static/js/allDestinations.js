@@ -47,7 +47,6 @@ fetch(URLS.destinations)
 
 $('#items-table').on('submit', '.buy-item-form', function (ev) {
     const url = $(this).attr('action');
-
     loader.show();
     fetch(url, {method: 'post'})
         .then(data => {

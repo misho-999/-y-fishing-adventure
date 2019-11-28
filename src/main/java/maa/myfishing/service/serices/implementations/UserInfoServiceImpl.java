@@ -1,6 +1,6 @@
 package maa.myfishing.service.serices.implementations;
 
-import maa.myfishing.constants.Constants;
+import maa.myfishing.constants.validation.UserValidationConstants;
 import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.UserInfo;
 import maa.myfishing.data.reposipories.DestinationRepository;
@@ -43,7 +43,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     public void addDestination(String townName, String username) {
         UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
         if (isDestinationPresent(townName, username)) {
-            throw new TownAlreadyExistException(Constants.TOWN_ALREADY_EXIST_EXCEPTION);
+            throw new TownAlreadyExistException(UserValidationConstants.USER_HAS_ALREADY_ADDED_DESTINATION);
         }
 
         DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationByTownName(townName);

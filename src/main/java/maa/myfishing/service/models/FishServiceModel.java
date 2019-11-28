@@ -5,6 +5,7 @@ public class FishServiceModel {
     private Double weightInKilograms;
     private Integer lengthInCentimeters;
     private String fishingId;
+    private String fishingUrl;
 
     public FishServiceModel() {
     }
@@ -39,5 +40,13 @@ public class FishServiceModel {
 
     public void setFishingId(String fishingId) {
         this.fishingId = fishingId;
+    }
+
+    public String getFishingUrl() {
+        return fishingUrl;
+    }
+
+    public void setFishingUrl(String fishingUrl) {
+        this.fishingUrl = fishingUrl;
     }
 }

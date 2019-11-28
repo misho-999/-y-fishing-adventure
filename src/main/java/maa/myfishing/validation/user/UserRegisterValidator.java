@@ -1,7 +1,7 @@
 package maa.myfishing.validation.user;
 
 import maa.myfishing.data.reposipories.UserRepository;
-import maa.myfishing.validation.ValidationConstants;
+import maa.myfishing.constants.validation.UserValidationConstants;
 import maa.myfishing.validation.annotation.Validator;
 import maa.myfishing.web.models.UserRegisterModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,27 +28,27 @@ public class UserRegisterValidator implements org.springframework.validation.Val
 
         if (this.userRepository.findByUsername(userRegisterModel.getUsername()).isPresent()) {
             errors.rejectValue("username",
-                    String.format(ValidationConstants.USERNAME_ALREADY_EXISTS, userRegisterModel.getUsername()),
-                    String.format(ValidationConstants.USERNAME_ALREADY_EXISTS, userRegisterModel.getUsername()));
+                    String.format(UserValidationConstants.USERNAME_ALREADY_EXISTS, userRegisterModel.getUsername()),
+                    String.format(UserValidationConstants.USERNAME_ALREADY_EXISTS, userRegisterModel.getUsername()));
         }
 
         if (userRegisterModel.getUsername().length() < 3 || userRegisterModel.getUsername().length() > 10) {
             errors.rejectValue(
                     "username",
-                    ValidationConstants.USERNAME_LENGTH,
-                    ValidationConstants.USERNAME_LENGTH
+                    UserValidationConstants.USERNAME_LENGTH,
+                    UserValidationConstants.USERNAME_LENGTH
             );
         }
 
         if (!userRegisterModel.getPassword().equals(userRegisterModel.getConfirmPassword())) {
-            errors.rejectValue("password", ValidationConstants.PASSWORDS_DO_NOT_MATCH,
-                    ValidationConstants.PASSWORDS_DO_NOT_MATCH);
+            errors.rejectValue("password", UserValidationConstants.PASSWORDS_DO_NOT_MATCH,
+                    UserValidationConstants.PASSWORDS_DO_NOT_MATCH);
         }
 
         if (this.userRepository.findByEmail(userRegisterModel.getEmail()).isPresent()) {
             errors.rejectValue("email",
-                    String.format(ValidationConstants.EMAIL_ALREADY_EXISTS, userRegisterModel.getEmail()),
-                    String.format(ValidationConstants.EMAIL_ALREADY_EXISTS, userRegisterModel.getEmail()));
+                    String.format(UserValidationConstants.EMAIL_ALREADY_EXISTS, userRegisterModel.getEmail()),
+                    String.format(UserValidationConstants.EMAIL_ALREADY_EXISTS, userRegisterModel.getEmail()));
         }
     }
 }

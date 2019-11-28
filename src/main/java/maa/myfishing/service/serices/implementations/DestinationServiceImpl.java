@@ -1,6 +1,6 @@
 package maa.myfishing.service.serices.implementations;
 
-import maa.myfishing.constants.Constants;
+import maa.myfishing.constants.validation.DestinationValidationConstants;
 import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.reposipories.DestinationRepository;
@@ -42,7 +42,7 @@ public class DestinationServiceImpl implements DestinationService {
     public DestinationServiceModel getDestinationByTownName(String townName) {
 
         Destination destination = this.destinationRepository.findByTownName(townName)
-                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_NAME_NOT_FOUND_EXCEPTION));
+                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_NAME_NOT_FOUND_EXCEPTION));
 
         return this.modelMapper.map(destination, DestinationServiceModel.class);
     }
@@ -67,7 +67,7 @@ public class DestinationServiceImpl implements DestinationService {
     @Override
     public DestinationServiceModel getDestinationById(String id) {
         Destination destination = this.destinationRepository.findById(id)
-                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
+                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
 
         return this.modelMapper.map(destination, DestinationServiceModel.class);
     }
@@ -75,7 +75,7 @@ public class DestinationServiceImpl implements DestinationService {
     @Override
     public DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel) {
         Destination destination = this.destinationRepository.findById(id)
-                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
+                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
         destination.setImgUrl(destinationServiceModel.getImgUrl());
         destination.setTownName(destinationServiceModel.getTownName());
         destination.setPopulation(destinationServiceModel.getPopulation());
@@ -88,7 +88,7 @@ public class DestinationServiceImpl implements DestinationService {
     @Override
     public void deleteDestination(String id) {
         Destination destination = this.destinationRepository.findById(id)
-                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
+                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
 
         List<Fishing> fishings = destination.getFishings();
 
@@ -105,5 +105,12 @@ public class DestinationServiceImpl implements DestinationService {
         });
 
         this.destinationRepository.delete(destination);
+    }
+
+    @Override
+    public List<DestinationServiceModel> getTopFiveDestination() {
+        return this.destinationRepository.findTop5ByOrderByFishingsCountDesc().stream()
+                .map(d-> this.modelMapper.map(d, DestinationServiceModel.class))
+                .collect(Collectors.toList());
     }
 }

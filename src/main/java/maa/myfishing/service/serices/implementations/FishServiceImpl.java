@@ -29,11 +29,14 @@ public class FishServiceImpl implements FishService {
 
     @Override
     public void createFish(FishServiceModel fishServiceModel) {
+
+        if (fishServiceModel.getFishingId().equals("")) {
+            fishServiceModel.setFishingId(fishServiceModel.getFishingUrl().replace("http://localhost:8000/fish/create/", ""));
+        }
+
         Fish fish = this.modelMapper.map(fishServiceModel, Fish.class);
 
-        String fishingId = fishServiceModel.getFishingId().replace("http://localhost:8000/fish/create/", "");
-
-        FishingServiceModel fishingServiceModel = this.fishingService.getFishingById(fishingId);
+        FishingServiceModel fishingServiceModel = this.fishingService.getFishingById(fishServiceModel.getFishingId());
 
         Fishing fishing = this.modelMapper.map(fishingServiceModel, Fishing.class);
 

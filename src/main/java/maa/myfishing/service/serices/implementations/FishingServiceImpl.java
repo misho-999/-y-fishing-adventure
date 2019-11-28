@@ -1,15 +1,14 @@
 package maa.myfishing.service.serices.implementations;
 
-import maa.myfishing.constants.Constants;
+import maa.myfishing.constants.validation.DestinationValidationConstants;
+import maa.myfishing.constants.validation.FishingValidationConstants;
 import maa.myfishing.data.models.Destination;
-import maa.myfishing.data.models.Fish;
 import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.FishingRepository;
 import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.eroors.FishingAlreadyExistsException;
 import maa.myfishing.eroors.FishingNotFoundException;
-import maa.myfishing.service.models.FishServiceModel;
 import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.FishingService;
 import org.modelmapper.ModelMapper;
@@ -17,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -40,13 +38,13 @@ public class FishingServiceImpl implements FishingService {
                 .orElse(null);
 
         if (fishing != null) {
-            throw new FishingAlreadyExistsException(Constants.FISHING_ALREADY_EXIST_EXCEPTION);
+            throw new FishingAlreadyExistsException(FishingValidationConstants.FISHING_ALREADY_EXIST_EXCEPTION);
         }
 
         fishing = this.modelMapper.map(fishingServiceModel, Fishing.class);
 
         Destination destination = this.destinationRepository.findById(destinationId)
-                .orElseThrow(() -> new DestinationNotFoundException(Constants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
+                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
 
         destination.setFishingsCount(destination.getFishingsCount() + 1);
         this.destinationRepository.save(destination);
@@ -82,7 +80,7 @@ public class FishingServiceImpl implements FishingService {
     @Override
     public FishingServiceModel getFishingById(String id) {
         Fishing fishing = this.fishingRepository.findById(id)
-                .orElseThrow(() -> new FishingNotFoundException(Constants.FISHING_WITH_ID_NOT_FOUND_EXCEPTION));
+                .orElseThrow(() -> new FishingNotFoundException(FishingValidationConstants.FISHING_WITH_ID_NOT_FOUND_EXCEPTION));
 
         return this.modelMapper.map(fishing, FishingServiceModel.class);
     }

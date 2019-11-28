@@ -4,10 +4,10 @@ import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.eroors.TownAlreadyExistException;
 import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.serices.DestinationService;
-import maa.myfishing.service.serices.FishingService;
 import maa.myfishing.service.serices.UserInfoService;
+import maa.myfishing.validation.destination.DestinationCreateValidator;
 import maa.myfishing.web.annotations.PageTitle;
-import maa.myfishing.web.models.DestinationAddModel;
+import maa.myfishing.web.models.DestinationCreateModel;
 import maa.myfishing.web.models.DestinationAllModel;
 import maa.myfishing.web.models.DestinationDetailsViewModel;
 import maa.myfishing.web.models.UserInfoModel;
@@ -15,9 +15,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.security.Principal;
 import java.util.stream.Collectors;
 
@@ -27,14 +29,47 @@ public class DestinationController extends BaseController {
 
     private final UserInfoService userInfoService;
     private final DestinationService destinationService;
+    private final DestinationCreateValidator destinationCreateValidator;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public DestinationController(UserInfoService userInfoService, DestinationService destinationService, ModelMapper modelMapper) {
+    public DestinationController(UserInfoService userInfoService, DestinationService destinationService, DestinationCreateValidator destinationCreateValidator, ModelMapper modelMapper) {
         this.userInfoService = userInfoService;
         this.destinationService = destinationService;
+        this.destinationCreateValidator = destinationCreateValidator;
         this.modelMapper = modelMapper;
     }
+
+
+    @GetMapping("/create")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("Add Destination")
+    public ModelAndView add(ModelAndView modelAndView, @ModelAttribute(name = "model") DestinationCreateModel destinationCreateModel) {
+        return super.view("destination/create-destination.html");
+    }
+
+    @PostMapping("/create")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView destinationAddConfirm(@Valid ModelAndView modelAndView, @ModelAttribute(name = "model")
+            DestinationCreateModel destinationCreateModel, Principal principal, BindingResult bindingResult) {
+
+        this.destinationCreateValidator.validate(destinationCreateModel, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            modelAndView.addObject("model", destinationCreateModel);
+
+            return super.view("destination/create-destination.html", modelAndView);
+        }
+
+        DestinationServiceModel destinationServiceModel = this.modelMapper.map(destinationCreateModel, DestinationServiceModel.class);
+
+        this.destinationService.createDestination(destinationServiceModel);
+
+        this.userInfoService.addDestination(destinationServiceModel.getTownName(), principal.getName());
+
+        return super.redirect("/destinations/my");
+    }
+
 
     @GetMapping("/all")
     @PreAuthorize("isAuthenticated()")
@@ -76,35 +111,13 @@ public class DestinationController extends BaseController {
     @PostMapping("/add-to-my/{townName}")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView addToMyDestinationsConfirm(@PathVariable String townName
-            , @ModelAttribute DestinationAddModel destinationAddModel, Principal principal) {
+            , @ModelAttribute DestinationCreateModel destinationCreateModel, Principal principal) {
 
         this.userInfoService.addDestination(townName, principal.getName());
 
         return super.redirect("/destinations/all");
     }
 
-
-    @GetMapping("/create")
-    @PreAuthorize("isAuthenticated()")
-    @PageTitle("Add Destination")
-    public ModelAndView add(ModelAndView modelAndView) {
-        return super.view("destination/create-destination.html");
-    }
-
-
-    @PostMapping("/create")
-    @PreAuthorize("isAuthenticated()")
-    public ModelAndView destinationAddConfirm(ModelAndView modelAndView, @ModelAttribute(name = "destinationModel")
-            DestinationAddModel destinationAddModel, Principal principal) {
-
-        DestinationServiceModel destinationServiceModel = this.modelMapper.map(destinationAddModel, DestinationServiceModel.class);
-
-        this.destinationService.createDestination(destinationServiceModel);
-
-        this.userInfoService.addDestination(destinationServiceModel.getTownName(), principal.getName());
-
-        return super.redirect("/destinations/my");
-    }
 
 
     @GetMapping("/details/{id}")
@@ -128,7 +141,7 @@ public class DestinationController extends BaseController {
     @PageTitle("Edit Destination")
     public ModelAndView editProduct(@PathVariable String id, ModelAndView modelAndView) {
         DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationById(id);
-        DestinationAddModel destinationAddModel = this.modelMapper.map(destinationServiceModel, DestinationAddModel.class);
+        DestinationCreateModel destinationCreateModel = this.modelMapper.map(destinationServiceModel, DestinationCreateModel.class);
 
         modelAndView.addObject("destination", destinationServiceModel);
         modelAndView.addObject("destinationId", id);
@@ -139,8 +152,8 @@ public class DestinationController extends BaseController {
 
     @PostMapping("/edit/{id}")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView editProductConfirm(@PathVariable String id, @ModelAttribute DestinationAddModel destinationAddModel) {
-        this.destinationService.editDestination(id, this.modelMapper.map(destinationAddModel, DestinationServiceModel.class));
+    public ModelAndView editProductConfirm(@PathVariable String id, @ModelAttribute DestinationCreateModel destinationCreateModel) {
+        this.destinationService.editDestination(id, this.modelMapper.map(destinationCreateModel, DestinationServiceModel.class));
 
         return super.redirect("/destinations/my");
     }
@@ -150,9 +163,9 @@ public class DestinationController extends BaseController {
     @PageTitle("Delete Destination")
     public ModelAndView deleteProduct(@PathVariable String id, ModelAndView modelAndView) {
         DestinationServiceModel destinationServiceModel = this.destinationService.getDestinationById(id);
-        DestinationAddModel destinationAddModel = this.modelMapper.map(destinationServiceModel, DestinationAddModel.class);
+        DestinationCreateModel destinationCreateModel = this.modelMapper.map(destinationServiceModel, DestinationCreateModel.class);
 
-        modelAndView.addObject("destination", destinationAddModel);
+        modelAndView.addObject("destination", destinationCreateModel);
         modelAndView.addObject("destinationId", id);
 
         return super.view("destination/delete-destination", modelAndView);

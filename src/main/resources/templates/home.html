@@ -14,33 +14,41 @@
 
 <main>
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <h1 class="text-center welcome"><em>Welcome Add Fishing to choose destination or create new Destination</em>
+        <div class="row justify-content-center mt-5">
+            <h1 class="text-center welcome"><em>Welcome to My Fishing Adventures,
+                [[*{#authentication.getPrincipal().getUsername()}]]!</em>
             </h1>
         </div>
-        <div class="row d-flex justify-content-center">
-            <div class="products-navigation col-md-3">
-                <h2 class="font-weight-bold">Navigation</h2>
-                <form class="mt-3">
-                    <div class="custom-control custom-radio mt-3">
-                        <input type="radio" id="allRadio" name="selection" class="custom-control-input" value="all"
-                               checked="checked">
-                        <label class="h4 custom-control-label" for="allRadio">All</label>
-                    </div>
 
-                </form>
-            </div>
-            <div class="data col-md-8">
-                <h1 class="text-center font-weight-bold">Products</h1>
-                <div class="products-data"></div>
-            </div>
+        <div class="row justify-content-center">
+            <form id="create-destination" class="form w-25 mx-auto" th:action="@{/api/top-five}" method="post"
+                  enctype="multipart/form-data">
+                <div class="form-check">
+                    <input class="form-check-input myRadio" type="radio" name="radio" id="exampleRadios1"
+                           value="option1">
+                    <label class="form-check-label label-color" for="exampleRadios1">Top 5 Fishing Destinations</label>
+                </div>
+                <br>
+                <div class="form-check">
+                    <input class="form-check-input myRadio" type="radio" name="radio" id="exampleRadios2"
+                           value="option2">
+                    <label class="form-check-label label-color text-center" for="exampleRadios2">Top 5 Successful
+                        Fishings</label>
+                </div>
+            </form>
         </div>
+        <input type="radio" class="message_pri" name="message_pri" value="1"/> ON
+        <input type="radio" class="message_pri" name="message_pri" value="2"/> OFF
+        <input type="radio" class="message_pri" name="message_pri" value="3"/> FOLLOWERS
     </div>
 </main>
 
 <footer>
     <th:block th:include="~{fragments/footer}"/>
 </footer>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/topFive.js"></script>
 
 </body>
 </html>
