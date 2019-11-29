@@ -15,6 +15,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Validator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,17 +23,23 @@ import java.util.stream.Collectors;
 public class FishingServiceImpl implements FishingService {
     private final FishingRepository fishingRepository;
     private final DestinationRepository destinationRepository;
+    private final Validator validator;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public FishingServiceImpl(FishingRepository fishingRepository, DestinationRepository destinationRepository, ModelMapper modelMapper) {
+    public FishingServiceImpl(FishingRepository fishingRepository, DestinationRepository destinationRepository, Validator validator, ModelMapper modelMapper) {
         this.fishingRepository = fishingRepository;
         this.destinationRepository = destinationRepository;
+        this.validator = validator;
         this.modelMapper = modelMapper;
     }
 
     @Override
     public FishingServiceModel addFishingToDestination(FishingServiceModel fishingServiceModel, String destinationId) {
+        if (!validator.validate(fishingServiceModel).isEmpty()) {
+            throw new IllegalArgumentException("Invalid Fishing");
+        }
+
         Fishing fishing = this.fishingRepository
                 .findByDateAndDescription(fishingServiceModel.getDate(), fishingServiceModel.getDescription())
                 .orElse(null);

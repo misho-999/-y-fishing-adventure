@@ -2,42 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/date/DateConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/DestinationValidationConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/FishValidationConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/FishingValidationConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/destination/DestinationCreateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/fish/FishCreateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/api/controllers/TopFIveApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/topFive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/DestinationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/DestinationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/FishServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/FishServiceModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/DestinationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/DestinationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/ValidationConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/UserValidationConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserEditValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserEditValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserRegisterValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/validation/user/UserRegisterValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationAddModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/DestinationCreateModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/FishAddModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/FishCreateModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/FishingAddModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/FishingCreateModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/allDestinations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/allDestinations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/create-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/create-destination.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/my-destinations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/my-destinations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fish/add-caught-fish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fish/add-caught-fish.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +60,7 @@
         <option value="HTML File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -115,6 +87,8 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../September 2019/Spring MVC - Oct 2019/Other Solutions/Product-Shop-master/app" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -122,12 +96,18 @@
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="maa.myfishing.service.serices.implementations" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fragments" />
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static\help" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\service\serices" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="maa.myfishing.web.controllers" />
@@ -136,12 +116,12 @@
       <recent name="maa.myfishing.data.reposipories" />
       <recent name="maa.myfishing.service.models" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fragments" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static\help" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\java\maa\myfishing\service\serices" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -156,7 +136,54 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.FishServiceImplTest">
+    <configuration name="FishServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myfishing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="maa.myfishing.service.serices.implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.implementations" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.implementations.FishServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FishServiceImplTest.getAllFishesByFishingId_whenIdIsIsPresent_ShouldReturnCorrectResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myfishing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="maa.myfishing.service.serices.implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.implementations" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.implementations.FishServiceImplTest" />
+      <option name="METHOD_NAME" value="getAllFishesByFishingId_whenIdIsIsPresent_ShouldReturnCorrectResult" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FishServiceImplTest.getAllFishesByFishingId_whenIdIsNotPresent_ShouldReturnEmptyList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myfishing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="maa.myfishing.service.serices.implementations.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.implementations" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.implementations.FishServiceImplTest" />
+      <option name="METHOD_NAME" value="getAllFishesByFishingId_whenIdIsNotPresent_ShouldReturnEmptyList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyfishingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myfishing" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="maa.myfishing.MyfishingApplication" />
@@ -164,6 +191,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FishServiceImplTest" />
+        <item itemvalue="JUnit.FishServiceImplTest.getAllFishesByFishingId_whenIdIsIsPresent_ShouldReturnCorrectResult" />
+        <item itemvalue="JUnit.FishServiceImplTest.getAllFishesByFishingId_whenIdIsNotPresent_ShouldReturnEmptyList" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -236,6 +270,8 @@
       <workItem from="1574836512796" duration="14894000" />
       <workItem from="1574851877682" duration="19532000" />
       <workItem from="1574924452799" duration="17795000" />
+      <workItem from="1574962063817" duration="4302000" />
+      <workItem from="1575019467801" duration="4873000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574444265566</created>
@@ -302,8 +338,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java</url>
-          <line>32</line>
+          <line>39</line>
           <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

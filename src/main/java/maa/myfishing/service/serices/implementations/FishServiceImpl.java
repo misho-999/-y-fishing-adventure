@@ -11,6 +11,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Validator;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,17 +20,22 @@ import java.util.stream.Collectors;
 public class FishServiceImpl implements FishService {
     private final FishRepository fishRepository;
     private final FishingService fishingService;
+    private final Validator validator;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public FishServiceImpl(FishRepository fishRepository, FishingService fishingService, ModelMapper modelMapper) {
+    public FishServiceImpl(FishRepository fishRepository, FishingService fishingService, Validator validator, ModelMapper modelMapper) {
         this.fishRepository = fishRepository;
         this.fishingService = fishingService;
+        this.validator = validator;
         this.modelMapper = modelMapper;
     }
 
     @Override
     public void createFish(FishServiceModel fishServiceModel) {
+        if (!validator.validate(fishServiceModel).isEmpty()) {
+            throw new IllegalArgumentException("Invalid Fish");
+        }
 
         if (fishServiceModel.getFishingId().equals("")) {
             fishServiceModel.setFishingId(fishServiceModel.getFishingUrl().replace("http://localhost:8000/fish/create/", ""));

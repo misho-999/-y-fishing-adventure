@@ -80,7 +80,6 @@ public class FishController extends BaseController {
         return super.view("fish/fish-all-for-fishing.html", modelAndView);
     }
 
-
 //    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})
 //    public ModelAndView handleDestinationNotFound(Exception e) {
 //        ModelAndView modelAndView = new ModelAndView("error.html");

@@ -18,6 +18,8 @@ public class Fish extends BaseEntity {
     public Fish() {
     }
 
+
+
     @Column(name = "name", nullable = false, updatable = false)
     public String getFishName() {
         return fishName;

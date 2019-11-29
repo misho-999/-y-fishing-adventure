@@ -58,7 +58,6 @@ public class FishingController extends BaseController {
 
         this.fishingService.addFishingToDestination(fishingServiceModel, destinationId);
 
-//        return super.redirect("/destinations/details/" + destinationId);
         return super.redirect("/fishings/my");
     }
 
