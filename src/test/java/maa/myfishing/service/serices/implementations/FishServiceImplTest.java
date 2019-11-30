@@ -3,6 +3,7 @@ package maa.myfishing.service.serices.implementations;
 import maa.myfishing.data.models.Fish;
 import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.reposipories.FishRepository;
+import maa.myfishing.service.models.FishServiceModel;
 import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.FishingService;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.modelmapper.ModelMapper;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,12 +32,21 @@ class FishServiceImplTest {
 
         Mockito.when(fishRepository.findAllByFishingId("1")).thenReturn(fishes);
 
-        FishingServiceModel fishingServiceModel = new FishingServiceModel();
+
     }
 
+    //!!!!!!!!!!!!!!!!!!
     @Test
     void createFish() {
 
+        FishServiceModel fishServiceModel = new FishServiceModel() {{
+            setFishName("Carp");
+            setWeightInKilograms(20.5);
+            setLengthInCentimeters(99);
+            setFishingId("FishingId111111111");
+        }};
+
+        Fish fish = this.modelMapper.map(fishServiceModel, Fish.class);
     }
 
 

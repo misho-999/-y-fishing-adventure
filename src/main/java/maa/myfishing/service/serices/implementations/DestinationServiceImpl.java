@@ -92,7 +92,7 @@ public class DestinationServiceImpl implements DestinationService {
 
         List<Fishing> fishings = destination.getFishings();
 
-        //Don't delet this code!!!!
+        //Don't delete this code!!!!
 //        fishings.forEach(fishing -> {
 //            fishing.setDestination(null);
 //        });

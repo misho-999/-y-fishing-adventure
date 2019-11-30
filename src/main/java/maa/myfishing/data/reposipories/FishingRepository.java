@@ -13,11 +13,14 @@ import java.util.Optional;
 public interface FishingRepository extends JpaRepository<Fishing, String> {
     Optional<Fishing> findByDateAndDescription(LocalDate date, String description);
 
-    @Query("SELECT f FROM Fishing  f JOIN f.destination d where d.townName =:townName")
-    List<Fishing> getAllFishingByTownName(String townName);
+    @Query("SELECT f FROM Fishing  f JOIN f.destination d where d.townName =:townName order by f.date desc")
+    List<Fishing> findAllFishingByTownName(String townName);
 
-    @Query("FROM Fishing f LEFT JOIN f.destination d LEFT JOIN d.userInfos u where u.user.username =:username ")
-    List<Fishing> getAllFishingByUsername(String username);
+    @Query("FROM Fishing f LEFT JOIN f.destination d LEFT JOIN d.userInfos u where u.user.username =:username order by f.date desc")
+    List<Fishing> findAllFishingByUsername(String username);
+
+    @Query("FROM Fishing f LEFT JOIN f.destination d LEFT JOIN d.userInfos u where u.user.username =:username and d.townName =:townName order by f.date desc")
+    List<Fishing> findAllFishingsByUsernameAndTownName(String username, String townName);
 
     Optional<Fishing> findById(String id);
 }

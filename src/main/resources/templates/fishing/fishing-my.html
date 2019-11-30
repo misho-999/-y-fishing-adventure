@@ -13,7 +13,14 @@
 </header>
 
 <main>
-    <div class="welcome"><strong><em>All Fishings</em></strong></div>
+<!--    <th:block th:switch="*{#authentication.getPrincipal().getUsername()}">-->
+<!--        <a th:case="${destination.creator}" th:href="@{/destinations/edit/{id}(id=${destination.id})}"-->
+<!--           class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>-->
+<!--        <div th:case="${destination.creator}" class="welcome"><strong><em>All Fishings</em></strong></div>-->
+<!--    </th:block>-->
+
+
+    <div class="welcome"><strong><em>My Fishings</em></strong></div>
     <div class="row d-flex justify-content-center">
         <th:block th:each="fishing, iter : ${fishings}">
             <div class="col col-md-3 fishing-list">

@@ -72,15 +72,22 @@ public class FishingServiceImpl implements FishingService {
 
     @Override
     public List<FishingServiceModel> getAllFishingsByTownName(String townName) {
-        List<Fishing> allFishings = this.fishingRepository.getAllFishingByTownName(townName);
+        List<Fishing> allFishings = this.fishingRepository.findAllFishingByTownName(townName);
 
         return this.setTownName(allFishings);
     }
 
     @Override
     public List<FishingServiceModel> getAllFishingsByUsername(String username) {
-        List<Fishing> allFishings = this.fishingRepository.getAllFishingByUsername(username);
+        List<Fishing> allFishings = this.fishingRepository.findAllFishingByUsername(username);
 
+        return setTownName(allFishings);
+    }
+
+
+    @Override
+    public List<FishingServiceModel> getAllFishingsByUsernameAndTownName(String username, String townName) {
+        List<Fishing> allFishings = this.fishingRepository.findAllFishingsByUsernameAndTownName(username, townName);
         return setTownName(allFishings);
     }
 
@@ -91,6 +98,7 @@ public class FishingServiceImpl implements FishingService {
 
         return this.modelMapper.map(fishing, FishingServiceModel.class);
     }
+
 
     private List<FishingServiceModel> setTownName(List<Fishing> fishings) {
         List<FishingServiceModel> fishingServiceModels = fishings.stream()
@@ -103,4 +111,6 @@ public class FishingServiceImpl implements FishingService {
 
         return fishingServiceModels;
     }
+
+
 }

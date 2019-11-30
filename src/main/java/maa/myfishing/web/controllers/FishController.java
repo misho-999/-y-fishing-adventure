@@ -65,7 +65,7 @@ public class FishController extends BaseController {
 
         this.fishService.createFish(fishServiceModel);
 
-        return super.redirect("/fishings/all");
+        return super.redirect("/fish/all-for-fishing/"+fishServiceModel.getFishingId());
     }
 
     @GetMapping("/all-for-fishing/{id}")

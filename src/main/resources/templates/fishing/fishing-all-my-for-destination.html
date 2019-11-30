@@ -6,22 +6,23 @@
     <th:block th:include="~{fragments/head}"/>
 </head>
 
-<body>
+<body class="fishing">
 
 <header>
     <th:block th:include="~{fragments/navbar}"/>
 </header>
 
 <main>
-    <div class="welcome"><strong><em>All Fishings</em></strong></div>
+    <div class="welcome"><p th:text="'All My Fishings For: ' + ${townName}"></div>
     <div class="row d-flex justify-content-center">
         <th:block th:each="fishing, iter : ${fishings}">
-            <div class="col col-md-3 fishing-list">
-                <div class="text-center text-white"><img th:src="${fishing.imgUrl}" width="300" height="200">
+            <div class="col col-md-3 fishing-list listing">
+                <div class="text-center text-white">
+                    <img th:src="${fishing.imgUrl}" width="300" height="200">
                     <h4 th:text="'Creator: '+ ${fishing.creator}"></h4>
                     <h4 th:text="'Destination: ' + ${fishing.townName}"></h4>
                     <h4 th:text="'Created on: '+${fishing.date}"></h4>
-                    <h4 th:text="'Description: '+ ${fishing.description}"></h4>
+<!--                    <h4 th:text="'Description: '+ ${fishing.description}"></h4>-->
                     <a th:href="@{/fish/create/{id}(id=${fishing.id})}"
                        class="btn btn-primary font-weight-bold text-white">Add Fish</a>
                     <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"

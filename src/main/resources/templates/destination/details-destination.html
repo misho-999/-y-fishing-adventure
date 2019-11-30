@@ -14,7 +14,10 @@
 
 <main>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
+            <span class="text-center welcome">Destination Details</span>
+        </div>
+        <div class="row destinations-details">
             <div class="col-md-6 text-right mt-5">
                 <img th:src="${destination.imgUrl}" class="img-thumb" width="300" height="200"/>
             </div>
@@ -33,29 +36,36 @@
                     <textarea th:text="${destination.description}"
                               class="form-control" readonly id="description"></textarea>
                 </div>
-<!--                <th:bolck th:if="${#authentication.getPrincipal().getUsername()} != ${destination.creator}">-->
+                <!--                <th:bolck th:if="${#authentication.getPrincipal().getUsername()} != ${destination.creator}">-->
                 <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <a th:href="@{/fishings/create/{id}(id=${destination.id})}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">Create Fishing</a>
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <a th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">All Fishing</a>
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <a th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">All My Fishing</a>
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <a th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">All Fishings For The Destination</a>
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <a th:href="@{/fishings/add-caught-fish}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">Add Caught Fish</a>
-                </div>
 
+                </div>
+                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
+
+                </div>
+                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
+
+                </div>
+                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
+
+                </div>
             </div>
+        </div>
+        <div class="row justify-content-center">
+            <ul class="nav">
+                <li class="nav-item m-md-2"><a th:href="@{/fishings/create/{id}(id=${destination.id})}"
+                                               class="btn btn-primary font-weight-bold text-white mt-2">Create
+                    Fishing</a></li>
+                <li class="nav-item m-md-2"><a
+                        th:href="@{/fishings/all-my-for-destination/{townName}(townName=${destination.townName})}"
+                        class="btn btn-primary font-weight-bold text-white mt-2">All My Fishing For This Destination</a>
+                </li>
+                <li class="nav-item m-md-2"><a
+                        th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"
+                        class="btn btn-primary font-weight-bold text-white mt-2">All Fishings For The
+                    Destination</a>
+                </li>
+            </ul>
         </div>
     </div>
     </div>

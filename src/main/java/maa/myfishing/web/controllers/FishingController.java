@@ -83,8 +83,23 @@ public class FishingController extends BaseController {
                 .stream()
                 .map(p -> this.modelMapper.map(p, FishingAllModel.class))
                 .collect(Collectors.toList()));
+        modelAndView.addObject("townName", townName);
 
-        return super.view("fishing/fishing-all.html", modelAndView);
+        return super.view("fishing/fishing-all-for-destination.html", modelAndView);
+    }
+
+
+    @GetMapping("/all-my-for-destination/{townName}")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @PageTitle("All Fishings")
+    public ModelAndView allMyForDestination(@PathVariable String townName, ModelAndView modelAndView, Principal principal) {
+        modelAndView.addObject("fishings", this.fishingService.getAllFishingsByUsernameAndTownName(principal.getName(), townName)
+                .stream()
+                .map(p -> this.modelMapper.map(p, FishingAllModel.class))
+                .collect(Collectors.toList()));
+        modelAndView.addObject("townName", townName);
+
+        return super.view("fishing/fishing-all-my-for-destination.html", modelAndView);
     }
 
 
@@ -103,7 +118,7 @@ public class FishingController extends BaseController {
                 .map(p -> this.modelMapper.map(p, FishingAllModel.class))
                 .collect(Collectors.toList()));
 
-        return super.view("fishing/fishing-all.html", modelAndView);
+        return super.view("fishing/fishing-my.html", modelAndView);
     }
 
     //==========================================================================

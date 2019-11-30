@@ -10,8 +10,12 @@ body {
     margin-bottom: 80px;
 }
 
-.destinations {
+.fishing {
     background-image: url(/jpg/Romantica.jpg);
+}
+
+.destinations {
+    background-image: url(/jpg/Beglik.jpg);
 }
 
 footer {
@@ -68,11 +72,24 @@ footer {
     max-width: 100%;
 }
 
-.index-text{
+.index-text {
     font-size: 2rem;
     margin-top: 50px;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.destinations-details {
+    border: 0.5px solid white;
+    margin-left: 250px;
+    margin-top: 10px;
+    margin-right: 250px;
+    border-radius: .5rem;
+}
+
+.listing {
+    width: 10em;
+    word-wrap: break-word;
 }
 
 /*=============================================*/
