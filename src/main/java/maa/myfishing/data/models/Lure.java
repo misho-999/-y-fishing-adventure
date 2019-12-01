@@ -5,14 +5,34 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "lures")
-public class Lure extends MainProperty {
+public class Lure extends BaseEntity {
+    private String make;
+    private String model;
     private String color;
-    private TypeOnLure typeOnLure;
+    private TypeOfLure typeOfLure;
     private Integer weightInGrams;
     private Integer lengthInMillimeters;
     private Fishing fishing;
 
     public Lure() {
+    }
+
+    @Column(name = "make", nullable = false)
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    @Column(name = "model", nullable = false)
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     @Column(name = "color", nullable = false, updatable = true)
@@ -26,12 +46,12 @@ public class Lure extends MainProperty {
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "type", nullable = false, updatable = true)
-    public TypeOnLure getTypeOnLure() {
-        return typeOnLure;
+    public TypeOfLure getTypeOfLure() {
+        return typeOfLure;
     }
 
-    public void setTypeOnLure(TypeOnLure typeOnLure) {
-        this.typeOnLure = typeOnLure;
+    public void setTypeOfLure(TypeOfLure typeOfLure) {
+        this.typeOfLure = typeOfLure;
     }
 
     @Column(name = "weigth_in_rgams", nullable = false, updatable = true)

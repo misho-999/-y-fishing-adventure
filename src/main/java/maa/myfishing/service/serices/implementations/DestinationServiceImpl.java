@@ -35,6 +35,7 @@ public class DestinationServiceImpl implements DestinationService {
     public DestinationServiceModel createDestination(DestinationServiceModel destinationServiceModel) {
         Destination destination = this.modelMapper.map(destinationServiceModel, Destination.class);
 
+        Destination destination1 = this.destinationRepository.saveAndFlush(destination);
         return this.modelMapper.map(this.destinationRepository.saveAndFlush(destination), DestinationServiceModel.class);
     }
 

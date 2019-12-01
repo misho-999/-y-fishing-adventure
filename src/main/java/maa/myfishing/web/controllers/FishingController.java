@@ -33,11 +33,11 @@ public class FishingController extends BaseController {
         this.modelMapper = modelMapper;
     }
 
-    @GetMapping("/create/{id}")
+    @GetMapping("/create/{townName}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Fishing")
     public ModelAndView addFishing() {
-        return super.view("fishing/fishing-create.html");
+        return super.view("fishing/create-fishing.html");
     }
 
     @ModelAttribute(value = "fishingAddModel")
@@ -54,11 +54,11 @@ public class FishingController extends BaseController {
 
         fishingServiceModel.setImgUrl(this.cloudinaryService.uploadImage(fishingCreateModel.getImage()));
 
-        String destinationId = fishingCreateModel.getDestinationId().replace("http://localhost:8000/fishings/create/", "");
+        String townName = fishingCreateModel.getDestinationId().replace("http://localhost:8000/fishings/create/", "");
 
-        this.fishingService.addFishingToDestination(fishingServiceModel, destinationId);
+        this.fishingService.addFishingToDestination(fishingServiceModel, townName);
 
-        return super.redirect("/fishings/my");
+        return super.redirect("/fishings/all-my-for-destination/"+townName);
     }
 
 
@@ -71,7 +71,7 @@ public class FishingController extends BaseController {
                 .map(p -> this.modelMapper.map(p, FishingAllModel.class))
                 .collect(Collectors.toList()));
 
-        return super.view("fishing/fishing-all.html", modelAndView);
+        return super.view("fishing/all-fishing.html", modelAndView);
     }
 
 
@@ -85,7 +85,7 @@ public class FishingController extends BaseController {
                 .collect(Collectors.toList()));
         modelAndView.addObject("townName", townName);
 
-        return super.view("fishing/fishing-all-for-destination.html", modelAndView);
+        return super.view("fishing/all-for-destination-fishings.html", modelAndView);
     }
 
 
@@ -99,7 +99,7 @@ public class FishingController extends BaseController {
                 .collect(Collectors.toList()));
         modelAndView.addObject("townName", townName);
 
-        return super.view("fishing/fishing-all-my-for-destination.html", modelAndView);
+        return super.view("fishing/all-my-for-destination-fishings.html", modelAndView);
     }
 
 
@@ -130,4 +130,12 @@ public class FishingController extends BaseController {
 
         return modelAndView;
     }
+
+//    @PostMapping("/delete/{id}")
+//    @PreAuthorize("isAuthenticated()")
+//    public ModelAndView deleteFishingConfirm(@PathVariable String id) {
+//        this.fishingService.deleteFishing(id);
+//
+//        return super.redirect("/destinations/my");
+//    }
 }

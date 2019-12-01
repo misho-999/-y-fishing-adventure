@@ -35,7 +35,7 @@ public class FishingServiceImpl implements FishingService {
     }
 
     @Override
-    public FishingServiceModel addFishingToDestination(FishingServiceModel fishingServiceModel, String destinationId) {
+    public FishingServiceModel addFishingToDestination(FishingServiceModel fishingServiceModel, String townName) {
         if (!validator.validate(fishingServiceModel).isEmpty()) {
             throw new IllegalArgumentException("Invalid Fishing");
         }
@@ -50,7 +50,7 @@ public class FishingServiceImpl implements FishingService {
 
         fishing = this.modelMapper.map(fishingServiceModel, Fishing.class);
 
-        Destination destination = this.destinationRepository.findById(destinationId)
+        Destination destination = this.destinationRepository.findByTownName(townName)
                 .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
 
         destination.setFishingsCount(destination.getFishingsCount() + 1);
@@ -112,5 +112,33 @@ public class FishingServiceImpl implements FishingService {
         return fishingServiceModels;
     }
 
+    @Override
+    public void deleteFishing(String id) {
+        Fishing fishing = this.fishingRepository.findById(id)
+                .orElseThrow(() -> new FishingNotFoundException(FishingValidationConstants.FISHING_WITH_ID_NOT_FOUND_EXCEPTION));
 
+            this.fishingRepository.delete(fishing);
+    }
+
+    //@Override
+    //    public void deleteDestination(String id) {
+    //        Destination destination = this.destinationRepository.findById(id)
+    //                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
+    //
+    //        List<Fishing> fishings = destination.getFishings();
+    //
+    //        //Don't delete this code!!!!
+    ////        fishings.forEach(fishing -> {
+    ////            fishing.setDestination(null);
+    ////        });
+    //
+    //        fishings.forEach(fishing -> {
+    //            fishing.setDestination(null);
+    //            this.fishingRepository.delete(fishing);
+    //            fishing.setFishes(null);
+    //            fishing.setLures(null);
+    //        });
+    //
+    //        this.destinationRepository.delete(destination);
+    //    }
 }

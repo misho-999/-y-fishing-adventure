@@ -42,14 +42,19 @@
                 <td class="col-md-1 text-center" th:text="${destination.fishingsCount}"></td>
                 <td class="col-md-5 text-left add-button">
 
-                    <a th:href="@{/destinations/details/{id}(id=${destination.id})}"
-                       class="btn btn-warning font-weight-bold text-white btn-sm align-middle">Details</a>
+                    <!--                    <th:block th:if="${destination.creator} == *{#authentication.getPrincipal().getUsername()}">-->
                     <th:block sec:authorize="hasRole('ROLE_MODERATOR')">
                         <a th:href="@{/destinations/edit/{id}(id=${destination.id})}"
                            class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>
                         <a th:href="@{/destinations/delete/{id}(id=${destination.id})}"
                            class="btn btn-danger font-weight-bold text-white btn-sm">Delete</a>
                     </th:block>
+
+                    <a th:id="'details'+${iter.index + 1}"
+                            th:href="@{/destinations/details/{id}(id=${destination.id})}"
+                       class="btn btn-warning font-weight-bold text-white btn-sm align-middle">Details</a>
+
+
                     <a th:id="${iter.index + 1}"
                        th:href="@{/destinations/add-to-my/{townName}(townName=${destination.townName})}"
                        class="btn btn-primary font-weight-bold text-white btn-sm">Add To My Destinations</a>

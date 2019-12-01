@@ -1,8 +1,8 @@
-package maa.myfishing.web.models;
+package maa.myfishing.service.models;
 
 import maa.myfishing.data.models.TypeOfLure;
 
-public class LureCreateModel {
+public class LureServiceModel {
     private String make;
     private String model;
     private String color;
@@ -11,7 +11,7 @@ public class LureCreateModel {
     private Integer lengthInMillimeters;
     private String fishingUrl;
 
-    public LureCreateModel() {
+    public LureServiceModel() {
     }
 
     public String getMake() {

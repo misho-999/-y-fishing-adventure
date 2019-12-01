@@ -6,7 +6,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "boats")
-public class Boat extends MainProperty {
+public class Boat extends BaseEntity{
     private Double length;
     private Double width;
     private Double weigth;

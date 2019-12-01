@@ -24,7 +24,7 @@
 <!--                    <h4 th:text="'Description: '+ ${fishing.description}"></h4>-->
                     <a th:href="@{/fish/create/{id}(id=${fishing.id})}"
                        class="btn btn-primary font-weight-bold text-white">Add Fish</a>
-                    <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
+                    <a th:href="@{/fishings/delete/{id}(id=${fishing.id})}"
                        class="btn btn-warning font-weight-bold text-white">Details</a>
                     <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"
                        class="btn btn-success font-weight-bold text-white">Edit</a>
