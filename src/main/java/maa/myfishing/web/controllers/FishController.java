@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping("/fish")
+@RequestMapping("/fishes")
 public class FishController extends BaseController {
     private final FishService fishService;
     private final FishCreateValidator fishCreateValidator;
@@ -35,8 +35,9 @@ public class FishController extends BaseController {
     @GetMapping("/create/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Fish")
-    public ModelAndView addFishing(@PathVariable String id, ModelAndView modelAndView, @ModelAttribute(name = "fishModel") FishCreateModel fishCreateModel) {
-        return super.view("fish/add-caught-fish.html", modelAndView);
+    public ModelAndView createFish(@PathVariable String id, ModelAndView modelAndView
+            , @ModelAttribute(name = "fishModel") FishCreateModel fishCreateModel) {
+        return super.view("fish/fish-create.html", modelAndView);
     }
 
     @ModelAttribute(value = "fishModel")
@@ -46,7 +47,7 @@ public class FishController extends BaseController {
 
     @PostMapping("/create")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView fishCreateConfirm(@Valid ModelAndView modelAndView, @ModelAttribute(name = "fishModel")
+    public ModelAndView createFishConfirm(@Valid ModelAndView modelAndView, @ModelAttribute(name = "fishModel")
             FishCreateModel fishCreateModel, BindingResult bindingResult) {
 
         this.fishCreateValidator.validate(fishCreateModel, bindingResult);
@@ -58,7 +59,7 @@ public class FishController extends BaseController {
 
             modelAndView.addObject("fishModel", fishCreateModel);
 
-            return super.view("fish/add-caught-fish.html", modelAndView);
+            return super.view("fish/fish-create.html", modelAndView);
         }
 
         FishServiceModel fishServiceModel = this.modelMapper.map(fishCreateModel, FishServiceModel.class);

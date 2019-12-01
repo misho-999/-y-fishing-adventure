@@ -18,6 +18,15 @@ body {
     background-image: url(/jpg/Beglik.jpg);
 }
 
+.fish {
+    background-image: url(/jpg/BashMaistora.jpg);
+}
+
+.lure {
+    background-image: url(/jpg/Lures.jpg);
+}
+
+
 footer {
     background-color: #d1ecf1;
     position: fixed;
@@ -93,3 +102,15 @@ footer {
 }
 
 /*=============================================*/
+
+.bg-blur {
+    /*background-color: rgb(0,0,0); !* Fallback color *!*/
+    background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+    /*font-weight: bold;*/
+    /*border: 3px solid #f1f1f1;*/
+    /*z-index: 2;*/
+    /*width: 100%;*/
+    /*padding: 20px;*/
+    margin: 50px;
+    /*text-align: center;*/
+}

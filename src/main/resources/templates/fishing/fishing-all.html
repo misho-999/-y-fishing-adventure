@@ -6,7 +6,7 @@
     <th:block th:include="~{fragments/head}"/>
 </head>
 
-<body>
+<body class="fishing">
 
 <header>
     <th:block th:include="~{fragments/navbar}"/>
@@ -21,7 +21,7 @@
                     <h4 th:text="'Creator: '+ ${fishing.creator}"></h4>
                     <h4 th:text="'Destination: ' + ${fishing.townName}"></h4>
                     <h4 th:text="'Created on: '+${fishing.date}"></h4>
-                    <h4 th:text="'Description: '+ ${fishing.description}"></h4>
+<!--                    <h4 th:text="'Description: '+ ${fishing.description}"></h4>-->
                     <a th:href="@{/fish/create/{id}(id=${fishing.id})}"
                        class="btn btn-primary font-weight-bold text-white">Add Fish</a>
                     <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
