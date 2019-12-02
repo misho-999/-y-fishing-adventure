@@ -3,7 +3,9 @@ package maa.myfishing.web.controllers;
 import maa.myfishing.service.models.LureServiceModel;
 import maa.myfishing.service.serices.LureService;
 import maa.myfishing.web.annotations.PageTitle;
+import maa.myfishing.web.models.FishAllModel;
 import maa.myfishing.web.models.FishCreateModel;
+import maa.myfishing.web.models.LureAllModel;
 import maa.myfishing.web.models.LureCreateModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/lures")
@@ -42,13 +45,25 @@ public class LureController extends BaseController {
 
     @PostMapping("/create/{fishingId}")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView fishCreateConfirm(@Valid @PathVariable String fishingId,ModelAndView modelAndView, @ModelAttribute(name = "lureModel")
+    public ModelAndView fishCreateConfirm(@Valid @PathVariable String fishingId, ModelAndView modelAndView, @ModelAttribute(name = "lureModel")
             LureCreateModel lureCreateModel) {
 
         LureServiceModel lureServiceModel = this.modelMapper.map(lureCreateModel, LureServiceModel.class);
 
         this.lureService.createLure(lureServiceModel, fishingId);
 
-        return super.redirect("/home");
+        return super.redirect("/lures/all-for-fishing/" +fishingId);
+    }
+
+    @GetMapping("/all-for-fishing/{fishingId}")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @PageTitle("All Lure For Destination")
+    public ModelAndView allLureForDestination(@PathVariable String fishingId, ModelAndView modelAndView) {
+        modelAndView.addObject("lures", this.lureService.getAllLuresByFishingId(fishingId)
+                .stream()
+                .map(l -> this.modelMapper.map(l, LureAllModel.class))
+                .collect(Collectors.toList()));
+
+        return super.view("lure/all-for-fishing-lure.html", modelAndView);
     }
 }

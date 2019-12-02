@@ -23,16 +23,17 @@
                     <h4 th:text="'Destination: ' + ${fishing.townName}"></h4>
                     <h4 th:text="'Created on: '+${fishing.date}"></h4>
 <!--                    <h4 th:text="'Description: '+ ${fishing.description}"></h4>-->
-                    <a th:href="@{/fish/create/{id}(id=${fishing.id})}"
-                       class="btn btn-primary font-weight-bold text-white">Add Fish</a>
+<!--                    <a th:href="@{/fish/create/{id}(id=${fishing.id})}"-->
+<!--                       class="btn btn-primary font-weight-bold text-white">Add Fish</a>-->
                     <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
                        class="btn btn-warning font-weight-bold text-white">Details</a>
-                    <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"
-                       class="btn btn-success font-weight-bold text-white">Edit</a>
-                    <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"
-                       class="btn btn-danger font-weight-bold text-white">Delete</a>
-                    <a th:href="@{/fish/all-for-fishing/{id}(id=${fishing.id})}"
-                       class="btn btn-primary font-weight-bold text-white mt-2">All Fishes For This Fishing</a>
+<!--                    <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"-->
+<!--                       class="btn btn-success font-weight-bold text-white">Edit</a>-->
+<!--                    <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"-->
+<!--                       class="btn btn-danger font-weight-bold text-white">Delete</a>-->
+                    <a th:href="@{/fishings/all-for-destination/{id}(id=${townName})}"
+                       class="btn btn-primary font-weight-bold text-white mt-2"
+                       th:text="'All Fishings For '+ ${townName}"></a>
                 </div>
             </div>
         </th:block>

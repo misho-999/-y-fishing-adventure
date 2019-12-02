@@ -39,7 +39,7 @@ public class FishController extends BaseController {
             , @ModelAttribute(name = "fishModel") FishCreateModel fishCreateModel) {
         modelAndView.addObject("fishingId", fishingId);
 
-        return super.view("fish/fish-create.html", modelAndView);
+        return super.view("fish/create-fish.html", modelAndView);
     }
 
     @ModelAttribute(value = "fishModel")
@@ -58,7 +58,7 @@ public class FishController extends BaseController {
             modelAndView.addObject("fishModel", fishCreateModel);
             modelAndView.addObject("fishingId", fishingId);
 
-            return super.view("fish/fish-create.html", modelAndView);
+            return super.view("fish/create-fish.html", modelAndView);
         }
 
         FishServiceModel fishServiceModel = this.modelMapper.map(fishCreateModel, FishServiceModel.class);
@@ -71,13 +71,13 @@ public class FishController extends BaseController {
     @GetMapping("/all-for-fishing/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("All Fish For Destination")
-    public ModelAndView allForDestination(@PathVariable String id, ModelAndView modelAndView) {
+    public ModelAndView allFishForDestination(@PathVariable String id, ModelAndView modelAndView) {
         modelAndView.addObject("fishes", this.fishService.getAllFishesByFishingId(id)
                 .stream()
                 .map(f -> this.modelMapper.map(f, FishAllModel.class))
                 .collect(Collectors.toList()));
 
-        return super.view("fish/fish-all-for-fishing.html", modelAndView);
+        return super.view("fish/all-for-fishing-fish.html", modelAndView);
     }
 
 //    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})

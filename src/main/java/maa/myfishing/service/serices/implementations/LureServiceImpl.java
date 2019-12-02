@@ -13,6 +13,9 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class LureServiceImpl implements LureService {
     private final LureRepository lureRepository;
@@ -45,5 +48,14 @@ public class LureServiceImpl implements LureService {
         lure.setFishing(fishing);
 
         this.lureRepository.saveAndFlush(lure);
+    }
+
+    @Override
+    public List<LureServiceModel> getAllLuresByFishingId(String fishingId) {
+        List<Lure> lures = this.lureRepository.findAllLuresByFishingId(fishingId);
+
+        return lures.stream()
+                .map(l -> modelMapper.map(l, LureServiceModel.class))
+                .collect(Collectors.toList());
     }
 }

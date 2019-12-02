@@ -105,7 +105,7 @@ public class FishingController extends BaseController {
 
     @GetMapping("/add-caught-fish")
     public ModelAndView AddCaughtFish(ModelAndView modelAndView) {
-        return super.view("fishing/fish-create.html");
+        return super.view("fishing/create-fish.html");
     }
 
 
@@ -118,7 +118,7 @@ public class FishingController extends BaseController {
                 .map(p -> this.modelMapper.map(p, FishingAllModel.class))
                 .collect(Collectors.toList()));
 
-        return super.view("fishing/fishing-my.html", modelAndView);
+        return super.view("fishing/my-fishing.html", modelAndView);
     }
 
     //==========================================================================

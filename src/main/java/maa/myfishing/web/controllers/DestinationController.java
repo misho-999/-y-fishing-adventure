@@ -96,17 +96,17 @@ public class DestinationController extends BaseController {
     }
 
     //=======================================================================
-    @GetMapping("/add-to-my/{townName}")
-    @PreAuthorize("isAuthenticated()")
-    @PageTitle("Ad To My Destinations")
-    public ModelAndView addToMyDestinations(@PathVariable String townName, ModelAndView modelAndView) {
-        DestinationServiceModel destination =
-                this.modelMapper.map(this.destinationService.getDestinationByTownName(townName), DestinationServiceModel.class);
-
-        modelAndView.addObject("destination", destination);
-
-        return super.view("destination/add-to-my-destination.html", modelAndView);
-    }
+//    @GetMapping("/add-to-my/{townName}")
+//    @PreAuthorize("isAuthenticated()")
+//    @PageTitle("Ad To My Destinations")
+//    public ModelAndView addToMyDestinations(@PathVariable String townName, ModelAndView modelAndView) {
+//        DestinationServiceModel destination =
+//                this.modelMapper.map(this.destinationService.getDestinationByTownName(townName), DestinationServiceModel.class);
+//
+//        modelAndView.addObject("destination", destination);
+//
+//        return super.view("destination/add-to-my-destination.html", modelAndView);
+//    }
 
     @PostMapping("/add-to-my/{townName}")
     @PreAuthorize("isAuthenticated()")
