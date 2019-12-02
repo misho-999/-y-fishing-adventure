@@ -2,35 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/LureValidationConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/LureRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/eroors/LureAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/LureServiceModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/LureService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Boat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Lure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Lure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/MainProperty.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/TypeOnLure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/TypeOfLure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/OverNightBindingModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/FishServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/FishServiceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/LureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/LureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/LureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/LureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/LureCreateModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/LureCreateModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/jpg/4815267_0_070320180346_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jpg/Boat.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/allDestinations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/allDestinations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/all-destinations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/destination/details-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/destination/details-destination.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-all-for-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-for-destination-fishings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-all-my-for-destination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-my-for-destination-fishings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-fishing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/create-fishing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/my-fishings.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lure/lure-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/lure/create-lure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/FishCreateModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/FishCreateModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fish/fish-create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fish/fish-create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/create-fishing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/create-fishing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-my.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/fishing-my.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lure/create-lure.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/lure/create-lure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -266,7 +254,7 @@
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
-        <option name="contentProportion" value="0.29289025" />
+        <option name="contentProportion" value="0.21483772" />
         <treeState>
           <expand />
           <select />
@@ -345,6 +333,7 @@
       <workItem from="1575188975402" duration="5046000" />
       <workItem from="1575207883490" duration="2531000" />
       <workItem from="1575210461216" duration="12843000" />
+      <workItem from="1575270382098" duration="5563000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574444265566</created>
@@ -411,33 +400,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java</url>
-          <line>68</line>
+          <line>67</line>
           <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/LureController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java</url>
           <line>119</line>
           <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishingController.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/LureController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

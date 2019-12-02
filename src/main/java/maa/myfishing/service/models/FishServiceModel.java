@@ -4,8 +4,7 @@ public class FishServiceModel {
     private String fishName;
     private Double weightInKilograms;
     private Integer lengthInCentimeters;
-    private String fishingId;
-    private String fishingUrl;
+    private String creator;
 
     public FishServiceModel() {
     }
@@ -34,19 +33,11 @@ public class FishServiceModel {
         this.lengthInCentimeters = lengthInCentimeters;
     }
 
-    public String getFishingId() {
-        return fishingId;
+    public String getCreator() {
+        return creator;
     }
 
-    public void setFishingId(String fishingId) {
-        this.fishingId = fishingId;
-    }
-
-    public String getFishingUrl() {
-        return fishingUrl;
-    }
-
-    public void setFishingUrl(String fishingUrl) {
-        this.fishingUrl = fishingUrl;
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 }

@@ -121,7 +121,7 @@ public class FishingServiceImpl implements FishingService {
     }
 
     //@Override
-    //    public void deleteDestination(String id) {
+    //    public void deleteFishing(String id) {
     //        Destination destination = this.destinationRepository.findById(id)
     //                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
     //

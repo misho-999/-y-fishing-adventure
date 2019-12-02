@@ -43,7 +43,6 @@ class FishServiceImplTest {
             setFishName("Carp");
             setWeightInKilograms(20.5);
             setLengthInCentimeters(99);
-            setFishingId("FishingId111111111");
         }};
 
         Fish fish = this.modelMapper.map(fishServiceModel, Fish.class);

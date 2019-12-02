@@ -5,5 +5,5 @@ import maa.myfishing.service.models.LureServiceModel;
 
 public interface LureService {
 
-    void createLure(LureServiceModel lureServiceModel);
+    void createLure(LureServiceModel lureServiceModel, String fishingId);
 }

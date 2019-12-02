@@ -13,10 +13,10 @@
 <main>
     <div class="welcome"><strong><em>Add Caught Fish</em></strong></div>
     <div class="row justify-content-md-center text-center">
-        <form id="create-fish" class="form w-25 mx-auto" th:action="@{/fish/create}" method="post"  th:object="${fishModel}"
-              enctype="multipart/form-data" >
-            <input type="hidden" name="fishingUrl" th:value="*{#httpServletRequest.requestURL}">
-            <input type="hidden" name="fishingId" th:value="*{fishingId}">
+        <form id="create-fish" class="form w-25 mx-auto"
+              th:action="@{/fishes/create/{fishingId}(fishingId=${fishingId})}" method="post" th:object="${fishModel}"
+              enctype="multipart/form-data">
+            <input type="hidden" name="creator" th:value="*{#authentication.getPrincipal().getUsername()}">
             <div class="form-row">
                 <div class="form-group col-md ">
                     <label for="fishName"><em><strong class="label-color">Fish Name</strong></em></label>
@@ -29,8 +29,10 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md ">
-                    <label for="weightInKilograms"><em><strong class="label-color">Weight In Kilograms</strong></em></label>
-                    <input type="number" min="0.00" step=".01"  class="form-control" id="weightInKilograms" placeholder="Weight In Kilograms(between 0,1 and 200kg)..."
+                    <label for="weightInKilograms"><em><strong class="label-color">Weight In
+                        Kilograms</strong></em></label>
+                    <input type="number" min="0.00" step=".01" class="form-control" id="weightInKilograms"
+                           placeholder="Weight In Kilograms(between 0,1 and 200kg)..."
                            name="weightInKilograms" th:value="*{weightInKilograms}">
                     <th:block th:if="${#fields.hasErrors('weightInKilograms')}">
                         <small class="error" th:errors="*{weightInKilograms}"></small>
@@ -40,7 +42,8 @@
             <div class="form-row">
                 <div class="form-group col-md ">
                     <label for="lengthInCentimeters"><em><strong class="label-color">Length In Centimeters</strong></em></label>
-                    <input type="number" class="form-control" id="lengthInCentimeters" placeholder="Length In Centimeters(between 20 and 300cm)... "
+                    <input type="number" class="form-control" id="lengthInCentimeters"
+                           placeholder="Length In Centimeters(between 20 and 300cm)... "
                            name="lengthInCentimeters" th:value="*{lengthInCentimeters}">
                     <th:block th:if="${#fields.hasErrors('lengthInCentimeters')}">
                         <small class="error" th:errors="*{lengthInCentimeters}"></small>

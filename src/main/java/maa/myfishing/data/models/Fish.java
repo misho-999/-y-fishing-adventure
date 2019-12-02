@@ -13,11 +13,11 @@ public class Fish extends BaseEntity {
     private String fishName;
     private Double weightInKilograms;
     private Integer lengthInCentimeters;
+    private String creator;
     private Fishing fishing;
 
     public Fish() {
     }
-
 
 
     @Column(name = "name", nullable = false, updatable = false)
@@ -51,6 +51,14 @@ public class Fish extends BaseEntity {
         this.lengthInCentimeters = length;
     }
 
+    @Column(name = "creator", nullable = false)
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
 
     @ManyToOne
     @JoinColumn(name = "fishing_id", referencedColumnName = "id")

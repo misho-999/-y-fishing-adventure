@@ -32,18 +32,14 @@ public class FishServiceImpl implements FishService {
     }
 
     @Override
-    public void createFish(FishServiceModel fishServiceModel) {
+    public void createFish(FishServiceModel fishServiceModel, String fishingId) {
         if (!validator.validate(fishServiceModel).isEmpty()) {
             throw new IllegalArgumentException("Invalid Fish");
         }
 
-        if (fishServiceModel.getFishingId().equals("")) {
-            fishServiceModel.setFishingId(fishServiceModel.getFishingUrl().replace("http://localhost:8000/fish/create/", ""));
-        }
-
         Fish fish = this.modelMapper.map(fishServiceModel, Fish.class);
 
-        FishingServiceModel fishingServiceModel = this.fishingService.getFishingById(fishServiceModel.getFishingId());
+        FishingServiceModel fishingServiceModel = this.fishingService.getFishingById(fishingId);
 
         Fishing fishing = this.modelMapper.map(fishingServiceModel, Fishing.class);
 

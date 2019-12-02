@@ -32,11 +32,13 @@ public class FishController extends BaseController {
         this.modelMapper = modelMapper;
     }
 
-    @GetMapping("/create/{id}")
+    @GetMapping("/create/{fishingId}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Fish")
-    public ModelAndView createFish(@PathVariable String id, ModelAndView modelAndView
+    public ModelAndView createFish(@PathVariable String fishingId, ModelAndView modelAndView
             , @ModelAttribute(name = "fishModel") FishCreateModel fishCreateModel) {
+        modelAndView.addObject("fishingId", fishingId);
+
         return super.view("fish/fish-create.html", modelAndView);
     }
 
@@ -45,28 +47,25 @@ public class FishController extends BaseController {
         return new FishCreateModel();
     }
 
-    @PostMapping("/create")
+    @PostMapping("/create/{fishingId}")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView createFishConfirm(@Valid ModelAndView modelAndView, @ModelAttribute(name = "fishModel")
+    public ModelAndView createFishConfirm(@Valid @PathVariable String fishingId, ModelAndView modelAndView, @ModelAttribute(name = "fishModel")
             FishCreateModel fishCreateModel, BindingResult bindingResult) {
 
         this.fishCreateValidator.validate(fishCreateModel, bindingResult);
 
         if (bindingResult.hasErrors()) {
-            if (fishCreateModel.getFishingId().equals("")) {
-                fishCreateModel.setFishingId(fishCreateModel.getFishingUrl().replace("http://localhost:8000/fish/create/", ""));
-            }
-
             modelAndView.addObject("fishModel", fishCreateModel);
+            modelAndView.addObject("fishingId", fishingId);
 
             return super.view("fish/fish-create.html", modelAndView);
         }
 
         FishServiceModel fishServiceModel = this.modelMapper.map(fishCreateModel, FishServiceModel.class);
 
-        this.fishService.createFish(fishServiceModel);
+        this.fishService.createFish(fishServiceModel, fishingId);
 
-        return super.redirect("/fish/all-for-fishing/"+fishServiceModel.getFishingId());
+        return super.redirect("/fishes/all-for-fishing/" + fishingId);
     }
 
     @GetMapping("/all-for-fishing/{id}")

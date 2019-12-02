@@ -27,7 +27,7 @@ public class LureServiceImpl implements LureService {
     }
 
     @Override
-    public void createLure(LureServiceModel lureServiceModel) {
+    public void createLure(LureServiceModel lureServiceModel, String fishingId) {
 
         Lure lure = this.lureRepository.findByMakeAndModelAndLengthInMillimeters(lureServiceModel.getMake(),
                 lureServiceModel.getModel(), lureServiceModel.getLengthInMillimeters()).orElse(null);
@@ -38,22 +38,12 @@ public class LureServiceImpl implements LureService {
 
         lure = this.modelMapper.map(lureServiceModel, Lure.class);
 
-        FishingServiceModel fishingServiceModel = this.fishingService.getFishingById("rrrrrrrrrr");
+        FishingServiceModel fishingServiceModel = this.fishingService.getFishingById(fishingId);
 
         Fishing fishing = this.modelMapper.map(fishingServiceModel, Fishing.class);
 
         lure.setFishing(fishing);
 
         this.lureRepository.saveAndFlush(lure);
-
-        // Fishing fishing = this.fishingRepository
-        //                .findByDateAndDescription(fishingServiceModel.getDate(), fishingServiceModel.getDescription())
-        //                .orElse(null);
-        //
-        //        if (fishing != null) {
-        //            throw new FishingAlreadyExistsException(FishingValidationConstants.FISHING_ALREADY_EXIST_EXCEPTION);
-        //        }
-        //
-        //        fishing = this.modelMapper.map(fishingServiceModel, Fishing.class);
     }
 }

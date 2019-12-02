@@ -31,6 +31,7 @@ public class LureController extends BaseController {
     @PageTitle("Add Lure")
     public ModelAndView createLure(@PathVariable String fishingId, ModelAndView modelAndView
             , @ModelAttribute(name = "lureModel") LureCreateModel lureCreateModel) {
+        modelAndView.addObject("fishingId", fishingId);
         return super.view("lure/create-lure.html", modelAndView);
     }
 
@@ -39,14 +40,14 @@ public class LureController extends BaseController {
         return new LureCreateModel();
     }
 
-    @PostMapping("/create")
+    @PostMapping("/create/{fishingId}")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView fishCreateConfirm(@Valid ModelAndView modelAndView, @ModelAttribute(name = "lureModel")
-            FishCreateModel fishCreateModel) {
+    public ModelAndView fishCreateConfirm(@Valid @PathVariable String fishingId,ModelAndView modelAndView, @ModelAttribute(name = "lureModel")
+            LureCreateModel lureCreateModel) {
 
-        LureServiceModel lureServiceModel = this.modelMapper.map(fishCreateModel, LureServiceModel.class);
+        LureServiceModel lureServiceModel = this.modelMapper.map(lureCreateModel, LureServiceModel.class);
 
-        this.lureService.createLure(lureServiceModel);
+        this.lureService.createLure(lureServiceModel, fishingId);
 
         return super.redirect("/home");
     }
