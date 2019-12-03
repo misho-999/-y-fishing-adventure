@@ -32,12 +32,13 @@ public class FishController extends BaseController {
         this.modelMapper = modelMapper;
     }
 
-    @GetMapping("/create/{fishingId}")
+    @GetMapping("/create/{fishingId}/{townName}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Fish")
-    public ModelAndView createFish(@PathVariable String fishingId, ModelAndView modelAndView
+    public ModelAndView createFish(@PathVariable String fishingId, @PathVariable String townName, ModelAndView modelAndView
             , @ModelAttribute(name = "fishModel") FishCreateModel fishCreateModel) {
         modelAndView.addObject("fishingId", fishingId);
+        modelAndView.addObject("townName", townName);
 
         return super.view("fish/create-fish.html", modelAndView);
     }
@@ -47,10 +48,10 @@ public class FishController extends BaseController {
         return new FishCreateModel();
     }
 
-    @PostMapping("/create/{fishingId}")
+    @PostMapping("/create/{fishingId}/{townName}")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView createFishConfirm(@Valid @PathVariable String fishingId, ModelAndView modelAndView, @ModelAttribute(name = "fishModel")
-            FishCreateModel fishCreateModel, BindingResult bindingResult) {
+    public ModelAndView createFishConfirm(@Valid @PathVariable String fishingId, @PathVariable String townName, ModelAndView modelAndView
+            , @ModelAttribute(name = "fishModel") FishCreateModel fishCreateModel, BindingResult bindingResult) {
 
         this.fishCreateValidator.validate(fishCreateModel, bindingResult);
 
@@ -65,7 +66,8 @@ public class FishController extends BaseController {
 
         this.fishService.createFish(fishServiceModel, fishingId);
 
-        return super.redirect("/fishes/all-for-fishing/" + fishingId);
+        return super.redirect("/fishings/all-my-for-destination/" + townName);
+
     }
 
     @GetMapping("/all-for-fishing/{id}")

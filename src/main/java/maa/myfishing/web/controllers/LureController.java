@@ -29,12 +29,14 @@ public class LureController extends BaseController {
         this.modelMapper = modelMapper;
     }
 
-    @GetMapping("/create/{fishingId}")
+    @GetMapping("/create/{fishingId}/{townName}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Lure")
-    public ModelAndView createLure(@PathVariable String fishingId, ModelAndView modelAndView
+    public ModelAndView createLure(@PathVariable String fishingId, @PathVariable String townName, ModelAndView modelAndView
             , @ModelAttribute(name = "lureModel") LureCreateModel lureCreateModel) {
         modelAndView.addObject("fishingId", fishingId);
+        modelAndView.addObject("townName", townName);
+
         return super.view("lure/create-lure.html", modelAndView);
     }
 
@@ -43,16 +45,17 @@ public class LureController extends BaseController {
         return new LureCreateModel();
     }
 
-    @PostMapping("/create/{fishingId}")
+    @PostMapping("/create/{fishingId}/{townName}")
     @PreAuthorize("isAuthenticated()")
-    public ModelAndView fishCreateConfirm(@Valid @PathVariable String fishingId, ModelAndView modelAndView, @ModelAttribute(name = "lureModel")
+    public ModelAndView fishCreateConfirm(@Valid @PathVariable String fishingId, @PathVariable String townName, ModelAndView modelAndView, @ModelAttribute(name = "lureModel")
             LureCreateModel lureCreateModel) {
 
         LureServiceModel lureServiceModel = this.modelMapper.map(lureCreateModel, LureServiceModel.class);
 
         this.lureService.createLure(lureServiceModel, fishingId);
 
-        return super.redirect("/lures/all-for-fishing/" +fishingId);
+//        return super.redirect("/lures/all-for-fishing/" + fishingId);
+        return super.redirect("/fishings/all-my-for-destination/" + townName);
     }
 
     @GetMapping("/all-for-fishing/{fishingId}")

@@ -6,7 +6,7 @@
     <th:block th:include="~{fragments/head}"/>
 </head>
 
-<body  class="lure">
+<body class="lure">
 
 <header>
     <th:block th:include="~{fragments/navbar}"/>
@@ -14,32 +14,35 @@
 
 <main>
     <div class="welcome"><strong><em>All Lures For This Fishing</em></strong></div>
-
-<!--    <a th:href="@{/fishings/all-my-for-destination/{fishingId}(fishingId=${fishingId})}"-->
-<!--       class="btn btn-warning font-weight-bold text-white btn-sm align-middle">Back To Fishing</a>-->
-
     <div class="row d-flex justify-content-center">
         <th:block th:each="lure, iter : ${lures}">
-            <div class="col col-md-3 text-white lure-list">
-
-                <p class="text-left" th:text="'Make: '+${lure.make}"></p>
-                <p class="text-left" th:text="'Model: '+${lure.model}"></p>
-                <p class="text-left" th:text="'Color: '+${lure.color}"></p>
-                <p class="text-left" th:text="'Type: '+${lure.typeOfLure}"></p>
-                <p class="text-left" th:text="'Weight: '+${lure.weightInGrams}"></p>
-                <p class="text-left" th:text="'Length: '+${lure.lengthInMillimeters}"></p>
-                <!--                    <a th:href="@{/lures/delete/{id}(id=${lure.id})}"-->
-                <!--                       class="btn btn-danger font-weight-bold text-white">Delete</a>-->
+            <div class="col col-md-3">
+                <div class="text-center text-white lures-list">
+                    <p class="text-left" th:text="'Make: '+${lure.make}"></p>
+                    <p class="text-left" th:text="'Model: '+${lure.model}"></p>
+                    <p class="text-left" th:text="'Color: '+${lure.color}"></p>
+                    <p class="text-left" th:text="'Type: '+${lure.typeOfLure}"></p>
+                    <p class="text-left" th:text="'Weight: '+${lure.weightInGrams}"></p>
+                    <p class="text-left" th:text="'Length: '+${lure.lengthInMillimeters}"></p>
+                    <!--                    <a th:href="@{/lures/delete/{id}(id=${lure.id})}"-->
+                    <!--                       class="btn btn-danger font-weight-bold text-white">Delete</a>-->
+                </div>
             </div>
         </th:block>
 
-        <th:block th:if="${lures.size()} %3 == 1">
-            <div class="col col-md-3 fishing-list"></div>
-            <div class="col col-md-3 fishing-list"></div>
+        <th:block th:if="${lures.size()} %4 == 1">
+            <div class="col col-md-3"></div>
+            <div class="col col-md-3"></div>
+            <div class="col col-md-3"></div>
         </th:block>
 
-        <th:block th:if="${lures.size()} %3 == 2">
-            <div class="col col-md-3 fishing-list"></div>
+        <th:block th:if="${lures.size()} %4 == 2">
+            <div class="col col-md-3"></div>
+            <div class="col col-md-3"></div>
+        </th:block>
+
+        <th:block th:if="${lures.size()} %4 == 3">
+            <div class="col col-md-3"></div>
         </th:block>
 
     </div>
