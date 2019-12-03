@@ -20,19 +20,12 @@
                 <div class="text-center text-white fishes-list">
                     <p class="text-left" th:text="'Name: '+${fish.fishName}"></p>
                     <p class="text-left" th:text="'Weight: '+${fish.weightInKilograms}+'kg'"></p>
-                    <p class="text-left" th:text="'Length: '+${fish.lengthInCentimeters}+'sm'"></p>
+                    <p class="text-left" th:text="'Length: '+${fish.lengthInCentimeters}+'cm'"></p>
                 </div>
                 <div class="text-center text-white">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item m-md-2">
-                            <a th:href="@{/destinations/edit/{id}(id=${fish.id})}"
-                               class="btn btn-success font-weight-bold text-white">Edit</a>
-                        </li>
-                        <li class="nav-item m-md-2">
-                            <a th:href="@{/destinations/delete/{id}(id=${fish.id})}"
-                               class="btn btn-danger font-weight-bold text-white">Delete</a>
-                        </li>
-                    </ul>
+                    <form method="POST" th:action="@{/fishes/delete/{id}/{fishingId}(id=${fish.id}, fishingId=${fishingId})}">
+                        <button type="submit" class="btn btn-danger font-weight-bold text-white">Delete</button>
+                    </form>
                 </div>
             </div>
         </th:block>

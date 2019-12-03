@@ -51,18 +51,16 @@
             <div class="form-row">
                 <div class="form-group col-md ">
                     <label for="weightInGrams"><em><strong class="label-color">Weight In Grams</strong></em></label>
-                    <input type="number" min="3" step=".5" class="form-control" id="weightInGrams"
-                           placeholder="between 3 and 10gr."
-                           name="weightInGrams" th:value="*{weightInGrams}">
+                    <input type="number" min="3" max="20" class="form-control" id="weightInGrams"
+                           placeholder="between 3 and 20gr." name="weightInGrams" th:value="*{weightInGrams}">
 
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md ">
                     <label for="lengthInMillimeters"><em><strong class="label-color">Length In Millimeters</strong></em></label>
-                    <input type="number" min="3" step=".5" class="form-control" id="lengthInMillimeters"
-                           placeholder="between 3 and 20mm. "
-                           name="lengthInMillimeters" th:value="*{lengthInMillimeters}">
+                    <input type="number" min="30" max="200" class="form-control" id="lengthInMillimeters"
+                           placeholder="between 30 and 200mm."  name="lengthInMillimeters" th:value="*{lengthInMillimeters}">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Add Lure</button>

@@ -22,10 +22,11 @@
                     <p class="text-left" th:text="'Model: '+${lure.model}"></p>
                     <p class="text-left" th:text="'Color: '+${lure.color}"></p>
                     <p class="text-left" th:text="'Type: '+${lure.typeOfLure}"></p>
-                    <p class="text-left" th:text="'Weight: '+${lure.weightInGrams}"></p>
-                    <p class="text-left" th:text="'Length: '+${lure.lengthInMillimeters}"></p>
-                    <!--                    <a th:href="@{/lures/delete/{id}(id=${lure.id})}"-->
-                    <!--                       class="btn btn-danger font-weight-bold text-white">Delete</a>-->
+                    <p class="text-left" th:text="'Weight: '+${lure.weightInGrams}+'gr.'"></p>
+                    <p class="text-left" th:text="'Length: '+${lure.lengthInMillimeters}+'mm.'"></p>
+                    <form method="POST" th:action="@{/lures/delete/{id}/{fishingId}(id=${lure.id}, fishingId=${fishingId})}">
+                        <button type="submit" class="btn btn-danger font-weight-bold text-white">Delete</button>
+                    </form>
                 </div>
             </div>
         </th:block>

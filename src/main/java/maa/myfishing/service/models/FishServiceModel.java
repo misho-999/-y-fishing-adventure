@@ -1,12 +1,21 @@
 package maa.myfishing.service.models;
 
 public class FishServiceModel {
+    private String id;
     private String fishName;
     private Double weightInKilograms;
     private Integer lengthInCentimeters;
     private String creator;
 
     public FishServiceModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getFishName() {

@@ -30,7 +30,7 @@ class FishServiceImplTest {
         fishingService = Mockito.mock(FishingService.class);
         modelMapper = new ModelMapper();
 
-        Mockito.when(fishRepository.findAllByFishingId("1")).thenReturn(fishes);
+        Mockito.when(fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc("1")).thenReturn(fishes);
 
 
     }
@@ -51,7 +51,7 @@ class FishServiceImplTest {
 
     @Test
     void getAllFishesByFishingId_whenIdIsNotPresent_ShouldReturnEmptyList() {
-        List<Fish> fishing = fishRepository.findAllByFishingId("2");
+        List<Fish> fishing = fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc("2");
         assertEquals(0, fishing.size());
     }
 
@@ -70,6 +70,6 @@ class FishServiceImplTest {
             setFishes(fishes);
         }};
 
-        assertEquals(fishes.size(), fishRepository.findAllByFishingId("1").size());
+        assertEquals(fishes.size(), fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc("1").size());
     }
 }

@@ -3,6 +3,7 @@ package maa.myfishing.service.models;
 import maa.myfishing.data.models.TypeOfLure;
 
 public class LureServiceModel {
+    private String id;
     private String make;
     private String model;
     private String color;
@@ -11,6 +12,14 @@ public class LureServiceModel {
     private Integer lengthInMillimeters;
 
     public LureServiceModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMake() {

@@ -66,7 +66,16 @@ public class LureController extends BaseController {
                 .stream()
                 .map(l -> this.modelMapper.map(l, LureAllModel.class))
                 .collect(Collectors.toList()));
+        modelAndView.addObject("fishingId", fishingId);
 
         return super.view("lure/all-for-fishing-lure.html", modelAndView);
+    }
+
+    @PostMapping("/delete/{id}/{fishingId}")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView deleteLureConfirm(@PathVariable String id, @PathVariable String fishingId) {
+        this.lureService.deleteLure(id);
+
+        return super.redirect("/lures/all-for-fishing/" + fishingId);
     }
 }

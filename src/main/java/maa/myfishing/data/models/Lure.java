@@ -54,9 +54,9 @@ public class Lure extends BaseEntity {
         this.typeOfLure = typeOfLure;
     }
 
-    @Column(name = "weigth_in_rgams", nullable = false, updatable = true)
-    @DecimalMin(value = "0.10")
-    @DecimalMax(value = "200.00")
+    @Column(name = "weight_in_grams", nullable = false, updatable = true)
+    @DecimalMin(value = "3")
+    @DecimalMax(value = "20")
     public Integer getWeightInGrams() {
         return weightInGrams;
     }
@@ -66,8 +66,8 @@ public class Lure extends BaseEntity {
     }
 
     @Column(name = "length_in_mm", nullable = false, updatable = false)
-    @Min(3)
-    @Max(value = 20)
+    @Min(30)
+    @Max(value = 200)
     public Integer getLengthInMillimeters() {
         return lengthInMillimeters;
     }

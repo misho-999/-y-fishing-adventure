@@ -29,8 +29,8 @@ public class Fish extends BaseEntity {
         this.fishName = name;
     }
 
-    @Column(name = "weigth_in_kg", nullable = false, updatable = false)
-    @DecimalMin(value = "0.10")
+    @Column(name = "weight_in_kg", nullable = false, updatable = false)
+    @DecimalMin(value = "0.30")
     @DecimalMax(value = "200.00")
     public Double getWeightInKilograms() {
         return weightInKilograms;
@@ -40,7 +40,7 @@ public class Fish extends BaseEntity {
         this.weightInKilograms = weigth;
     }
 
-    @Column(name = "length_in_sm", nullable = false, updatable = false)
+    @Column(name = "length_in_cm", nullable = false, updatable = false)
     @Min(20)
     @Max(value = 300)
     public Integer getLengthInCentimeters() {

@@ -1,8 +1,10 @@
 package maa.myfishing.service.serices.implementations;
 
+import maa.myfishing.constants.validation.FishValidationConstants;
 import maa.myfishing.data.models.Fish;
 import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.reposipories.FishRepository;
+import maa.myfishing.eroors.FishNotFoundException;
 import maa.myfishing.service.models.FishServiceModel;
 import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.FishService;
@@ -51,10 +53,18 @@ public class FishServiceImpl implements FishService {
     @Override
     public List<FishServiceModel> getAllFishesByFishingId(String id) {
 
-        List<Fish> allByFishingId = this.fishRepository.findAllByFishingId(id);
+        List<Fish> allByFishingId = this.fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc(id);
 
         return allByFishingId.stream()
                 .map(f -> this.modelMapper.map(f, FishServiceModel.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteFish(String id) {
+        Fish fish = this.fishRepository.findById(id)
+                .orElseThrow(() -> new FishNotFoundException(FishValidationConstants.FISH_WITH_ID_NOT_FOUND_EXCEPTION));
+
+        this.fishRepository.delete(fish);
     }
 }

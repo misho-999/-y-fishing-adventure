@@ -9,6 +9,8 @@ public class FishingAllModel {
     private String description;
     private String townName;
     private String creator;
+    private Integer countOfFishes;
+    private Integer countOfLures;
 
     public FishingAllModel() {
     }

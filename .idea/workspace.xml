@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/eroors/FishNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/eroors/LureNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/FishValidationConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/FishValidationConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Fish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Lure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/models/Lure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/FishServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/FishServiceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/LureServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/models/LureServiceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/LureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/LureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/FishController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/LureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/LureController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/LureAllModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/models/LureAllModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fish/all-for-fishing-fish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fish/all-for-fishing-fish.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fish/create-fish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fish/create-fish.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-my-for-destination-fishings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-my-for-destination-fishings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lure/all-for-fishing-lure.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/lure/all-for-fishing-lure.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/lure/create-lure.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/lure/create-lure.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,20 +121,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="maa.myfishing.service.serices.implementations" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="maa.myfishing.constants.validation" />
-      <recent name="maa.myfishing.eroors" />
-      <recent name="maa.myfishing.web.controllers" />
-      <recent name="maa.myfishing.config" />
-      <recent name="maa.myfishing.web.models" />
-    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -132,6 +130,20 @@
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fragments" />
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\static\help" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="maa.myfishing.eroors" />
+      <recent name="maa.myfishing.constants.validation" />
+      <recent name="maa.myfishing.web.controllers" />
+      <recent name="maa.myfishing.config" />
+      <recent name="maa.myfishing.web.models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -329,6 +341,7 @@
       <workItem from="1575279564530" duration="14746000" />
       <workItem from="1575355712008" duration="10516000" />
       <workItem from="1575366249189" duration="2547000" />
+      <workItem from="1575369585953" duration="4562000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574444265566</created>

@@ -3,6 +3,7 @@ package maa.myfishing.web.models;
 import maa.myfishing.data.models.TypeOfLure;
 
 public class LureAllModel {
+    private String id;
     private String make;
     private String model;
     private String color;
@@ -11,6 +12,14 @@ public class LureAllModel {
     private Integer lengthInMillimeters;
 
     public LureAllModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMake() {

@@ -70,16 +70,25 @@ public class FishController extends BaseController {
 
     }
 
-    @GetMapping("/all-for-fishing/{id}")
+    @GetMapping("/all-for-fishing/{fishingId}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("All Fish For Destination")
-    public ModelAndView allFishForDestination(@PathVariable String id, ModelAndView modelAndView) {
-        modelAndView.addObject("fishes", this.fishService.getAllFishesByFishingId(id)
+    public ModelAndView allFishForDestination(@PathVariable String fishingId, ModelAndView modelAndView) {
+        modelAndView.addObject("fishes", this.fishService.getAllFishesByFishingId(fishingId)
                 .stream()
                 .map(f -> this.modelMapper.map(f, FishAllModel.class))
                 .collect(Collectors.toList()));
+        modelAndView.addObject("fishingId", fishingId);
 
         return super.view("fish/all-for-fishing-fish.html", modelAndView);
+    }
+
+    @PostMapping("/delete/{id}/{fishingId}")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView deleteFishConfirm(@PathVariable String id, @PathVariable String fishingId) {
+        this.fishService.deleteFish(id);
+
+        return super.redirect("/fishes/all-for-fishing/" + fishingId);
     }
 
 //    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})

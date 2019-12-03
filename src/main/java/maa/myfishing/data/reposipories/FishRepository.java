@@ -13,7 +13,7 @@ public interface FishRepository extends JpaRepository<Fish, String> {
 
 //    @Query("FROM Fish f JOIN f.fishing fi WHERE fi.id =:id")
 //    List<Fish> findAllFishesByFishingId(String id);
-    List<Fish> findAllByFishingId(String id);
+    List<Fish> findAllByFishingIdOrderByWeightInKilogramsDesc(String id);
 
     Optional<Fish> findByFishNameAndWeightInKilogramsAndLengthInCentimeters(String id, double weightInKilograms, int lengthInCentimeters);
 }

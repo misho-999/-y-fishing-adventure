@@ -5,6 +5,7 @@ import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.models.Lure;
 import maa.myfishing.data.reposipories.LureRepository;
 import maa.myfishing.eroors.LureAlreadyExistsException;
+import maa.myfishing.eroors.LureNotFoundException;
 import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.models.LureServiceModel;
 import maa.myfishing.service.serices.FishingService;
@@ -57,5 +58,13 @@ public class LureServiceImpl implements LureService {
         return lures.stream()
                 .map(l -> modelMapper.map(l, LureServiceModel.class))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteLure(String id) {
+        Lure lure = this.lureRepository.findById(id)
+                .orElseThrow(() -> new LureNotFoundException(LureValidationConstants.LURE_WITH_ID_NOT_FOUND_EXCEPTION));
+
+        this.lureRepository.delete(lure);
     }
 }

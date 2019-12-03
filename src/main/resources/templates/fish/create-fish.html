@@ -31,7 +31,7 @@
                 <div class="form-group col-md ">
                     <label for="weightInKilograms"><em><strong class="label-color">Weight In
                         Kilograms</strong></em></label>
-                    <input type="number" min="0.00" step=".01" class="form-control" id="weightInKilograms"
+                    <input type="number" min="0.3" max="200" step=".1" class="form-control" id="weightInKilograms"
                            placeholder="Weight In Kilograms(between 0,1 and 200kg)..."
                            name="weightInKilograms" th:value="*{weightInKilograms}">
                     <th:block th:if="${#fields.hasErrors('weightInKilograms')}">
@@ -42,7 +42,7 @@
             <div class="form-row">
                 <div class="form-group col-md ">
                     <label for="lengthInCentimeters"><em><strong class="label-color">Length In Centimeters</strong></em></label>
-                    <input type="number" class="form-control" id="lengthInCentimeters"
+                    <input type="number" min="20" max="300" class="form-control" id="lengthInCentimeters"
                            placeholder="Length In Centimeters(between 20 and 300cm)... "
                            name="lengthInCentimeters" th:value="*{lengthInCentimeters}">
                     <th:block th:if="${#fields.hasErrors('lengthInCentimeters')}">
