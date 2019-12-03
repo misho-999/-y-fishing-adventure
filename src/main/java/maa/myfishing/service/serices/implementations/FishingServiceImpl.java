@@ -53,7 +53,10 @@ public class FishingServiceImpl implements FishingService {
         Destination destination = this.destinationRepository.findByTownName(townName)
                 .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
 
-        destination.setFishingsCount(destination.getFishingsCount() + 1);
+        int fishingCount = fishingRepository.findAllFishingByTownName(destination.getTownName()).size();
+
+        destination.setFishingsCount(fishingCount + 1);
+
         this.destinationRepository.save(destination);
 
         fishing.setDestination(destination);
@@ -113,32 +116,17 @@ public class FishingServiceImpl implements FishingService {
     }
 
     @Override
-    public void deleteFishing(String id) {
+    public void deleteFishing(String id, String townName) {
         Fishing fishing = this.fishingRepository.findById(id)
                 .orElseThrow(() -> new FishingNotFoundException(FishingValidationConstants.FISHING_WITH_ID_NOT_FOUND_EXCEPTION));
 
-            this.fishingRepository.delete(fishing);
-    }
+        Destination destination = destinationRepository.findByTownName(townName)
+                .orElseThrow(() -> new DestinationNotFoundException(
+                        DestinationValidationConstants.DESTINATION_WITH_TOWN_NAME_NOT_FOUND_EXCEPTION));
 
-    //@Override
-    //    public void deleteFishing(String id) {
-    //        Destination destination = this.destinationRepository.findById(id)
-    //                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
-    //
-    //        List<Fishing> fishings = destination.getFishings();
-    //
-    //        //Don't delete this code!!!!
-    ////        fishings.forEach(fishing -> {
-    ////            fishing.setDestination(null);
-    ////        });
-    //
-    //        fishings.forEach(fishing -> {
-    //            fishing.setDestination(null);
-    //            this.fishingRepository.delete(fishing);
-    //            fishing.setFishes(null);
-    //            fishing.setLures(null);
-    //        });
-    //
-    //        this.destinationRepository.delete(destination);
-    //    }
+        destination.setFishingsCount(destination.getFishingsCount() - 1);
+        this.destinationRepository.save(destination);
+
+        this.fishingRepository.delete(fishing);
+    }
 }

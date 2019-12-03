@@ -10,7 +10,6 @@ public class Fishing extends BaseEntity {
     private String imgUrl;
     private LocalDate date;// На BindingModela трябва да има @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String description;
-    private Boat boat;
     private Destination destination;
     private String creator;
     private List<Fish> fishes;
@@ -56,15 +55,6 @@ public class Fishing extends BaseEntity {
         this.creator = creator;
     }
 
-    @OneToOne(mappedBy = "fishing")
-    public Boat getBoat() {
-        return boat;
-    }
-
-    public void setBoat(Boat boat) {
-        this.boat = boat;
-    }
-
     @ManyToOne
     @JoinColumn(name = "destination_id", referencedColumnName = "id")
     public Destination getDestination() {
@@ -75,7 +65,7 @@ public class Fishing extends BaseEntity {
         this.destination = destination;
     }
 
-    @OneToMany(mappedBy = "fishing")
+    @OneToMany(mappedBy = "fishing", cascade = CascadeType.ALL)
     public List<Fish> getFishes() {
         return fishes;
     }
@@ -84,7 +74,7 @@ public class Fishing extends BaseEntity {
         this.fishes = fishes;
     }
 
-    @OneToMany(mappedBy = "fishing")
+    @OneToMany(mappedBy = "fishing", cascade = CascadeType.ALL)
     public List<Lure> getLures() {
         return lures;
     }

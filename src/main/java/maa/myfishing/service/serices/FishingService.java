@@ -19,5 +19,5 @@ public interface FishingService {
 
     FishingServiceModel getFishingById(String id);
 
-    void deleteFishing(String id);
+    void deleteFishing(String id, String townName);
 }

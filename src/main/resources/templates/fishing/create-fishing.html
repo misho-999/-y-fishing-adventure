@@ -13,7 +13,7 @@
 </header>
 
 <main>
-    <div class="welcome"><strong><em>Create Fishing</em></strong></div>
+    <div class="welcome"><p th:text="'Create Fishing In: ' + ${townName}"></div>
     <div class="row justify-content-md-center text-center">
         <form id="create-fishing" class="form w-25 mx-auto"
               th:action="@{/fishings/create/{townName}(townName=${townName})}" method="post"

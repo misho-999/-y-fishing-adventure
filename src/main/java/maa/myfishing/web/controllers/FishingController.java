@@ -6,8 +6,8 @@ import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.CloudinaryService;
 import maa.myfishing.service.serices.FishingService;
 import maa.myfishing.web.annotations.PageTitle;
-import maa.myfishing.web.models.FishingCreateModel;
 import maa.myfishing.web.models.FishingAllModel;
+import maa.myfishing.web.models.FishingCreateModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -121,6 +121,28 @@ public class FishingController extends BaseController {
         return super.view("fishing/my-fishing.html", modelAndView);
     }
 
+    @GetMapping("/delete/{id}/{townName}")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("Delete Fishing")
+    public ModelAndView deleteProduct(@PathVariable String id, @PathVariable String townName, ModelAndView modelAndView) {
+        FishingServiceModel fishingServiceModel = this.fishingService.getFishingById(id);
+        FishingCreateModel fishingCreateModel = this.modelMapper.map(fishingServiceModel, FishingCreateModel.class);
+
+        modelAndView.addObject("fishing", fishingCreateModel);
+        modelAndView.addObject("townName", townName);
+
+        return super.view("fishing/delete-fishing.html", modelAndView);
+    }
+
+
+    @PostMapping("/delete/{id}/{townName}")
+    @PreAuthorize("isAuthenticated()")
+    public ModelAndView deleteFishingConfirm(@PathVariable String id, @PathVariable String townName) {
+        this.fishingService.deleteFishing(id, townName);
+
+        return super.redirect("/fishings/all-my-for-destination/" + townName);
+    }
+
     //==========================================================================
     @ExceptionHandler({FishingAlreadyExistsException.class})
     public ModelAndView handleDestinationNotFound(DestinationNotFoundException e) {
@@ -131,11 +153,4 @@ public class FishingController extends BaseController {
         return modelAndView;
     }
 
-//    @PostMapping("/delete/{id}")
-//    @PreAuthorize("isAuthenticated()")
-//    public ModelAndView deleteFishingConfirm(@PathVariable String id) {
-//        this.fishingService.deleteFishing(id);
-//
-//        return super.redirect("/destinations/my");
-//    }
 }

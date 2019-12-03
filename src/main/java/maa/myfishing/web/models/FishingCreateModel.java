@@ -7,13 +7,21 @@ import org.springframework.web.multipart.MultipartFile;
 import java.time.LocalDate;
 
 public class FishingCreateModel {
+    private String id;
     private MultipartFile image;
     private LocalDate date;// На BindingModela трябва да има @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String description;
-    private String destinationId;
     private String creator;
 
     public FishingCreateModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public MultipartFile getImage() {
@@ -22,14 +30,6 @@ public class FishingCreateModel {
 
     public void setImage(MultipartFile image) {
         this.image = image;
-    }
-
-    public String getDestinationId() {
-        return destinationId;
-    }
-
-    public void setDestinationId(String destinationId) {
-        this.destinationId = destinationId;
     }
 
     @DateTimeFormat(pattern = DateConstants.DATE_TIME_FORMAT)
