@@ -5,7 +5,9 @@ import maa.myfishing.constants.validation.FishingValidationConstants;
 import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.Fishing;
 import maa.myfishing.data.reposipories.DestinationRepository;
+import maa.myfishing.data.reposipories.FishRepository;
 import maa.myfishing.data.reposipories.FishingRepository;
+import maa.myfishing.data.reposipories.LureRepository;
 import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.eroors.FishingAlreadyExistsException;
 import maa.myfishing.eroors.FishingNotFoundException;
@@ -22,13 +24,17 @@ import java.util.stream.Collectors;
 @Service
 public class FishingServiceImpl implements FishingService {
     private final FishingRepository fishingRepository;
+    private final FishRepository fishRepository;
+    private final LureRepository lureRepository;
     private final DestinationRepository destinationRepository;
     private final Validator validator;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public FishingServiceImpl(FishingRepository fishingRepository, DestinationRepository destinationRepository, Validator validator, ModelMapper modelMapper) {
+    public FishingServiceImpl(FishingRepository fishingRepository, FishRepository fishRepository, LureRepository lureRepository, DestinationRepository destinationRepository, Validator validator, ModelMapper modelMapper) {
         this.fishingRepository = fishingRepository;
+        this.fishRepository = fishRepository;
+        this.lureRepository = lureRepository;
         this.destinationRepository = destinationRepository;
         this.validator = validator;
         this.modelMapper = modelMapper;
@@ -91,7 +97,15 @@ public class FishingServiceImpl implements FishingService {
     @Override
     public List<FishingServiceModel> getAllFishingsByUsernameAndTownName(String username, String townName) {
         List<Fishing> allFishings = this.fishingRepository.findAllFishingsByUsernameAndTownName(username, townName);
-        return setTownName(allFishings);
+
+        List<FishingServiceModel> fishings = this.setTownName(allFishings);
+
+        for (FishingServiceModel fishing : fishings) {
+            fishing.setCountOfFishes(this.fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc(fishing.getId()).size());
+            fishing.setCountOfLures(this.lureRepository.findAllLuresByFishingId(fishing.getId()).size());
+        }
+
+        return fishings;
     }
 
     @Override

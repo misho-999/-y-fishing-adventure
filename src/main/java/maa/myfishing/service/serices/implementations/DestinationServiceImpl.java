@@ -20,14 +20,12 @@ import java.util.stream.Collectors;
 public class DestinationServiceImpl implements DestinationService {
     private final DestinationRepository destinationRepository;
     private final FishingRepository fishingRepository;
-    private final UserInfoRepository userInfoRepository;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public DestinationServiceImpl(DestinationRepository destinationRepository, FishingRepository fishingRepository, UserInfoRepository userInfoRepository, ModelMapper modelMapper) {
+    public DestinationServiceImpl(DestinationRepository destinationRepository, FishingRepository fishingRepository, ModelMapper modelMapper) {
         this.destinationRepository = destinationRepository;
         this.fishingRepository = fishingRepository;
-        this.userInfoRepository = userInfoRepository;
         this.modelMapper = modelMapper;
     }
 
@@ -35,7 +33,6 @@ public class DestinationServiceImpl implements DestinationService {
     public DestinationServiceModel createDestination(DestinationServiceModel destinationServiceModel) {
         Destination destination = this.modelMapper.map(destinationServiceModel, Destination.class);
 
-        Destination destination1 = this.destinationRepository.saveAndFlush(destination);
         return this.modelMapper.map(this.destinationRepository.saveAndFlush(destination), DestinationServiceModel.class);
     }
 
@@ -108,10 +105,10 @@ public class DestinationServiceImpl implements DestinationService {
         this.destinationRepository.delete(destination);
     }
 
-    @Override
-    public List<DestinationServiceModel> getTopFiveDestination() {
-        return this.destinationRepository.findTop5ByOrderByFishingsCountDesc().stream()
-                .map(d-> this.modelMapper.map(d, DestinationServiceModel.class))
-                .collect(Collectors.toList());
-    }
+//    @Override
+//    public List<DestinationServiceModel> getTopFiveDestination() {
+//        return this.destinationRepository.findTop5ByOrderByFishingsCountDesc().stream()
+//                .map(d-> this.modelMapper.map(d, DestinationServiceModel.class))
+//                .collect(Collectors.toList());
+//    }
 }

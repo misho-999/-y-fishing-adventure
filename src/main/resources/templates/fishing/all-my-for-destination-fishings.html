@@ -22,12 +22,13 @@
                     <h4 th:text="'Creator: '+ ${fishing.creator}"></h4>
                     <h4 th:text="'Destination: ' + ${fishing.description}"></h4>
                     <h4 th:text="'Created on: '+${fishing.date}"></h4>
+                    <h4 th:text="'Count Of Fishes: '+${fishing.countOfFishes}"></h4>
+                    <h4 th:text="'Count Of Lures: '+${fishing.countOfLures}"></h4>
                 </div>
                 <div class="text-center text-white">
                     <ul class="nav justify-content-center">
+
                         <li class="nav-item m-md-2">
-                            <!--                            <a th:href="@{/fishes/create/{id}(id=${fishing.id})}"-->
-                            <!--                               class="btn btn-primary font-weight-bold text-white btn-sm">Add Fish</a>-->
                             <a th:href="@{/fishes/create/{id}/{townName}(id=${fishing.id}, townName=${townName})}"
                                class="btn btn-primary font-weight-bold text-white btn-sm">Add Fish</a>
                         </li>
@@ -44,9 +45,6 @@
                                class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>
                         </li>
                         <li class="nav-item m-md-2">
-                            <!--                            <a th:href="@{/destinations/delete/{id}(id=${fishing.id})}"-->
-                            <!--                               class="btn btn-danger font-weight-bold text-white btn-sm">Delete</a>-->
-
                             <a th:href="@{/fishings/delete/{id}/{townName}(id=${fishing.id}, townName =${townName})}"
                                class="btn btn-danger font-weight-bold text-white btn-sm">Delete</a>
                         </li>

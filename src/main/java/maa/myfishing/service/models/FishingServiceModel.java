@@ -9,6 +9,8 @@ public class FishingServiceModel {
     private String description;
     private String townName;
     private String creator;
+    private int countOfFishes;
+    private int countOfLures;
 
     public FishingServiceModel() {
     }
@@ -59,5 +61,21 @@ public class FishingServiceModel {
 
     public void setCreator(String creator) {
         this.creator = creator;
+    }
+
+    public int getCountOfFishes() {
+        return countOfFishes;
+    }
+
+    public void setCountOfFishes(int countOfFishes) {
+        this.countOfFishes = countOfFishes;
+    }
+
+    public int getCountOfLures() {
+        return countOfLures;
+    }
+
+    public void setCountOfLures(int countOfLures) {
+        this.countOfLures = countOfLures;
     }
 }

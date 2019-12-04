@@ -22,33 +22,28 @@
                 <img th:src="${destination.imgUrl}" class="img-thumb" width="300" height="200"/>
             </div>
             <div class="col-md-6 text-left">
-                <div class="col-md-6 mt-5 text-white font-weight-bold text-center">
-                    <h4 th:text="'Town: ' + ${destination.townName}"></h4>
+                <div class="text-center text-white fishes-list">
+                    <p class="text-left" th:text="'TownName: '+${destination.townName}"></p>
+                    <p class="text-left" th:text="'Population: '+${destination.population}"></p>
+                    <p class="text-left" th:text="'Altitude: '+${destination.altitude}"></p>
+                    <p class="text-left" th:text="'Description: '+${destination.description}"></p>
                 </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <h4 th:text="'Population: ' + ${destination.population}"></h4>
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <h4 th:text="'Altitude: ' + ${destination.altitude}"></h4>
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-                    <h4 th:text="'Description:'"></h4>
-                    <textarea th:text="${destination.description}"
-                              class="form-control" readonly id="description"></textarea>
-                </div>
-                <!--                <th:bolck th:if="${#authentication.getPrincipal().getUsername()} != ${destination.creator}">-->
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
 
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
+<!--                <div class="col-md-6 mt-5 text-white font-weight-bold text-center">-->
+                <!--                    <h4 th:text="'Town: ' + ${destination.townName}"></h4>-->
+                <!--                </div>-->
+                <!--                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">-->
+                <!--                    <h4 th:text="'Population: ' + ${destination.population}"></h4>-->
+                <!--                </div>-->
+                <!--                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">-->
+                <!--                    <h4 th:text="'Altitude: ' + ${destination.altitude}"></h4>-->
+                <!--                </div>-->
+                <!--                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">-->
+                <!--                    <h4 th:text="'Description:'"></h4>-->
+                <!--                    <textarea th:text="${destination.description}"-->
+                <!--                              class="form-control" readonly id="description"></textarea>-->
 
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-
-                </div>
-                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">
-
-                </div>
+                <!--                </div>-->
             </div>
         </div>
         <div class="row justify-content-center">

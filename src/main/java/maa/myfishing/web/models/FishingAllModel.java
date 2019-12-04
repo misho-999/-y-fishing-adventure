@@ -63,4 +63,20 @@ public class FishingAllModel {
     public void setCreator(String creator) {
         this.creator = creator;
     }
+
+    public Integer getCountOfFishes() {
+        return countOfFishes;
+    }
+
+    public void setCountOfFishes(Integer countOfFishes) {
+        this.countOfFishes = countOfFishes;
+    }
+
+    public Integer getCountOfLures() {
+        return countOfLures;
+    }
+
+    public void setCountOfLures(Integer countOfLures) {
+        this.countOfLures = countOfLures;
+    }
 }

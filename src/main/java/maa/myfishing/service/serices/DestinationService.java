@@ -21,6 +21,6 @@ public interface DestinationService {
 
     void deleteDestination(String id);
 
-    List<DestinationServiceModel> getTopFiveDestination();
+//    List<DestinationServiceModel> getTopFiveDestination();
 
 }
