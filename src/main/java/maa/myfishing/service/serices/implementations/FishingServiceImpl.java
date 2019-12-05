@@ -117,18 +117,6 @@ public class FishingServiceImpl implements FishingService {
     }
 
 
-    private List<FishingServiceModel> setTownName(List<Fishing> fishings) {
-        List<FishingServiceModel> fishingServiceModels = fishings.stream()
-                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
-                .collect(Collectors.toList());
-
-        for (int i = 0; i < fishings.size(); i++) {
-            fishingServiceModels.get(i).setTownName(fishings.get(i).getDestination().getTownName());
-        }
-
-        return fishingServiceModels;
-    }
-
     @Override
     public void deleteFishing(String id, String townName) {
         Fishing fishing = this.fishingRepository.findById(id)
@@ -143,4 +131,18 @@ public class FishingServiceImpl implements FishingService {
 
         this.fishingRepository.delete(fishing);
     }
+
+
+    private List<FishingServiceModel> setTownName(List<Fishing> fishings) {
+        List<FishingServiceModel> fishingServiceModels = fishings.stream()
+                .map(f -> this.modelMapper.map(f, FishingServiceModel.class))
+                .collect(Collectors.toList());
+
+        for (int i = 0; i < fishings.size(); i++) {
+            fishingServiceModels.get(i).setTownName(fishings.get(i).getDestination().getTownName());
+        }
+
+        return fishingServiceModels;
+    }
+
 }

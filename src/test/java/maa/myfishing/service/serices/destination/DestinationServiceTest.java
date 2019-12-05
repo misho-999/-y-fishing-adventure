@@ -1,60 +1,30 @@
-package maa.myfishing.service.serices;
+package maa.myfishing.service.serices.destination;
 
-import maa.myfishing.base.TestBase;
-import maa.myfishing.constants.validation.DestinationValidationConstants;
 import maa.myfishing.data.models.Destination;
-import maa.myfishing.data.reposipories.DestinationRepository;
-import maa.myfishing.data.reposipories.FishingRepository;
-import maa.myfishing.data.reposipories.UserInfoRepository;
 import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.service.models.DestinationServiceModel;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnit;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DestinationServiceTest extends TestBase {
-    List<Destination> destinations;
-
-    @MockBean
-    DestinationRepository destinationRepository;
-
-    @MockBean
-    FishingRepository fishingRepository;
-
-    ModelMapper modelMapper = new ModelMapper();
-
-    @Autowired
-    DestinationService destinationService;
-
-    @BeforeEach
-    private void setupTest() {
-        destinations = new ArrayList<>();
-    }
+class DestinationServiceTest extends DestinationBaseTest {
 
     @Test
     void createDestination() {
-//        DestinationServiceModel destinationServiceModel = getDestinationServiceModel();
-//
-//        destinationService.createDestination(destinationServiceModel);
-//
-//        ArgumentCaptor<Destination> argument = ArgumentCaptor.forClass(Destination.class);
-//        Mockito.verify(destinationRepository).save(argument.capture());
-//
-//        Destination destination = argument.getValue();
-//
-//        assertNotNull(destination);
+        DestinationServiceModel destinationServiceModel = getDestinationServiceModel();
+
+        destinationService.createDestination(destinationServiceModel);
+
+        ArgumentCaptor<Destination> argument = ArgumentCaptor.forClass(Destination.class);
+        Mockito.verify(destinationRepository).save(argument.capture());
+
+        Destination destination = argument.getValue();
+
+        assertNotNull(destination);
     }
 
     @Test
@@ -67,11 +37,10 @@ class DestinationServiceTest extends TestBase {
         assertThrows(
                 DestinationNotFoundException.class,
                 () -> destinationService.getDestinationByTownName(townName));
-
     }
 
     @Test
-    void getDestinationByTownName_WhenTownIsExist_ShouldDestination() {
+    void getDestinationByTownName_WhenTownIsExist_ShouldReturnDestination() {
         String townName = "Chushkovo";
 
         Destination destination = new Destination();
@@ -80,11 +49,9 @@ class DestinationServiceTest extends TestBase {
         Mockito.when(destinationRepository.findByTownName(townName))
                 .thenReturn(Optional.of(destination));
 
-
         DestinationServiceModel destinationServiceModel = destinationService.getDestinationByTownName(townName);
 
         assertEquals(destination.getTownName(), destinationServiceModel.getTownName());
-
     }
 
 
@@ -136,20 +103,12 @@ class DestinationServiceTest extends TestBase {
         Mockito.when(destinationRepository.findDestinationsByUsername("Pesho")).thenReturn(destinations);
 
         assertEquals(3, destinationRepository.findDestinationsByUsername("Pesho").size());
-
     }
 
 
     @Test
     void getDestinationById_WhenDestinationIsNotPresent_ThenThrowException() {
-        String id = "1";
-
-        Mockito.when(destinationRepository.findById(id)).thenReturn(Optional.empty());
-
-        assertThrows(
-                DestinationNotFoundException.class,
-                () -> destinationService.getDestinationById(id));
-
+        testDestinationWithIdIsNotPresent();
     }
 
 
@@ -169,13 +128,7 @@ class DestinationServiceTest extends TestBase {
 
     @Test
     void editDestination_WhenDestinationIsNotPresent_ThenThrowException() {
-        String id = "1";
-
-        Mockito.when(destinationRepository.findById(id)).thenReturn(Optional.empty());
-
-        assertThrows(DestinationNotFoundException.class,
-                () -> destinationService.getDestinationById(id));
-
+        testDestinationWithIdIsNotPresent();
     }
 
     @Test
@@ -183,38 +136,32 @@ class DestinationServiceTest extends TestBase {
         String id = "1";
         DestinationServiceModel destinationServiceModel = new DestinationServiceModel();
         destinationServiceModel.setTownName("Chukurovo2");
-        destinationServiceModel.setPopulation(222);
-        destinationServiceModel.setAltitude(2222);
-        destinationServiceModel.setDescription("2");
+        destinationServiceModel.setPopulation(22);
+        destinationServiceModel.setAltitude(222);
+        destinationServiceModel.setDescription("BlaBla2");
+        destinationServiceModel.setImgUrl("URL2");
 
         Destination destination = new Destination();
-        destination.setTownName("Chukurovo");
-        destination.setPopulation(15000);
-        destination.setAltitude(2500);
-        destination.setDescription("BlaBla");
+        destination.setTownName("Chukurovo1");
+        destination.setPopulation(111111);
+        destination.setAltitude(1111);
+        destination.setDescription("BlaBla1");
+        destination.setImgUrl("URL1");
 
         Mockito.when(destinationRepository.findById(id)).thenReturn(Optional.of(destination));
 
         DestinationServiceModel mockDestinationServiceModel = destinationService.editDestination(id, destinationServiceModel);
-        
 
+        assertEquals("Chukurovo2", mockDestinationServiceModel.getTownName());
+        assertEquals(150002, mockDestinationServiceModel.getPopulation());
+        assertEquals(2502, mockDestinationServiceModel.getAltitude());
+        assertEquals("BlaBla2", mockDestinationServiceModel.getDescription());
+        assertEquals("URL2", mockDestinationServiceModel.getImgUrl());
     }
 
-    // public DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel) {
-    //        Destination destination = this.destinationRepository.findById(id)
-    //                .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
-    //        destination.setImgUrl(destinationServiceModel.getImgUrl());
-    //        destination.setTownName(destinationServiceModel.getTownName());
-    //        destination.setPopulation(destinationServiceModel.getPopulation());
-    //        destination.setAltitude(destinationServiceModel.getAltitude());
-    //        destination.setDescription(destinationServiceModel.getDescription());
-    //
-    //        return this.modelMapper.map(this.destinationRepository.saveAndFlush(destination), DestinationServiceModel.class);
-    //    }
-
     @Test
-    void deleteDestination() {
-
+    void deleteDestination_WhenDestinationIsNotPresent_ThenThrowException() {
+        testDestinationWithIdIsNotPresent();
     }
 
     private DestinationServiceModel getDestinationServiceModel() {
@@ -230,6 +177,5 @@ class DestinationServiceTest extends TestBase {
         destinationServiceModel.setImgUrl("dsassdsdsdssdsdsd");
 
         return destinationServiceModel;
-
     }
 }
