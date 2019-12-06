@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationBaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingBaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/base/ApiTestBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/base/ViewTestBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/DestinationControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/eroors/UserNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/DestinationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/DestinationServiceImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/implementations/FishServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/UserValidationConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/constants/validation/UserValidationConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/UserInfoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/DestinationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/DestinationControllerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,22 +109,8 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
-      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="maa.myfishing.service.serices" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="maa.myfishing.web.view.controllers" />
-      <recent name="maa.myfishing.service.serices.fishing" />
-      <recent name="maa.myfishing.service.serices" />
-      <recent name="maa.myfishing.service.base" />
-      <recent name="maa.myfishing.base" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\test\java\maa\myfishing\web" />
@@ -134,6 +118,20 @@
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fragments" />
       <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="maa.myfishing.eroors" />
+      <recent name="maa.myfishing.web.view.controllers" />
+      <recent name="maa.myfishing.service.serices.fishing" />
+      <recent name="maa.myfishing.service.serices" />
+      <recent name="maa.myfishing.service.base" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\destination" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fish" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\fishing" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates\user" />
+      <recent name="D:\SOFTUNI\JAVA\JAVA WEB\Project\My-fishing-adventure\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -164,64 +162,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FishingServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DestinationControllerTest.deleteDestination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="maa.myfishing.service.serices.fishing.*" />
+          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.fishing" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.fishing.FishingServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FishingServiceImplTest.deleteFishing_WhenFishingIsNotPresent_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myfishing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="maa.myfishing.service.serices.fishing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.fishing" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.fishing.FishingServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteFishing_WhenFishingIsNotPresent_ShouldThrowException" />
+      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.DestinationControllerTest" />
+      <option name="METHOD_NAME" value="deleteDestination" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FishingServiceImplTest.deleteFishing_WhenTownIsNotPresent_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DestinationControllerTest.deleteDestinationConfirm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="maa.myfishing.service.serices.fishing.*" />
+          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.fishing" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.fishing.FishingServiceImplTest" />
-      <option name="METHOD_NAME" value="deleteFishing_WhenTownIsNotPresent_ShouldThrowException" />
+      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.DestinationControllerTest" />
+      <option name="METHOD_NAME" value="deleteDestinationConfirm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FishingServiceImplTest.getFishingById_WhenFIshingIsPresent_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DestinationControllerTest.destinationDetails_WhenDestinationsIsPresent_ShouldReturnDestinationDetailsViewWithStatus200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="maa.myfishing.service.serices.fishing.*" />
+          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.fishing" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.fishing.FishingServiceImplTest" />
-      <option name="METHOD_NAME" value="getFishingById_WhenFIshingIsPresent_ShouldThrowException" />
+      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.DestinationControllerTest" />
+      <option name="METHOD_NAME" value="destinationDetails_WhenDestinationsIsPresent_ShouldReturnDestinationDetailsViewWithStatus200" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DestinationControllerTest.editDestinationConfirm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myfishing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.DestinationControllerTest" />
+      <option name="METHOD_NAME" value="editDestinationConfirm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -237,10 +236,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DestinationControllerTest" />
-        <item itemvalue="JUnit.FishingServiceImplTest" />
-        <item itemvalue="JUnit.FishingServiceImplTest.deleteFishing_WhenTownIsNotPresent_ShouldThrowException" />
-        <item itemvalue="JUnit.FishingServiceImplTest.deleteFishing_WhenFishingIsNotPresent_ShouldThrowException" />
-        <item itemvalue="JUnit.FishingServiceImplTest.getFishingById_WhenFIshingIsPresent_ShouldThrowException" />
+        <item itemvalue="JUnit.DestinationControllerTest.editDestinationConfirm" />
+        <item itemvalue="JUnit.DestinationControllerTest.deleteDestinationConfirm" />
+        <item itemvalue="JUnit.DestinationControllerTest.deleteDestination" />
+        <item itemvalue="JUnit.DestinationControllerTest.destinationDetails_WhenDestinationsIsPresent_ShouldReturnDestinationDetailsViewWithStatus200" />
       </list>
     </recent_temporary>
   </component>
@@ -334,7 +333,8 @@
       <workItem from="1575448829857" duration="6420000" />
       <workItem from="1575455313433" duration="12514000" />
       <workItem from="1575529361555" duration="3278000" />
-      <workItem from="1575533105606" duration="7490000" />
+      <workItem from="1575533105606" duration="19707000" />
+      <workItem from="1575617135948" duration="8811000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574444265566</created>
@@ -406,7 +406,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
-          <line>113</line>
+          <line>114</line>
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -433,6 +433,59 @@
           <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingServiceImplTest.java</url>
           <line>108</line>
           <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="208" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/web/controllers/DestinationController.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="213" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/DestinationControllerTest.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserInfoServiceImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="245" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="246" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="247" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/eroors/DestinationNotFoundException.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="248" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/DestinationControllerTest.java</url>
+          <line>178</line>
+          <properties class="maa.myfishing.web.view.controllers.DestinationControllerTest" method="editDestinationConfirm">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="249" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

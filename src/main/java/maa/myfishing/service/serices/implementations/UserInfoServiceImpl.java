@@ -6,12 +6,14 @@ import maa.myfishing.data.models.UserInfo;
 import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.UserInfoRepository;
 import maa.myfishing.eroors.TownAlreadyExistException;
+import maa.myfishing.eroors.UserNotFoundException;
 import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.models.UserInfoServiceModel;
 import maa.myfishing.service.serices.DestinationService;
 import maa.myfishing.service.serices.UserInfoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,9 +42,11 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public void addDestination(String townName, String username) {
-        UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
-        if (isDestinationPresent(townName, username)) {
+    public void addDestinationToMyDestinatoins(String townName, String username) {
+        UserInfo userInfo = this.userInfoRepository.findByUserUsername(username)
+                .orElseThrow(() -> new UserNotFoundException(String.format(UserValidationConstants.USER_NOT_FOUND_EXCEPTION, username)));
+
+        if (isDestinationPresent(townName, userInfo)) {
             throw new TownAlreadyExistException(UserValidationConstants.USER_HAS_ALREADY_ADDED_DESTINATION);
         }
 
@@ -57,8 +61,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         this.userInfoRepository.save(userInfo);
     }
 
-    private boolean isDestinationPresent(String townName, String username) {
-        UserInfo userInfo = this.userInfoRepository.findByUserUsername(username);
+    private boolean isDestinationPresent(String townName, UserInfo userInfo) {
         List<Destination> destinations = userInfo.getDestinations();
 
         boolean isPresent = false;
@@ -73,6 +76,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public UserInfo getUserByUsername(String username) {
-        return this.userInfoRepository.findByUserUsername(username);
+        return this.userInfoRepository.findByUserUsername(username)
+                .orElseThrow(() -> new UserNotFoundException(String.format(UserValidationConstants.USER_NOT_FOUND_EXCEPTION, username)));
     }
 }
