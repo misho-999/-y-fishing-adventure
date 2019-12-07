@@ -2,7 +2,7 @@ package maa.myfishing.web.models;
 
 import maa.myfishing.data.models.TypeOfLure;
 
-public class LureAllModel {
+public class LureAllViewModel {
     private String id;
     private String make;
     private String model;
@@ -11,7 +11,7 @@ public class LureAllModel {
     private Integer weightInGrams;
     private Integer lengthInMillimeters;
 
-    public LureAllModel() {
+    public LureAllViewModel() {
     }
 
     public String getId() {

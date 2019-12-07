@@ -1,10 +1,12 @@
 package maa.myfishing.web.controllers;
 
+import maa.myfishing.service.models.RoleServiceModel;
 import maa.myfishing.service.models.UserServiceModel;
 import maa.myfishing.service.serices.UserService;
 import maa.myfishing.validation.user.UserEditValidator;
 import maa.myfishing.validation.user.UserRegisterValidator;
 import maa.myfishing.web.annotations.PageTitle;
+import maa.myfishing.web.models.UserAllViewModel;
 import maa.myfishing.web.models.UserRegisterModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/users")
@@ -73,7 +78,7 @@ public class UserController extends BaseController {
         return super.view("user/login");
     }
 
-//    @GetMapping("/profile")
+    //    @GetMapping("/profile")
 //    @PreAuthorize("isAuthenticated()")
 //    @PageTitle("Profile")
 //    public ModelAndView profile(Principal principal, ModelAndView modelAndView) {
@@ -116,25 +121,29 @@ public class UserController extends BaseController {
 //        return super.redirect("/users/profile");
 //    }
 //
-//    @GetMapping("/all")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
-//    @PageTitle("All Users")
-//    public ModelAndView allUsers(ModelAndView modelAndView) {
-//        List<UserAllViewModel> users = this.userService.findAllUsers()
-//                .stream()
-//                .map(u -> {
-//                    UserAllViewModel user = this.modelMapper.map(u, UserAllViewModel.class);
-//                    Set<String> authorities = u.getAuthorities().stream().map(a -> a.getAuthority()).collect(Collectors.toSet());
-//                    user.setAuthorities(authorities);
-//
-//                    return user;
-//                })
-//                .collect(Collectors.toList());
-//
-//        modelAndView.addObject("users", users);
-//
-//        return super.view("user/all-users", modelAndView);
-//    }
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PageTitle("All Users")
+    public ModelAndView allUsers(ModelAndView modelAndView) {
+        List<UserAllViewModel> users = this.userService.getAllUsers()
+                .stream()
+                .map(u -> {
+                    UserAllViewModel user = this.modelMapper.map(u, UserAllViewModel.class);
+                    Set<String> authorities = u.getAuthorities()
+                            .stream()
+                            .map(RoleServiceModel::getAuthority)
+                            .collect(Collectors.toSet());
+
+                    user.setAuthorities(authorities);
+
+                    return user;
+                })
+                .collect(Collectors.toList());
+
+        modelAndView.addObject("users", users);
+
+        return super.view("user/all-users.html", modelAndView);
+    }
 
     @PostMapping("/set-user/{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")

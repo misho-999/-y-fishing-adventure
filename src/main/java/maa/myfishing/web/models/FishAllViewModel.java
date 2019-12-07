@@ -1,13 +1,13 @@
 package maa.myfishing.web.models;
 
-public class FishAllModel {
+public class FishAllViewModel {
     private String id;
     private String fishName;
     private Double weightInKilograms;
     private Integer lengthInCentimeters;
     private String fishingId;
 
-    public FishAllModel() {
+    public FishAllViewModel() {
     }
 
     public String getId() {

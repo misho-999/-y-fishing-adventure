@@ -6,7 +6,7 @@ import maa.myfishing.service.serices.FishService;
 import maa.myfishing.validation.fish.FishCreateValidator;
 import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.FishCreateModel;
-import maa.myfishing.web.models.FishAllModel;
+import maa.myfishing.web.models.FishAllViewModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -76,7 +76,7 @@ public class FishController extends BaseController {
     public ModelAndView allFishForDestination(@PathVariable String fishingId, ModelAndView modelAndView) {
         modelAndView.addObject("fishes", this.fishService.getAllFishesByFishingId(fishingId)
                 .stream()
-                .map(f -> this.modelMapper.map(f, FishAllModel.class))
+                .map(f -> this.modelMapper.map(f, FishAllViewModel.class))
                 .collect(Collectors.toList()));
         modelAndView.addObject("fishingId", fishingId);
 

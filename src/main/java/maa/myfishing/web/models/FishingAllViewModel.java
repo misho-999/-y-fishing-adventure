@@ -2,7 +2,7 @@ package maa.myfishing.web.models;
 
 import java.time.LocalDate;
 
-public class FishingAllModel {
+public class FishingAllViewModel {
     private String id;
     private String imgUrl;
     private LocalDate date;
@@ -12,7 +12,7 @@ public class FishingAllModel {
     private Integer countOfFishes;
     private Integer countOfLures;
 
-    public FishingAllModel() {
+    public FishingAllViewModel() {
     }
 
     public String getId() {

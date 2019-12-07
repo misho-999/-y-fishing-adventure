@@ -3,9 +3,7 @@ package maa.myfishing.web.controllers;
 import maa.myfishing.service.models.LureServiceModel;
 import maa.myfishing.service.serices.LureService;
 import maa.myfishing.web.annotations.PageTitle;
-import maa.myfishing.web.models.FishAllModel;
-import maa.myfishing.web.models.FishCreateModel;
-import maa.myfishing.web.models.LureAllModel;
+import maa.myfishing.web.models.LureAllViewModel;
 import maa.myfishing.web.models.LureCreateModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +62,7 @@ public class LureController extends BaseController {
     public ModelAndView allLureForDestination(@PathVariable String fishingId, ModelAndView modelAndView) {
         modelAndView.addObject("lures", this.lureService.getAllLuresByFishingId(fishingId)
                 .stream()
-                .map(l -> this.modelMapper.map(l, LureAllModel.class))
+                .map(l -> this.modelMapper.map(l, LureAllViewModel.class))
                 .collect(Collectors.toList()));
         modelAndView.addObject("fishingId", fishingId);
 

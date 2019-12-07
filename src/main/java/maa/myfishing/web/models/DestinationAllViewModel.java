@@ -1,6 +1,6 @@
 package maa.myfishing.web.models;
 
-public class DestinationAllModel {
+public class DestinationAllViewModel {
 
     private String creator;
     private String id;
@@ -11,7 +11,7 @@ public class DestinationAllModel {
     private String description;
     private int fishingsCount;
 
-    public DestinationAllModel() {
+    public DestinationAllViewModel() {
     }
 
     public String getCreator() {

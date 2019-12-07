@@ -6,7 +6,7 @@ import maa.myfishing.service.models.FishingServiceModel;
 import maa.myfishing.service.serices.CloudinaryService;
 import maa.myfishing.service.serices.FishingService;
 import maa.myfishing.web.annotations.PageTitle;
-import maa.myfishing.web.models.FishingAllModel;
+import maa.myfishing.web.models.FishingAllViewModel;
 import maa.myfishing.web.models.FishingCreateModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class FishingController extends BaseController {
     @GetMapping("/create/{townName}")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("Add Fishing")
-    public ModelAndView addFishing(@PathVariable String townName, ModelAndView modelAndView) {
+    public ModelAndView createFishing(@PathVariable String townName, ModelAndView modelAndView) {
         modelAndView.addObject("townName", townName);
 
         return super.view("fishing/create-fishing.html", modelAndView);
@@ -49,7 +49,7 @@ public class FishingController extends BaseController {
 
     @PostMapping("/create/{townName}")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public ModelAndView destinationAddConfirm(@PathVariable String townName, ModelAndView modelAndView, @ModelAttribute(name = "fishingAddModel")
+    public ModelAndView createFishingConfirm(@PathVariable String townName, ModelAndView modelAndView, @ModelAttribute(name = "fishingAddModel")
             FishingCreateModel fishingCreateModel) throws IOException {
 
         FishingServiceModel fishingServiceModel = this.modelMapper.map(fishingCreateModel, FishingServiceModel.class);
@@ -65,10 +65,10 @@ public class FishingController extends BaseController {
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("All Fishings")
-    public ModelAndView all(ModelAndView modelAndView) {
+    public ModelAndView getAll(ModelAndView modelAndView) {
         modelAndView.addObject("fishings", this.fishingService.getAllFishings()
                 .stream()
-                .map(p -> this.modelMapper.map(p, FishingAllModel.class))
+                .map(p -> this.modelMapper.map(p, FishingAllViewModel.class))
                 .collect(Collectors.toList()));
 
         return super.view("fishing/all-fishing.html", modelAndView);
@@ -81,7 +81,7 @@ public class FishingController extends BaseController {
     public ModelAndView allForDestination(@PathVariable String townName, ModelAndView modelAndView) {
         modelAndView.addObject("fishings", this.fishingService.getAllFishingsByTownName(townName)
                 .stream()
-                .map(p -> this.modelMapper.map(p, FishingAllModel.class))
+                .map(p -> this.modelMapper.map(p, FishingAllViewModel.class))
                 .collect(Collectors.toList()));
         modelAndView.addObject("townName", townName);
 
@@ -95,18 +95,18 @@ public class FishingController extends BaseController {
     public ModelAndView allMyForDestination(@PathVariable String townName, ModelAndView modelAndView, Principal principal) {
         modelAndView.addObject("fishings", this.fishingService.getAllFishingsByUsernameAndTownName(principal.getName(), townName)
                 .stream()
-                .map(p -> this.modelMapper.map(p, FishingAllModel.class))
+                .map(p -> this.modelMapper.map(p, FishingAllViewModel.class))
                 .collect(Collectors.toList()));
         modelAndView.addObject("townName", townName);
 
         return super.view("fishing/all-my-for-destination-fishings.html", modelAndView);
     }
 
-
-    @GetMapping("/add-caught-fish")
-    public ModelAndView AddCaughtFish(ModelAndView modelAndView) {
-        return super.view("fishing/create-fish.html");
-    }
+//
+//    @GetMapping("/add-caught-fish")
+//    public ModelAndView AddCaughtFish(ModelAndView modelAndView) {
+//        return super.view("fishing/create-fish.html");
+//    }
 
 
     @GetMapping("/my")
@@ -115,7 +115,7 @@ public class FishingController extends BaseController {
     public ModelAndView allMyFishings(ModelAndView modelAndView, Principal principal) {
         modelAndView.addObject("fishings", this.fishingService.getAllFishingsByUsername(principal.getName())
                 .stream()
-                .map(p -> this.modelMapper.map(p, FishingAllModel.class))
+                .map(p -> this.modelMapper.map(p, FishingAllViewModel.class))
                 .collect(Collectors.toList()));
 
         return super.view("fishing/my-fishing.html", modelAndView);

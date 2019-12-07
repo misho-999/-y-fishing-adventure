@@ -9,11 +9,10 @@ import maa.myfishing.service.serices.UserInfoService;
 import maa.myfishing.validation.destination.DestinationCreateValidator;
 import maa.myfishing.web.annotations.PageTitle;
 import maa.myfishing.web.models.DestinationCreateModel;
-import maa.myfishing.web.models.DestinationAllModel;
+import maa.myfishing.web.models.DestinationAllViewModel;
 import maa.myfishing.web.models.DestinationDetailsViewModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -78,7 +77,7 @@ public class DestinationController extends BaseController {
     public ModelAndView allDestinations(ModelAndView modelAndView) {
         modelAndView.addObject("destinations", this.destinationService.getAllDestinations()
                 .stream()
-                .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
+                .map(p -> this.modelMapper.map(p, DestinationAllViewModel.class))
                 .collect(Collectors.toList()));
 
         return super.view("destination/all-destinations.html", modelAndView); //Няма View
@@ -90,7 +89,7 @@ public class DestinationController extends BaseController {
     public ModelAndView myDestinations(ModelAndView modelAndView, Principal principal) {
         modelAndView.addObject("destinations", this.destinationService.getMyDestinations(principal.getName())
                 .stream()
-                .map(p -> this.modelMapper.map(p, DestinationAllModel.class))
+                .map(p -> this.modelMapper.map(p, DestinationAllViewModel.class))
                 .collect(Collectors.toList()));
 
         return super.view("destination/my-destinations.html", modelAndView);

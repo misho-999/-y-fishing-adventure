@@ -13,7 +13,7 @@ public interface UserService extends UserDetailsService {
 
     UserServiceModel editUserProfile(UserServiceModel userServiceModel, String oldPassword);
 
-    List<UserServiceModel> findAllUsers();
+    List<UserServiceModel> getAllUsers();
 
     void setUserRole(String id, String role);
 }
