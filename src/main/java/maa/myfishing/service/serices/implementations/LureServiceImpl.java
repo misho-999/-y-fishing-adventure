@@ -67,4 +67,16 @@ public class LureServiceImpl implements LureService {
 
         this.lureRepository.delete(lure);
     }
+
+    @Override
+    public List<LureServiceModel> getAllLures() {
+        return lureRepository.findAll().stream()
+                .map(l -> {
+                    String fishingId = l.getFishing().getId();
+                    LureServiceModel lureServiceModel = modelMapper.map(l, LureServiceModel.class);
+                    lureServiceModel.setFishingId(fishingId);
+                    return lureServiceModel;
+                })
+                .collect(Collectors.toList());
+    }
 }

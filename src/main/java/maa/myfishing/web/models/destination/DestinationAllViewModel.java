@@ -1,6 +1,7 @@
-package maa.myfishing.web.models;
+package maa.myfishing.web.models.destination;
 
-public class DestinationDetailsViewModel {
+public class DestinationAllViewModel {
+
     private String creator;
     private String id;
     private String imgUrl;
@@ -8,8 +9,9 @@ public class DestinationDetailsViewModel {
     private Integer population;
     private Integer altitude;
     private String description;
+    private int fishingsCount;
 
-    public DestinationDetailsViewModel() {
+    public DestinationAllViewModel() {
     }
 
     public String getCreator() {
@@ -66,5 +68,13 @@ public class DestinationDetailsViewModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getFishingsCount() {
+        return fishingsCount;
+    }
+
+    public void setFishingsCount(int fishingsCount) {
+        this.fishingsCount = fishingsCount;
     }
 }

@@ -1,4 +1,4 @@
-package maa.myfishing.web.models;
+package maa.myfishing.web.models.user;
 
 public class UserRegisterModel {
 

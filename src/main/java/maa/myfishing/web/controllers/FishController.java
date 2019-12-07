@@ -5,8 +5,8 @@ import maa.myfishing.service.models.FishServiceModel;
 import maa.myfishing.service.serices.FishService;
 import maa.myfishing.validation.fish.FishCreateValidator;
 import maa.myfishing.web.annotations.PageTitle;
-import maa.myfishing.web.models.FishCreateModel;
-import maa.myfishing.web.models.FishAllViewModel;
+import maa.myfishing.web.models.fish.FishCreateModel;
+import maa.myfishing.web.models.fish.FishAllViewModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -72,7 +72,7 @@ public class FishController extends BaseController {
 
     @GetMapping("/all-for-fishing/{fishingId}")
     @PreAuthorize("hasRole('ROLE_USER')")
-    @PageTitle("All Fish For Destination")
+    @PageTitle("All Fishes For Destination")
     public ModelAndView allFishForDestination(@PathVariable String fishingId, ModelAndView modelAndView) {
         modelAndView.addObject("fishes", this.fishService.getAllFishesByFishingId(fishingId)
                 .stream()
@@ -81,6 +81,19 @@ public class FishController extends BaseController {
         modelAndView.addObject("fishingId", fishingId);
 
         return super.view("fish/all-for-fishing-fish.html", modelAndView);
+    }
+
+
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @PageTitle("All Fishes")
+    public ModelAndView allFish(ModelAndView modelAndView) {
+        modelAndView.addObject("fishes", this.fishService.getAllFishes()
+                .stream()
+                .map(f -> this.modelMapper.map(f, FishAllViewModel.class))
+                .collect(Collectors.toList()));
+
+        return super.view("fish/all-fish.html", modelAndView);
     }
 
     @PostMapping("/delete/{id}/{fishingId}")

@@ -32,8 +32,7 @@
 
                     <div class="row d-flex justify-content-center">
                         <th:block th:if="${#lists.contains(user.authorities, 'ROLE_USER') &&
-                            !#lists.contains(user.authorities, 'ROLE_MODERATOR') && !#lists.contains(user.authorities, 'ROLE_ADMIN')
-                        }">
+                            !#lists.contains(user.authorities, 'ROLE_MODERATOR') && !#lists.contains(user.authorities, 'ROLE_ADMIN')}">
                             <form th:action="@{/users/set-moderator/{id}(id=${user.id})}" method="post">
                                 <button class="btn btn-primary btn-width m-1">MODERATOR</button>
                             </form>
@@ -42,8 +41,7 @@
                             </form>
                         </th:block>
                         <th:block th:if="${#lists.contains(user.authorities, 'ROLE_USER') &&
-                            #lists.contains(user.authorities, 'ROLE_MODERATOR') && !#lists.contains(user.authorities, 'ROLE_ADMIN')
-                        }">
+                            #lists.contains(user.authorities, 'ROLE_MODERATOR') && !#lists.contains(user.authorities, 'ROLE_ADMIN')}">
                             <form th:action="@{/users/set-user/{id}(id=${user.id})}" method="post">
                                 <button class="btn btn-primary btn-width m-1">USER</button>
                             </form>
@@ -52,8 +50,8 @@
                             </form>
                         </th:block>
                         <th:block th:if="${#lists.contains(user.authorities, 'ROLE_USER') &&
-                            #lists.contains(user.authorities, 'ROLE_MODERATOR') && #lists.contains(user.authorities, 'ROLE_ADMIN') && !#lists.contains(user.authorities, 'ROLE_ROOT')
-                        }">
+                            #lists.contains(user.authorities, 'ROLE_MODERATOR') && #lists.contains(user.authorities, 'ROLE_ADMIN')
+                            && !#lists.contains(user.authorities, 'ROLE_ROOT')}">
                             <form th:action="@{/users/set-user/{id}(id=${user.id})}" method="post">
                                 <button class="btn btn-primary btn-width m-1">USER</button>
                             </form>

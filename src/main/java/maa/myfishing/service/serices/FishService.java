@@ -10,5 +10,7 @@ public interface FishService {
 
    List<FishServiceModel> getAllFishesByFishingId(String Id);
 
+   List<FishServiceModel> getAllFishes();
+
    void deleteFish(String id);
 }

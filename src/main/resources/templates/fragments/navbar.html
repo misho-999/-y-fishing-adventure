@@ -23,10 +23,8 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" th:href="@{/destinations/create}">Create Destination</a>
                             <a class="dropdown-item" th:href="@{/destinations/my}">My Destinations</a>
-                            <!--                            <th:block sec:authorize="hasRole('ROLE_MODERATOR')">-->
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" th:href="@{/destinations/all}">All Destination</a>
-                            <!--                            </th:block>-->
                         </div>
                     </li>
 
@@ -34,7 +32,6 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fishings</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <!--                                <a class="dropdown-item" th:href="@{/fishings/create}">Create Fishing</a>-->
                             <a class="dropdown-item" th:href="@{/fishings/my}">My Fishings</a>
                             <th:block sec:authorize="hasRole('ROLE_MODERATOR')">
                                 <div class="dropdown-divider"></div>
@@ -51,11 +48,10 @@
                                     Moderator
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="moderatorDropdown">
-                                    <a class="dropdown-item" th:href="@{/categories/add}">Add Category</a>
-                                    <a class="dropdown-item" th:href="@{/products/add}">Add Product</a>
+                                    <a class="dropdown-item" th:href="@{/fishes/all}">All Fishes</a>
+                                    <a class="dropdown-item" th:href="@{/lures/all}">All Lure</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" th:href="@{/categories/all}">All Categories</a>
-                                    <a class="dropdown-item" th:href="@{/products/all}">All Products</a>
+                                    <a class="dropdown-item" th:href="@{/fishings/all}">All Fishings</a>
                                 </div>
                             </div>
                         </li>

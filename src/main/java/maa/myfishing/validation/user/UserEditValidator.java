@@ -4,7 +4,7 @@ import maa.myfishing.data.models.User;
 import maa.myfishing.data.reposipories.UserRepository;
 import maa.myfishing.constants.validation.UserValidationConstants;
 import maa.myfishing.validation.annotation.Validator;
-import maa.myfishing.web.models.UserEditModel;
+import maa.myfishing.web.models.user.UserEditModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.Errors;

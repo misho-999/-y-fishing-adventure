@@ -10,6 +10,7 @@ public class LureServiceModel {
     private TypeOfLure typeOfLure;
     private Integer weightInGrams;
     private Integer lengthInMillimeters;
+    private String fishingId;
 
     public LureServiceModel() {
     }
@@ -70,4 +71,11 @@ public class LureServiceModel {
         this.lengthInMillimeters = lengthInMillimeters;
     }
 
+    public String getFishingId() {
+        return fishingId;
+    }
+
+    public void setFishingId(String fishingId) {
+        this.fishingId = fishingId;
+    }
 }

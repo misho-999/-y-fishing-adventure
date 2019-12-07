@@ -4,7 +4,7 @@ package maa.myfishing.validation.fish;
 import maa.myfishing.constants.validation.FishValidationConstants;
 import maa.myfishing.data.reposipories.FishRepository;
 import maa.myfishing.validation.annotation.Validator;
-import maa.myfishing.web.models.FishCreateModel;
+import maa.myfishing.web.models.fish.FishCreateModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 

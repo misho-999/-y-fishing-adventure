@@ -3,7 +3,7 @@ package maa.myfishing.validation.user;
 import maa.myfishing.data.reposipories.UserRepository;
 import maa.myfishing.constants.validation.UserValidationConstants;
 import maa.myfishing.validation.annotation.Validator;
-import maa.myfishing.web.models.UserRegisterModel;
+import maa.myfishing.web.models.user.UserRegisterModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 

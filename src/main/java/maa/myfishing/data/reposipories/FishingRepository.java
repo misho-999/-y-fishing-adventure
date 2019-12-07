@@ -28,4 +28,6 @@ public interface FishingRepository extends JpaRepository<Fishing, String> {
 
     @Query("FROM Fishing f  WHERE f.creator =:username")
     List<Fishing> findAllFishingByUsername(String username);
+
+    List<Fishing> findAllByOrderByDateDesc();
 }

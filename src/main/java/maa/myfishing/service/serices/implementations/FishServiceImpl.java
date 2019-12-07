@@ -52,10 +52,7 @@ public class FishServiceImpl implements FishService {
 
     @Override
     public List<FishServiceModel> getAllFishesByFishingId(String id) {
-
-        List<Fish> allByFishingId = this.fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc(id);
-
-        return allByFishingId.stream()
+        return fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc(id).stream()
                 .map(f -> this.modelMapper.map(f, FishServiceModel.class))
                 .collect(Collectors.toList());
     }
@@ -66,5 +63,17 @@ public class FishServiceImpl implements FishService {
                 .orElseThrow(() -> new FishNotFoundException(FishValidationConstants.FISH_WITH_ID_NOT_FOUND_EXCEPTION));
 
         this.fishRepository.delete(fish);
+    }
+
+    @Override
+    public List<FishServiceModel> getAllFishes() {
+        return fishRepository.findAllByOrderByWeightInKilogramsDesc().stream()
+                .map(f -> {
+                    String fishingId = f.getFishing().getId();
+                    FishServiceModel fishServiceModel = this.modelMapper.map(f, FishServiceModel.class);
+                    fishServiceModel.setFishingId(fishingId);
+                    return fishServiceModel;
+                })
+                .collect(Collectors.toList());
     }
 }

@@ -3,7 +3,7 @@ package maa.myfishing.validation.destination;
 import maa.myfishing.constants.validation.DestinationValidationConstants;
 import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.validation.annotation.Validator;
-import maa.myfishing.web.models.DestinationCreateModel;
+import maa.myfishing.web.models.destination.DestinationCreateModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 

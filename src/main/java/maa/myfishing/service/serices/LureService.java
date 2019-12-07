@@ -12,5 +12,7 @@ public interface LureService {
 
     List<LureServiceModel> getAllLuresByFishingId(String fishingId);
 
+    List<LureServiceModel> getAllLures();
+
     void deleteLure(String id);
 }

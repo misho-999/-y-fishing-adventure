@@ -1,16 +1,26 @@
-package maa.myfishing.web.models;
+package maa.myfishing.web.models.lure;
 
 import maa.myfishing.data.models.TypeOfLure;
 
-public class LureCreateModel {
+public class LureAllViewModel {
+    private String id;
     private String make;
     private String model;
     private String color;
     private TypeOfLure typeOfLure;
     private Integer weightInGrams;
     private Integer lengthInMillimeters;
+    private String fishingId;
 
-    public LureCreateModel() {
+    public LureAllViewModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMake() {
@@ -61,4 +71,11 @@ public class LureCreateModel {
         this.lengthInMillimeters = lengthInMillimeters;
     }
 
+    public String getFishingId() {
+        return fishingId;
+    }
+
+    public void setFishingId(String fishingId) {
+        this.fishingId = fishingId;
+    }
 }

@@ -3,8 +3,8 @@ package maa.myfishing.web.controllers;
 import maa.myfishing.service.models.LureServiceModel;
 import maa.myfishing.service.serices.LureService;
 import maa.myfishing.web.annotations.PageTitle;
-import maa.myfishing.web.models.LureAllViewModel;
-import maa.myfishing.web.models.LureCreateModel;
+import maa.myfishing.web.models.lure.LureAllViewModel;
+import maa.myfishing.web.models.lure.LureCreateModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -67,6 +67,18 @@ public class LureController extends BaseController {
         modelAndView.addObject("fishingId", fishingId);
 
         return super.view("lure/all-for-fishing-lure.html", modelAndView);
+    }
+
+    @GetMapping("/all")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @PageTitle("All Lure For Destination")
+    public ModelAndView allLure(ModelAndView modelAndView) {
+        modelAndView.addObject("lures", this.lureService.getAllLures()
+                .stream()
+                .map(l -> this.modelMapper.map(l, LureAllViewModel.class))
+                .collect(Collectors.toList()));
+
+        return super.view("lure/all-lure.html", modelAndView);
     }
 
     @PostMapping("/delete/{id}/{fishingId}")

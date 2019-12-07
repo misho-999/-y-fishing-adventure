@@ -1,6 +1,6 @@
-package maa.myfishing.web.models;
+package maa.myfishing.web.models.user;
 
-import maa.myfishing.data.models.Destination;
+import maa.myfishing.web.models.destination.DestinationDetailsViewModel;
 
 import java.util.List;
 

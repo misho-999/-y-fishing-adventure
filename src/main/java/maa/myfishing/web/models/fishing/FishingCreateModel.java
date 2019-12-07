@@ -1,4 +1,4 @@
-package maa.myfishing.web.models;
+package maa.myfishing.web.models.fishing;
 
 import maa.myfishing.constants.date.DateConstants;
 import org.springframework.format.annotation.DateTimeFormat;
