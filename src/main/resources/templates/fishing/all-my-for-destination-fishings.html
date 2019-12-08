@@ -16,14 +16,16 @@
     <div class="welcome"><p th:text="'All My Fishings For: ' + ${townName}"></div>
     <div class="row d-flex justify-content-center">
         <th:block th:each="fishing, iter : ${fishings}">
-            <div class="col col-md-5 fishing-list listing">
-                <div class="text-center text-white">
+            <div class="col col-md-5 fishing-list">
+                <div class="justify-content-center">
                     <img th:src="${fishing.imgUrl}" width="300" height="200">
-                    <h4 th:text="'Creator: '+ ${fishing.creator}"></h4>
-                    <h4 th:text="'Destination: ' + ${fishing.description}"></h4>
-                    <h4 th:text="'Created on: '+${fishing.date}"></h4>
-                    <h4 th:text="'Count Of Fishes: '+${fishing.countOfFishes}"></h4>
-                    <h4 th:text="'Count Of Lures: '+${fishing.countOfLures}"></h4>
+                </div>
+                <div class="text-center text-white">
+                    <p class="text-left" th:text="'Creator: '+ ${fishing.creator}"></p>
+                    <p class="text-left" th:text="'Destination: ' + ${fishing.description}"></p>
+                    <p class="text-left" th:text="'Created on: '+${fishing.date}"></p>
+                    <p class="text-left" th:text="'Count Of Fishes: '+${fishing.countOfFishes}"></p>
+                    <p class="text-left" th:text="'Count Of Lures: '+${fishing.countOfLures}"></p>
                 </div>
                 <div class="text-center text-white">
                     <ul class="nav justify-content-center">
@@ -63,14 +65,13 @@
             </div>
         </th:block>
 
-        <th:block th:if="${fishings.size()} %3 == 1">
-            <div class="col col-md-3 fishing-list"></div>
-            <div class="col col-md-3 fishing-list"></div>
+        <th:block th:if="${fishings.size()} %2 == 1">
+            <div class="col col-md-5"></div>
         </th:block>
 
-        <th:block th:if="${fishings.size()} %3 == 2">
-            <div class="col col-md-3 fishing-list"></div>
-        </th:block>
+<!--        <th:block th:if="${fishings.size()} %3 == 2">-->
+<!--            <div class="col col-md-3 fishing-list"></div>-->
+<!--        </th:block>-->
 
     </div>
 </main>

@@ -50,10 +50,10 @@
                         </th:block></li>
                         <li><a th:id="'details'+${iter.index + 1}"
                                th:href="@{/destinations/details/{id}(id=${destination.id})}"
-                               class="btn btn-warning font-weight-bold text-white btn-sm align-middle">Details</a></li>
+                               class="btn btn-warning font-weight-bold text-white btn-sm ml-1">Details</a></li>
                         <li><form method="POST" th:action="@{/destinations/add-to-my/{townName}(townName=${destination.townName})}">
                             <button th:id="${iter.index + 1}" type="submit"
-                                    class="btn btn-primary font-weight-bold text-white btn-sm">Add To My Destinations</button>
+                                    class="btn btn-primary font-weight-bold text-white btn-sm ml-1">Add To My Destinations</button>
                         </form></li>
                     </ul>
                 </td>
