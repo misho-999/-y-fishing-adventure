@@ -21,12 +21,14 @@
                     <p class="text-left" th:text="'Name: '+${fish.fishName}"></p>
                     <p class="text-left" th:text="'Weight: '+${fish.weightInKilograms}+'kg'"></p>
                     <p class="text-left" th:text="'Length: '+${fish.lengthInCentimeters}+'cm'"></p>
+
                 </div>
-                <div class="text-center text-white">
+                <div class="text-center text-white mb-5">
                     <form method="POST" th:action="@{/fishes/delete/{id}/{fishingId}(id=${fish.id}, fishingId=${fish.fishingId})}">
                         <button type="submit" class="btn btn-danger font-weight-bold text-white">Delete</button>
                     </form>
                 </div>
+
             </div>
         </th:block>
 

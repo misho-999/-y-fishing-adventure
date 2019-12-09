@@ -25,7 +25,7 @@
                     <p class="text-left" th:text="'Weight: '+${lure.weightInGrams}+'gr.'"></p>
                     <p class="text-left" th:text="'Length: '+${lure.lengthInMillimeters}+'mm.'"></p>
                 </div>
-                <div class="text-center text-white">
+                <div class="text-center text-white mb-5">
                     <form method="POST"
                           th:action="@{/lures/delete/{id}/{fishingId}(id=${lure.id}, fishingId=${lure.fishingId})}">
                         <button type="submit" class="btn btn-danger font-weight-bold text-white">Delete</button>

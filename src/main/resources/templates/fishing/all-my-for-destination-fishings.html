@@ -20,12 +20,12 @@
                 <div class="justify-content-center">
                     <img th:src="${fishing.imgUrl}" width="300" height="200">
                 </div>
-                <div class="text-center text-white">
-                    <p class="text-left" th:text="'Creator: '+ ${fishing.creator}"></p>
-                    <p class="text-left" th:text="'Destination: ' + ${fishing.description}"></p>
-                    <p class="text-left" th:text="'Created on: '+${fishing.date}"></p>
-                    <p class="text-left" th:text="'Count Of Fishes: '+${fishing.countOfFishes}"></p>
-                    <p class="text-left" th:text="'Count Of Lures: '+${fishing.countOfLures}"></p>
+                <div class="justify-content-center text-white p-text">
+                    <p class="text-center" th:text="'Creator: '+ ${fishing.creator}"></p>
+<!--                    <p class="text-left" th:text="'Destination: ' + ${fishing.description}"></p>-->
+                    <p class="text-center" th:text="'Created on: '+${fishing.date}"></p>
+                    <p class="text-center" th:text="'Count Of Fishes: '+${fishing.countOfFishes}"></p>
+                    <p class="text-center" th:text="'Count Of Lures: '+${fishing.countOfLures}"></p>
                 </div>
                 <div class="text-center text-white">
                     <ul class="nav justify-content-center">
@@ -39,7 +39,7 @@
                                class="btn btn-primary font-weight-bold text-white btn-sm">Add Lure</a>
                         </li>
                         <li class="nav-item m-md-2">
-                            <a th:href="@{/destinations/details/{id}(id=${fishing.id})}"
+                            <a th:href="@{/fishings/details/{id}(id=${fishing.id})}"
                                class="btn btn-warning font-weight-bold text-white btn-sm">Details</a>
                         </li>
                         <li class="nav-item m-md-2">
@@ -66,7 +66,7 @@
         </th:block>
 
         <th:block th:if="${fishings.size()} %2 == 1">
-            <div class="col col-md-5"></div>
+            <div class="col col-md-5 fishing-list-empty"></div>
         </th:block>
 
 <!--        <th:block th:if="${fishings.size()} %3 == 2">-->

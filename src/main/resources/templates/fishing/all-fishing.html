@@ -23,26 +23,17 @@
                     <h4 th:text="'Created on: '+${fishing.date}"></h4>
                     <a th:href="@{/fishings/delete/{id}/{townName}(id=${fishing.id}, townName =${fishing.townName})}"
                        class="btn btn-danger font-weight-bold text-white">Delete</a>
-<!--                    <a th:href="@{/fish/create/{id}(id=${fishing.id})}"-->
-<!--                       class="btn btn-primary font-weight-bold text-white">Add Fish</a>-->
-<!--                    <a th:href="@{/fishings/delete/{id}(id=${fishing.id})}"-->
-<!--                       class="btn btn-warning font-weight-bold text-white">Details</a>-->
-<!--                    <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"-->
-<!--                       class="btn btn-success font-weight-bold text-white">Edit</a>-->
-<!--                   -->
-<!--                    <a th:href="@{/fishes/all-for-fishing/{id}(id=${fishing.id})}"-->
-<!--                       class="btn btn-primary font-weight-bold text-white mt-2">All Fishes For This Fishing</a>-->
                 </div>
             </div>
         </th:block>
 
         <th:block th:if="${fishings.size()} %3 == 1">
-            <div class="col col-md-3 fishing-list"></div>
-            <div class="col col-md-3 fishing-list"></div>
+            <div class="col col-md-3 fishing-list-empty"></div>
+            <div class="col col-md-3 fishing-list-empty"></div>
         </th:block>
 
         <th:block th:if="${fishings.size()} %3 == 2">
-            <div class="col col-md-3 fishing-list"></div>
+            <div class="col col-md-3 fishing-list-empty"></div>
         </th:block>
 
     </div>

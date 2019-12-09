@@ -79,12 +79,6 @@ public class FishingServiceImpl implements FishingService {
         return setTownName(allFishings);
     }
 
-    @Override
-    public List<FishingServiceModel> getAllFishingsByTownName(String townName) {
-        List<Fishing> allFishings = this.fishingRepository.findAllFishingByTownName(townName);
-
-        return this.setTownName(allFishings);
-    }
 
     @Override
     public List<FishingServiceModel> getAllFishingsByUsername(String username) {
@@ -95,15 +89,23 @@ public class FishingServiceImpl implements FishingService {
 
 
     @Override
+    public List<FishingServiceModel> getAllFishingsByTownName(String townName) {
+        List<Fishing> allFishings = this.fishingRepository.findAllFishingByTownName(townName);
+
+        List<FishingServiceModel> fishings = this.setTownName(allFishings);
+
+        setCountOfFishingsAndLures(fishings);
+
+        return fishings;
+    }
+
+    @Override
     public List<FishingServiceModel> getAllFishingsByUsernameAndTownName(String username, String townName) {
         List<Fishing> allFishings = this.fishingRepository.findAllFishingsByUsernameAndTownName(username, townName);
 
         List<FishingServiceModel> fishings = this.setTownName(allFishings);
 
-        for (FishingServiceModel fishing : fishings) {
-            fishing.setCountOfFishes(this.fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc(fishing.getId()).size());
-            fishing.setCountOfLures(this.lureRepository.findAllLuresByFishingId(fishing.getId()).size());
-        }
+        setCountOfFishingsAndLures(fishings);
 
         return fishings;
     }
@@ -113,7 +115,10 @@ public class FishingServiceImpl implements FishingService {
         Fishing fishing = this.fishingRepository.findById(id)
                 .orElseThrow(() -> new FishingNotFoundException(FishingValidationConstants.FISHING_WITH_ID_NOT_FOUND_EXCEPTION));
 
-        return this.modelMapper.map(fishing, FishingServiceModel.class);
+        FishingServiceModel fishingServiceModel = this.modelMapper.map(fishing, FishingServiceModel.class);
+        fishingServiceModel.setTownName(fishing.getDestination().getTownName());
+
+        return fishingServiceModel;
     }
 
 
@@ -142,6 +147,16 @@ public class FishingServiceImpl implements FishingService {
 
                     return fishing;
                 }).collect(Collectors.toList());
+    }
+
+    private List<FishingServiceModel> setCountOfFishingsAndLures(List<FishingServiceModel> fishings) {
+        fishings.stream()
+                .map(f -> {
+                    f.setCountOfFishes(this.fishRepository.findAllByFishingIdOrderByWeightInKilogramsDesc(f.getId()).size());
+                    f.setCountOfLures(this.lureRepository.findAllLuresByFishingId(f.getId()).size());
+                    return f;
+                }).collect(Collectors.toList());
+        return fishings;
     }
 
 }

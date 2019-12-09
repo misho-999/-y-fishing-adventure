@@ -55,7 +55,7 @@ footer {
 .img-thumb {
     padding: .25rem;
     background-color: #fff;
-    border: 0.5px solid #0062cc;
+    border: 1px solid #0062cc;
     border-radius: .25rem;
     max-width: 100%;
 }
@@ -79,43 +79,43 @@ footer {
 }
 
 .lures-list {
-    padding: 30px;
     margin: 10px;
     border: 1px solid white;
     border-radius: .25rem;
     max-width: 100%;
     text-align: center;
     font-size: 20px;
-    padding-left: 50px;
+    padding: 30px 30px 30px 50px;
     /*background-color: rgba(0,0,0, 0.1); !* Black w/opacity/see-through *!*/
     background-color: #80bdff; /* Black w/opacity/see-through */
     /*background-image: url(/jpg/Lures.jpg);*/
 }
 
 .fishing-list {
-    padding: 30px;
-    padding-left: 50px;
+    padding: 10px;
     margin: 30px;
     border: 1px solid white;
     border-radius: .25rem;
     max-width: 100%;
     text-align: center;
     font-size: 20px;
-
     background-color: rgba(0,0,0, 0.4);
     word-wrap: break-word;
 }
 
+.fishing-list-empty {
+    margin: 30px;
+}
+
 
 .fishes-list {
-    padding: 30px;
     margin: 30px;
     border: 1px solid white;
     border-radius: .25rem;
     max-width: 100%;
     text-align: center;
     font-size: 20px;
-    padding-left: 50px;
+    padding: 30px 30px 30px 50px;
     background-color: rgba(0,0,0, 0.4);
     word-wrap: break-word;
 }
@@ -129,7 +129,7 @@ footer {
 }
 
 .destinations-details {
-    border: 0.5px solid white;
+    border: 1px solid white;
     margin-left: 250px;
     margin-top: 10px;
     margin-right: 250px;
@@ -154,3 +154,8 @@ footer {
     margin: 50px;
     /*text-align: center;*/
 }
+
+/*.p-text{*/
+/*    margin: 50px;*/
+/*    padding-left: 70px;*/
+/*}*/

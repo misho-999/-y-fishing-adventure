@@ -121,6 +121,16 @@ public class FishingController extends BaseController {
         return super.view("fishing/my-fishing.html", modelAndView);
     }
 
+
+    @GetMapping("/details/{fishingId}")
+    @PreAuthorize("isAuthenticated()")
+    @PageTitle("Fishing Details")
+    public ModelAndView fishingDetails(@PathVariable String fishingId, ModelAndView modelAndView, Principal principal) {
+        modelAndView.addObject("fishing", this.fishingService.getFishingById(fishingId));
+
+        return super.view("fishing/details-fishing.html", modelAndView);
+    }
+
     @GetMapping("/delete/{id}/{townName}")
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Delete Fishing")
