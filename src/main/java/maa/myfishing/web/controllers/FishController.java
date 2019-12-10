@@ -1,6 +1,9 @@
 package maa.myfishing.web.controllers;
 
 
+import maa.myfishing.eroors.DestinationNotFoundException;
+import maa.myfishing.eroors.FishNotFoundException;
+import maa.myfishing.eroors.TownAlreadyExistException;
 import maa.myfishing.service.models.FishServiceModel;
 import maa.myfishing.service.serices.FishService;
 import maa.myfishing.validation.fish.FishCreateValidator;
@@ -104,12 +107,12 @@ public class FishController extends BaseController {
         return super.redirect("/fishes/all-for-fishing/" + fishingId);
     }
 
-//    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class})
-//    public ModelAndView handleDestinationNotFound(Exception e) {
-//        ModelAndView modelAndView = new ModelAndView("error.html");
-//        modelAndView.addObject("message", e.getMessage());
-////        modelAndView.addObject("statusCode", e.getStatusCode());
-//
-//        return modelAndView;
-//    }
+    @ExceptionHandler({FishNotFoundException.class})
+    public ModelAndView handleDestinationNotFound(Exception e) {
+        ModelAndView modelAndView = new ModelAndView("error.html");
+        modelAndView.addObject("message", e.getMessage());
+//        modelAndView.addObject("statusCode", e.getStatusCode());
+
+        return modelAndView;
+    }
 }

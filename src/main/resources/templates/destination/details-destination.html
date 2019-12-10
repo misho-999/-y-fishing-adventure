@@ -26,37 +26,28 @@
                     <p class="text-left" th:text="'TownName: '+${destination.townName}"></p>
                     <p class="text-left" th:text="'Population: '+${destination.population}"></p>
                     <p class="text-left" th:text="'Altitude: '+${destination.altitude}"></p>
-                    <p class="text-left" th:text="'Description: '+${destination.description}"></p>
+                    <p class="text-left" th:text="'Description: '"></p>
+                    <textarea name="description" id="description" class="form-control" rows="3"
+                              th:field="${destination.description}">
+                    </textarea>
                 </div>
-
-<!--                <div class="col-md-6 mt-5 text-white font-weight-bold text-center">-->
-                <!--                    <h4 th:text="'Town: ' + ${destination.townName}"></h4>-->
-                <!--                </div>-->
-                <!--                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">-->
-                <!--                    <h4 th:text="'Population: ' + ${destination.population}"></h4>-->
-                <!--                </div>-->
-                <!--                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">-->
-                <!--                    <h4 th:text="'Altitude: ' + ${destination.altitude}"></h4>-->
-                <!--                </div>-->
-                <!--                <div class="col-md-6 mt-2 text-white font-weight-bold text-center">-->
-                <!--                    <h4 th:text="'Description:'"></h4>-->
-                <!--                    <textarea th:text="${destination.description}"-->
-                <!--                              class="form-control" readonly id="description"></textarea>-->
-
-                <!--                </div>-->
             </div>
         </div>
         <div class="row justify-content-center">
             <ul class="nav">
-                <li class="nav-item m-md-2"><a th:href="@{/fishings/create/{townName}(townName=${destination.townName})}"
-                                               class="btn btn-success font-weight-bold text-white mt-2">Create
+                <li class="nav-item m-md-2"><a
+                        th:href="@{/fishings/create/{townName}(townName=${destination.townName})}"
+                        class="btn btn-success font-weight-bold text-white mt-2">Create
                     Fishing</a></li>
-                <li class="nav-item m-md-2"><a th:href="@{/fishings/all-my-for-destination/{townName}(townName=${destination.townName})}"
-                        class="btn btn-primary font-weight-bold text-white mt-2" th:text="'All My Fishing For '+ ${destination.townName}"></a>
-                </li>
-                <li class="nav-item m-md-2"><a th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"
+                <li class="nav-item m-md-2"><a
+                        th:href="@{/fishings/all-my-for-destination/{townName}(townName=${destination.townName})}"
                         class="btn btn-primary font-weight-bold text-white mt-2"
-                                               th:text="'All Fishings For '+ ${destination.townName}"></a>
+                        th:text="'All My Fishing For '+ ${destination.townName}"></a>
+                </li>
+                <li class="nav-item m-md-2"><a
+                        th:href="@{/fishings/all-for-destination/{id}(id=${destination.townName})}"
+                        class="btn btn-primary font-weight-bold text-white mt-2"
+                        th:text="'All Fishings For '+ ${destination.townName}"></a>
                 </li>
             </ul>
         </div>

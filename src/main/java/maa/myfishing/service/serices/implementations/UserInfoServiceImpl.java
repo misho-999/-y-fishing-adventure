@@ -42,7 +42,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public void addDestinationToMyDestinatoins(String townName, String username) {
+    public void addDestinationToMyDestinations(String townName, String username) {
         UserInfo userInfo = this.userInfoRepository.findByUserUsername(username)
                 .orElseThrow(() -> new UserNotFoundException(String.format(UserValidationConstants.USER_NOT_FOUND_EXCEPTION, username)));
 
@@ -61,6 +61,13 @@ public class UserInfoServiceImpl implements UserInfoService {
         this.userInfoRepository.save(userInfo);
     }
 
+    @Override
+    public UserInfo getUserByUsername(String username) {
+        return this.userInfoRepository.findByUserUsername(username)
+                .orElseThrow(() -> new UserNotFoundException(String.format(UserValidationConstants.USER_NOT_FOUND_EXCEPTION, username)));
+    }
+
+
     private boolean isDestinationPresent(String townName, UserInfo userInfo) {
         List<Destination> destinations = userInfo.getDestinations();
 
@@ -74,9 +81,4 @@ public class UserInfoServiceImpl implements UserInfoService {
         return false;
     }
 
-    @Override
-    public UserInfo getUserByUsername(String username) {
-        return this.userInfoRepository.findByUserUsername(username)
-                .orElseThrow(() -> new UserNotFoundException(String.format(UserValidationConstants.USER_NOT_FOUND_EXCEPTION, username)));
-    }
 }

@@ -7,7 +7,7 @@ public interface UserInfoService {
 
     UserInfoServiceModel saveUserInfo(UserInfoServiceModel userInfoServiceModel);
 
-    void addDestinationToMyDestinatoins(String townName, String username);
+    void addDestinationToMyDestinations(String townName, String username);
 
     UserInfo getUserByUsername(String username);
 }

@@ -61,6 +61,7 @@ footer {
 }
 
 .welcome {
+    margin-top: 10px;
     text-align: center;
     font-size: 10mm;
     color: blue;
@@ -81,21 +82,19 @@ footer {
 .lures-list {
     margin: 10px;
     border: 1px solid white;
-    border-radius: .25rem;
+    border-radius: .5rem;
     max-width: 100%;
     text-align: center;
     font-size: 20px;
     padding: 30px 30px 30px 50px;
-    /*background-color: rgba(0,0,0, 0.1); !* Black w/opacity/see-through *!*/
-    background-color: #80bdff; /* Black w/opacity/see-through */
-    /*background-image: url(/jpg/Lures.jpg);*/
+    background-color: #80bdff;
 }
 
 .fishing-list {
     padding: 10px;
     margin: 30px;
     border: 1px solid white;
-    border-radius: .25rem;
+    border-radius: .5rem;
     max-width: 100%;
     text-align: center;
     font-size: 20px;
@@ -111,7 +110,7 @@ footer {
 .fishes-list {
     margin: 30px;
     border: 1px solid white;
-    border-radius: .25rem;
+    border-radius: .5rem;
     max-width: 100%;
     text-align: center;
     font-size: 20px;

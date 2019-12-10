@@ -20,8 +20,6 @@ public abstract class BaseController {
         return this.view("redirect:" + url);
     }
 
-
-    //!!!!!!!!!!!
     protected boolean isLoggedIn(HttpSession session) {
         return session.getAttribute("user") != null;
     }

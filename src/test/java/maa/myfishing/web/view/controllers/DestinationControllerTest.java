@@ -10,8 +10,8 @@ import maa.myfishing.service.serices.UserInfoService;
 import maa.myfishing.validation.destination.DestinationCreateValidator;
 import maa.myfishing.web.base.ViewTestBase;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -54,9 +55,6 @@ class DestinationControllerTest extends ViewTestBase {
     @Autowired
     UserInfoService userInfoService;
 
-//    ModelMapper modelMapper = new ModelMapper();
-
-
     @Test
     void create() {
 
@@ -64,9 +62,10 @@ class DestinationControllerTest extends ViewTestBase {
 
     @Test
     void destinationCreateConfirm_whenDestination_shouldReturnHeroDetailsViewWith200() throws Exception {
-
+        String username = "spring";
+        String townName = "Chushkovo";
         DestinationServiceModel destinationServiceModel = new DestinationServiceModel();
-        destinationServiceModel.setTownName("Chushkovo");
+        destinationServiceModel.setTownName(townName);
         destinationServiceModel.setPopulation(1500);
         destinationServiceModel.setAltitude(560);
         destinationServiceModel.setDescription("RRRRRR");
@@ -74,15 +73,24 @@ class DestinationControllerTest extends ViewTestBase {
         Destination destination = new Destination();
         destination.setTownName("Test");
 
-        destinationService.createDestination(destinationServiceModel);
+        UserInfo userInfo = new UserInfo();
+
+        userInfo.setDestinations(getDestinations());
+
+        Mockito.when(destinationRepository.saveAndFlush(any(Destination.class))).thenReturn(destination);
+        Mockito.when(destinationRepository.findByTownName(townName)).thenReturn(Optional.of(destination));
+        Mockito.when(userInfoRepository.findByUserUsername(username)).thenReturn(Optional.of(userInfo));
+        Mockito.when(userInfoRepository.saveAndFlush(any(UserInfo.class))).thenReturn(userInfo);
 
         Mockito.when(bindingResult.hasErrors()).thenReturn(false);
 
-        Mockito.when(destinationRepository.saveAndFlush(destination)).thenReturn(destination);
+        destinationService.createDestination(destinationServiceModel);
+
+        this.userInfoService.addDestinationToMyDestinations(destinationServiceModel.getTownName(), username);
 
         mockMvc.perform(post("/destinations/create"))
-                .andExpect(status().isOk())
-                .andExpect(view().name(DestinationControllerTest.DESTINATION_CREATE_VIEW_NAME));
+                .andExpect(status().isFound())
+                .andExpect(view().name("redirect:/destinations/my"));
     }
 
     @Test
@@ -129,7 +137,7 @@ class DestinationControllerTest extends ViewTestBase {
         String townName = "Cushkovo";
         String username = "spring";
 
-        userInfoService.addDestinationToMyDestinatoins(townName, username);
+        userInfoService.addDestinationToMyDestinations(townName, username);
 
         mockMvc.perform(post("/destinations/add-to-my/" + townName))
                 .andExpect(status().isNotFound())
@@ -214,6 +222,9 @@ class DestinationControllerTest extends ViewTestBase {
         Destination destination1 = new Destination();
         Destination destination2 = new Destination();
         Destination destination3 = new Destination();
+        destination1.setTownName("Chushkovo1");
+        destination2.setTownName("Chushkovo2");
+        destination3.setTownName("Chushkovo3");
 
         destinations.add(destination1);
         destinations.add(destination2);

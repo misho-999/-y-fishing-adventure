@@ -1,52 +1,164 @@
-// console.log('TOp-5')
-//
-// function getTopFive() {
-//     // let action = document.getElementById("myRadio").value;
-//     // document.getElementById("demo").innerHTML = x;
-//
-//     var message = $(".myRadio:checked").val();
-//     console.log(message)
-// }
-//
-// getTopFive();
-//
-// // $(".myRadio").click(function() {
-// //     $.post(
-// //         "user_submit.php",
-// //         {vote: $("[name='vote']:checked").val()},
-// //         function(data){
-// //         });
-// // });
-// console.log('Afrter-Top-5');
-//
-// $('#create-destination').on('click', '.myRadio', function (ev) {
-//     const url = $(this).attr('action');
-//
-//     // loader.show();
-//     console.log("FUnction")
-//     fetch("/api/top-five", {method: 'get'})
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log(data)
-//             // loader.hide();
-//             let message = $(".myRadio:checked").val();
-//             console.log(message)
-//         });
-//
-//     ev.preventDefault();
-//     return false;
-// });
-//
-// // $('#items-table').on('submit', '.buy-item-form', function (ev) {
-// //     const url = $(this).attr('action');
-// //
-// //     loader.show();
-// //     fetch(url, {method: 'post'})
-// //         .then(data => {
-// //             console.log(data)
-// //             loader.hide();
-// //         });
-// //
-// //     ev.preventDefault();
-// //     return false;
-// // });
+$('#myForm input').on('change', function () {
+    let message = $('input[name=radioBtn]:checked', '#myForm').val();
+    getTopFive(message);
+});
+
+const getTopFive = function (message) {
+
+    let type = message;
+    fetch(`/api/top-five/${message}`, {method: 'get'})
+        .then(response => response.json())
+        .then(data => {
+            let result = "";
+            console.log(data);
+            console.log(type);
+            if (type === "destinations") {
+                result = createDestinationsTable(data);
+            } else if (type === "fishings") {
+                result = createFishingsTable(data);
+            } else if (type === "fishes") {
+                result = createFishesTable(data);
+            }
+
+            $('#top-five-table').html(result);
+            setHeader(type);
+        });
+};
+
+const createDestinationsTable = function (destinations) {
+    let result = `<table class="table table-hover w-50 mx-auto label-color font-weight-bold">
+        <thead>
+        <tr class="row mx-auto">
+            <th class="col-md-2 text-center">#</th>
+            <th class="col-md-3 text-center">Image</th>
+            <th class="col-md-2 text-center">Town</th>
+            <th class="col-md-2 text-center">Creator</th>
+            <th class="col-md-3 text-center">Fishings Count</th>
+        </tr>
+            <tbody>`;
+
+    destinations.forEach((destination, index) => {
+        result += destinationsTable(destination, index);
+    });
+
+    result += `</tbody>
+    </table>`;
+
+    return result;
+};
+
+let destinationsTable = function (destination, index) {
+    let table = `
+        </thead>
+            <tr class="row mx-auto">
+                <td class="col-md-2 text-center">${index + 1}</td>
+                <td class="col-md-3 text-center">
+                    <div class="text-center"><img src="${destination.imgUrl}" width="100" height="50"
+                                                  class="img-thumb" alt="Destination"></div>
+                </td>
+                <td class="col-md-2 text-center">${destination.townName}</td>
+                <td class="col-md-2 text-center">${destination.creator}</td>
+                <td class="col-md-3 text-center">${destination.fishingsCount}</td>
+            </tr>`;
+
+    return table;
+};
+
+const createFishingsTable = function (fishings) {
+    let result = `<table class="table table-hover w-50 mx-auto label-color font-weight-bold">
+        <thead>
+        <tr class="row mx-auto">
+            <th class="col-md-2 text-center">#</th>
+            <th class="col-md-2 text-center">Date</th>
+            <th class="col-md-2 text-center">Town Name</th>
+            <th class="col-md-2 text-center">Creator</th>
+            <th class="col-md-2 text-center">Count of Fishes</th>
+            <th class="col-md-2 text-center">Count of Lures</th>
+        </tr>
+            <tbody>`;
+
+    fishings.forEach((fishing, index) => {
+        result += fishingTable(fishing, index);
+    });
+
+    result += `</tbody>
+    </table>`;
+
+    return result;
+};
+
+let fishingTable = function (fishing, index) {
+    let table = `
+        </thead>
+            <tr class="row mx-auto">
+                <td class="col-md-2 text-center">${index + 1}</td>
+                <td class="col-md-2 text-center">${fishing.date}</td>
+                <td class="col-md-2 text-center">${fishing.townName}</td>
+                <td class="col-md-2 text-center">${fishing.creator}</td>
+                <td class="col-md-2 text-center">${fishing.countOfFishes}</td>
+                <td class="col-md-2 text-center">${fishing.countOfLures}</td>
+            </tr>`;
+
+    return table;
+};
+
+
+const createFishesTable = function (fishes) {
+
+    let result = `<table class="table table-hover w-50 mx-auto label-color font-weight-bold">
+        <thead>
+        <tr class="row mx-auto">
+            <th class="col-md-2 text-center">#</th>
+            <th class="col-md-2 text-center">Fisherman</th>
+            <th class="col-md-2 text-center">Fish Name</th>
+            <th class="col-md-2 text-center">Weight In Kilograms</th>
+            <th class="col-md-2 text-center">Length In Centimeters</th>
+        </tr>
+            <tbody>`;
+
+    fishes.forEach((fish, index) => {
+        result += fishTable(fish, index);
+    });
+
+    result += `</tbody>
+    </table>`;
+
+    return result;
+};
+
+let fishTable = function (fish, index) {
+    let table = `
+        </thead>
+            <tr class="row mx-auto">
+                <td class="col-md-2 text-center">${index + 1}</td>
+                <td class="col-md-2 text-center">${fish.creator}</td>
+                <td class="col-md-2 text-center">${fish.fishName}</td>
+                <td class="col-md-2 text-center">${fish.weightInKilograms}</td>
+                <td class="col-md-2 text-center">${fish.lengthInCentimeters}</td>
+            </tr>`;
+
+    return table;
+};
+
+
+const setHeader = function (type) {
+    let message = "";
+    switch (type) {
+        case "destinations":
+            message = "Top 5 Fishing Destinations";
+            break;
+        case "fishings":
+            message = "Top 5 Fishings";
+            break;
+        case "fishes":
+            message = "Top 5 Big Fishes";
+            break;
+    }
+
+    let html = `<div id="welcome" class="row justify-content-center mt-5">
+            <h1 class="text-center welcome"><em>${message}!</em>
+            </h1>
+        </div>`;
+
+    $('#welcome').html(html);
+};

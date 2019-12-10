@@ -90,11 +90,6 @@ public class DestinationServiceImpl implements DestinationService {
 
         List<Fishing> fishings = destination.getFishings();
 
-        //Don't delete this code!!!!
-//        fishings.forEach(fishing -> {
-//            fishing.setDestination(null);
-//        });
-
         fishings.forEach(fishing -> {
             fishing.setDestination(null);
             this.fishingRepository.delete(fishing);
@@ -105,10 +100,10 @@ public class DestinationServiceImpl implements DestinationService {
         this.destinationRepository.delete(destination);
     }
 
-//    @Override
-//    public List<DestinationServiceModel> getTopFiveDestination() {
-//        return this.destinationRepository.findTop5ByOrderByFishingsCountDesc().stream()
-//                .map(d-> this.modelMapper.map(d, DestinationServiceModel.class))
-//                .collect(Collectors.toList());
-//    }
+    @Override
+    public List<DestinationServiceModel> getTopFiveDestination() {
+        return this.destinationRepository.findTop5ByOrderByFishingsCountDesc().stream()
+                .map(d -> this.modelMapper.map(d, DestinationServiceModel.class))
+                .collect(Collectors.toList());
+    }
 }

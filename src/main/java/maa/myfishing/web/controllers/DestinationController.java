@@ -65,7 +65,7 @@ public class DestinationController extends BaseController {
 
         this.destinationService.createDestination(destinationServiceModel);
 
-        this.userInfoService.addDestinationToMyDestinatoins(destinationServiceModel.getTownName(), principal.getName());
+        this.userInfoService.addDestinationToMyDestinations(destinationServiceModel.getTownName(), principal.getName());
 
         return super.redirect("/destinations/my");
     }
@@ -95,30 +95,15 @@ public class DestinationController extends BaseController {
         return super.view("destination/my-destinations.html", modelAndView);
     }
 
-    //=======================================================================
-//    @GetMapping("/add-to-my/{townName}")
-//    @PreAuthorize("isAuthenticated()")
-//    @PageTitle("Ad To My Destinations")
-//    public ModelAndView addToMyDestinations(@PathVariable String townName, ModelAndView modelAndView) {
-//        DestinationServiceModel destination =
-//                this.modelMapper.map(this.destinationService.getDestinationByTownName(townName), DestinationServiceModel.class);
-//
-//        modelAndView.addObject("destination", destination);
-//
-//        return super.view("destination/add-to-my-destination.html", modelAndView);
-//    }
-
     @PostMapping("/add-to-my/{townName}")
     @PreAuthorize("isAuthenticated()")
     public ModelAndView addToMyDestinationsConfirm(@PathVariable String townName
             , @ModelAttribute DestinationCreateModel destinationCreateModel, Principal principal) {
 
-        this.userInfoService.addDestinationToMyDestinatoins(townName, principal.getName());
+        this.userInfoService.addDestinationToMyDestinations(townName, principal.getName());
 
         return super.redirect("/destinations/all");
     }
-
-
 
     @GetMapping("/details/{id}")
     @PreAuthorize("isAuthenticated()")
@@ -128,11 +113,8 @@ public class DestinationController extends BaseController {
                 this.modelMapper.map(this.destinationService.getDestinationById(id), DestinationDetailsViewModel.class);
 
         modelAndView.addObject("destination", destination);
-//
-//        modelAndView.addObject("userInfo", this.modelMapper
-//                .map(this.userInfoService.getUserByUsername(principal.getName()), UserInfoModel.class));
 
-            return super.view("destination/details-destination.html", modelAndView);
+        return super.view("destination/details-destination.html", modelAndView);
     }
 
 
@@ -179,7 +161,7 @@ public class DestinationController extends BaseController {
         return super.redirect("/destinations/my");
     }
 
-    @ExceptionHandler({DestinationNotFoundException.class, UserNotFoundException.class, TownAlreadyExistException.class})
+    @ExceptionHandler({DestinationNotFoundException.class, TownAlreadyExistException.class, UserNotFoundException.class})
     public ModelAndView handleDestinationNotFound(Exception e) {
         ModelAndView modelAndView = new ModelAndView("error.html");
         modelAndView.addObject("message", e.getMessage());

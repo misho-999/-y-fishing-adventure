@@ -76,7 +76,7 @@ public class FishingServiceImpl implements FishingService {
     public List<FishingServiceModel> getAllFishings() {
         List<Fishing> allFishings = this.fishingRepository.findAllByOrderByDateDesc();
 
-        return setTownName(allFishings);
+        return this.setTownName(allFishings);
     }
 
 
@@ -84,7 +84,11 @@ public class FishingServiceImpl implements FishingService {
     public List<FishingServiceModel> getAllFishingsByUsername(String username) {
         List<Fishing> allFishings = this.fishingRepository.findAllFishingByUsername(username);
 
-        return setTownName(allFishings);
+        List<FishingServiceModel> fishings = this.setTownName(allFishings);
+
+        this.setCountOfFishingsAndLures(fishings);
+
+        return fishings;
     }
 
 
@@ -94,7 +98,7 @@ public class FishingServiceImpl implements FishingService {
 
         List<FishingServiceModel> fishings = this.setTownName(allFishings);
 
-        setCountOfFishingsAndLures(fishings);
+        this.setCountOfFishingsAndLures(fishings);
 
         return fishings;
     }
@@ -105,7 +109,7 @@ public class FishingServiceImpl implements FishingService {
 
         List<FishingServiceModel> fishings = this.setTownName(allFishings);
 
-        setCountOfFishingsAndLures(fishings);
+        this.setCountOfFishingsAndLures(fishings);
 
         return fishings;
     }

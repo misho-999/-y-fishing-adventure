@@ -6,6 +6,8 @@
     <th:block th:include="~{fragments/head}"/>
 </head>
 
+<link rel="stylesheet" href="/css/allDestinations.css">
+
 <body class="container-fluid">
 
 <header>
@@ -14,36 +16,46 @@
 
 <main>
     <div class="container-fluid">
-        <div class="row justify-content-center mt-5">
+        <div id="welcome" class="row justify-content-center mt-2">
             <h1 class="text-center welcome"><em>Welcome to а Fishing Adventures,
                 [[*{#authentication.getPrincipal().getUsername()}]]!</em>
             </h1>
         </div>
-
-        <div class="row justify-content-center">
-            <form id="create-destination" class="form w-25 mx-auto" th:action="@{/api/top-five}" method="post"
-                  enctype="multipart/form-data">
-                <div class="form-check">
-                    <input class="form-check-input myRadio" type="radio" name="radio" id="exampleRadios1"
-                           value="option1">
-                    <label class="form-check-label label-color" for="exampleRadios1">Top 5 Fishing Destinations</label>
-                </div>
-                <br>
-                <div class="form-check">
-                    <input class="form-check-input myRadio" type="radio" name="radio" id="exampleRadios2"
-                           value="option2">
-                    <label class="form-check-label label-color text-center" for="exampleRadios2">Top 5 Successful
-                        Fishings</label>
-                </div>
-                <br>
-                <div class="form-check">
-                    <input class="form-check-input myRadio" type="radio" name="radio" id="exampleRadios3"
-                           value="option2">
-                    <label class="form-check-label label-color text-center" for="exampleRadios2">Top 5 Big
-                        Fishes</label>
-                </div>
+        <div id="top-five-table" class="row justify-content-center">
+            <form id="myForm" th:action="@{/home}" method="get">
+                <fieldset class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radioBtn" id="gridRadios1"
+                                       value="destinations">
+                                <label class="form-check-label label-color" for="gridRadios1">Top 5 Fishing
+                                    Destinations</label>
+                            </div>
+                            <br/>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radioBtn" id="gridRadios2"
+                                       value="fishings">
+                                <label class="form-check-label label-color" for="gridRadios2">Top 5 Successful
+                                    Fishings</label>
+                            </div>
+                            <br/>
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="radioBtn" id="gridRadios3"
+                                       value="fishes">
+                                <label class="form-check-label label-color" for="gridRadios3">Top 5 Big Fishes</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+<!--                <div class="form-group row">-->
+<!--                    <div class="col-sm-10">-->
+<!--                        <button type="submit" class="btn btn-primary">Back To Home</button>-->
+<!--                    </div>-->
+<!--                </div>-->
             </form>
         </div>
+    </div>
     </div>
 </main>
 
