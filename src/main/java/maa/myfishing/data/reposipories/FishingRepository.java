@@ -1,5 +1,6 @@
 package maa.myfishing.data.reposipories;
 
+import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.Fishing;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -30,4 +31,5 @@ public interface FishingRepository extends JpaRepository<Fishing, String> {
     List<Fishing> findAllFishingByUsername(String username);
 
     List<Fishing> findAllByOrderByDateDesc();
+
 }

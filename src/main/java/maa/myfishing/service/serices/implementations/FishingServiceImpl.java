@@ -141,6 +141,19 @@ public class FishingServiceImpl implements FishingService {
         this.fishingRepository.delete(fishing);
     }
 
+    @Override
+    public List<FishingServiceModel> getTopFiveFishings() {
+        List<Fishing> allFishings = this.fishingRepository.findAllByOrderByDateDesc();
+
+        List<FishingServiceModel> fishingServiceModels = this.setTownName(allFishings);
+
+        return this.setCountOfFishingsAndLures(fishingServiceModels)
+                .stream().sorted((f1, f2) -> Integer.compare(f2.getCountOfFishes(), f1.getCountOfFishes()))
+                .limit(5)
+                .collect(Collectors.toList());
+    }
+
+
     private List<FishingServiceModel> setTownName(List<Fishing> fishings) {
 
         return fishings.stream()

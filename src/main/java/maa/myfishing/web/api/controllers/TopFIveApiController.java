@@ -34,7 +34,7 @@ public class TopFIveApiController {
     }
 
     @GetMapping("/api/top-five/destinations")
-    List<DestinationTopFiveViewModel> getTopFiveDestinations() {
+    List<DestinationTopFiveViewModel> topFiveDestinations() {
         return this.destinationService.getTopFiveDestination()
                 .stream()
                 .map(d -> this.modelMapper.map(d, DestinationTopFiveViewModel.class))
@@ -42,16 +42,16 @@ public class TopFIveApiController {
     }
 
     @GetMapping("/api/top-five/fishings")
-    List<FishingTopFiveViewModel> getTopFiveFishings() {
-        return this.fishingService.getAllFishings()
+    List<FishingTopFiveViewModel> topFiveFishings() {
+        return this.fishingService.getTopFiveFishings()
                 .stream()
                 .map(f -> this.modelMapper.map(f, FishingTopFiveViewModel.class))
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/api/top-five/fishes")
-    List<FishTopFiveViewModel> getTopFiveFishes() {
-        return this.fishService.getAllFishes()
+    List<FishTopFiveViewModel> topFiveFishes() {
+        return this.fishService.getTopFiveFishes()
                 .stream()
                 .map(f -> this.modelMapper.map(f, FishTopFiveViewModel.class))
                 .collect(Collectors.toList());

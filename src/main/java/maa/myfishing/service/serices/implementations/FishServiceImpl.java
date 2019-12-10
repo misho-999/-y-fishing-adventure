@@ -76,4 +76,12 @@ public class FishServiceImpl implements FishService {
                 })
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public List<FishServiceModel> getTopFiveFishes() {
+        return this.fishRepository.findTop5ByOrderByWeightInKilogramsDesc()
+                .stream()
+                .map(f -> this.modelMapper.map(f, FishServiceModel.class))
+                .collect(Collectors.toList());
+    }
 }

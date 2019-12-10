@@ -18,4 +18,6 @@ public interface FishRepository extends JpaRepository<Fish, String> {
     Optional<Fish> findByFishNameAndWeightInKilogramsAndLengthInCentimeters(String id, double weightInKilograms, int lengthInCentimeters);
 
     List<Fish> findAllByOrderByWeightInKilogramsDesc();
+
+    List<Fish> findTop5ByOrderByWeightInKilogramsDesc();
 }
