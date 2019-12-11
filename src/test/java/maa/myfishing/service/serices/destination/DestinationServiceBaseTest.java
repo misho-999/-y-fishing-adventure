@@ -5,7 +5,6 @@ import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.reposipories.DestinationRepository;
 import maa.myfishing.data.reposipories.FishingRepository;
 import maa.myfishing.eroors.DestinationNotFoundException;
-import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.serices.DestinationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,11 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class DestinationBaseTest extends TestBase {
+public class DestinationServiceBaseTest extends TestBase {
     List<Destination> destinations;
+
     @MockBean
     DestinationRepository destinationRepository;
 
@@ -39,16 +38,12 @@ public class DestinationBaseTest extends TestBase {
         destinations = new ArrayList<>();
     }
 
-
     @Test
     void testDestinationWithIdIsNotPresent() {
         String id = "id";
 
-        Mockito.when(destinationRepository.findById(id))
-                .thenReturn(Optional.empty());
-
         assertThrows(
                 DestinationNotFoundException.class,
-                () -> destinationService.getDestinationByTownName(id));
+                () -> destinationService.getDestinationById(id));
     }
 }

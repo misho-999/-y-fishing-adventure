@@ -34,7 +34,7 @@ public class FishServiceImpl implements FishService {
     }
 
     @Override
-    public void createFish(FishServiceModel fishServiceModel, String fishingId) {
+    public FishServiceModel createFish(FishServiceModel fishServiceModel, String fishingId) {
         if (!validator.validate(fishServiceModel).isEmpty()) {
             throw new IllegalArgumentException("Invalid Fish");
         }
@@ -47,7 +47,7 @@ public class FishServiceImpl implements FishService {
 
         fish.setFishing(fishing);
 
-        this.fishRepository.saveAndFlush(fish);
+       return this.modelMapper.map(this.fishRepository.saveAndFlush(fish), FishServiceModel.class);
     }
 
     @Override

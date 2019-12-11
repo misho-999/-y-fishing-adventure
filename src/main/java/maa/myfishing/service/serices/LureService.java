@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface LureService {
 
-    void createLure(LureServiceModel lureServiceModel, String fishingId);
+    LureServiceModel createLure(LureServiceModel lureServiceModel, String fishingId);
 
     List<LureServiceModel> getAllLuresByFishingId(String fishingId);
 

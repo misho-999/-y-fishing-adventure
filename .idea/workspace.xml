@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fish/FishServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/lure/LureServiceImplBaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/lure/LureServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/data/reposipories/FishingRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/FishingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/LureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/LureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/api/controllers/TopFIveApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/web/api/controllers/TopFIveApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/MyfishingApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/base/ServiceTestBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationServiceBaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingServiceImplTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +28,7 @@
   </component>
   <component name="CoverageViewManager">
     <option name="myAutoScrollToSource" value="true" />
-    <option name="myElementSize" value="121" />
+    <option name="myElementSize" value="84" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -104,12 +113,12 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="maa.myfishing.web.controllers" />
       <recent name="maa.myfishing.service.serices.implementations" />
+      <recent name="maa.myfishing.web.controllers" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -151,82 +160,87 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MyfishingApplication">
-    <configuration name="DestinationControllerTest.destinationCreateConfirm_whenDestination_shouldReturnHeroDetailsViewWith200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LureServiceImplTest">
+    <configuration name="LureServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
+          <option name="PATTERN" value="maa.myfishing.service.serices.lure.*" />
+          <option name="ENABLED" value="false" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="maa.myfishing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.DestinationControllerTest" />
-      <option name="METHOD_NAME" value="destinationCreateConfirm_whenDestination_shouldReturnHeroDetailsViewWith200" />
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.lure" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.lure.LureServiceImplTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LureServiceImplTest.createLure_WhenFIshingIsNotExist_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myfishing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="maa.myfishing.service.serices.lure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.lure" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.lure.LureServiceImplTest" />
+      <option name="METHOD_NAME" value="createLure_WhenFIshingIsNotExist_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FishingControllerTest.allForDestination_WhenFishingsIsPresent_ShouldReturnFishingAllForDestinaitonViewWithStatus200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LureServiceImplTest.createLure_WhenLuresIsExist_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
+          <option name="PATTERN" value="maa.myfishing.service.serices.lure.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.FishingControllerTest" />
-      <option name="METHOD_NAME" value="allForDestination_WhenFishingsIsPresent_ShouldReturnFishingAllForDestinaitonViewWithStatus200" />
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.lure" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.lure.LureServiceImplTest" />
+      <option name="METHOD_NAME" value="createLure_WhenLuresIsExist_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FishingControllerTest.allMyFishings" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LureServiceImplTest.createLure_WhenLuresIsValid_ShouldCreateLure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
+          <option name="PATTERN" value="maa.myfishing.service.serices.lure.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.FishingControllerTest" />
-      <option name="METHOD_NAME" value="allMyFishings" />
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.lure" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.lure.LureServiceImplTest" />
+      <option name="METHOD_NAME" value="createLure_WhenLuresIsValid_ShouldCreateLure" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FishingControllerTest.allMyForDestination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LureServiceImplTest.getAllLuresByFishingId_WhenFishingIsNotPresent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
+          <option name="PATTERN" value="maa.myfishing.service.serices.lure.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.FishingControllerTest" />
-      <option name="METHOD_NAME" value="allMyForDestination" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FishingControllerTest.deleteProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myfishing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="maa.myfishing.web.view.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.FishingControllerTest" />
-      <option name="METHOD_NAME" value="deleteProduct" />
+      <option name="PACKAGE_NAME" value="maa.myfishing.service.serices.lure" />
+      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.serices.lure.LureServiceImplTest" />
+      <option name="METHOD_NAME" value="getAllLuresByFishingId_WhenFishingIsNotPresent" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -234,18 +248,28 @@
     </configuration>
     <configuration name="MyfishingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="myfishing" />
+      <extension name="coverage" track_test_folders="true" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="maa.myfishing.MyfishingApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.LureServiceImplTest.createLure_WhenLuresIsValid_ShouldCreateLure" />
+      <item itemvalue="JUnit.LureServiceImplTest" />
+      <item itemvalue="Spring Boot.MyfishingApplication" />
+      <item itemvalue="JUnit.LureServiceImplTest.createLure_WhenLuresIsExist_ShouldThrowException" />
+      <item itemvalue="JUnit.LureServiceImplTest.createLure_WhenFIshingIsNotExist_ShouldThrowException" />
+      <item itemvalue="JUnit.LureServiceImplTest.getAllLuresByFishingId_WhenFishingIsNotPresent" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DestinationControllerTest.destinationCreateConfirm_whenDestination_shouldReturnHeroDetailsViewWith200" />
-        <item itemvalue="JUnit.FishingControllerTest.deleteProduct" />
-        <item itemvalue="JUnit.FishingControllerTest.allMyFishings" />
-        <item itemvalue="JUnit.FishingControllerTest.allMyForDestination" />
-        <item itemvalue="JUnit.FishingControllerTest.allForDestination_WhenFishingsIsPresent_ShouldReturnFishingAllForDestinaitonViewWithStatus200" />
+        <item itemvalue="JUnit.LureServiceImplTest" />
+        <item itemvalue="JUnit.LureServiceImplTest.getAllLuresByFishingId_WhenFishingIsNotPresent" />
+        <item itemvalue="JUnit.LureServiceImplTest.createLure_WhenFIshingIsNotExist_ShouldThrowException" />
+        <item itemvalue="JUnit.LureServiceImplTest.createLure_WhenLuresIsExist_ShouldThrowException" />
+        <item itemvalue="JUnit.LureServiceImplTest.createLure_WhenLuresIsValid_ShouldCreateLure" />
       </list>
     </recent_temporary>
   </component>
@@ -347,7 +371,10 @@
       <workItem from="1575882608627" duration="9739000" />
       <workItem from="1575896508855" duration="5157000" />
       <workItem from="1575960553364" duration="17961000" />
-      <workItem from="1575983368369" duration="4651000" />
+      <workItem from="1575983368369" duration="5437000" />
+      <workItem from="1575994908966" duration="2079000" />
+      <workItem from="1576049042305" duration="10100000" />
+      <workItem from="1576059183050" duration="17155000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574444265566</created>
@@ -398,34 +425,19 @@
           <option name="timeStamp" value="150" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationBaseTest.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationServiceTest.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="174" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationBaseTest.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingServiceImplTest.java</url>
-          <line>108</line>
+          <line>109</line>
           <option name="timeStamp" value="192" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="250" />
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/FishingServiceImpl.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="307" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/DestinationServiceImpl.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="251" />
+          <url>file://$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/LureServiceImpl.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="310" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -437,6 +449,54 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/myfishing$LureServiceImplTest.ic" NAME="LureServiceImplTest Coverage Results" MODIFIED="1576083126290" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$FishingServiceImplTest.ic" NAME="FishingServiceImplTest Coverage Results" MODIFIED="1576074668727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationControllerTest.ic" NAME="DestinationControllerTest Coverage Results" MODIFIED="1576073526127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$FishingControllerTest.ic" NAME="FishingControllerTest Coverage Results" MODIFIED="1576073582262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$FishServiceImplTest.ic" NAME="FishServiceImplTest Coverage Results" MODIFIED="1576074744375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationServiceImplTest2.ic" NAME="DestinationServiceImplTest2 Coverage Results" MODIFIED="1576059306199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.implementations.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationServiceTest_createDestination.ic" NAME="DestinationServiceTest.createDestination Coverage Results" MODIFIED="1576058804976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.destination.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$FishingServiceImplTest_addFishingToDestination_WhenFishingIsAlreadyExist_ShouldThrowException.ic" NAME="FishingServiceImplTest.addFishingToDestination_WhenFishingIsAlreadyExist_ShouldThrowException Coverage Results" MODIFIED="1576059848219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.fishing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationServiceTest_getAllDestinations_WhenDestinationsAreNotPresent_ShouldReturnEmptyList.ic" NAME="DestinationServiceTest.getAllDestinations_WhenDestinationsAreNotPresent_ShouldReturnEmptyList Coverage Results" MODIFIED="1576061259222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.destination.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationServiceImplTest2_getDestinationByTownName_WhenTownIsNotPresent_ShouldThrowException.ic" NAME="DestinationServiceImplTest2.getDestinationByTownName_WhenTownIsNotPresent_ShouldThrowException Coverage Results" MODIFIED="1576058674756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.implementations.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationServiceTest.ic" NAME="DestinationServiceTest Coverage Results" MODIFIED="1576070589981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$FishServiceImplTest_getAllFishesByFishingId_WhenFishesIsPresentShouldReturnFishes.ic" NAME="FishServiceImplTest.getAllFishesByFishingId_WhenFishesIsPresentShouldReturnFishes Coverage Results" MODIFIED="1576072066040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.fish.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$FishServiceImplTest_createFish_WhenFishIsValid_ShouldThrowException.ic" NAME="FishServiceImplTest.createFish_WhenFishIsValid_ShouldThrowException Coverage Results" MODIFIED="1576057667996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.implementations.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationServiceTest_deleteDestination_WhenDestinationIsNotPresent_ThenThrowException.ic" NAME="DestinationServiceTest.deleteDestination_WhenDestinationIsNotPresent_ThenThrowException Coverage Results" MODIFIED="1576064593112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.destination.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationBaseTest_testDestinationWithIdIsNotPresent.ic" NAME="DestinationBaseTest.testDestinationWithIdIsNotPresent Coverage Results" MODIFIED="1576049237831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.destination.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/myfishing$DestinationServiceTest_getMyDestinations_WhenDestinationsIsPresent_ThenReturnDestinations.ic" NAME="DestinationServiceTest.getMyDestinations_WhenDestinationsIsPresent_ThenReturnDestinations Coverage Results" MODIFIED="1576061839569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>maa.myfishing.service.serices.destination.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/myfishing$MyfishingApplication.ic" NAME="MyfishingApplication Coverage Results" MODIFIED="1574841803307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

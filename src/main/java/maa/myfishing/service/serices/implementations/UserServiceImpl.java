@@ -44,8 +44,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserServiceModel registerUser(UserServiceModel userServiceModel) {
-        this.roleService.seedRolesInDb();
+
         if (this.userRepository.count() == 0) {
+            this.roleService.seedRolesInDb();
             userServiceModel.setAuthorities(this.roleService.findAllRoles());
         } else {
             userServiceModel.setAuthorities(new LinkedHashSet<>());

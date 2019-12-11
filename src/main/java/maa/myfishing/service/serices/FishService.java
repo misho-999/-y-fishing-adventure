@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface FishService {
 
-    void createFish(FishServiceModel fishServiceModel, String fishingId);
+    FishServiceModel createFish(FishServiceModel fishServiceModel, String fishingId);
 
    List<FishServiceModel> getAllFishesByFishingId(String Id);
 

@@ -31,8 +31,7 @@ public class LureServiceImpl implements LureService {
     }
 
     @Override
-    public void createLure(LureServiceModel lureServiceModel, String fishingId) {
-
+    public LureServiceModel createLure(LureServiceModel lureServiceModel, String fishingId) {
         Lure lure = this.lureRepository.findByMakeAndModelAndLengthInMillimeters(lureServiceModel.getMake(),
                 lureServiceModel.getModel(), lureServiceModel.getLengthInMillimeters()).orElse(null);
 
@@ -48,7 +47,7 @@ public class LureServiceImpl implements LureService {
 
         lure.setFishing(fishing);
 
-        this.lureRepository.saveAndFlush(lure);
+        return this.modelMapper.map(this.lureRepository.saveAndFlush(lure), LureServiceModel.class);
     }
 
     @Override

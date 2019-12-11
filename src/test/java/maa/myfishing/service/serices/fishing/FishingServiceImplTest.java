@@ -20,6 +20,7 @@ import java.util.Optional;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 class FishingServiceImplTest extends FishingBaseTest {
 
@@ -83,16 +84,16 @@ class FishingServiceImplTest extends FishingBaseTest {
         assertEquals(0, mockFishings.size());
     }
 
-    @Test
-    void getAllFishings_WhenFishingsIsPresent_ShouldReturnFishings() {
-        List<Fishing> fishings = getFishings();
-
-        Mockito.when(fishingRepository.findAll()).thenReturn(this.fishings);
-
-        List<FishingServiceModel> mockFishings = fishingService.getAllFishings();
-
-        assertEquals(2, mockFishings.size());
-    }
+//    @Test
+//    void getAllFishings_WhenFishingsIsPresent_ShouldReturnFishings() {
+//        List<Fishing> fishings = getFishings();
+//
+//        Mockito.when(fishingRepository.findAll()).thenReturn(this.fishings);
+//
+//        List<FishingServiceModel> mockFishings = fishingService.getAllFishings();
+//
+//        assertEquals(2, mockFishings.size());
+//    }
 
     @Test
     void getAllFishingsByTownName_WhenFishingAreNotPresent_ShouldReturnEmptyList() {
@@ -166,21 +167,9 @@ class FishingServiceImplTest extends FishingBaseTest {
         assertEquals(2, mockFishings.size());
     }
 
+    //OK
     @Test
-    void getFishingById_WhenFIshingIsPresent_ShouldThrowException() {
-        String fishingId = "1";
-        Fishing fishing = new Fishing();
-        fishing.setDescription("Test description");
-
-        Mockito.when(fishingRepository.findById(fishingId)).thenReturn(Optional.of(fishing));
-
-        FishingServiceModel mockFishing = fishingService.getFishingById(fishingId);
-
-        assertEquals(fishing.getDescription(), mockFishing.getDescription());
-    }
-
-    @Test
-    void getFishingById_WhenFIshingIsNotPresent_ShouldThrowException() {
+    void getFishingById_WhenFishingIsNotPresent_ShouldThrowException() {
         String fishingId = "1";
 
         Mockito.when(fishingRepository.findById(fishingId)).thenReturn(Optional.empty());
@@ -189,6 +178,20 @@ class FishingServiceImplTest extends FishingBaseTest {
                 () -> fishingService.getFishingById(fishingId));
     }
 
+    //OK
+    @Test
+    void getFishingById_WhenFishingIsPresent_ShouldReturnFishing() {
+        String fishingId = "1";
+        Fishing fishing = getFishing();
+
+        Mockito.when(fishingRepository.findById(fishingId)).thenReturn(Optional.of(fishing));
+
+        FishingServiceModel mockFishing = fishingService.getFishingById(fishingId);
+
+        assertEquals(fishing.getDescription(), mockFishing.getDescription());
+    }
+
+    //OK
     @Test
     void deleteFishing_WhenFishingIsNotPresent_ShouldThrowException() {
         String fishingId = "1";
@@ -201,6 +204,7 @@ class FishingServiceImplTest extends FishingBaseTest {
     }
 
 
+    //OK
     @Test
     void deleteFishing_WhenTownIsNotPresent_ShouldThrowException() {
         String fishingId = "1";
@@ -212,6 +216,43 @@ class FishingServiceImplTest extends FishingBaseTest {
         assertThrows(DestinationNotFoundException.class,
                 () -> fishingService.deleteFishing(fishingId, townName));
     }
+
+    //OK
+    @Test
+    void deleteFishing_WhenTownAndFishingArePresent_ShouldDeleteFishing() {
+        String fishingId = "1";
+        String townName = "Chushkovo";
+        Fishing fishing = getFishing();
+
+        Mockito.when(this.fishingRepository.findById(fishingId)).thenReturn(Optional.of(fishing));
+        Mockito.when(destinationRepository.findByTownName(townName)).thenReturn(Optional.of(new Destination()));
+
+        fishingService.deleteFishing(fishingId, townName);
+
+        Mockito.verify(fishingRepository, times(1)).delete(fishing);
+    }
+
+    @Test
+    void getTopFiveFishings() {
+        List<Fishing> fishings = getFishings();
+
+        Mockito.when(fishingRepository.findAllByOrderByDateDesc()).thenReturn(fishings);
+
+        List<FishingServiceModel> mockFishings = fishingService.getTopFiveFishings();
+
+        assertEquals(2, mockFishings.size());
+    }
+    //   @Override
+    //    public List<FishingServiceModel> getTopFiveFishings() {
+    //        List<Fishing> allFishings = this.fishingRepository.findAllByOrderByDateDesc();
+    //
+    //        List<FishingServiceModel> fishingServiceModels = this.setTownName(allFishings);
+    //
+    //        return this.setCountOfFishingsAndLures(fishingServiceModels)
+    //                .stream().sorted((f1, f2) -> Integer.compare(f2.getCountOfFishes(), f1.getCountOfFishes()))
+    //                .limit(5)
+    //                .collect(Collectors.toList());
+    //    }
 
     private List<Fishing> getFishings() {
         Destination destination1 = new Destination();
@@ -228,5 +269,16 @@ class FishingServiceImplTest extends FishingBaseTest {
         fishings.add(fishing2);
 
         return fishings;
+    }
+
+    private Fishing getFishing() {
+        Fishing fishing = new Fishing();
+        Destination destination = new Destination();
+        destination.setTownName("TestTownName");
+
+        fishing.setDescription("Test description");
+        fishing.setDestination(destination);
+
+        return fishing;
     }
 }

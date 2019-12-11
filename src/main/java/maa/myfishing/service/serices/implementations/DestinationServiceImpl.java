@@ -71,7 +71,7 @@ public class DestinationServiceImpl implements DestinationService {
     }
 
     @Override
-    public DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel) {
+        public DestinationServiceModel editDestination(String id, DestinationServiceModel destinationServiceModel) {
         Destination destination = this.destinationRepository.findById(id)
                 .orElseThrow(() -> new DestinationNotFoundException(DestinationValidationConstants.DESTINATION_WITH_TOWN_ID_NOT_FOUND_EXCEPTION));
         destination.setImgUrl(destinationServiceModel.getImgUrl());
