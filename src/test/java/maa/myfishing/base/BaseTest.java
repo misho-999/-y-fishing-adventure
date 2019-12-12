@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-public class TestBase {
+public class BaseTest {
     @BeforeEach
     private void setupTest() {
         MockitoAnnotations.initMocks(this);

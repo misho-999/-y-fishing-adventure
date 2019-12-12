@@ -1,7 +1,6 @@
-package maa.myfishing.service.serices.fish;
+package maa.myfishing.service.fish;
 
-import javafx.beans.binding.When;
-import maa.myfishing.base.TestBase;
+import maa.myfishing.base.BaseTest;
 import maa.myfishing.data.models.Destination;
 import maa.myfishing.data.models.Fish;
 import maa.myfishing.data.models.Fishing;
@@ -11,13 +10,10 @@ import maa.myfishing.eroors.FishNotFoundException;
 import maa.myfishing.eroors.FishingNotFoundException;
 import maa.myfishing.service.models.FishServiceModel;
 import maa.myfishing.service.serices.FishService;
-import org.apache.catalina.LifecycleState;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 
 import javax.validation.Validator;
 import java.util.ArrayList;
@@ -29,10 +25,9 @@ import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.refEq;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
-class FishServiceImplTest extends TestBase {
+class FishServiceImplTest extends BaseTest {
     List<Fish> fishes = new ArrayList<>();
 
     @MockBean

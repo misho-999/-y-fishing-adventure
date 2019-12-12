@@ -22,7 +22,6 @@
                 </div>
                 <div class="justify-content-center text-white p-text">
                     <p class="text-center" th:text="'Creator: '+ ${fishing.creator}"></p>
-<!--                    <p class="text-left" th:text="'Destination: ' + ${fishing.description}"></p>-->
                     <p class="text-center" th:text="'Created on: '+${fishing.date}"></p>
                     <p class="text-center" th:text="'Count Of Fishes: '+${fishing.countOfFishes}"></p>
                     <p class="text-center" th:text="'Count Of Lures: '+${fishing.countOfLures}"></p>
@@ -42,17 +41,17 @@
                             <a th:href="@{/fishings/details/{id}(id=${fishing.id})}"
                                class="btn btn-warning font-weight-bold text-white btn-sm">Details</a>
                         </li>
-                        <li class="nav-item m-md-2">
-                            <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"
-                               class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>
-                        </li>
+<!--                        <li class="nav-item m-md-2">-->
+<!--                            <a th:href="@{/destinations/edit/{id}(id=${fishing.id})}"-->
+<!--                               class="btn btn-success font-weight-bold text-white btn-sm">Edit</a>-->
+<!--                        </li>-->
                         <li class="nav-item m-md-2">
                             <a th:href="@{/fishings/delete/{id}/{townName}(id=${fishing.id}, townName =${townName})}"
                                class="btn btn-danger font-weight-bold text-white btn-sm">Delete</a>
                         </li>
                         <li class="nav-item m-md-2">
                             <a th:href="@{/fishes/all-for-fishing/{id}(id=${fishing.id})}"
-                               class="btn btn-primary font-weight-bold text-white mt-2 btn-sm">All Fishes For This
+                               class="btn btn-primary font-weight-bold text-white mt-2 ml-3 btn-sm">All Fishes For This
                                 Fishing</a>
                         </li>
                         <li class="nav-item m-md-2">

@@ -1,23 +1,18 @@
-package maa.myfishing.service.serices.fishing;
+package maa.myfishing.service.fishing;
 
 import maa.myfishing.data.models.Destination;
-import maa.myfishing.data.models.Fish;
 import maa.myfishing.data.models.Fishing;
 import maa.myfishing.eroors.DestinationNotFoundException;
 import maa.myfishing.eroors.FishingAlreadyExistsException;
 import maa.myfishing.eroors.FishingNotFoundException;
 import maa.myfishing.service.models.FishingServiceModel;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
-import javax.validation.ConstraintViolation;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
@@ -83,17 +78,6 @@ class FishingServiceImplTest extends FishingBaseTest {
 
         assertEquals(0, mockFishings.size());
     }
-
-//    @Test
-//    void getAllFishings_WhenFishingsIsPresent_ShouldReturnFishings() {
-//        List<Fishing> fishings = getFishings();
-//
-//        Mockito.when(fishingRepository.findAll()).thenReturn(this.fishings);
-//
-//        List<FishingServiceModel> mockFishings = fishingService.getAllFishings();
-//
-//        assertEquals(2, mockFishings.size());
-//    }
 
     @Test
     void getAllFishingsByTownName_WhenFishingAreNotPresent_ShouldReturnEmptyList() {
@@ -242,43 +226,6 @@ class FishingServiceImplTest extends FishingBaseTest {
 
         assertEquals(2, mockFishings.size());
     }
-    //   @Override
-    //    public List<FishingServiceModel> getTopFiveFishings() {
-    //        List<Fishing> allFishings = this.fishingRepository.findAllByOrderByDateDesc();
-    //
-    //        List<FishingServiceModel> fishingServiceModels = this.setTownName(allFishings);
-    //
-    //        return this.setCountOfFishingsAndLures(fishingServiceModels)
-    //                .stream().sorted((f1, f2) -> Integer.compare(f2.getCountOfFishes(), f1.getCountOfFishes()))
-    //                .limit(5)
-    //                .collect(Collectors.toList());
-    //    }
 
-    private List<Fishing> getFishings() {
-        Destination destination1 = new Destination();
-        Destination destination2 = new Destination();
-        destination1.setTownName("Chushkovo1");
-        destination2.setTownName("Chushkovo2");
 
-        Fishing fishing1 = new Fishing();
-        Fishing fishing2 = new Fishing();
-        fishing1.setDestination(destination1);
-        fishing2.setDestination(destination2);
-
-        fishings.add(fishing1);
-        fishings.add(fishing2);
-
-        return fishings;
-    }
-
-    private Fishing getFishing() {
-        Fishing fishing = new Fishing();
-        Destination destination = new Destination();
-        destination.setTownName("TestTownName");
-
-        fishing.setDescription("Test description");
-        fishing.setDestination(destination);
-
-        return fishing;
-    }
 }

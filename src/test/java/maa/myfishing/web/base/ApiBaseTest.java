@@ -1,12 +1,12 @@
 package maa.myfishing.web.base;
 
-import maa.myfishing.base.TestBase;
+import maa.myfishing.base.BaseTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ApiTestBase extends TestBase {
+public class ApiBaseTest extends BaseTest {
     @LocalServerPort
     protected int port;
 
