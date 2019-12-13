@@ -25,34 +25,34 @@
                     <div class="form-group col-md ">
                         <label for="imgUrl"><em><strong class="label-color">Image URL</strong></em></label>
                         <input type="text" class="form-control" id="imgUrl" placeholder="Image Url..." name="imgUrl"
-                               th:value="${destination.imgUrl}">
+                               th:value="${destination.imgUrl}" readonly>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md ">
                         <label for="townName"><em><strong class="label-color">Town Name</strong></em></label>
                         <input type="text" class="form-control" id="townName" placeholder="townName..." name="townName"
-                               th:value="${destination.townName}">
+                               th:value="${destination.townName}" readonly>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="population"><em><strong class="label-color">Population</strong></em></label>
                         <input type="number" class="form-control" id="population" placeholder="population..."
-                               name="population" th:value="${destination.population}">
+                               name="population" th:value="${destination.population}" readonly>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="altitude"><em><strong class="label-color">Altitude</strong></em></label>
                         <input type="number" class="form-control" id="altitude" placeholder="altitude..."
-                               name="altitude" th:value="${destination.altitude}">
+                               name="altitude" th:value="${destination.altitude}" readonly>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="altitude"><em><strong class="label-color">Description</strong></em></label>
                     <textarea name="description" id="add-product-description" class="form-control" rows="5"
-                              th:text="${destination.description}"></textarea>
+                              th:text="${destination.description}" readonly></textarea>
                 </div>
                 <button type="submit" class="btn btn-danger">Delete Destination</button>
             </form>

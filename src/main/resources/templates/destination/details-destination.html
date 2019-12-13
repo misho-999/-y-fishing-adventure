@@ -28,7 +28,7 @@
                     <p class="text-left" th:text="'Altitude: '+${destination.altitude}"></p>
                     <p class="text-left" th:text="'Description: '"></p>
                     <textarea name="description" id="description" class="form-control" rows="3"
-                              th:field="${destination.description}">
+                              th:field="${destination.description}" readonly>
                     </textarea>
                 </div>
             </div>

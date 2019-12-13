@@ -20,20 +20,20 @@ const getTopFive = function (message) {
                 result = createFishesTable(data);
             }
 
-            $('#top-five-table').html(result);
-            setHeader(type);
+            $('.top-five').html(result);
+            $('#welcome').remove();
         });
 };
 
 const createDestinationsTable = function (destinations) {
     let result = `<table class="table table-hover w-50 mx-auto label-color font-weight-bold">
         <thead>
-        <tr class="row mx-auto">
-            <th class="col-md-2 text-center">#</th>
-            <th class="col-md-3 text-center">Image</th>
-            <th class="col-md-2 text-center">Town</th>
-            <th class="col-md-2 text-center">Creator</th>
-            <th class="col-md-3 text-center">Fishings Count</th>
+        <tr class="row mx-auto border border-white">
+            <th class="col-md-2 text-center font-italic">#</th>
+            <th class="col-md-3 text-center font-italic">Image</th>
+            <th class="col-md-2 text-center font-italic">Town</th>
+            <th class="col-md-2 text-center font-italic">Fisherman</th>
+            <th class="col-md-3 text-center font-italic">Fishings Count</th>
         </tr>
             <tbody>`;
 
@@ -50,7 +50,7 @@ const createDestinationsTable = function (destinations) {
 let destinationsTable = function (destination, index) {
     let table = `
         </thead>
-            <tr class="row mx-auto">
+            <tr class="row mx-auto border border-white">
                 <td class="col-md-2 text-center">${index + 1}</td>
                 <td class="col-md-3 text-center">
                     <div class="text-center"><img src="${destination.imgUrl}" width="100" height="50"
@@ -67,13 +67,13 @@ let destinationsTable = function (destination, index) {
 const createFishingsTable = function (fishings) {
     let result = `<table class="table table-hover w-50 mx-auto label-color font-weight-bold">
         <thead>
-        <tr class="row mx-auto">
-            <th class="col-md-2 text-center">#</th>
-            <th class="col-md-2 text-center">Date</th>
-            <th class="col-md-2 text-center">Town Name</th>
-            <th class="col-md-2 text-center">Creator</th>
-            <th class="col-md-2 text-center">Count of Fishes</th>
-            <th class="col-md-2 text-center">Count of Lures</th>
+        <tr class="row mx-auto border border-white">
+            <th class="col-md-2 text-center font-italic">#</th>
+            <th class="col-md-2 text-center font-italic">Date</th>
+            <th class="col-md-2 text-center font-italic">Town Name</th>
+            <th class="col-md-2 text-center font-italic">Fisherman</th>
+            <th class="col-md-2 text-center font-italic">Count of Fishes</th>
+            <th class="col-md-2 text-center font-italic">Count of Lures</th>
         </tr>
             <tbody>`;
 
@@ -90,7 +90,7 @@ const createFishingsTable = function (fishings) {
 let fishingTable = function (fishing, index) {
     let table = `
         </thead>
-            <tr class="row mx-auto">
+            <tr class="row mx-auto border border-white">
                 <td class="col-md-2 text-center">${index + 1}</td>
                 <td class="col-md-2 text-center">${fishing.date}</td>
                 <td class="col-md-2 text-center">${fishing.townName}</td>
@@ -107,12 +107,12 @@ const createFishesTable = function (fishes) {
 
     let result = `<table class="table table-hover w-50 mx-auto label-color font-weight-bold">
         <thead>
-        <tr class="row mx-auto">
-            <th class="col-md-2 text-center">#</th>
-            <th class="col-md-2 text-center">Fisherman</th>
-            <th class="col-md-2 text-center">Fish Name</th>
-            <th class="col-md-2 text-center">Weight In Kilograms</th>
-            <th class="col-md-2 text-center">Length In Centimeters</th>
+        <tr class="row mx-auto border border-white">
+            <th class="col-md-2 text-center font-italic">#</th>
+            <th class="col-md-2 text-center font-italic">Fisherman</th>
+            <th class="col-md-2 text-center font-italic">Fish Name</th>
+            <th class="col-md-3 text-center font-italic">Weight In Kilograms</th>
+            <th class="col-md-3 text-center font-italic">Length In Centimeters</th>
         </tr>
             <tbody>`;
 
@@ -129,36 +129,13 @@ const createFishesTable = function (fishes) {
 let fishTable = function (fish, index) {
     let table = `
         </thead>
-            <tr class="row mx-auto">
+            <tr class="row mx-auto border border-white">
                 <td class="col-md-2 text-center">${index + 1}</td>
                 <td class="col-md-2 text-center">${fish.creator}</td>
                 <td class="col-md-2 text-center">${fish.fishName}</td>
-                <td class="col-md-2 text-center">${fish.weightInKilograms}</td>
-                <td class="col-md-2 text-center">${fish.lengthInCentimeters}</td>
+                <td class="col-md-3 text-center">${fish.weightInKilograms}</td>
+                <td class="col-md-3 text-center">${fish.lengthInCentimeters}</td>
             </tr>`;
 
     return table;
-};
-
-
-const setHeader = function (type) {
-    let message = "";
-    switch (type) {
-        case "destinations":
-            message = "Top 5 Fishing Destinations";
-            break;
-        case "fishings":
-            message = "Top 5 Fishings";
-            break;
-        case "fishes":
-            message = "Top 5 Big Fishes";
-            break;
-    }
-
-    let html = `<div id="welcome" class="row justify-content-center mt-5">
-            <h1 class="text-center welcome"><em>${message}!</em>
-            </h1>
-        </div>`;
-
-    $('#welcome').html(html);
 };

@@ -1,11 +1,8 @@
 package maa.myfishing.service.serices.implementations;
 
-import maa.myfishing.data.models.Destination;
-import maa.myfishing.data.models.TypeOfOvernight;
 import maa.myfishing.data.models.User;
 import maa.myfishing.data.models.UserInfo;
 import maa.myfishing.data.reposipories.UserRepository;
-import maa.myfishing.service.models.DestinationServiceModel;
 import maa.myfishing.service.models.UserInfoServiceModel;
 import maa.myfishing.service.models.UserServiceModel;
 import maa.myfishing.service.serices.RoleService;
