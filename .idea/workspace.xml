@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="731ae66f-ce55-4c20-9492-3c9fa9138230" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/destination/DestinationServiceBaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/role/RoleServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/user/UserServiceImplBaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/user/UserServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/userInfo/UserInfoServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/fishing/FishingControllerBaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/maa/myfishing/service/serices/implementations/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-my-for-destination-fishings.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/all-my-for-destination-fishings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/base/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/base/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationServiceBaseTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/destination/DestinationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/destination/DestinationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fish/FishServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/fish/FishServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/fishing/FishingBaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/fishing/FishingServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/fishing/FishingServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/lure/LureServiceImplBaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/lure/LureServiceImplBaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/serices/lure/LureServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/service/lure/LureServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/base/ApiTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/base/ApiBaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/base/ViewTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/base/ViewBaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/DestinationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/DestinationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/FishingControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/maa/myfishing/web/view/controllers/fishing/FishingControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fish/create-fish.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fish/create-fish.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fishing/details-fishing.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fishing/details-fishing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="79" />
+    <option name="myElementSize" value="72" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -113,7 +96,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/fishing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -166,75 +149,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MyfishingApplication">
-    <configuration name="FishingControllerTest.createFishingConfirm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myfishing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="maa.myfishing.web.view.controllers.fishing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers.fishing" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.fishing.FishingControllerTest" />
-      <option name="METHOD_NAME" value="createFishingConfirm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FishingControllerTest.deleteFishingConfirm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myfishing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="maa.myfishing.web.view.controllers.fishing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.web.view.controllers.fishing" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.web.view.controllers.fishing.FishingControllerTest" />
-      <option name="METHOD_NAME" value="deleteFishingConfirm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserInfoServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myfishing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="maa.myfishing.service.userInfo.*" />
-          <option name="ENABLED" value="false" />
-        </pattern>
-        <pattern>
-          <option name="PATTERN" value="maa.myfishing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.service.userInfo" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.userInfo.UserInfoServiceImplTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserInfoServiceImplTest.getUserByUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="myfishing" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="maa.myfishing.service.userInfo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="maa.myfishing.service.userInfo" />
-      <option name="MAIN_CLASS_NAME" value="maa.myfishing.service.userInfo.UserInfoServiceImplTest" />
-      <option name="METHOD_NAME" value="getUserByUsername" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="maa.myfishing in myfishing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="myfishing" />
       <extension name="coverage">
@@ -260,19 +174,11 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.maa.myfishing in myfishing" />
-      <item itemvalue="JUnit.FishingControllerTest.createFishingConfirm" />
-      <item itemvalue="JUnit.FishingControllerTest.deleteFishingConfirm" />
-      <item itemvalue="JUnit.UserInfoServiceImplTest" />
-      <item itemvalue="JUnit.UserInfoServiceImplTest.getUserByUsername" />
       <item itemvalue="Spring Boot.MyfishingApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.maa.myfishing in myfishing" />
-        <item itemvalue="JUnit.UserInfoServiceImplTest.getUserByUsername" />
-        <item itemvalue="JUnit.UserInfoServiceImplTest" />
-        <item itemvalue="JUnit.FishingControllerTest.deleteFishingConfirm" />
-        <item itemvalue="JUnit.FishingControllerTest.createFishingConfirm" />
       </list>
     </recent_temporary>
   </component>
@@ -379,6 +285,8 @@
       <workItem from="1576049042305" duration="10100000" />
       <workItem from="1576059183050" duration="17155000" />
       <workItem from="1576135081878" duration="15007000" />
+      <workItem from="1576228742925" duration="247000" />
+      <workItem from="1576229089851" duration="4034000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1574444265566</created>
@@ -499,7 +407,7 @@
     <SUITE FILE_PATH="coverage/myfishing$UserInfoServiceImplTest.ic" NAME="UserInfoServiceImplTest Coverage Results" MODIFIED="1576149273915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>maa.myfishing.service.userInfo.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/myfishing$maa_myfishing_in_myfishing.ic" NAME="maa.myfishing in myfishing Coverage Results" MODIFIED="1576149358146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/myfishing$maa_myfishing_in_myfishing.ic" NAME="maa.myfishing in myfishing Coverage Results" MODIFIED="1576229444507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>maa.myfishing.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/myfishing$FishingControllerTest.ic" NAME="FishingControllerTest Coverage Results" MODIFIED="1576073582262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
