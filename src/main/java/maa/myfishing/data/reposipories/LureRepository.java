@@ -15,5 +15,4 @@ public interface LureRepository extends JpaRepository<Lure, String> {
 
     @Query("FROM Lure l LEFT JOIN l.fishing f WHERE f.id =:fishingId ")
     List<Lure> findAllLuresByFishingId(String fishingId);
-
 }

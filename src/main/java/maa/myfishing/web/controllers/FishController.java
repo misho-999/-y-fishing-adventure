@@ -70,7 +70,6 @@ public class FishController extends BaseController {
         this.fishService.createFish(fishServiceModel, fishingId);
 
         return super.redirect("/fishings/all-my-for-destination/" + townName);
-
     }
 
     @GetMapping("/all-for-fishing/{fishingId}")
@@ -85,7 +84,6 @@ public class FishController extends BaseController {
 
         return super.view("fish/all-for-fishing-fish.html", modelAndView);
     }
-
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_USER')")

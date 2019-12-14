@@ -18,7 +18,6 @@ public interface DestinationRepository extends JpaRepository<Destination, String
 
     Optional<Destination> findById(String id);
 
-    //Do not change!!!
     @Query("SELECT d from Destination d JOIN d.userInfos u where u.user.username = :username")
     List<Destination> findDestinationsByUsername(String username);
 

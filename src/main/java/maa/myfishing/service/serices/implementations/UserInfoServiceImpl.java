@@ -67,7 +67,6 @@ public class UserInfoServiceImpl implements UserInfoService {
                 .orElseThrow(() -> new UserNotFoundException(String.format(UserValidationConstants.USER_NOT_FOUND_EXCEPTION, username)));
     }
 
-
     private boolean isDestinationPresent(String townName, UserInfo userInfo) {
         List<Destination> destinations = userInfo.getDestinations();
 
@@ -80,5 +79,4 @@ public class UserInfoServiceImpl implements UserInfoService {
         }
         return false;
     }
-
 }

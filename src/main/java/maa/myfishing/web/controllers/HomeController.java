@@ -32,15 +32,7 @@ public class HomeController extends BaseController {
     @PreAuthorize("isAuthenticated()")
     @PageTitle("Home")
     public ModelAndView home(ModelAndView modelAndView) {
-//        List<CategoryViewModel> categories = this.categoryService.findAllCategories()
-//                .stream()
-//                .map(category -> this.modelMapper.map(category, CategoryViewModel.class))
-//                .collect(Collectors.toList());
-
-//        modelAndView.setViewName("home.html");
-//        return modelAndView;
 
         return super.view("home.html", modelAndView);
     }
-
 }

@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "fishings")
 public class Fishing extends BaseEntity {
     private String imgUrl;
-    private LocalDate date;// На BindingModela трябва да има @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date;// На BindingModel трябва да има @DateTimeFormat(pattern = "yyyy-MM-dd")
     private String description;
     private Destination destination;
     private String creator;

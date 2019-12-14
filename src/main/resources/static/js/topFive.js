@@ -21,7 +21,7 @@ const getTopFive = function (message) {
             }
 
             $('.top-five').html(result);
-            $('#welcome').remove();
+            setHeader(type);
         });
 };
 
@@ -138,4 +138,26 @@ let fishTable = function (fish, index) {
             </tr>`;
 
     return table;
+};
+
+const setHeader = function (type) {
+    let message = "";
+    switch (type) {
+        case "destinations":
+            message = "Top 5 Fishing Destinations";
+            break;
+        case "fishings":
+            message = "Top 5 Fishings";
+            break;
+        case "fishes":
+            message = "Top 5 Big Fishes";
+            break;
+    }
+
+    let html = `<div id="welcome" class="row justify-content-center">
+            <h1 class="text-center welcome"><em>${message}!</em>
+            </h1>
+        </div>`;
+
+    $('#welcome').html(html);
 };

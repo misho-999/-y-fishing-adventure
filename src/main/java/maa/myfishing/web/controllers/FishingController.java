@@ -61,7 +61,6 @@ public class FishingController extends BaseController {
         return super.redirect("/fishings/all-my-for-destination/" + townName);
     }
 
-
     @GetMapping("/all")
     @PreAuthorize("hasRole('ROLE_USER')")
     @PageTitle("All Fishings")
@@ -73,7 +72,6 @@ public class FishingController extends BaseController {
 
         return super.view("fishing/all-fishing.html", modelAndView);
     }
-
 
     @GetMapping("/all-for-destination/{townName}")
     @PreAuthorize("hasRole('ROLE_USER')")
@@ -102,13 +100,6 @@ public class FishingController extends BaseController {
         return super.view("fishing/all-my-for-destination-fishings.html", modelAndView);
     }
 
-//
-//    @GetMapping("/add-caught-fish")
-//    public ModelAndView AddCaughtFish(ModelAndView modelAndView) {
-//        return super.view("fishing/create-fish.html");
-//    }
-
-
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
     @PageTitle("My Fishings")
@@ -120,7 +111,6 @@ public class FishingController extends BaseController {
 
         return super.view("fishing/my-fishing.html", modelAndView);
     }
-
 
     @GetMapping("/details/{fishingId}")
     @PreAuthorize("isAuthenticated()")
@@ -162,5 +152,4 @@ public class FishingController extends BaseController {
 
         return modelAndView;
     }
-
 }

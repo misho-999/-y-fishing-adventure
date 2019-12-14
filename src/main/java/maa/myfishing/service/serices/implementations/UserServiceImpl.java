@@ -125,6 +125,4 @@ public class UserServiceImpl implements UserService {
 
         this.userRepository.saveAndFlush(this.modelMapper.map(userServiceModel, User.class));
     }
-
-
 }

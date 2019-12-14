@@ -52,7 +52,6 @@ public class LureController extends BaseController {
 
         this.lureService.createLure(lureServiceModel, fishingId);
 
-//        return super.redirect("/lures/all-for-fishing/" + fishingId);
         return super.redirect("/fishings/all-my-for-destination/" + townName);
     }
 
