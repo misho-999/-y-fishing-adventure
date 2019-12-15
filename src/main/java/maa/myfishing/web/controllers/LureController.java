@@ -1,5 +1,9 @@
 package maa.myfishing.web.controllers;
 
+import maa.myfishing.eroors.DestinationNotFoundException;
+import maa.myfishing.eroors.LureNotFoundException;
+import maa.myfishing.eroors.TownAlreadyExistException;
+import maa.myfishing.eroors.UserNotFoundException;
 import maa.myfishing.service.models.LureServiceModel;
 import maa.myfishing.service.serices.LureService;
 import maa.myfishing.web.annotations.PageTitle;
@@ -86,5 +90,14 @@ public class LureController extends BaseController {
         this.lureService.deleteLure(id);
 
         return super.redirect("/lures/all-for-fishing/" + fishingId);
+    }
+
+    //==========================================
+    @ExceptionHandler({LureNotFoundException.class})
+    public ModelAndView handleDestinationNotFound(Exception e) {
+        ModelAndView modelAndView = new ModelAndView("error.html");
+        modelAndView.addObject("message", e.getMessage());
+//        modelAndView.setStatus(HttpStatus.NOT_FOUND);
+        return modelAndView;
     }
 }

@@ -12,12 +12,11 @@
 </header>
 <main>
     <div class="welcome"><strong><em>Add Lure</em></strong></div>
-    <div class="row justify-content-md-center text-center bg-blur">
-        <form id="create-fish" class="form w-25 mx-auto"
+    <div class="row justify-content-md-center text-center ">
+        <form id="create-fish" class="form w-25 mx-auto add-lure-form"
               th:action="@{/lures/create/{fishingId}/{townName}(fishingId=${fishingId}, townName = ${townName})}" method="post" th:object="${lureModel}"
               enctype="multipart/form-data">
             <input type="hidden" name="fishingUrl" th:value="*{#httpServletRequest.requestURL}">
-            <!--            <input type="hidden" name="fishingId" th:value="*{fishingId}">-->
             <div class="form-row">
                 <div class="form-group col-md ">
                     <label for="make"><em><strong class="label-color">Make</strong></em></label>

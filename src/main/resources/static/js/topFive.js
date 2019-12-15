@@ -32,8 +32,8 @@ const createDestinationsTable = function (destinations) {
             <th class="col-md-2 text-center font-italic">#</th>
             <th class="col-md-3 text-center font-italic">Image</th>
             <th class="col-md-2 text-center font-italic">Town</th>
-            <th class="col-md-2 text-center font-italic">Fisherman</th>
-            <th class="col-md-3 text-center font-italic">Fishings Count</th>
+            <th class="col-md-2 text-center font-italic">Creator</th>
+            <th class="col-md-3 text-center font-italic">Count of Fishings</th>
         </tr>
             <tbody>`;
 
@@ -109,10 +109,10 @@ const createFishesTable = function (fishes) {
         <thead>
         <tr class="row mx-auto border border-white">
             <th class="col-md-2 text-center font-italic">#</th>
-            <th class="col-md-2 text-center font-italic">Fisherman</th>
             <th class="col-md-2 text-center font-italic">Fish Name</th>
-            <th class="col-md-3 text-center font-italic">Weight In Kilograms</th>
-            <th class="col-md-3 text-center font-italic">Length In Centimeters</th>
+            <th class="col-md-2 text-center font-italic">Fisherman</th>
+            <th class="col-md-3 text-center font-italic">Weight</th>
+            <th class="col-md-3 text-center font-italic">Length</th>
         </tr>
             <tbody>`;
 
@@ -131,10 +131,10 @@ let fishTable = function (fish, index) {
         </thead>
             <tr class="row mx-auto border border-white">
                 <td class="col-md-2 text-center">${index + 1}</td>
-                <td class="col-md-2 text-center">${fish.creator}</td>
                 <td class="col-md-2 text-center">${fish.fishName}</td>
-                <td class="col-md-3 text-center">${fish.weightInKilograms}</td>
-                <td class="col-md-3 text-center">${fish.lengthInCentimeters}</td>
+                <td class="col-md-2 text-center">${fish.creator}</td>
+                <td class="col-md-3 text-center">${fish.weightInKilograms} kg.</td>
+                <td class="col-md-3 text-center">${fish.lengthInCentimeters} cm.</td>
             </tr>`;
 
     return table;

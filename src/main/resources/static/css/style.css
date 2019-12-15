@@ -90,6 +90,13 @@ footer {
     background-color: #80bdff;
 }
 
+.add-lure-form {
+    background-color: rgba(0, 0, 0, 0.35);
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 0.5rem;
+}
+
 .fishing-list {
     padding: 10px;
     margin: 30px;

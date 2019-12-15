@@ -20,7 +20,7 @@
             <th class="col-md-2 text-center">Image</th>
             <th class="col-md-2 text-center">Town</th>
             <th class="col-md-2 text-center">Fisherman</th>
-            <th class="col-md-1 text-center">Fishings Count</th>
+            <th class="col-md-2 text-center">Count of Fishings</th>
             <th class="col-md-3 text-center">Action</th>
         </tr>
         </thead>
@@ -35,7 +35,7 @@
                 </td>
                 <td class="col-md-2 text-center" th:text="${destination.townName}"></td>
                 <td class="col-md-2 text-center" th:text="${destination.creator}"></td>
-                <td class="col-md-1 text-center" th:text="${destination.fishingsCount}"></td>
+                <td class="col-md-2 text-center" th:text="${destination.fishingsCount}"></td>
                 <td class="col-md-3 text-left">
                     <a th:href="@{/destinations/details/{id}(id=${destination.id})}"
                        class="btn btn-warning font-weight-bold text-white btn-sm ml-3">Details</a>
