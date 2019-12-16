@@ -17,7 +17,6 @@
           </node>
         </introspection-scope>
       </schema-mapping>
-      <legacy-introspector>true</legacy-introspector>
     </data-source>
   </component>
 </project>
