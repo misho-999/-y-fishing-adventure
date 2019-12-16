@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"/>
+</head>
+
+<body class="fishing">
+
+<header>
+    <th:block th:include="~{fragments/navbar}"/>
+</header>
+
+<main>
+    <div class="welcome"><strong><em>All Fishes For This Fishing</em></strong></div>
+    <div class="row d-flex justify-content-center">
+        <th:block th:each="fish, iter : ${fishes}">
+            <div class="col col-md-3">
+                <div class="text-center text-white fishes-list">
+                    <p class="text-left" th:text="'Name: '+${fish.fishName}"></p>
+                    <p class="text-left" th:text="'Weight: '+${fish.weightInKilograms}+'kg'"></p>
+                    <p class="text-left" th:text="'Length: '+${fish.lengthInCentimeters}+'cm'"></p>
+                </div>
+                <div class="text-center text-white">
+                    <form method="POST" th:action="@{/fishes/delete/{id}/{fishingId}(id=${fish.id}, fishingId=${fishingId})}">
+                        <button type="submit" class="btn btn-danger font-weight-bold text-white">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </th:block>
+
+        <th:block th:if="${fishes.size()} %4 == 1">
+            <div class="col col-md-3"></div>
+            <div class="col col-md-3"></div>
+            <div class="col col-md-3"></div>
+        </th:block>
+
+        <th:block th:if="${fishes.size()} %4 == 2">
+            <div class="col col-md-3"></div>
+            <div class="col col-md-3"></div>
+        </th:block>
+
+        <th:block th:if="${fishes.size()} %4 == 3">
+            <div class="col col-md-3"></div>
+        </th:block>
+
+    </div>
+</main>
+
+<footer>
+    <th:block th:include="~{fragments/footer}"/>
+</footer>
+
+</body>
+</html>

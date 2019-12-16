@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"/>
+</head>
+
+<body class="fishing">
+
+<header>
+    <th:block th:include="~{fragments/navbar}"/>
+</header>
+
+<main>
+    <div class="welcome"><p th:text="'All Fishings For: ' + ${townName}"></div>
+    <div class="row d-flex justify-content-center">
+        <th:block th:each="fishing, iter : ${fishings}">
+            <div class="text-center col col-md-3 fishing-list listing">
+                <div class="text-center text-white">
+                    <img th:src="${fishing.imgUrl}" width="300" height="200">
+                    <p class="text-center" th:text="'Creator: '+ ${fishing.creator}"></p>
+                    <p class="text-center" th:text="'Creator: '+ ${fishing.date}"></p>
+                    <p class="text-center" th:text="'Created on: '+${fishing.countOfFishes}"></p>
+                    <p class="text-center" th:text="'Created on: '+${fishing.countOfLures}"></p>
+                    <a th:href="@{/fishings/details/{id}(id=${fishing.id})}"
+                       class="btn btn-warning font-weight-bold text-white">Details</a>
+<!--                    <a th:href="@{/fishings/all-for-destination/{id}(id=${townName})}"-->
+<!--                       class="btn btn-primary font-weight-bold text-white"-->
+<!--                       th:text="'All Fishings For '+ ${townName}"></a>-->
+                </div>
+            </div>
+        </th:block>
+
+        <th:block th:if="${fishings.size()} %3 == 1">
+            <div class="col col-md-3 fishing-list-empty"></div>
+            <div class="col col-md-3 fishing-list-empty"></div>
+        </th:block>
+
+        <th:block th:if="${fishings.size()} %3 == 2">
+            <div class="col col-md-3 fishing-list-empty"></div>
+        </th:block>
+
+    </div>
+</main>
+
+<footer>
+    <th:block th:include="~{fragments/footer}"/>
+</footer>
+
+</body>
+</html>

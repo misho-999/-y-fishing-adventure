@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <th:block th:include="~{fragments/head}"/>
+</head>
+
+<body class="lure">
+<header>
+    <th:block th:include="~{fragments/navbar}"/>
+</header>
+<main>
+    <div class="welcome"><strong><em>Add Lure</em></strong></div>
+    <div class="row justify-content-md-center text-center ">
+        <form id="create-fish" class="form w-25 mx-auto add-lure-form"
+              th:action="@{/lures/create/{fishingId}/{townName}(fishingId=${fishingId}, townName = ${townName})}" method="post" th:object="${lureModel}"
+              enctype="multipart/form-data">
+            <input type="hidden" name="fishingUrl" th:value="*{#httpServletRequest.requestURL}">
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <label for="make"><em><strong class="label-color">Make</strong></em></label>
+                    <input type="text" class="form-control" id="make" placeholder="Make..." name="make"
+                           th:value="*{make}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <label for="model"><em><strong class="label-color">Model</strong></em></label>
+                    <input type="text" class="form-control" id="model" placeholder="Model..." name="model"
+                           th:value="*{model}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <label for="color"><em><strong class="label-color">Color</strong></em></label>
+                    <input type="text" class="form-control" id="color" placeholder="Color..." name="color"
+                           th:value="*{color}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <select class="w-50" name="typeOfLure">
+                        <option selected>Choose Type...</option>
+                        <option th:each="typeOfLure : ${T(maa.myfishing.data.models.TypeOfLure).values()}"
+                                th:value="${typeOfLure}" th:text="${typeOfLure}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <label for="weightInGrams"><em><strong class="label-color">Weight In Grams</strong></em></label>
+                    <input type="number" min="3" max="20" class="form-control" id="weightInGrams"
+                           placeholder="between 3 and 20gr." name="weightInGrams" th:value="*{weightInGrams}">
+
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md ">
+                    <label for="lengthInMillimeters"><em><strong class="label-color">Length In Millimeters</strong></em></label>
+                    <input type="number" min="30" max="200" class="form-control" id="lengthInMillimeters"
+                           placeholder="between 30 and 200mm."  name="lengthInMillimeters" th:value="*{lengthInMillimeters}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Lure</button>
+        </form>
+    </div>
+</main>
+<footer>
+    <th:block th:include="~{fragments/footer}"/>
+</footer>
+
+</body>
+
+</html>
