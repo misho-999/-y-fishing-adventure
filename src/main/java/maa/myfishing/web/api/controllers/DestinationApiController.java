@@ -24,24 +24,17 @@ public class DestinationApiController {
 
     @GetMapping(value = "/api/destinations")
     @PageTitle("All Destinations")
-    public List [] allDestinations(Principal principal) {
-        List <String> allDestinations = this.destinationService.getAllDestinations()
+    public List[] allDestinations(Principal principal) {
+        List<String> allDestinations = this.destinationService.getAllDestinations()
                 .stream()
                 .map(DestinationServiceModel::getTownName)
                 .collect(Collectors.toList());
 
-        List <String> myDestinations = this.destinationService.getMyDestinations(principal.getName())
+        List<String> myDestinations = this.destinationService.getMyDestinations(principal.getName())
                 .stream()
                 .map(DestinationServiceModel::getTownName)
                 .collect(Collectors.toList());
 
         return new List[]{allDestinations, myDestinations};
     }
-
-//    @PostMapping("/api/items/{id}")
-//    public void BuyItem(@PathVariable long id, HttpSession session) {
-//        String username = getUsername(session);
-//        itemsService.createForUserById(id, username);
-//    }
-
 }
