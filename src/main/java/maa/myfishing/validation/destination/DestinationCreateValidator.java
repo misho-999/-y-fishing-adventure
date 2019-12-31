@@ -40,7 +40,7 @@ public class DestinationCreateValidator implements org.springframework.validatio
             );
         }
 
-        if (destinationCreateModel.getAltitude() < 0 || destinationCreateModel.getAltitude() > 5000000) {
+        if (destinationCreateModel.getPopulation() < 1000 || destinationCreateModel.getPopulation() > 5000000) {
             errors.rejectValue(
                     "population",
                     DestinationValidationConstants.DESTINATION_POPULATION_EXCEPTION,
@@ -48,7 +48,7 @@ public class DestinationCreateValidator implements org.springframework.validatio
             );
         }
 
-        if (destinationCreateModel.getAltitude() < 3 || destinationCreateModel.getAltitude() > 5000) {
+        if (destinationCreateModel.getAltitude() < 0 || destinationCreateModel.getAltitude() > 5000) {
             errors.rejectValue(
                     "altitude",
                     DestinationValidationConstants.DESTINATION_ALTITUDE_EXCEPTION,
